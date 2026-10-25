@@ -1,0 +1,47 @@
+# Jednou denně: aktualizuje seznam burzovně obchodovaných společností (tickerů)
+# a uloží zálohu všech dat do větve "data-zaloha".
+# Web se s novým seznamem zveřejní při nejbližším hodinovém běhu.
+name: Tickery a záloha (denně)
+
+on:
+  schedule:
+    - cron: "41 4 * * *"   # denně ve 4:41 UTC (5:41 / 6:41 našeho času)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-repozitare
+  cancel-in-progress: false
+
+jobs:
+  tickery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Načíst uložená data (větev data)
+        run: python -m src.vetev nacti
+
+      - name: Záloha dat (stav před dnešní aktualizací)
+        run: python -m src.vetev uloz data-zaloha
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+
+      - name: Aktualizovat seznam tickerů
+        run: python -m src.main tickery
+
+      - name: Uložit data (větev data)
+        run: python -m src.vetev uloz data
+        env:
+          GH_TOKEN: ${{ github.token }}
