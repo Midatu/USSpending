@@ -1,0 +1,33 @@
+# Doplněk zahraničních kotací (formát tickeru podle Yahoo Finance). Řádky začínající # se ignorují.
+ticker;nazev;burza
+BA.L;BAE Systems plc;London
+RR.L;Rolls-Royce Holdings plc;London
+BAB.L;Babcock International Group plc;London
+QQ.L;QinetiQ Group plc;London
+SRP.L;Serco Group plc;London
+CHG.L;Chemring Group plc;London
+HO.PA;Thales SA;Paris
+AIR.PA;Airbus SE;Paris
+SAF.PA;Safran SA;Paris
+AM.PA;Dassault Aviation SA;Paris
+CAP.PA;Capgemini SE;Paris
+SOP.PA;Sopra Steria Group;Paris
+RHM.DE;Rheinmetall AG;Frankfurt (Xetra)
+HAG.DE;Hensoldt AG;Frankfurt (Xetra)
+SIE.DE;Siemens AG;Frankfurt (Xetra)
+ENR.DE;Siemens Energy AG;Frankfurt (Xetra)
+8TRA.DE;Traton SE;Frankfurt (Xetra)
+TKA.DE;thyssenkrupp AG;Frankfurt (Xetra)
+LDO.MI;Leonardo SpA;Milano
+FCT.MI;Fincantieri SpA;Milano
+SAAB-B.ST;Saab AB;Stockholm
+KOG.OL;Kongsberg Gruppen ASA;Oslo
+NHY.OL;Norsk Hydro ASA;Oslo
+ASB.AX;Austal Ltd;Sydney
+CAE.TO;CAE Inc;Toronto
+6702.T;Fujitsu Ltd;Tokio
+7011.T;Mitsubishi Heavy Industries;Tokio
+7013.T;IHI Corp;Tokio
+012450.KS;Hanwha Aerospace;Soul
+329180.KS;HD Hyundai Heavy Industries;Soul
+ESLT.TA;Elbit Systems Ltd;Tel Aviv

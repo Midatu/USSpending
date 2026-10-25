@@ -1,0 +1,196 @@
+# Ruční přiřazení názvů firem (včetně dceřiných společností) k tickerům.
+# vzor = část názvu firmy (velikost písmen a interpunkce nehraje roli), ticker = symbol podle Yahoo Finance.
+# Prázdný ticker = firma je soukromá (zabrání chybnému automatickému přiřazení).
+# Delší vzory mají přednost před kratšími. Řádky začínající # se ignorují.
+vzor;ticker;poznamka
+Lockheed Martin;LMT;
+Sikorsky;LMT;dceřiná firma Lockheed Martin
+Raytheon;RTX;
+RTX;RTX;
+Pratt & Whitney;RTX;
+Pratt and Whitney;RTX;
+Collins Aerospace;RTX;
+Rockwell Collins;RTX;
+Raytheon Lockheed Martin Javelin;LMT;společný podnik RTX a LMT
+Northrop Grumman;NOC;
+Orbital ATK;NOC;
+Boeing;BA;
+Insitu;BA;dceřiná firma Boeing
+Aurora Flight Sciences;BA;dceřiná firma Boeing
+Wisk Aero;BA;
+General Dynamics;GD;
+Electric Boat;GD;
+Bath Iron Works;GD;
+Gulfstream;GD;
+NASSCO;GD;
+National Steel and Shipbuilding;GD;
+General Dynamics Information Technology;GD;
+GDIT;GD;
+Huntington Ingalls;HII;
+Newport News Shipbuilding;HII;
+Ingalls Shipbuilding;HII;
+L3Harris;LHX;
+L3 Harris;LHX;
+L-3;LHX;
+Harris Corp;LHX;
+Aerojet Rocketdyne;LHX;
+Leidos;LDOS;
+Science Applications International;SAIC;
+SAIC;SAIC;
+CACI;CACI;
+Booz Allen;BAH;
+KBR;KBR;
+Kellogg Brown;KBR;
+Amentum;AMTM;
+Jacobs Engineering;J;
+Jacobs Technology;J;
+V2X;VVX;
+Vectrus;VVX;
+Vertex Aerospace;VVX;
+Parsons Government;PSN;
+Parsons Corp;PSN;
+Parsons Transportation;PSN;
+BWX Technologies;BWXT;
+BWXT;BWXT;
+Textron;TXT;
+Bell Textron;TXT;
+Bell Helicopter;TXT;
+Bell Boeing;BA;společný podnik Bell (TXT) a Boeing
+AAI Corp;TXT;
+Oshkosh;OSK;
+GE Aerospace;GE;
+General Electric;GE;
+Honeywell;HON;
+Accenture Federal;ACN;
+Accenture;ACN;
+IBM;IBM;
+International Business Machines;IBM;
+Microsoft;MSFT;
+Amazon Web Services;AMZN;
+Oracle;ORCL;
+Palantir;PLTR;
+Kratos;KTOS;
+AeroVironment;AVAV;
+BlueHalo;AVAV;dceřiná firma AeroVironment
+Mercury Systems;MRCY;
+Curtiss-Wright;CW;
+Moog;MOG-A;
+TransDigm;TDG;
+HEICO;HEI;
+Fluor;FLR;
+AECOM;ACM;
+Tetra Tech;TTEK;
+McKesson;MCK;
+Cardinal Health;CAH;
+Humana;HUM;
+Centene;CNC;
+Health Net Federal;CNC;
+UnitedHealth;UNH;
+Optum;UNH;
+Maximus;MMS;
+Leonardo DRS;DRS;
+DRS Technologies;DRS;
+Elbit Systems of America;ESLT;
+Elbit Systems;ESLT;
+BAE Systems;BA.L;
+Rolls-Royce;RR.L;
+Thales;HO.PA;
+Airbus;AIR.PA;
+Safran;SAF.PA;
+Rheinmetall;RHM.DE;
+American Rheinmetall;RHM.DE;
+Kongsberg;KOG.OL;
+Saab;SAAB-B.ST;
+CAE USA;CAE;
+CAE Inc;CAE;
+Babcock International;BAB.L;
+Babcock & Wilcox;BW;
+Fincantieri;FCT.MI;
+Marinette Marine;FCT.MI;
+Austal;ASB.AX;
+Hensoldt;HAG.DE;
+Siemens Government Technologies;SIE.DE;
+QinetiQ;QQ.L;
+Serco;SRP.L;
+Fujitsu;6702.T;
+Hanwha;012450.KS;
+Navistar Defense;8TRA.DE;
+Teledyne;TDY;
+FLIR;TDY;
+Viasat;VSAT;
+Iridium;IRDM;
+Maxar;;soukromá od 2023
+Rocket Lab;RKLB;
+Intuitive Machines;LUNR;
+Redwire;RDW;
+Planet Labs;PL;
+BlackSky;BKSY;
+Spire Global;SPIR;
+AST SpaceMobile;ASTS;
+Archer Aviation;ACHR;
+Joby Aviation;JOBY;
+Ducommun;DCO;
+Woodward;WWD;
+Hexcel;HXL;
+Howmet;HWM;
+Spirit AeroSystems;BA;převzato Boeingem
+Triumph Group;;soukromá od 2025
+Astronics;ATRO;
+Vse Corp;VSEC;
+VSE Corp;VSEC;
+AAR Corp;AIR;
+Huntington Ingalls Industries;HII;
+Great Lakes Dredge;GLDD;
+Granite Construction;GVA;
+Tutor Perini;TPC;
+Sterling Infrastructure;STRL;
+MasTec;MTZ;
+Quanta Services;PWR;
+EMCOR;EME;
+Dycom;DY;
+Clark Construction;;soukromá
+Whiting-Turner;;soukromá
+Bechtel;;soukromá
+Anduril;;soukromá
+SpaceX;;soukromá
+Space Exploration Technologies;;soukromá
+Sierra Nevada;;soukromá
+Peraton;;soukromá
+ManTech;;soukromá
+General Atomics;;soukromá
+Blue Origin;;soukromá
+Shield AI;;soukromá
+AM General;;soukromá
+Booz Allen Hamilton;BAH;
+Cubic;;soukromá
+Arcadis;ARCAD.AS;Amsterdam
+Pfizer;PFE;
+Merck Sharp;MRK;
+Moderna;MRNA;
+Johnson & Johnson;JNJ;
+Abbott Laboratories;ABT;
+Cerner;ORCL;převzato Oraclem
+Deloitte;;soukromá
+Ernst & Young;;soukromá
+PricewaterhouseCoopers;;soukromá
+Guidehouse;;soukromá
+Lumen Technologies;LUMN;
+Verizon;VZ;
+AT&T;T;
+Dell;DELL;
+Hewlett Packard Enterprise;HPE;
+HP Inc;HPQ;
+Cisco;CSCO;
+Carahsoft;;soukromá
+Iron Bow;;soukromá
+World Wide Technology;;soukromá
+Sumitomo;8053.T;
+Mitsubishi;8058.T;
+ExxonMobil;XOM;
+Exxon Mobil;XOM;
+Chevron;CVX;
+Valero;VLO;
+Marathon Petroleum;MPC;
+Phillips 66;PSX;
+World Fuel Services;WKC;
+World Kinect;WKC;

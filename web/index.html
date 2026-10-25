@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vládní kontrakty USA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Rozvržení: úzká hlavička se stavem zdrojů, souhrn, filtry, široká tabulka (vodorovně posuvná). */
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --fg: #1b2433;
+  --muted: #5b6676;
+  --line: #dde3eb;
+  --accent: #1a4480;
+  --accent-soft: #e5edf8;
+  --up: #1b7f3b;
+  --down: #b3261e;
+  --warn: #946200;
+  --tag-new: #e3f1e6;
+  --tag-mod: #fdf0d5;
+  --f-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141c; --surface: #161d28; --fg: #e4e9f0; --muted: #98a3b3; --line: #2a3443;
+    --accent: #8fb4ea; --accent-soft: #1d2b40; --up: #5ccf84; --down: #f28b82; --warn: #e7b85b;
+    --tag-new: #183424; --tag-mod: #3a2d12; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141c; --surface: #161d28; --fg: #e4e9f0; --muted: #98a3b3; --line: #2a3443;
+  --accent: #8fb4ea; --accent-soft: #1d2b40; --up: #5ccf84; --down: #f28b82; --warn: #e7b85b;
+  --tag-new: #183424; --tag-mod: #3a2d12; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.wrap { max-width: 1480px; margin: 0 auto; display: grid; gap: 20px; }
+header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
+h1 { font: 800 clamp(26px, 4vw, 38px)/1.05 var(--f-display); font-stretch: 80%; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.sub { color: var(--muted); margin: 4px 0 0; font-size: 14px; }
+.zdroje { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--up); }
+.chip.err i { background: var(--down); }
+.chip.none i { background: var(--muted); }
+.souhrn { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.kpi b { display: block; font: 700 24px/1.2 var(--f-display); font-stretch: 85%; font-variant-numeric: tabular-nums; }
+.kpi span { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+.lista { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tabs { display: flex; gap: 4px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 3px; }
+.tabs button { border: 0; background: none; color: var(--muted); font: 600 14px var(--f-body); padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--accent); color: var(--surface); }
+input[type=search], select, input[type=number] {
+  font: 14px var(--f-body); color: var(--fg); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 6px; padding: 7px 10px; min-width: 0;
+}
+input[type=search] { flex: 1 1 240px; }
+label.chk { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font: 600 14px var(--f-body); color: var(--accent); background: var(--accent-soft); border: 1px solid transparent; border-radius: 6px; padding: 7px 12px; text-decoration: none; }
+.btn:hover { border-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tabulka { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 1180px; font-size: 13.5px; }
+th { position: sticky; top: 0; background: var(--surface); text-align: left; font: 600 11.5px var(--f-body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 10px 10px; border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; user-select: none; }
+th[data-s]::after { content: " ↕"; opacity: 0.35; }
+th.asc::after { content: " ↑"; opacity: 1; } th.desc::after { content: " ↓"; opacity: 1; }
+td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:hover td { background: var(--accent-soft); }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; font-size: 12.5px; }
+.firma b { font-weight: 600; }
+.firma small, .popis small { display: block; color: var(--muted); font-size: 12px; }
+.popis { max-width: 380px; }
+.tk { font: 500 13px var(--f-mono); color: var(--accent); white-space: nowrap; }
+.tk small { display: block; font: 11px var(--f-body); color: var(--muted); }
+.tag { display: inline-block; font-size: 11.5px; font-weight: 600; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+.tag.n { background: var(--tag-new); color: var(--up); }
+.tag.m { background: var(--tag-mod); color: var(--warn); }
+.tag.k { background: var(--accent-soft); color: var(--accent); }
+a.tk { text-decoration: none; }
+a.tk:hover { text-decoration: underline; }
+.kpi select { font-size: 12px; padding: 1px 4px; margin-left: 2px; vertical-align: baseline; }
+.kpi small { display: block; color: var(--muted); font-size: 11.5px; margin-top: 2px; }
+.up { color: var(--up); } .down { color: var(--down); }
+.spark { display: block; }
+.prazdne { padding: 40px 20px; text-align: center; color: var(--muted); }
+.pozn { color: var(--muted); font-size: 12.5px; max-width: 900px; }
+.pozn p { margin: 4px 0; }
+a { color: var(--accent); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Vládní kontrakty USA</h1>
+      <p class="sub" id="aktualizace">Načítám data...</p>
+    </div>
+    <div class="zdroje" id="zdroje"></div>
+  </header>
+
+  <section class="souhrn" id="souhrn"></section>
+
+  <div class="lista">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-k" aria-selected="true">Kontrakty</button>
+      <button role="tab" id="tab-t" aria-selected="false">Tickery</button>
+    </div>
+    <a class="btn" href="kontrakty.xlsx">Stáhnout Excel</a>
+  </div>
+
+  <section id="pohled-k">
+    <div class="lista" style="margin-bottom:12px">
+      <input type="search" id="hledat" placeholder="Hledat firmu, ticker, popis, číslo kontraktu">
+      <select id="f-typ"><option value="">Všechny typy</option><option>Nový</option><option>Navýšení</option><option>Hlášení 8-K</option></select>
+      <select id="f-zdroj"><option value="">Všechny zdroje</option><option>DoD</option><option>SAM.gov</option><option>USAspending</option><option>SEC 8-K</option></select>
+      <select id="f-min"><option value="0">Jakákoli výše</option><option value="1000000">od 1 mil. $</option><option value="10000000">od 10 mil. $</option><option value="100000000">od 100 mil. $</option><option value="1000000000">od 1 mld. $</option></select>
+      <label class="chk"><input type="checkbox" id="f-ticker"> Jen s tickerem</label>
+    </div>
+    <div class="tabulka">
+      <table>
+        <thead><tr>
+          <th data-s="datum">Datum</th><th data-s="typ">Typ</th><th data-s="spolecnost">Společnost</th>
+          <th data-s="ticker">Ticker</th><th data-s="castka" class="num">Výše ($)</th><th>Popis</th>
+          <th data-s="zmena_pct" class="num">Zhodnocení</th><th data-s="cena_pri" class="num">Cena start</th>
+          <th data-s="cena_nyni" class="num">Cena dnes</th><th>Vývoj</th><th>Detail</th>
+        </tr></thead>
+        <tbody id="radky"></tbody>
+      </table>
+      <div class="prazdne" id="prazdne" hidden>Žádný kontrakt neodpovídá filtrům.</div>
+    </div>
+    <p class="pozn" id="pocet"></p>
+  </section>
+
+  <section id="pohled-t" hidden>
+    <div class="lista" style="margin-bottom:12px">
+      <input type="search" id="hledat-t" placeholder="Hledat ticker nebo název společnosti">
+    </div>
+    <div class="tabulka">
+      <table style="min-width:560px">
+        <thead><tr><th>Ticker</th><th>Společnost</th><th>Burza</th></tr></thead>
+        <tbody id="radky-t"></tbody>
+      </table>
+    </div>
+    <p class="pozn" id="pocet-t"></p>
+  </section>
+
+  <div class="pozn">
+    <p><b>Typ:</b> „Nový“ je nově udělený kontrakt, „Navýšení“ je modifikace existujícího kontraktu, „Hlášení 8-K“ je kontrakt oznámený firmou (bez čísla kontraktu, který už máme). Značka „navazuje“ znamená, že původní kontrakt je také v seznamu. Kliknutím na ticker otevřeš Yahoo Finance.</p>
+    <p><b>Zdroje:</b> DoD = denní oznámení ministerstva obrany (kontrakty nad 7,5 mil. $, ve stejný den). SAM.gov = oznámení o udělení zakázek všech federálních úřadů (zpravidla do několika dnů). USAspending = oficiální databáze výdajů (DoD se zpožděním cca 90 dní). SEC 8-K = hlášení, ve kterých firma sama oznamuje kontrakt (ticker je jistý, částka je vyčtena z textu automaticky). Záznam se doplňuje, jakmile ho najdeme v dalším zdroji.</p>
+    <p><b>Souhrn nahoře</b> se počítá z řádků, které odpovídají filtrům. Zhodnocení celkem ukazuje, kolik by vydělalo 1 000 $ vložených do akcie každé firmy v den udělení kontraktu.</p>
+    <p><b>Ceny:</b> Yahoo Finance, zpoždění cca 15 minut, v měně burzy. Cena start je závěrečná cena v den udělení (nebo nejbližší následující obchodní den). Přiřazení tickeru je automatické; typ shody „podobnost“ a „začátek názvu“ doporučujeme ověřit.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const kc = new Intl.NumberFormat("cs-CZ", { maximumFractionDigits: 0 });
+  const kc2 = new Intl.NumberFormat("cs-CZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const yahoo = (t) => "https://finance.yahoo.com/quote/" + encodeURIComponent(t);
+  const datum = (iso) => { if (!iso) return ""; const [y, m, d] = iso.slice(0, 10).split("-"); return `${+d}. ${+m}. ${y}`; };
+  const cas = (iso) => iso ? new Date(iso).toLocaleString("cs-CZ", { dateStyle: "medium", timeStyle: "short" }) : "neznámo";
+  const castka = (v) => {
+    if (v == null) return "";
+    if (v >= 1e9) return kc2.format(v / 1e9) + " mld.";
+    if (v >= 1e6) return kc2.format(v / 1e6) + " mil.";
+    return kc.format(v);
+  };
+
+  function spark(r) {
+    const d = r.graf || [];
+    if (d.length < 2) return "";
+    const w = 120, h = 32, p = 3;
+    const lo = Math.min(...d), hi = Math.max(...d), rng = hi - lo || 1;
+    const x = (i) => p + (i * (w - 2 * p)) / (d.length - 1);
+    const y = (v) => h - p - ((v - lo) / rng) * (h - 2 * p);
+    const body = d.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+    const tr = (r.zmena_pct ?? 0) >= 0 ? "var(--up)" : "var(--down)";
+    const y0 = y(d[0]).toFixed(1);
+    return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Vývoj ceny akcie">
+      <line x1="${p}" x2="${w - p}" y1="${y0}" y2="${y0}" stroke="var(--line)" stroke-dasharray="2 2"/>
+      <polygon points="${p},${h - p} ${body} ${w - p},${h - p}" fill="${tr}" fill-opacity="0.12"/>
+      <polyline points="${body}" fill="none" stroke="${tr}" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="${x(d.length - 1).toFixed(1)}" cy="${y(d[d.length - 1]).toFixed(1)}" r="2.4" fill="${tr}"/></svg>`;
+  }
+
+  let data = { kontrakty: [] }, tickery = [], razeni = { k: "datum", smer: -1 };
+
+  function filtruj() {
+    const q = $("hledat").value.trim().toLowerCase();
+    const typ = $("f-typ").value, zdr = $("f-zdroj").value, min = +$("f-min").value, jenT = $("f-ticker").checked;
+    let r = data.kontrakty.filter((k) =>
+      (!typ || k.typ === typ) && (!zdr || (k.zdroje || []).includes(zdr)) && (k.castka || 0) >= min && (!jenT || k.ticker) &&
+      (!q || [k.spolecnost, k.materska, k.ticker, k.popis, k.piid, k.agentura].join(" ").toLowerCase().includes(q)));
+    const { k: s, smer } = razeni;
+    r.sort((a, b) => {
+      const va = a[s], vb = b[s];
+      if (va == null || va === "") return 1;
+      if (vb == null || vb === "") return -1;
+      return (typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "cs")) * smer;
+    });
+    return r;
+  }
+
+  function vykresli() {
+    const r = filtruj();
+    souhrn(r);
+    $("radky").innerHTML = r.slice(0, 1500).map((k) => {
+      const z = k.zmena_pct, zc = z == null ? "" : z >= 0 ? "up" : "down";
+      const typTag = k.typ === "Nový" ? `<span class="tag n">Nový</span>` : k.typ === "Hlášení 8-K" ? `<span class="tag k">Hlášení 8-K</span>` :
+        `<span class="tag m">Navýšení</span>${k.puvodni_v_seznamu ? `<small style="display:block;color:var(--muted);font-size:11.5px">navazuje</small>` : ""}${k.mod && k.mod !== "0" && !k.mod.startsWith("?") ? `<small style="display:block;color:var(--muted);font-size:11.5px;font-family:var(--f-mono)">${esc(k.mod)}</small>` : ""}`;
+      const mena = k.mena && k.mena !== "USD" ? ` <small style="color:var(--muted)">${esc(k.mena)}</small>` : "";
+      const odkaz = (u, t) => u && `<a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>`;
+      const odkazy = [odkaz(k.odkaz_usa, "USAspending"), odkaz(k.odkaz_dod, "DoD"), odkaz(k.odkaz_sam, "SAM.gov"),
+                      odkaz(k.odkaz_8k, "SEC 8-K")].filter(Boolean).join("<br>");
+      const zmTd = `<td class="num ${zc}">${z == null ? "" : (z > 0 ? "+" : "") + kc2.format(z) + " %"}</td>`;
+      return `<tr>
+        <td class="num" style="text-align:left">${datum(k.datum)}</td>
+        <td>${typTag}</td>
+        <td class="firma"><b>${esc(k.spolecnost)}</b>${k.materska && k.materska.toLowerCase() !== (k.spolecnost || "").toLowerCase() ? `<small>Mateřská: ${esc(k.materska)}</small>` : ""}<small>${esc(k.agentura)}</small></td>
+        <td class="tk">${k.ticker ? `<a class="tk" href="${yahoo(k.ticker)}" target="_blank" rel="noopener" title="Otevřít na Yahoo Finance">${esc(k.ticker)}</a>` + `<small>${esc(k.burza || "")}${k.shoda ? " · " + esc(k.shoda) : ""}</small>` : `<small>${esc(k.shoda || "bez tickeru")}</small>`}</td>
+        <td class="num">${castka(k.castka)}</td>
+        <td class="popis">${esc(k.popis)}${k.poznamka ? `<small>${esc(k.poznamka)}</small>` : ""}${k.piid && !k.piid.startsWith("8K") ? `<small style="font-family:var(--f-mono)">${esc(k.piid)}</small>` : ""}</td>
+        ${zmTd}
+        <td class="num">${k.cena_pri != null ? kc2.format(k.cena_pri) + mena : ""}</td>
+        <td class="num">${k.cena_nyni != null ? kc2.format(k.cena_nyni) + mena : ""}</td>
+        <td>${spark(k)}</td>
+        <td style="white-space:nowrap">${odkazy}</td></tr>`;
+    }).join("");
+    $("prazdne").hidden = r.length > 0;
+    $("pocet").textContent = `Zobrazeno ${Math.min(r.length, 1500)} z ${r.length} kontraktů odpovídajících filtrům (celkem ${data.kontrakty.length}).`;
+    document.querySelectorAll("th[data-s]").forEach((th) => {
+      th.classList.toggle("asc", th.dataset.s === razeni.k && razeni.smer === 1);
+      th.classList.toggle("desc", th.dataset.s === razeni.k && razeni.smer === -1);
+    });
+  }
+
+  let dnu = 7;
+  function souhrn(k) {
+    const od = new Date(Date.now() - dnu * 864e5).toISOString().slice(0, 10);
+    const objem = k.filter((x) => x.datum >= od).reduce((a, b) => a + (b.castka || 0), 0);
+    const se = k.filter((x) => x.zmena_pct != null);
+    const prum = se.length ? se.reduce((a, b) => a + b.zmena_pct, 0) / se.length : null;
+    const zisk = se.reduce((a, b) => a + 1000 * b.zmena_pct / 100, 0);
+    const pz = (v, suf) => v == null ? "-" : (v > 0 ? "+" : "") + kc2.format(v) + suf;
+    const volba = `<select id="f-dnu" aria-label="Počet dní">${[7, 30, 90, 365].map((d) => `<option value="${d}"${d === dnu ? " selected" : ""}>${d}</option>`).join("")}</select>`;
+    const pol = [
+      [kc.format(k.length), "Kontraktů celkem", ""],
+      [castka(objem) + " $", `Objem $ za ${volba} dní`, ""],
+      [pz(prum, " %"), "Průměr zhodnocení", `ze ${kc.format(se.length)} kontraktů s cenou akcie`],
+      [se.length ? pz(zisk, " $") : "-", "Zhodnocení celkem", se.length ? `při 1 000 $ do každé akcie (vloženo ${kc.format(se.length * 1000)} $)` : ""],
+    ];
+    $("souhrn").innerHTML = pol.map(([b, s, m]) => `<div class="kpi"><b class="${b.startsWith("+") ? "up" : b.startsWith("-") && b !== "-" ? "down" : ""}">${b}</b><span>${s}</span>${m ? `<small>${m}</small>` : ""}</div>`).join("");
+    $("f-dnu").addEventListener("change", (e) => { dnu = +e.target.value; vykresli(); });
+  }
+
+  function hlavicka() {
+    $("aktualizace").textContent = `Poslední kontrola: ${cas(data.posledni_beh)} · minimální výše ${castka(data.min_castka)} $ · tickery aktualizovány ${cas(data.tickery_aktualizace)}`;
+    const z = data.zdroje || {};
+    $("zdroje").innerHTML = ["DoD", "SAM.gov", "USAspending", "SEC 8-K", "Ceny akcií"].map((n) => {
+      const s = z[n];
+      const cls = !s || s.ok == null ? "none" : s.ok ? "" : "err";
+      const txt = !s ? "zatím neběželo" : s.ok == null ? "neaktivní" : s.ok ? "OK" : "chyba";
+      const tip = s ? ` title="${esc(s.ok === false ? s.chyba : s.info || ("Poslední úspěch: " + cas(s.cas)))}"` : "";
+      return `<span class="chip ${cls}"${tip}><i></i>${n}: ${txt}</span>`;
+    }).join("");
+  }
+
+  function vykresliT() {
+    const q = $("hledat-t").value.trim().toLowerCase();
+    const r = q ? tickery.filter((t) => (t[0] + " " + t[1]).toLowerCase().includes(q)) : tickery;
+    $("radky-t").innerHTML = r.slice(0, 300).map((t) => `<tr><td class="tk"><a class="tk" href="${yahoo(t[0])}" target="_blank" rel="noopener">${esc(t[0])}</a></td><td>${esc(t[1])}</td><td>${esc(t[2])}</td></tr>`).join("");
+    $("pocet-t").textContent = `Zobrazeno ${Math.min(r.length, 300)} z ${r.length} (celkem ${tickery.length} tickerů).`;
+  }
+
+  function prepni(t) {
+    $("tab-k").setAttribute("aria-selected", t === "k");
+    $("tab-t").setAttribute("aria-selected", t === "t");
+    $("pohled-k").hidden = t !== "k";
+    $("pohled-t").hidden = t !== "t";
+    if (t === "t" && !tickery.length) {
+      fetch("tickery.json", { cache: "no-store" }).then((r) => r.json()).then((j) => { tickery = j; vykresliT(); })
+        .catch(() => { $("pocet-t").textContent = "Seznam tickerů se nepodařilo načíst."; });
+    }
+  }
+
+  ["hledat", "f-typ", "f-zdroj", "f-min", "f-ticker"].forEach((id) => $(id).addEventListener("input", vykresli));
+  $("hledat-t").addEventListener("input", vykresliT);
+  $("tab-k").addEventListener("click", () => prepni("k"));
+  $("tab-t").addEventListener("click", () => prepni("t"));
+  document.querySelectorAll("th[data-s]").forEach((th) => th.addEventListener("click", () => {
+    razeni = { k: th.dataset.s, smer: razeni.k === th.dataset.s ? -razeni.smer : (th.dataset.s === "datum" || th.dataset.s === "castka" ? -1 : 1) };
+    vykresli();
+  }));
+
+  fetch("data.json", { cache: "no-store" }).then((r) => r.json()).then((j) => {
+    data = j; hlavicka(); vykresli();
+  }).catch(() => { $("aktualizace").textContent = "Data se zatím nepodařilo načíst. První běh programu možná ještě neproběhl."; });
+})();
+</script>
+</body>
+</html>

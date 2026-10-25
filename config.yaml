@@ -1,0 +1,39 @@
+# Nastavení sledování vládních kontraktů USA
+# Po úpravě stačí soubor uložit (commit) na GitHubu, další běh už použije nové hodnoty.
+
+# Minimální výše kontraktu / navýšení v USD
+min_castka: 500000
+
+# Kontakt pro SEC (SEC vyžaduje u stahování seznamu tickerů jméno a e-mail).
+# Doporučení: použij svou anonymní adresu z GitHubu ve tvaru
+#   12345678+uzivatel@users.noreply.github.com
+# (najdeš ji v GitHub > Settings > Emails). Nevkládej sem soukromý e-mail, repozitář je veřejný.
+sec_kontakt: "GovContractTracker admin@example.com"
+
+# USAspending: kolik dní zpět hledat záznamy, které byly v databázi nově přidány nebo upraveny
+usaspending_dny_zpet: 3
+
+# Ignorovat záznamy USAspending, jejichž datum udělení je starší než X dní
+# (DoD kontrakty se v USAspending objevují zhruba se 90denním zpožděním, proto 150)
+max_stari_kontraktu_dni: 150
+
+# Kolik detailů kontraktů (mateřská společnost, popis) dotáhnout z USAspending za jeden běh
+max_detailu_za_beh: 400
+
+# Oznámení DoD: kolik posledních denních oznámení načíst při prvním spuštění
+dod_pocet_oznameni: 10
+
+# Jak dlouho držet kontrakty ve výstupu (dny od data udělení)
+uchovavat_dni: 365
+
+# Graf vývoje akcie: maximální počet bodů v grafu
+graf_max_bodu: 60
+
+# SAM.gov (oznámení o udělení zakázek). Potřebuje API klíč uložený jako GitHub Secret SAM_API_KEY.
+# Osobní klíč má malý denní limit dotazů, proto se dotazujeme jen každé 3 hodiny (8 dotazů denně).
+sam_kazdych_hodin: 3
+sam_dny_zpet: 2
+
+# SEC 8-K (kontrakty oznámené samotnými firmami)
+sec_dny_zpet: 3
+sec_max_dokumentu_za_beh: 60
