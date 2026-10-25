@@ -21,11 +21,40 @@ BLOKY = "▁▂▃▄▅▆▇█"
 WEB_POLE_VYNECHAT = {"cena_datum", "cena_nyni_datum", "prvni_zaznam", "odkaz", "dni"}
 
 
-def _hezky(text: str) -> str:
+VELKA = {"LLC", "LLP", "LP", "JV", "USA", "US", "U.S.", "IT", "IBM", "KBR", "SAIC", "CACI", "BAE", "AT&T", "GE",
+         "NASA", "DOD", "DOW", "VA", "FY", "IDIQ", "IDV", "BPA", "GSA", "II", "III", "IV", "PLC", "AG", "SA", "NV",
+         "HVAC", "USNS", "USS", "MRO", "O&M", "R&D", "AI", "UAS", "SLA", "CIO", "NAVSEA", "NAVAIR", "SOCOM", "DLA",
+         "DISA", "DHS", "FBI", "DEA", "IRS", "CDC", "NIH", "FAA", "NOAA", "VHA", "HHS", "DOE", "EPA"}
+
+
+def _slovo(w: str, prvni: bool, nazev: bool) -> str:
+    holy = w.strip(",.;:()/-")
+    if not holy or not any(c.isalpha() for c in holy):
+        return w
+    if holy.upper() in VELKA or (len(holy) <= 3 and not any(c in "AEIOUY" for c in holy.upper())):
+        return w.upper()
+    if any(c.isdigit() for c in holy):
+        return w
+    if nazev or prvni:
+        return w[:1].upper() + w[1:].lower() if w[:1].isalpha() else w[:2] + w[2:].lower()
+    return w.lower()
+
+
+def _hezky(text: str, nazev: bool = False) -> str:
+    """Text psaný celý VELKÝMI písmeny převede na čitelnou podobu (zkratky ponechá velké)."""
     text = (text or "").strip()
-    if text and text.isupper():
-        text = text.capitalize()
-    return text
+    if not text or not text.isupper():
+        return text
+    slova = text.split()
+    return " ".join(_slovo(w, i == 0, nazev) for i, w in enumerate(slova))
+
+
+def _popis(z: dict) -> str:
+    if z.get("popis_dod"):
+        return z["popis_dod"][:1].upper() + z["popis_dod"][1:]
+    kandidati = [z.get("popis_award") or "", z.get("popis_usa") or "", z.get("popis_sam") or "", z.get("popis_8k") or ""]
+    dlouhe = [k for k in kandidati if len(k) >= 25]
+    return _hezky((dlouhe or sorted(kandidati, key=len, reverse=True))[0])
 
 
 ZADAVATELE = {
@@ -40,6 +69,11 @@ def zadavatel(text: str) -> str:
     text = (text or "").strip()
     if text.isupper():
         text = text.title().replace(" Of ", " of ").replace(" The ", " the ").replace(" And ", " and ")
+    # "Veterans Affairs, Department Of" -> "Department of Veterans Affairs"
+    m = __import__("re").match(r"^(.+?),\s*(Department|Dept\.?|Office|Agency|Bureau)\s+of\s*(the)?$", text, 2)
+    if m:
+        text = f"{m.group(2).title()} of {'the ' if m.group(3) else ''}{m.group(1)}"
+    text = text.replace("Dept of ", "Department of ").replace("Dept. of ", "Department of ")
     return ZADAVATELE.get(text.lower(), text)
 
 
@@ -65,11 +99,10 @@ def priprav(cfg: dict, db: dict, cache_cen: dict) -> list[dict]:
     for klic, z in db.items():
         r = {
             "id": klic, "datum": z["datum"], "typ": z["typ"],
-            "spolecnost": z["spolecnost"], "materska": z.get("materska", ""),
+            "spolecnost": _hezky(z["spolecnost"], nazev=True), "materska": _hezky(z.get("materska", ""), nazev=True),
             "ticker": z.get("ticker", ""), "burza": z.get("burza", ""), "shoda": z.get("shoda", ""),
             "castka": z.get("castka_dod") or z.get("castka_usa") or z.get("castka_sam") or z.get("castka_8k"),
-            "popis": _hezky(z.get("popis_dod") or z.get("popis_award") or z.get("popis_usa")
-                            or z.get("popis_sam") or z.get("popis_8k")),
+            "popis": _popis(z),
             "poznamka": z.get("poznamka", ""), "agentura": zadavatel(z.get("agentura", "")),
             "zdroje": z.get("zdroje", []),
             "odkaz": (z.get("odkaz_usa") or z.get("odkaz_dod") or z.get("odkaz_sam") or z.get("odkaz_8k") or ""),
@@ -87,7 +120,8 @@ def priprav(cfg: dict, db: dict, cache_cen: dict) -> list[dict]:
 
 def _web_radek(r: dict) -> dict:
     """Zkrácený řádek pro web: bez prázdných a nepotřebných polí."""
-    w = {k: v for k, v in r.items() if k not in WEB_POLE_VYNECHAT and v not in ("", None, False, [])}
+    w = {k: v for k, v in r.items()
+         if k not in WEB_POLE_VYNECHAT and v is not None and v is not False and v != "" and v != []}
     if w.get("graf"):
         w["graf"] = [round(v, 2) for v in w["graf"]]
     return w

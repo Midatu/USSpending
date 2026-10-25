@@ -14,7 +14,11 @@ from .common import http_session, log, norm_piid
 from .zdroj_dod import CISLO
 
 EFTS = "https://efts.sec.gov/LATEST/search-index"
-DOTAZ = '"awarded" "contract"'
+DOTAZY = [
+    '"awarded a contract"', '"has been awarded"', '"was awarded"', '"contract award"', '"task order"',
+    '"Department of War"', '"Department of Defense" contract', '"U.S. Army" contract', '"U.S. Navy" contract',
+    '"U.S. Air Force" contract', '"NASA" contract', '"Missile Defense Agency"',
+]
 URAD = re.compile(
     r"Department of (?:Defense|War|the (?:Army|Navy|Air Force)|Energy|Homeland Security|Veterans Affairs"
     r"|State|Health and Human Services|Transportation|Justice|Commerce)|U\.S\. (?:Army|Navy|Air Force|Space Force"
@@ -87,17 +91,28 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
     zpracovane = stav.setdefault("sec_dokumenty", {})
     limit = int(cfg.get("sec_max_dokumentu_za_beh", 60))
 
-    zasahy = []
-    for strana in range(5):
-        r = s.get(EFTS, params={"q": DOTAZ, "forms": "8-K", "dateRange": "custom",
-                                "startdt": od.isoformat(), "enddt": dnes.isoformat(), "from": strana * 100},
-                  timeout=60)
-        r.raise_for_status()
-        hity = (r.json().get("hits") or {}).get("hits") or []
-        zasahy.extend(hity)
-        if len(hity) < 100:
-            break
-        time.sleep(0.2)
+    zasahy, videne = [], set()
+    for dotaz in DOTAZY:
+        nacteno = 0
+        for _ in range(5):  # max 5 stránek na jeden dotaz
+            r = s.get(EFTS, params={"q": dotaz, "forms": "8-K", "dateRange": "custom",
+                                    "startdt": od.isoformat(), "enddt": dnes.isoformat(), "from": nacteno},
+                      timeout=60)
+            r.raise_for_status()
+            j = (r.json().get("hits") or {})
+            hity = j.get("hits") or []
+            celkem = (j.get("total") or {}).get("value", 0)
+            for h in hity:
+                if h.get("_id") not in videne:
+                    videne.add(h.get("_id"))
+                    zasahy.append(h)
+            nacteno += len(hity)
+            time.sleep(0.15)
+            if not hity or nacteno >= celkem:
+                break
+    # tiskové zprávy (příloha EX-99) a hlavní dokument 8-K mají přednost před ostatními přílohami
+    zasahy.sort(key=lambda h: 0 if str((h.get("_source") or {}).get("file_type", "")).upper().startswith(("EX-99", "8-K")) else 1)
+    log.info("SEC 8-K: %d unikátních dokumentů z %d dotazů", len(zasahy), len(DOTAZY))
 
     vystup, stazeno = [], 0
     for h in zasahy:

@@ -13,6 +13,7 @@ Collins Aerospace;RTX;
 Rockwell Collins;RTX;
 Raytheon Lockheed Martin Javelin;LMT;společný podnik RTX a LMT
 Northrop Grumman;NOC;
+Northrup Grumman;NOC;překlep v oznámeních DoD
 Orbital ATK;NOC;
 Boeing;BA;
 Insitu;BA;dceřiná firma Boeing
@@ -194,3 +195,5 @@ Marathon Petroleum;MPC;
 Phillips 66;PSX;
 World Fuel Services;WKC;
 World Kinect;WKC;
+Coca-Cola Bottling;;nezávislé stáčírny, ne The Coca-Cola Company
+Tidewater Development;;

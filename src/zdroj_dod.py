@@ -186,26 +186,61 @@ def _seznam_clanku(s, max_pocet: int) -> list[tuple[str, dt.date | None]]:
     raise RuntimeError("Nepodařilo se načíst seznam oznámení DoD (RSS ani stránku).")
 
 
+HLAVICKY_PROHLIZECE = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+}
+
+
+def _varianty_url(url: str, d: dt.date | None) -> list[str]:
+    """Původní adresa, stejná stránka na defense.gov a zrcadlo GlobalSecurity.org (když war.gov blokuje servery GitHubu)."""
+    varianty = [url]
+    if "war.gov" in url:
+        varianty.append(url.replace("www.war.gov", "www.defense.gov"))
+    m = re.search(r"/Article/(\d+)", url)
+    if m and d:
+        varianty.append(f"https://www.globalsecurity.org/military/library/news/{d.year}/{d.month:02d}/dod-contracts_{m.group(1)}.htm")
+    return varianty
+
+
 def stahni(cfg: dict, stav: dict) -> list[dict]:
     """Stáhne nová (a nedávno upravená) oznámení. stav['dod_clanky'] = {url: iso_cas}."""
     s = http_session()
+    s.headers.update(HLAVICKY_PROHLIZECE)
     zpracovane = stav.setdefault("dod_clanky", {})
     clanky = _seznam_clanku(s, int(cfg.get("dod_pocet_oznameni", 10)))
     dnes = dt.date.today()
-    vystup = []
+    vystup, pokusy, uspechy, chyby = [], 0, 0, []
     for url, d in clanky:
         cerstve = d is None or (dnes - d).days <= 2  # čerstvá oznámení kontrolujeme znovu (opravy)
         if url in zpracovane and not cerstve:
             continue
-        try:
-            r = s.get(url, timeout=40)
-            r.raise_for_status()
-            zaznamy = rozparsuj_clanek(r.text, url, d)
-            vystup.extend(zaznamy)
-            zpracovane[url] = dnes.isoformat()
-            log.info("DoD %s: %d záznamů", url.rstrip("/").split("/")[-1], len(zaznamy))
-        except Exception as e:  # noqa: BLE001
-            log.warning("Článek %s selhal: %s", url, e)
+        pokusy += 1
+        for varianta in _varianty_url(url, d):
+            try:
+                r = s.get(varianta, timeout=40)
+                r.raise_for_status()
+                zaznamy = rozparsuj_clanek(r.text, url, d)
+                if not zaznamy and "awarded" not in r.text:
+                    raise ValueError("stránka neobsahuje text oznámení")
+                vystup.extend(zaznamy)
+                zpracovane[url] = dnes.isoformat()
+                uspechy += 1
+                log.info("DoD %s: %d záznamů (zdroj %s)", url.rstrip("/").split("/")[-2], len(zaznamy),
+                         varianta.split("/")[2])
+                break
+            except Exception as e:  # noqa: BLE001
+                chyby.append(f"{varianta.split('/')[2]}: {str(e)[:120]}")
+                log.warning("Oznámení %s selhalo: %s", varianta, e)
+    stav["dod_posledni_chyby"] = chyby[-6:]
+    if pokusy and not uspechy:
+        raise RuntimeError(f"Žádné z {pokusy} oznámení se nepodařilo stáhnout. " + " | ".join(chyby[:3]))
     # udržuj stav malý
     if len(zpracovane) > 200:
         for k in sorted(zpracovane, key=zpracovane.get)[:-200]:

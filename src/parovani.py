@@ -2,8 +2,8 @@
 
 Pořadí:  1) ruční aliasy (aliasy.csv, včetně dceřiných firem)
          2) přesná shoda normalizovaného názvu se seznamem tickerů
-         3) shoda začátku názvu ("LOCKHEED MARTIN ROTARY..." -> "LOCKHEED MARTIN")
-         4) podobnost názvů (fuzzy), jen velmi vysoká shoda
+         3) podobnost názvů (fuzzy), jen velmi vysoká shoda a stejné první slovo
+Dceřiné firmy (např. "Lockheed Martin Rotary..." nebo "Sikorsky") řeší aliasy a mateřská společnost z USAspending.
 Zkouší se nejdřív mateřská společnost (z USAspending), potom samotný příjemce.
 """
 import csv
@@ -74,20 +74,10 @@ class Parovac:
                 break
         if vysledek is None and n in self.index:
             vysledek = (self.index[n], "přesná")
-        if vysledek is None:
-            slova = n.split()
-            for k in range(len(slova) - 1, 0, -1):
-                pref = " ".join(slova[:k])
-                if pref in self.index:
-                    if k == 1 and (len(pref) < 6 or pref in OBECNA_SLOVA):
-                        continue
-                    if k >= 2 and all(w in OBECNA_SLOVA for w in slova[:k]):
-                        continue
-                    vysledek = (self.index[pref], "začátek názvu")
-                    break
         if vysledek is None and len(n.split()) >= 2:
-            kandidati = [k for k in self.klice if k[:1] == n[:1]]
-            shoda = difflib.get_close_matches(n, kandidati, n=1, cutoff=0.93)
+            prvni = n.split()[0]
+            kandidati = [k for k in self.klice if k.split()[0] == prvni and len(k.split()) >= 2]
+            shoda = difflib.get_close_matches(n, kandidati, n=1, cutoff=0.94)
             if shoda:
                 vysledek = (self.index[shoda[0]], "podobnost")
         self._cache[n] = vysledek
