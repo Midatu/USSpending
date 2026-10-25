@@ -66,7 +66,7 @@ def vytez_text(text: str, min_castka: float):
         if not castky:
             continue
         if not nejlepsi or max(castky) > nejlepsi[0]:
-            nejlepsi = (max(castky), veta.strip())
+            nejlepsi = (max(castky), veta.strip(), URAD.search(veta).group(0))
     if not nejlepsi:
         return None
     popis = nejlepsi[1]
@@ -75,13 +75,13 @@ def vytez_text(text: str, min_castka: float):
         popis = popis[m.end():]
     if len(popis) > 300:
         popis = popis[:297] + "..."
-    return nejlepsi[0], popis, sorted({norm_piid(c) for c in CISLO.findall(text)})
+    return nejlepsi[0], popis, sorted({norm_piid(c) for c in CISLO.findall(text)}), nejlepsi[2]
 
 
 def stahni(cfg: dict, stav: dict) -> list[dict]:
     s = http_session(user_agent=cfg.get("sec_kontakt", "GovContractTracker admin@example.com"))
     s.headers["Accept"] = "application/json"
-    min_castka = float(cfg.get("min_castka", 500000))
+    min_castka = float(cfg.get("min_castka", 1000000))
     dnes = dt.date.today()
     od = dnes - dt.timedelta(days=int(cfg.get("sec_dny_zpet", 3)))
     zpracovane = stav.setdefault("sec_dokumenty", {})
@@ -123,7 +123,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             continue
         if not vysledek:
             continue
-        castka, popis, cisla = vysledek
+        castka, popis, cisla, urad = vysledek
         jmeno = (zdroj.get("display_names") or [""])[0]
         m = TICKER.search(jmeno)
         ticker = m.group(1).split(",")[0].strip() if m else ""
@@ -132,7 +132,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             "datum": (zdroj.get("file_date") or dnes.isoformat())[:10],
             "spolecnost": re.sub(r"\s*\(.*$", "", jmeno).strip().title(),
             "ticker_pevny": ticker, "castka_8k": castka, "popis_8k": popis,
-            "odkaz_8k": url, "cisla_kontraktu": cisla, "agentura": "",
+            "odkaz_8k": url, "cisla_kontraktu": cisla, "agentura": urad,
         })
     # stav držíme malý
     if len(zpracovane) > 3000:

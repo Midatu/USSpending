@@ -63,7 +63,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             break
     stav["sam_posledni_dotaz"] = ted.isoformat()
 
-    min_castka = float(cfg.get("min_castka", 500000))
+    min_castka = float(cfg.get("min_castka", 1000000))
     vystup = []
     for o in vysledky:
         award = o.get("award") or {}

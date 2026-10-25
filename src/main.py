@@ -3,91 +3,138 @@
   python -m src.main kontrakty   každou hodinu: kontrakty + ceny + výstup (web, Excel)
   python -m src.main tickery     jednou denně: aktualizace seznamu tickerů
   python -m src.main vystup      jen znovu sestaví výstup z uložených dat
+
+Data se ukládají trvale (větev "data" v repozitáři) a každý běh je jen doplní a aktualizuje.
+Kontrakty jsou rozdělené po měsících: data/kontrakty/RRRR-MM.json.
 """
 import datetime as dt
 import sys
 import traceback
+from collections import defaultdict
 
 from . import ceny, tickery, vystup, zdroj_dod, zdroj_sam, zdroj_sec8k, zdroj_usaspending
 from .common import DATA, iso_ted, log, nacti_config, nacti_json, uloz_json
 from .parovani import Parovac
 
-SOUBOR_KONTRAKTY = DATA / "kontrakty.json"
+SLOZKA_KONTRAKTY = DATA / "kontrakty"
 SOUBOR_CENY = DATA / "ceny.json"
 SOUBOR_DETAILY = DATA / "usaspending_detaily.json"
 SOUBOR_STAV = DATA / "stav.json"
 
 
-def _klic(z):
-    return f"{z['piid']}|{z['mod']}"
+# ---------- ukládání ----------
+
+def nacti_kontrakty() -> dict:
+    db = {}
+    stary = DATA / "kontrakty.json"  # převod ze staršího formátu (jeden soubor)
+    if stary.exists():
+        db.update(nacti_json(stary, {}))
+        stary.unlink()
+    if SLOZKA_KONTRAKTY.exists():
+        for soubor in sorted(SLOZKA_KONTRAKTY.glob("*.json")):
+            db.update(nacti_json(soubor, {}))
+    return db
 
 
-def _sloucit(db: dict, novy: dict, zdroj: str, ted: str):
-    """Vloží nebo doplní záznam. Vrací True, pokud jde o nový záznam."""
-    klic = _klic(novy)
-    # DoD navýšení bez čísla modifikace: zkus spárovat s USAspending podle kontraktu, data a částky
-    if zdroj == "USAspending" and klic not in db and novy["mod"] != "0":
+def uloz_kontrakty(db: dict):
+    po_mesicich = defaultdict(dict)
+    for k, z in db.items():
+        po_mesicich[z["datum"][:7]][k] = z
+    SLOZKA_KONTRAKTY.mkdir(parents=True, exist_ok=True)
+    for mesic, zaznamy in po_mesicich.items():
+        uloz_json(SLOZKA_KONTRAKTY / f"{mesic}.json", zaznamy)
+    for soubor in SLOZKA_KONTRAKTY.glob("*.json"):  # měsíc bez záznamů (po pročištění)
+        if soubor.stem not in po_mesicich:
+            soubor.unlink()
+
+
+# ---------- slučování záznamů z více zdrojů ----------
+
+class Databaze:
+    def __init__(self, db: dict, ted: str):
+        self.db, self.ted = db, ted
+        self.podle_piid = defaultdict(set)
         for k, z in db.items():
-            puvodni = z.get("castka_dod") or z.get("castka_sam")
-            if (z["piid"] == novy["piid"] and z["mod"].startswith("?") and puvodni
-                    and abs((dt.date.fromisoformat(z["datum"]) - dt.date.fromisoformat(novy["datum"])).days) <= 10
-                    and abs(puvodni - novy["castka_usa"]) <= 0.05 * puvodni):
-                db[klic] = db.pop(k)
-                db[klic]["mod"] = novy["mod"]
-                break
-    if klic in db:
-        z = db[klic]
-        for pole, hodnota in novy.items():
-            if hodnota in (None, "", []):
-                continue
-            if pole in ("datum",) and z.get(pole):
-                z[pole] = min(z[pole], hodnota)
-            elif pole == "spolecnost" and z.get(pole):
-                if zdroj == "DoD":  # DoD má nejčitelnější názvy
-                    z.setdefault("alt_nazvy", []).append(z[pole])
+            self.podle_piid[z["piid"]].add(k)
+
+    def _presun(self, stary: str, novy: str):
+        z = self.db.pop(stary)
+        self.podle_piid[z["piid"]].discard(stary)
+        self.db[novy] = z
+        self.podle_piid[z["piid"]].add(novy)
+
+    def sloucit(self, novy: dict, zdroj: str) -> bool:
+        """Vloží nebo doplní záznam. Vrací True, pokud jde o nový záznam."""
+        klic = f"{novy['piid']}|{novy['mod']}"
+        # navýšení bez čísla modifikace (DoD, SAM): spáruj s USAspending podle kontraktu, data a částky
+        if zdroj == "USAspending" and klic not in self.db and novy["mod"] != "0":
+            for k in list(self.podle_piid.get(novy["piid"], ())):
+                z = self.db[k]
+                puvodni = z.get("castka_dod") or z.get("castka_sam")
+                if (z["mod"].startswith("?") and puvodni
+                        and abs((dt.date.fromisoformat(z["datum"]) - dt.date.fromisoformat(novy["datum"])).days) <= 10
+                        and abs(puvodni - novy["castka_usa"]) <= 0.05 * puvodni):
+                    self._presun(k, klic)
+                    self.db[klic]["mod"] = novy["mod"]
+                    break
+        if klic in self.db:
+            z = self.db[klic]
+            for pole, hodnota in novy.items():
+                if hodnota in (None, "", []):
+                    continue
+                if pole == "datum" and z.get(pole):
+                    z[pole] = min(z[pole], hodnota)
+                elif pole == "spolecnost" and z.get(pole):
+                    if zdroj == "DoD":  # DoD má nejčitelnější názvy
+                        z.setdefault("alt_nazvy", []).append(z[pole])
+                        z[pole] = hodnota
+                    elif hodnota.lower() != z[pole].lower():
+                        z.setdefault("alt_nazvy", []).append(hodnota)
+                    z["alt_nazvy"] = list(dict.fromkeys(z.get("alt_nazvy", [])))[:5]
+                else:
                     z[pole] = hodnota
-                elif hodnota.lower() != z[pole].lower():
-                    z.setdefault("alt_nazvy", []).append(hodnota)
-                z["alt_nazvy"] = list(dict.fromkeys(z.get("alt_nazvy", [])))[:5]
-            else:
-                z[pole] = hodnota
-        if zdroj not in z["zdroje"]:
-            z["zdroje"].append(zdroj)
-            z["doplneno"] = ted
-        return False
-    novy = dict(novy, zdroje=[zdroj], prvni_zaznam=ted)
-    db[klic] = novy
-    return True
+            if zdroj not in z["zdroje"]:
+                z["zdroje"].append(zdroj)
+                z["doplneno"] = self.ted
+            return False
+        self.db[klic] = dict(novy, zdroje=[zdroj], prvni_zaznam=self.ted)
+        self.podle_piid[novy["piid"]].add(klic)
+        return True
 
-
-def _pripoj_8k(db: dict, z: dict, ted: str) -> bool:
-    """Pokud hlášení 8-K zmiňuje číslo kontraktu, který už máme, připojí ho k němu."""
-    nalezeno = False
-    for cislo in z.get("cisla_kontraktu", []):
-        for zaznam in db.values():
-            if zaznam["piid"] == cislo:
+    def pripoj_8k(self, z: dict) -> bool:
+        """Pokud hlášení 8-K zmiňuje číslo kontraktu, který už máme, připojí ho k němu."""
+        nalezeno = False
+        for cislo in z.get("cisla_kontraktu", []):
+            for k in self.podle_piid.get(cislo, ()):
+                zaznam = self.db[k]
                 zaznam["odkaz_8k"] = z["odkaz_8k"]
                 if "SEC 8-K" not in zaznam["zdroje"]:
                     zaznam["zdroje"].append("SEC 8-K")
-                    zaznam["doplneno"] = ted
+                    zaznam["doplneno"] = self.ted
                 nalezeno = True
-    return nalezeno
+        return nalezeno
 
+
+# ---------- hlavní běh ----------
 
 def beh_kontrakty():
     cfg = nacti_config()
     ted = iso_ted()
     stav = nacti_json(SOUBOR_STAV, {})
     stav.setdefault("zdroje", {})
-    db = nacti_json(SOUBOR_KONTRAKTY, {})
+    db = nacti_kontrakty()
+    pocet_pred = len(db)
     detaily = nacti_json(SOUBOR_DETAILY, {})
     cache_cen = nacti_json(SOUBOR_CENY, {})
-    min_castka = float(cfg.get("min_castka", 500000))
+    min_castka = float(cfg.get("min_castka", 1000000))
+    log.info("Načteno %d uložených záznamů", pocet_pred)
 
     seznam = tickery.nacti()
     if not seznam.get("seznam"):
         log.info("Seznam tickerů chybí, stahuji poprvé.")
         seznam = tickery.aktualizuj(cfg)
+
+    databaze = Databaze(db, ted)
 
     def castka(z):
         return z.get("castka_dod") or z.get("castka_usa") or z.get("castka_sam") or z.get("castka_8k") or 0
@@ -99,9 +146,9 @@ def beh_kontrakty():
             for z in zaznamy:
                 if castka(z) < min_castka:
                     continue
-                if nazev == "SEC 8-K" and _pripoj_8k(db, z, ted):
+                if nazev == "SEC 8-K" and databaze.pripoj_8k(z):
                     continue
-                nove += _sloucit(db, z, nazev, ted)
+                nove += databaze.sloucit(z, nazev)
             stav["zdroje"][nazev] = {"ok": True, "cas": ted, "nalezeno": len(zaznamy), "nove": nove}
             log.info("%s: %d záznamů, z toho %d nových", nazev, len(zaznamy), nove)
         except zdroj_sam.Neaktivni as e:
@@ -121,17 +168,23 @@ def beh_kontrakty():
     zdroj("USAspending", zdroj_usaspending.stahni)
     zdroj("SEC 8-K", zdroj_sec8k.stahni)
 
-    # zahoď staré záznamy
-    hranice = (dt.date.today() - dt.timedelta(days=int(cfg.get("uchovavat_dni", 365)))).isoformat()
-    for k in [k for k, z in db.items() if z["datum"] < hranice]:
-        db.pop(k)
+    # volitelné pročištění starých záznamů (0 = uchovávat navždy)
+    uchovavat = int(cfg.get("uchovavat_dni", 0) or 0)
+    if uchovavat > 0:
+        hranice = (dt.date.today() - dt.timedelta(days=uchovavat)).isoformat()
+        for k in [k for k, z in db.items() if z["datum"] < hranice]:
+            db.pop(k)
 
-    # detaily z USAspending (mateřská firma, lepší popis)
-    gids = sorted({z["award_gid"] for z in db.values() if z.get("award_gid")} - set(detaily),
-                  key=lambda g: g)
+    # detaily z USAspending (mateřská firma, lepší popis), nejnovější kontrakty mají přednost
+    chybi = {}
+    for z in db.values():
+        g = z.get("award_gid")
+        if g and g not in detaily:
+            chybi[g] = max(chybi.get(g, ""), z["datum"])
+    gids = sorted(chybi, key=chybi.get, reverse=True)
     try:
         n = zdroj_usaspending.dotahni_detaily(gids, detaily, int(cfg.get("max_detailu_za_beh", 400)))
-        log.info("USAspending detaily: dotaženo %d", n)
+        log.info("USAspending detaily: dotaženo %d (zbývá %d)", n, max(len(gids) - n, 0))
     except Exception as e:  # noqa: BLE001
         log.warning("Detaily selhaly: %s", e)
     platne = {z.get("award_gid") for z in db.values()}
@@ -169,8 +222,13 @@ def beh_kontrakty():
         traceback.print_exc()
         stav["zdroje"]["Ceny akcií"] = {"ok": False, "chyba": str(e)[:300], "cas_chyby": ted}
 
+    # pojistka: bez zapnutého pročišťování nesmí záznamů ubýt
+    if uchovavat == 0 and len(db) < pocet_pred:
+        raise SystemExit(f"Počet záznamů klesl z {pocet_pred} na {len(db)}, data neukládám.")
+
     stav["posledni_beh"] = ted
-    uloz_json(SOUBOR_KONTRAKTY, db)
+    stav["pocet_zaznamu"] = len(db)
+    uloz_kontrakty(db)
     uloz_json(SOUBOR_CENY, cache_cen, kompaktni=True)
     uloz_json(SOUBOR_DETAILY, detaily, kompaktni=True)
     uloz_json(SOUBOR_STAV, stav)
@@ -179,7 +237,7 @@ def beh_kontrakty():
 
 def beh_vystup():
     cfg = nacti_config()
-    vystup.sestav(cfg, nacti_json(SOUBOR_KONTRAKTY, {}), nacti_json(SOUBOR_CENY, {}),
+    vystup.sestav(cfg, nacti_kontrakty(), nacti_json(SOUBOR_CENY, {}),
                   tickery.nacti(), nacti_json(SOUBOR_STAV, {}))
 
 

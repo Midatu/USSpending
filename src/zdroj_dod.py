@@ -148,7 +148,9 @@ def rozparsuj_clanek(html: str, url: str, datum_fallback: dt.date | None = None)
         if not text:
             continue
         if _je_hlavicka(text):
-            agentura = text.title().replace("Of ", "of ").replace("And ", "and ")
+            agentura = text.title().replace("Of ", "of ").replace("And ", "and ").replace("Logistcs", "Logistics")
+            agentura = {"Army": "U.S. Army", "Navy": "U.S. Navy", "Air Force": "U.S. Air Force",
+                        "Space Force": "U.S. Space Force", "Marine Corps": "U.S. Marine Corps"}.get(agentura, agentura)
             continue
         vystup.extend(rozparsuj_odstavec(text, agentura, datum, url))
     return vystup

@@ -2,13 +2,13 @@
 # Po úpravě stačí soubor uložit (commit) na GitHubu, další běh už použije nové hodnoty.
 
 # Minimální výše kontraktu / navýšení v USD
-min_castka: 500000
+min_castka: 1000000
 
 # Kontakt pro SEC (SEC vyžaduje u stahování seznamu tickerů jméno a e-mail).
 # Doporučení: použij svou anonymní adresu z GitHubu ve tvaru
 #   12345678+uzivatel@users.noreply.github.com
 # (najdeš ji v GitHub > Settings > Emails). Nevkládej sem soukromý e-mail, repozitář je veřejný.
-sec_kontakt: "TickerLister tokuth@proton.me"
+sec_kontakt: "GovContractTracker admin@example.com"
 
 # USAspending: kolik dní zpět hledat záznamy, které byly v databázi nově přidány nebo upraveny
 usaspending_dny_zpet: 3
@@ -23,11 +23,11 @@ max_detailu_za_beh: 400
 # Oznámení DoD: kolik posledních denních oznámení načíst při prvním spuštění
 dod_pocet_oznameni: 10
 
-# Jak dlouho držet kontrakty ve výstupu (dny od data udělení)
-uchovavat_dni: 365
+# Jak dlouho držet kontrakty (dny od data udělení). 0 = uchovávat navždy (doporučeno).
+uchovavat_dni: 0
 
 # Graf vývoje akcie: maximální počet bodů v grafu
-graf_max_bodu: 60
+graf_max_bodu: 40
 
 # SAM.gov (oznámení o udělení zakázek). Potřebuje API klíč uložený jako GitHub Secret SAM_API_KEY.
 # Osobní klíč má malý denní limit dotazů, proto se dotazujeme jen každé 3 hodiny (8 dotazů denně).

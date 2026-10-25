@@ -6,6 +6,8 @@ import datetime as dt
 
 from .common import iso_ted, log
 
+MIN_DNU_PA = 30  # roční zhodnocení počítáme jen u kontraktů starších 30 dní
+
 MENY = {
     ".L": "GBp", ".PA": "EUR", ".DE": "EUR", ".MI": "EUR", ".AS": "EUR", ".ST": "SEK",
     ".OL": "NOK", ".AX": "AUD", ".T": "JPY", ".KS": "KRW", ".TO": "CAD", ".TA": "ILA",
@@ -102,8 +104,12 @@ def vyhodnot(ticker: str, datum: str, cache: dict, max_bodu: int = 60) -> dict:
     if len(rada) > max_bodu:
         krok = (len(rada) - 1) / (max_bodu - 1)
         rada = [rada[round(i * krok)] for i in range(max_bodu)]
+    drzeni = (dt.date.fromisoformat(dny[-1]) - dt.date.fromisoformat(dny[0])).days
+    zmena = (ted / pri - 1) if pri else None
+    # roční zhodnocení (% p.a.) má smysl až po delší době, jinak by krátké výkyvy vycházely v tisících %
+    pa = round(((1 + zmena) ** (365 / drzeni) - 1) * 100, 2) if zmena is not None and drzeni >= MIN_DNU_PA else None
     return {
         "cena_pri": pri, "cena_datum": dny[0], "cena_nyni": ted, "cena_nyni_datum": dny[-1],
-        "zmena_pct": round((ted / pri - 1) * 100, 2) if pri else None,
-        "graf": rada, "mena": mena(ticker),
+        "zmena_pct": round(zmena * 100, 2) if zmena is not None else None,
+        "zmena_pa": pa, "dni": drzeni, "graf": rada, "mena": mena(ticker),
     }

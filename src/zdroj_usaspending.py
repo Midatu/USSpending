@@ -44,7 +44,7 @@ def _hledej(s, filtry: dict, min_castka: float, max_stran: int = 60) -> list[dic
 
 def stahni(cfg: dict, stav: dict) -> list[dict]:
     s = http_session()
-    min_castka = float(cfg.get("min_castka", 500000))
+    min_castka = float(cfg.get("min_castka", 1000000))
     dnes = dt.date.today()
     od = dnes - dt.timedelta(days=int(cfg.get("usaspending_dny_zpet", 3)))
     nejstarsi = dnes - dt.timedelta(days=int(cfg.get("max_stari_kontraktu_dni", 150)))
