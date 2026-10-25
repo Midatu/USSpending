@@ -1,10 +1,10 @@
 """Ceny akcií z Yahoo Finance (knihovna yfinance, zdarma, zpoždění cca 15 minut).
 
-Cache v data/ceny.json: {ticker: {"h": {"YYYY-MM-DD": close}, "od": "YYYY-MM-DD", "cas": iso}}
+Cache v data/ceny.json: {ticker: {"h": {"YYYY-MM-DD": close}, "od": "YYYY-MM-DD"}}
 """
 import datetime as dt
 
-from .common import iso_ted, log
+from .common import log
 
 MIN_DNU_PA = 30  # roční zhodnocení počítáme jen u kontraktů starších 30 dní
 
@@ -22,7 +22,6 @@ def mena(ticker: str) -> str:
 
 
 def _serie(df, ticker, vice):
-    import pandas as pd  # noqa: F401
     try:
         if vice:
             sub = df[ticker] if ticker in df.columns.get_level_values(0) else None
@@ -69,25 +68,24 @@ def aktualizuj(potreba: dict[str, str], cache: dict) -> dict:
         c = cache.get(t)
         if not c or not c.get("h") or c.get("od", "9999") > od:
             plne.append(t)
-    # plná historie pro nové tickery (seskupené podle data začátku)
+    # plná historie pro nové tickery (a pro tickery, u kterých přibyl starší kontrakt)
     if plne:
         start = min(potreba[t] for t in plne)
         start = (dt.date.fromisoformat(start) - dt.timedelta(days=7)).isoformat()
         for t, h in _stahni(plne, start=start).items():
-            cache[t] = {"h": h, "od": potreba[t], "cas": iso_ted()}
+            cache[t] = {"h": h, "od": potreba[t]}
         log.info("Ceny: plná historie pro %d/%d tickerů", sum(1 for t in plne if t in cache), len(plne))
     # rychlá aktualizace posledních dní pro všechny (aktuální cena)
     ostatni = [t for t in potreba if t not in plne]
     for t, h in _stahni(ostatni, period="5d").items():
-        cache.setdefault(t, {"h": {}, "od": potreba[t]})
-        cache[t]["h"].update(h)
-        cache[t]["cas"] = iso_ted()
+        cache.setdefault(t, {"h": {}, "od": potreba[t]})["h"].update(h)
     log.info("Ceny: aktualizováno %d tickerů", len(ostatni))
     # ořízni historii, která už není potřeba
     for t in list(cache):
         if t not in potreba:
             cache.pop(t)
             continue
+        cache[t].pop("cas", None)  # pole ze starší verze
         od = (dt.date.fromisoformat(potreba[t]) - dt.timedelta(days=7)).isoformat()
         cache[t]["h"] = {d: v for d, v in cache[t]["h"].items() if d >= od}
     return cache

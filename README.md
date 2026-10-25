@@ -6,7 +6,7 @@ Program každou hodinu hledá nově udělené vládní kontrakty USA (a navýše
 
 | Úloha | Jak často | Zdroj |
 |---|---|---|
-| Oznámení kontraktů ministerstva obrany (Department of War) | každou hodinu | war.gov (dříve defense.gov), kontrakty nad 7,5 mil. $, zveřejněno týž den |
+| Oznámení kontraktů ministerstva obrany (Department of War) | každou hodinu | war.gov (dříve defense.gov), kontrakty nad 7,5 mil. $, zveřejněno týž den. Pozor: web teď servery GitHubu blokuje, viz níže |
 | Oznámení o udělení zakázek všech federálních úřadů | každé 3 hodiny | SAM.gov API (potřebuje bezplatný klíč, viz krok 6) |
 | Kontrakty všech federálních úřadů | každou hodinu | USAspending.gov API (DoD zde se zpožděním cca 90 dní) |
 | Kontrakty oznámené samotnými firmami | každou hodinu | SEC EDGAR, hlášení 8-K (ticker je jistý, částka vyčtená z textu) |
@@ -107,16 +107,16 @@ Platnost klíče SAM.gov je omezená (obvykle 90 dní). Když vyprší, uvidíš
 
 Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projeví při dalším hodinovém běhu, a to i zpětně u již nalezených kontraktů.
 
-**Typ shody tickeru** ve výstupu: `alias` (ruční seznam), `přesná` (název souhlasí), `začátek názvu` (např. „Lockheed Martin Rotary...“ > Lockheed Martin), `podobnost` (velmi podobný název). U posledních dvou doporučujeme občas zkontrolovat a případné chyby opravit v `aliasy.csv`.
+**Typ shody tickeru** ve výstupu: `alias` (ruční seznam, včetně dceřiných firem), `přesná` (název souhlasí), `podobnost` (velmi podobný název, doporučujeme občas zkontrolovat), `hlášení SEC` (ticker uvedla sama firma v 8-K), `soukromá (alias)` (firma je v ručním seznamu označená jako soukromá). Chybné přiřazení opravíš v `aliasy.csv`.
 
 ## Co je dobré vědět
 
 - **Zpoždění USAspending:** civilní úřady se objevují v řádu dnů, kontrakty ministerstva obrany cca 90 dní po udělení. Proto kombinujeme se zdrojem DoD, který je okamžitý.
-- **Oznámení DoD** obsahují jen kontrakty nad 7,5 mil. $. U kontraktů pro více firem najednou (sdílený strop) je uvedena celková částka stropu, ne částka pro jednu firmu (je to vyznačeno v poznámce).
+- **Oznámení DoD:** war.gov i defense.gov momentálně odmítají servery GitHubu (chyba 403), takže štítek DoD na webu hlásí chybu. Kontrakty ministerstva obrany mezitím přicházejí přes SAM.gov a USAspending. Oznámení obsahují jen kontrakty nad 7,5 mil. $. U kontraktů pro více firem najednou (sdílený strop) je uvedena celková částka stropu, ne částka pro jednu firmu (je to vyznačeno v poznámce).
 - **Hlášení 8-K** píšou firmy volnou formou (tisková zpráva). Program vybere větu, která zmiňuje vládní úřad, kontrakt a částku. Občas tak zachytí i něco jiného (např. souhrn za čtvrtletí), proto má typ „Hlášení 8-K“ vlastní filtr a odkaz na původní dokument.
 - **Ceny akcií** pochází z Yahoo Finance přes neoficiální rozhraní. Občas může být dočasně nedostupné; program pak ponechá poslední známé hodnoty. Ceny jsou v měně dané burzy (u Londýna v pencích).
 - **Plánovač GitHubu** může hodinový běh o několik minut zpozdit, při velkém vytížení i víc.
-- GitHub vypíná plánované běhy v repozitáři, ve kterém se 60 dní nic nedělo. Program ale každou hodinu ukládá data, takže by k tomu nemělo docházet. Pokud by se to stalo, v záložce Actions stačí workflow znovu povolit.
+- GitHub vypíná plánované běhy ve veřejném repozitáři, ve kterém se 60 dní nic nedělo, a předem na to upozorní e-mailem. Kdyby se to stalo, v záložce **Actions** stačí u workflow kliknout na **Enable workflow**.
 - Stav jednotlivých zdrojů (OK / chyba) vidíš v hlavičce webu a na listu *Stav* v Excelu.
 
 ## Struktura projektu

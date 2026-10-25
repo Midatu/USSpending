@@ -60,7 +60,7 @@ def _vety(text: str) -> list[str]:
 
 
 def vytez_text(text: str, min_castka: float):
-    """Najde nejvýznamnější větu o vládním kontraktu. Vrací (castka, veta, cisla_kontraktu)."""
+    """Najde nejvýznamnější větu o vládním kontraktu. Vrací (castka, popis, cisla_kontraktu, zadavatel) nebo None."""
     text = re.sub(r"\s+", " ", text)
     nejlepsi = None
     for veta in _vety(text):
@@ -89,7 +89,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
     dnes = dt.date.today()
     od = dnes - dt.timedelta(days=int(cfg.get("sec_dny_zpet", 3)))
     zpracovane = stav.setdefault("sec_dokumenty", {})
-    limit = int(cfg.get("sec_max_dokumentu_za_beh", 60))
+    limit = int(cfg.get("sec_max_dokumentu_za_beh", 120))
 
     zasahy, videne = [], set()
     for dotaz in DOTAZY:
@@ -112,7 +112,6 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
                 break
     # tiskové zprávy (příloha EX-99) a hlavní dokument 8-K mají přednost před ostatními přílohami
     zasahy.sort(key=lambda h: 0 if str((h.get("_source") or {}).get("file_type", "")).upper().startswith(("EX-99", "8-K")) else 1)
-    log.info("SEC 8-K: %d unikátních dokumentů z %d dotazů", len(zasahy), len(DOTAZY))
 
     vystup, stazeno = [], 0
     for h in zasahy:
@@ -153,5 +152,6 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
     if len(zpracovane) > 3000:
         for k in sorted(zpracovane, key=zpracovane.get)[:-3000]:
             zpracovane.pop(k)
-    log.info("SEC 8-K: %d zásahů, staženo %d dokumentů, %d hlášení o kontraktech", len(zasahy), stazeno, len(vystup))
+    log.info("SEC 8-K: %d dokumentů z %d dotazů, staženo %d, %d hlášení o kontraktech",
+             len(zasahy), len(DOTAZY), stazeno, len(vystup))
     return vystup

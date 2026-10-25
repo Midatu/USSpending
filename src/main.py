@@ -13,23 +13,21 @@ import traceback
 from collections import defaultdict
 
 from . import ceny, tickery, vystup, zdroj_dod, zdroj_sam, zdroj_sec8k, zdroj_usaspending
-from .common import DATA, iso_ted, log, nacti_config, nacti_json, uloz_json
+from .common import DATA, Neaktivni, castka_zaznamu, iso_ted, log, nacti_config, nacti_json, uloz_json
 from .parovani import Parovac
 
 SLOZKA_KONTRAKTY = DATA / "kontrakty"
 SOUBOR_CENY = DATA / "ceny.json"
 SOUBOR_DETAILY = DATA / "usaspending_detaily.json"
 SOUBOR_STAV = DATA / "stav.json"
+# pole, která starší verze programu ukládaly a už se nepoužívají
+ZASTARALA_POLE = ("nazev_tickeru", "sdileny", "uei", "doplneno", "spolecnost_usa")
 
 
 # ---------- ukládání ----------
 
 def nacti_kontrakty() -> dict:
     db = {}
-    stary = DATA / "kontrakty.json"  # převod ze staršího formátu (jeden soubor)
-    if stary.exists():
-        db.update(nacti_json(stary, {}))
-        stary.unlink()
     if SLOZKA_KONTRAKTY.exists():
         for soubor in sorted(SLOZKA_KONTRAKTY.glob("*.json")):
             db.update(nacti_json(soubor, {}))
@@ -85,17 +83,15 @@ class Databaze:
                 if pole == "datum" and z.get(pole):
                     z[pole] = min(z[pole], hodnota)
                 elif pole == "spolecnost" and z.get(pole):
-                    if zdroj == "DoD":  # DoD má nejčitelnější názvy
-                        z.setdefault("alt_nazvy", []).append(z[pole])
-                        z[pole] = hodnota
-                    elif hodnota.lower() != z[pole].lower():
-                        z.setdefault("alt_nazvy", []).append(hodnota)
-                    z["alt_nazvy"] = list(dict.fromkeys(z.get("alt_nazvy", [])))[:5]
+                    if hodnota.lower() == z[pole].lower():
+                        continue
+                    if zdroj == "DoD":  # DoD má nejčitelnější názvy, původní název si ponecháme jako další
+                        z[pole], hodnota = hodnota, z[pole]
+                    z["alt_nazvy"] = list(dict.fromkeys(z.get("alt_nazvy", []) + [hodnota]))[:5]
                 else:
                     z[pole] = hodnota
             if zdroj not in z["zdroje"]:
                 z["zdroje"].append(zdroj)
-                z["doplneno"] = self.ted
             return False
         self.db[klic] = dict(novy, zdroje=[zdroj], prvni_zaznam=self.ted)
         self.podle_piid[novy["piid"]].add(klic)
@@ -110,7 +106,6 @@ class Databaze:
                 zaznam["odkaz_8k"] = z["odkaz_8k"]
                 if "SEC 8-K" not in zaznam["zdroje"]:
                     zaznam["zdroje"].append("SEC 8-K")
-                    zaznam["doplneno"] = self.ted
                 nalezeno = True
         return nalezeno
 
@@ -123,8 +118,12 @@ def beh_kontrakty():
     stav = nacti_json(SOUBOR_STAV, {})
     stav.setdefault("zdroje", {})
     db = nacti_kontrakty()
+    for z in db.values():
+        for pole in ZASTARALA_POLE:
+            z.pop(pole, None)
     pocet_pred = len(db)
-    detaily = nacti_json(SOUBOR_DETAILY, {})
+    detaily = {g: {k: v for k, v in d.items() if k in ("materska", "popis")}
+               for g, d in nacti_json(SOUBOR_DETAILY, {}).items()}
     cache_cen = nacti_json(SOUBOR_CENY, {})
     min_castka = float(cfg.get("min_castka", 1000000))
     log.info("Načteno %d uložených záznamů", pocet_pred)
@@ -136,26 +135,22 @@ def beh_kontrakty():
 
     databaze = Databaze(db, ted)
 
-    def castka(z):
-        return z.get("castka_dod") or z.get("castka_usa") or z.get("castka_sam") or z.get("castka_8k") or 0
-
     def zdroj(nazev, funkce):
         try:
             zaznamy = funkce(cfg, stav)
             nove = 0
             for z in zaznamy:
-                if castka(z) < min_castka:
+                if castka_zaznamu(z) < min_castka:
                     continue
                 if nazev == "SEC 8-K" and databaze.pripoj_8k(z):
                     continue
                 nove += databaze.sloucit(z, nazev)
             stav["zdroje"][nazev] = {"ok": True, "cas": ted, "nalezeno": len(zaznamy), "nove": nove}
             log.info("%s: %d záznamů, z toho %d nových", nazev, len(zaznamy), nove)
-        except zdroj_sam.Neaktivni as e:
+        except Neaktivni as e:
             predchozi = stav["zdroje"].get(nazev, {})
-            if predchozi.get("ok") and "klíč" not in str(e):
-                predchozi["info"] = str(e)  # běželo dříve, jen teď čeká na další dotaz
-                stav["zdroje"][nazev] = predchozi
+            if e.cekani and predchozi.get("ok"):
+                predchozi["info"] = str(e)  # běželo dříve, jen teď čeká na další povolený dotaz
             else:
                 stav["zdroje"][nazev] = {"ok": None, "info": str(e), "cas": ted}
             log.info("%s: %s", nazev, e)
@@ -198,17 +193,12 @@ def beh_kontrakty():
     # tickery (znovu při každém běhu, aby se projevily opravy v aliasy.csv)
     parovac = Parovac(seznam.get("seznam", []))
     for z in db.values():
-        if z.get("ticker_pevny"):
+        if z.get("ticker_pevny"):  # hlášení 8-K podala sama firma, ticker je jistý
             t = z["ticker_pevny"]
-            inf = parovac.info.get(t, {})
-            z.update(ticker=t, shoda="hlášení SEC", burza=inf.get("burza", ""), nazev_tickeru=inf.get("nazev", ""))
+            z.update(ticker=t, shoda="hlášení SEC", burza=parovac.info.get(t, {}).get("burza", ""))
             continue
-        t, typ, burza, nazev_t = parovac.prirad(z.get("materska", ""), z["spolecnost"])
-        for alt in z.get("alt_nazvy", []) + [z.get("spolecnost_usa", "")]:
-            if t or typ:
-                break
-            t, typ, burza, nazev_t = parovac.prirad("", alt)
-        z.update(ticker=t, shoda=typ, burza=burza, nazev_tickeru=nazev_t)
+        t, typ, burza = parovac.prirad(z.get("materska", ""), z["spolecnost"], *z.get("alt_nazvy", []))
+        z.update(ticker=t, shoda=typ, burza=burza)
 
     # ceny akcií
     potreba = {}
@@ -231,14 +221,14 @@ def beh_kontrakty():
     uloz_kontrakty(db)
     uloz_json(SOUBOR_CENY, cache_cen, kompaktni=True)
     uloz_json(SOUBOR_DETAILY, detaily, kompaktni=True)
-    uloz_json(SOUBOR_STAV, stav)
     vystup.sestav(cfg, db, cache_cen, seznam, stav)
+    uloz_json(SOUBOR_STAV, stav)  # až po výstupu: obsahuje i datum obnovy ročních archivů Excelu
 
 
 def beh_vystup():
-    cfg = nacti_config()
-    vystup.sestav(cfg, nacti_kontrakty(), nacti_json(SOUBOR_CENY, {}),
-                  tickery.nacti(), nacti_json(SOUBOR_STAV, {}))
+    stav = nacti_json(SOUBOR_STAV, {})
+    vystup.sestav(nacti_config(), nacti_kontrakty(), nacti_json(SOUBOR_CENY, {}), tickery.nacti(), stav)
+    uloz_json(SOUBOR_STAV, stav)
 
 
 if __name__ == "__main__":

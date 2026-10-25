@@ -7,13 +7,9 @@ import datetime as dt
 import os
 import re
 
-from .common import http_session, log, norm_piid
+from .common import Neaktivni, http_session, log, norm_piid
 
 API = "https://api.sam.gov/opportunities/v2/search"
-
-
-class Neaktivni(Exception):
-    """Zdroj není nastavený nebo teď nemá běžet (není to chyba)."""
 
 
 def _castka(v):
@@ -39,7 +35,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
     posledni = stav.get("sam_posledni_dotaz")
     kazdych = float(cfg.get("sam_kazdych_hodin", 3))
     if posledni and (ted - dt.datetime.fromisoformat(posledni)).total_seconds() < kazdych * 3600 - 300:
-        raise Neaktivni(f"Další dotaz za méně než {kazdych:g} h (denní limit API).")
+        raise Neaktivni(f"Další dotaz za méně než {kazdych:g} h (denní limit API).", cekani=True)
 
     dnes = ted.date()
     od = dnes - dt.timedelta(days=int(cfg.get("sam_dny_zpet", 2)))
@@ -80,7 +76,6 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             "typ": "Navýšení" if je_mod else "Nový",
             "datum": (award.get("date") or o.get("postedDate") or "")[:10],
             "spolecnost": (awardee.get("name") or "").strip(),
-            "uei": awardee.get("ueiSAM") or "",
             "castka_sam": castka,
             "popis_sam": (o.get("title") or "").strip(),
             "agentura": _agentura(o.get("fullParentPathName")),

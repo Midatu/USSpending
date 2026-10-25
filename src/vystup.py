@@ -6,6 +6,7 @@ site/tickery.json         directory tickerů
 site/kontrakty.xlsx       posledních 12 měsíců (+ archivy kontrakty-RRRR.xlsx za starší roky)
 """
 import datetime as dt
+import re
 import shutil
 from collections import defaultdict
 
@@ -15,10 +16,10 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from . import ceny
-from .common import DATA, SITE, WEB, iso_ted, log, uloz_json
+from .common import DATA, SITE, WEB, castka_zaznamu, iso_ted, log, uloz_json
 
 BLOKY = "▁▂▃▄▅▆▇█"
-WEB_POLE_VYNECHAT = {"cena_datum", "cena_nyni_datum", "prvni_zaznam", "odkaz", "dni"}
+WEB_POLE_VYNECHAT = {"id", "cena_datum", "cena_nyni_datum", "prvni_zaznam", "odkaz", "dni"}
 
 
 VELKA = {"LLC", "LLP", "LP", "JV", "USA", "US", "U.S.", "IT", "IBM", "KBR", "SAIC", "CACI", "BAE", "AT&T", "GE",
@@ -70,7 +71,7 @@ def zadavatel(text: str) -> str:
     if text.isupper():
         text = text.title().replace(" Of ", " of ").replace(" The ", " the ").replace(" And ", " and ")
     # "Veterans Affairs, Department Of" -> "Department of Veterans Affairs"
-    m = __import__("re").match(r"^(.+?),\s*(Department|Dept\.?|Office|Agency|Bureau)\s+of\s*(the)?$", text, 2)
+    m = re.match(r"^(.+?),\s*(Department|Dept\.?|Office|Agency|Bureau)\s+of\s*(the)?$", text, re.I)
     if m:
         text = f"{m.group(2).title()} of {'the ' if m.group(3) else ''}{m.group(1)}"
     text = text.replace("Dept of ", "Department of ").replace("Dept. of ", "Department of ")
@@ -101,7 +102,7 @@ def priprav(cfg: dict, db: dict, cache_cen: dict) -> list[dict]:
             "id": klic, "datum": z["datum"], "typ": z["typ"],
             "spolecnost": _hezky(z["spolecnost"], nazev=True), "materska": _hezky(z.get("materska", ""), nazev=True),
             "ticker": z.get("ticker", ""), "burza": z.get("burza", ""), "shoda": z.get("shoda", ""),
-            "castka": z.get("castka_dod") or z.get("castka_usa") or z.get("castka_sam") or z.get("castka_8k"),
+            "castka": castka_zaznamu(z) or None,
             "popis": _popis(z),
             "poznamka": z.get("poznamka", ""), "agentura": zadavatel(z.get("agentura", "")),
             "zdroje": z.get("zdroje", []),
@@ -219,6 +220,7 @@ def excel(radky: list[dict], seznam: dict, stav: dict, cesta, nadpis_obdobi: str
 # ---------- sestavení webu ----------
 
 def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict):
+    """Sestaví web a Excel. Do stav["excel_archivy"] zapíše, kdy byly obnoveny roční archivy (uloží volající)."""
     if SITE.exists():
         shutil.rmtree(SITE)
     (SITE / "data").mkdir(parents=True)
@@ -246,7 +248,6 @@ def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict):
             archivy[rok] = dnes.isoformat()
             log.info("Excel archiv %s obnoven", rok)
         shutil.copy(soubor, SITE / soubor.name)
-    uloz_json(DATA / "stav.json", stav)
 
     uloz_json(SITE / "meta.json", {
         "aktualizace": iso_ted(), "posledni_beh": stav.get("posledni_beh"),

@@ -13,7 +13,7 @@ API = "https://api.usaspending.gov/api/v2"
 POLE = [
     "Award ID", "Mod", "Recipient Name", "Action Date", "Transaction Amount",
     "Transaction Description", "Awarding Agency", "Awarding Sub Agency",
-    "Recipient UEI", "internal_id", "generated_internal_id",
+    "generated_internal_id",
 ]
 KONTRAKTY = ["A", "B", "C", "D"]  # typy kontraktů (ne granty, ne půjčky)
 
@@ -81,7 +81,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             "datum": datum[:10], "spolecnost": (t.get("Recipient Name") or "").strip(),
             "castka_usa": float(castka), "popis_usa": (t.get("Transaction Description") or "").strip(),
             "agentura": t.get("Awarding Sub Agency") or t.get("Awarding Agency") or "",
-            "uei": t.get("Recipient UEI") or "", "award_gid": gid,
+            "award_gid": gid,
             "odkaz_usa": f"https://www.usaspending.gov/award/{gid}" if gid else "",
         })
     return vystup
@@ -107,7 +107,6 @@ def dotahni_detaily(gids: list[str], cache: dict, limit: int) -> int:
             cache[gid] = {
                 "materska": (rec.get("parent_recipient_name") or "").strip(),
                 "popis": (j.get("description") or "").strip(),
-                "celkem": j.get("base_and_all_options_value") or j.get("total_obligation"),
             }
             hotovo += 1
             time.sleep(0.2)

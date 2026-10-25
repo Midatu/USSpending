@@ -67,12 +67,21 @@ def ted() -> dt.datetime:
     return dt.datetime.now(dt.timezone.utc)
 
 
-def dnes() -> dt.date:
-    return ted().date()
-
-
 def iso_ted() -> str:
     return ted().strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+class Neaktivni(Exception):
+    """Zdroj není nastavený (cekani=False) nebo jen čeká na další povolený dotaz (cekani=True). Není to chyba."""
+
+    def __init__(self, zprava: str, cekani: bool = False):
+        super().__init__(zprava)
+        self.cekani = cekani
+
+
+def castka_zaznamu(z: dict) -> float:
+    """Výše kontraktu podle priority zdrojů: oznámení DoD, USAspending, SAM.gov, hlášení 8-K."""
+    return z.get("castka_dod") or z.get("castka_usa") or z.get("castka_sam") or z.get("castka_8k") or 0
 
 
 def norm_piid(s: str) -> str:

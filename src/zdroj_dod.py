@@ -20,7 +20,7 @@ SEZNAM_URLS = ["https://www.war.gov/News/Contracts/", "https://www.defense.gov/N
 # Číslo kontraktu, např. W912DW-26-D-A003, N0001920C0047, FA853226DB028
 CISLO = re.compile(r"\b([A-Z][A-Z0-9]{5}-?\d{2}-?[A-Z0-9]-?[A-Z0-9]{4})\b")
 MOD_ZAVORKA = re.compile(r"modification\s*\(\s*([A-Z0-9]{5,6})\s*\)", re.I)
-MOD_VOLNY = re.compile(r"\b(?:modification|Modification)\s+(P[0-9A-Z]{5}|A\d{5})\b")
+MOD_VOLNY = re.compile(r"\bmodification\s+(P[0-9A-Z]{5}|A\d{5})\b", re.I)
 CASTKA = re.compile(r"\$\s?([\d,]+(?:\.\d+)?)")
 SLOVESO = re.compile(
     r"\b(?:is|was|has been|have been|are|were|will be)\s+(?:each\s+)?(?:being\s+)?awarded\b"
@@ -102,7 +102,7 @@ def rozparsuj_odstavec(text: str, agentura: str, datum: dt.date, url: str) -> li
                 zaznamy.append({
                     "piid": norm_piid(c), "mod": "0", "typ": "Nový", "datum": datum_ud.isoformat(),
                     "spolecnost": nazev, "castka_dod": castka, "popis_dod": popis,
-                    "agentura": agentura, "odkaz_dod": url, "sdileny": True,
+                    "agentura": agentura, "odkaz_dod": url,
                 })
         pocet = len(zaznamy)
         for z in zaznamy:
@@ -128,7 +128,7 @@ def rozparsuj_odstavec(text: str, agentura: str, datum: dt.date, url: str) -> li
     return [{
         "piid": piid, "mod": mod, "typ": "Navýšení" if je_mod else "Nový",
         "datum": datum_ud.isoformat(), "spolecnost": nazev, "castka_dod": castka,
-        "popis_dod": popis, "agentura": agentura, "odkaz_dod": url, "sdileny": False,
+        "popis_dod": popis, "agentura": agentura, "odkaz_dod": url,
     }]
 
 
@@ -238,7 +238,6 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             except Exception as e:  # noqa: BLE001
                 chyby.append(f"{varianta.split('/')[2]}: {str(e)[:120]}")
                 log.warning("Oznámení %s selhalo: %s", varianta, e)
-    stav["dod_posledni_chyby"] = chyby[-6:]
     if pokusy and not uspechy:
         raise RuntimeError(f"Žádné z {pokusy} oznámení se nepodařilo stáhnout. " + " | ".join(chyby[:3]))
     # udržuj stav malý

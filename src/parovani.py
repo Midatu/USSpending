@@ -3,8 +3,8 @@
 Pořadí:  1) ruční aliasy (aliasy.csv, včetně dceřiných firem)
          2) přesná shoda normalizovaného názvu se seznamem tickerů
          3) podobnost názvů (fuzzy), jen velmi vysoká shoda a stejné první slovo
-Dceřiné firmy (např. "Lockheed Martin Rotary..." nebo "Sikorsky") řeší aliasy a mateřská společnost z USAspending.
-Zkouší se nejdřív mateřská společnost (z USAspending), potom samotný příjemce.
+Zkouší se nejdřív mateřská společnost (z USAspending), potom samotný příjemce a jeho další názvy.
+Dceřiné firmy (např. Sikorsky) tak pokrývají aliasy a mateřská společnost.
 """
 import csv
 import difflib
@@ -16,14 +16,6 @@ PRAVNI_FORMY = {
     "INC", "INCORPORATED", "CORP", "CORPORATION", "CO", "COMPANY", "LLC", "L", "C", "LTD",
     "LIMITED", "PLC", "LP", "LLP", "HOLDINGS", "HOLDING", "GROUP", "NV", "SA", "AG", "SE",
     "THE", "DEL", "DE", "NEW", "CLASS", "A", "B", "ADR", "PBC", "TRUST", "USA", "US", "JV",
-}
-OBECNA_SLOVA = {
-    "AMERICAN", "NATIONAL", "GLOBAL", "UNITED", "GENERAL", "INTERNATIONAL", "ADVANCED", "FEDERAL",
-    "SYSTEMS", "TECHNOLOGIES", "TECHNOLOGY", "SOLUTIONS", "SERVICES", "PACIFIC", "ATLANTIC",
-    "NORTHERN", "SOUTHERN", "WESTERN", "EASTERN", "CENTRAL", "FIRST", "PREMIER", "APPLIED",
-    "STRATEGIC", "INTEGRATED", "DEFENSE", "AEROSPACE", "ENERGY", "CONSTRUCTION", "ENGINEERING",
-    "MEDICAL", "HEALTH", "DYNAMICS", "DIGITAL", "SECURITY", "MISSION", "PRECISION", "PIONEER",
-    "SUMMIT", "LIBERTY", "PATRIOT", "EAGLE", "ALPHA", "APEX", "VECTOR", "SIGMA", "DELTA",
 }
 BURZA_PRIORITA = {"NYSE": 0, "Nasdaq": 0, "CBOE": 1, "OTC": 3, "": 4}
 
@@ -42,14 +34,14 @@ def norm(nazev: str) -> str:
 
 class Parovac:
     def __init__(self, tickery: list[dict]):
-        self.aliasy: list[tuple[str, str, str]] = []
+        self.aliasy: list[tuple[str, str]] = []  # (normalizovaný vzor, ticker)
         cesta = ROOT / "aliasy.csv"
         if cesta.exists():
             with open(cesta, encoding="utf-8") as f:
                 for z in csv.DictReader((r for r in f if not r.startswith("#")), delimiter=";"):
                     vzor = norm(z.get("vzor") or "")
                     if vzor:
-                        self.aliasy.append((vzor, (z.get("ticker") or "").strip().upper(), z.get("vzor")))
+                        self.aliasy.append((vzor, (z.get("ticker") or "").strip().upper()))
         self.aliasy.sort(key=lambda a: -len(a[0]))
         self.info = {t["ticker"]: t for t in tickery}
         self.index: dict[str, str] = {}
@@ -68,7 +60,7 @@ class Parovac:
             return self._cache[n]
         vysledek = None
         obal = f" {n} "
-        for vzor, ticker, _ in self.aliasy:
+        for vzor, ticker in self.aliasy:
             if f" {vzor} " in obal:
                 vysledek = (ticker, "alias" if ticker else "soukromá (alias)")
                 break
@@ -83,14 +75,11 @@ class Parovac:
         self._cache[n] = vysledek
         return vysledek
 
-    def prirad(self, materska: str, spolecnost: str):
-        """Vrátí (ticker, typ_shody, burza, nazev_tickeru) nebo ("", "", "", "")."""
-        for nazev in (materska, spolecnost):
+    def prirad(self, *nazvy: str):
+        """Zkusí názvy v daném pořadí. Vrátí (ticker, typ_shody, burza) nebo ("", "", "")."""
+        for nazev in nazvy:
             v = self._jeden(nazev)
             if v:
                 ticker, typ = v
-                if not ticker:
-                    return "", typ, "", ""
-                inf = self.info.get(ticker, {})
-                return ticker, typ, inf.get("burza", ""), inf.get("nazev", "")
-        return "", "", "", ""
+                return ticker, typ, self.info.get(ticker, {}).get("burza", "") if ticker else ""
+        return "", "", ""
