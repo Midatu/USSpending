@@ -8,7 +8,7 @@ min_castka: 500000
 # Doporučení: použij svou anonymní adresu z GitHubu ve tvaru
 #   12345678+uzivatel@users.noreply.github.com
 # (najdeš ji v GitHub > Settings > Emails). Nevkládej sem soukromý e-mail, repozitář je veřejný.
-sec_kontakt: "GovContractTracker admin@example.com"
+sec_kontakt: "TickerLister tokuth@proton.me"
 
 # USAspending: kolik dní zpět hledat záznamy, které byly v databázi nově přidány nebo upraveny
 usaspending_dny_zpet: 3
