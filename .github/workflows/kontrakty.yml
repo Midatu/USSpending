@@ -1,0 +1,66 @@
+# Každou hodinu: stáhne nové kontrakty, aktualizuje ceny akcií a zveřejní web + Excel.
+# Běží výhradně na serverech GitHubu. S tvým počítačem nemá žádné spojení.
+#
+# Data se ukládají trvale do větve "data" v tomto repozitáři. Každý běh je načte,
+# doplní o nové záznamy, aktualizuje ceny a uloží zpět. Nic se nezačíná od nuly.
+name: Kontrakty (každou hodinu)
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # každou hodinu v 17. minutě (čas UTC)
+  workflow_dispatch:        # ruční spuštění tlačítkem "Run workflow"
+
+permissions:
+  contents: write   # uložení dat do větve "data"
+  pages: write      # zveřejnění webu
+  id-token: write   # vyžaduje nasazení na GitHub Pages
+
+concurrency:
+  group: data-repozitare
+  cancel-in-progress: false
+
+jobs:
+  kontrakty:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.nasazeni.outputs.page_url }}
+    steps:
+      - name: Stáhnout program
+        uses: actions/checkout@v4
+
+      - name: Připravit Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Nainstalovat knihovny
+        run: pip install -r requirements.txt
+
+      - name: Načíst uložená data (větev data)
+        run: python -m src.vetev nacti
+
+      - name: Stáhnout kontrakty a ceny, sestavit výstup
+        run: python -m src.main kontrakty
+        env:
+          # API klíč pro SAM.gov z GitHub Secrets (v logu se nikdy nezobrazí). Bez něj se SAM.gov přeskočí.
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+
+      - name: Uložit data (větev data)
+        run: python -m src.vetev uloz data
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Nastavit GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Nahrát web
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Zveřejnit web
+        id: nasazeni
+        uses: actions/deploy-pages@v4
