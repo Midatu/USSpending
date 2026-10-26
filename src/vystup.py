@@ -4,6 +4,8 @@ site/meta.json            stav zdrojů, seznam měsíců s počty záznamů, arc
 site/data/RRRR-MM.json    řádky kontraktů po měsících (web načítá jen zvolené období)
 site/tickery.json         directory tickerů
 site/kontrakty.xlsx       posledních 12 měsíců (+ archivy kontrakty-RRRR.xlsx za starší roky)
+site/zpravy.json          upozornění a přehled sentimentu podle firem (podstránka Zprávy)
+site/zpravy/RRRR-MM.json  zprávy po měsících
 """
 import datetime as dt
 import re
@@ -145,7 +147,21 @@ def _odkaz(url: str, text: str) -> str:
     return f'=HYPERLINK("{url.replace(chr(34), "")}","{text.replace(chr(34), "")}")'
 
 
-def excel(radky: list[dict], seznam: dict, stav: dict, cesta, nadpis_obdobi: str):
+TYPY_UPOZORNENI = {
+    "negativni_vlna": "Vlna negativních zpráv", "pozitivni_vlna": "Vlna pozitivních zpráv",
+    "zhorseni": "Zhoršení sentimentu", "zlepseni": "Zlepšení sentimentu", "zajem": "Nárůst zájmu médií",
+}
+
+
+def typ_upozorneni(typ: str) -> str:
+    return "Významný kontrakt" if typ.startswith("kontrakt:") else TYPY_UPOZORNENI.get(typ, typ)
+
+
+def hodnoceni(s: float) -> str:
+    return "pozitivní" if s >= 0.25 else "negativní" if s <= -0.25 else "neutrální"
+
+
+def excel(radky: list[dict], seznam: dict, stav: dict, cesta, nadpis_obdobi: str, zpravy: dict | None = None):
     wb = Workbook(write_only=True)
     bila, modra = Font(bold=True, color="FFFFFF"), PatternFill("solid", fgColor="1F3A5F")
     odkaz_font = Font(color="0563C1", underline="single")
@@ -198,6 +214,25 @@ def excel(radky: list[dict], seznam: dict, stav: dict, cesta, nadpis_obdobi: str
             r["prvni_zaznam"].replace("T", " ").replace("Z", ""),
         ])
 
+    if zpravy is not None:
+        clanky = zpravy["clanky_excel"]
+        wz = list_s_hlavickou("Zprávy", [("Datum", 12), ("Čas (UTC)", 9), ("Ticker", 12), ("Společnost", 30),
+                                         ("Titulek (odkaz na článek)", 90), ("Zdroj", 20), ("Kategorie", 18),
+                                         ("Sentiment", 10), ("Hodnocení", 11)])
+        wz.auto_filter.ref = f"A1:I{len(clanky) + 1}"
+        for z in clanky:
+            titulek = WriteOnlyCell(wz, value=z["titulek"])
+            titulek.hyperlink, titulek.font = z["url"], odkaz_font
+            barva = zelena if z["s"] >= 0.25 else cervena if z["s"] <= -0.25 else None
+            wz.append([z["cas"][:10], z["cas"][11:16], ", ".join(z["tickery"]), z["firmy"], titulek, z["zdroj"],
+                       z["kat"], _bunka(wz, z["s"], barva, "+0.00;-0.00;0.00"), _bunka(wz, hodnoceni(z["s"]), barva)])
+        wu = list_s_hlavickou("Upozornění", [("Od", 12), ("Naposledy", 12), ("Stav", 10), ("Typ", 24),
+                                             ("Ticker", 12), ("Společnost", 30), ("Popis", 100)])
+        for u in zpravy["upozorneni"]:
+            barva = cervena if u["smer"] == "neg" else zelena if u["smer"] == "pos" else None
+            wu.append([u["od"], u["do"], "aktivní" if u["aktivni"] else "skončilo",
+                       _bunka(wu, typ_upozorneni(u["typ"]), barva), u["ticker"], u["firma"], u["text"]])
+
     wt = list_s_hlavickou("Tickery", [("Ticker", 12), ("Společnost", 50), ("Burza", 18), ("CIK", 12), ("Zdroj", 14)])
     vse = seznam.get("seznam", [])
     wt.auto_filter.ref = f"A1:E{len(vse) + 1}"
@@ -219,12 +254,52 @@ def excel(radky: list[dict], seznam: dict, stav: dict, cesta, nadpis_obdobi: str
 
 # ---------- sestavení webu ----------
 
-def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict):
+def priprav_zpravy(zd: dict) -> dict:
+    """Zprávy pro web a Excel: seznam článků, přehled podle firem (7 a 30 dní), upozornění."""
+    from .zpravy import NEGATIVNI, POZITIVNI, okno
+    firmy = zd["firmy"]
+    nazev = {t: _hezky(f.nazev, nazev=True) for t, f in firmy.items()}
+    clanky = sorted(zd["clanky"].values(), key=lambda z: z["cas"], reverse=True)
+    for z in clanky:
+        z["firmy"] = ", ".join(nazev.get(t, t) for t in z["tickery"])
+    dnes = dt.date.today()
+    d = lambda n: (dnes - dt.timedelta(days=n)).isoformat()  # noqa: E731
+    prehled = []
+    for t in firmy:
+        dny = zd["denni"].get(t, {})
+        n7, s7, neg7, pos7 = okno(dny, d(6), d(0))
+        n30, s30, _, _ = okno(dny, d(36), d(7))
+        trend = []
+        for i in range(29, -1, -1):
+            v = dny.get(d(i))
+            trend.append([v[0], round(v[1] / v[0], 2)] if v else None)
+        posledni = next((z["cas"] for z in clanky if t in z["tickery"]), "")
+        prehled.append({"t": t, "nazev": nazev[t], "n7": n7, "s7": s7, "neg7": neg7, "pos7": pos7,
+                        "n30": n30, "s30": s30, "trend": trend, "posledni": posledni})
+    prehled.sort(key=lambda r: (r["n7"], r["n30"]), reverse=True)
+    upozorneni = sorted(zd["upozorneni"].items(), key=lambda kv: (kv[1]["aktivni"], kv[1]["do"], kv[1]["od"]), reverse=True)
+    for uid, u in upozorneni:
+        u["id"], u["firma"] = uid, nazev.get(u["ticker"], _hezky(u.get("firma", ""), nazev=True))
+    return {"clanky": clanky, "prehled": prehled, "upozorneni": [u for _, u in upozorneni],
+            "hranice": [NEGATIVNI, POZITIVNI]}
+
+
+def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict, zpravy_data: dict | None = None):
     """Sestaví web a Excel. Do stav["excel_archivy"] zapíše, kdy byly obnoveny roční archivy (uloží volající)."""
     if SITE.exists():
         shutil.rmtree(SITE)
     (SITE / "data").mkdir(parents=True)
     radky = priprav(cfg, db, cache_cen)
+    zpravy = None
+    if zpravy_data is not None:
+        try:
+            zpravy = priprav_zpravy(zpravy_data)
+            dni_excel = int(cfg.get("zpravy_excel_dni", 90))
+            hranice = (dt.date.today() - dt.timedelta(days=dni_excel)).isoformat()
+            zpravy["clanky_excel"] = [z for z in zpravy["clanky"] if z["cas"][:10] >= hranice]
+        except Exception as e:  # noqa: BLE001
+            log.warning("Výstup zpráv selhal: %s", e)
+            zpravy = None
 
     po_mesicich = defaultdict(list)
     for r in radky:
@@ -236,7 +311,7 @@ def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict):
     dnes = dt.date.today()
     rok_zpet = (dnes - dt.timedelta(days=365)).isoformat()
     excel([r for r in radky if r["datum"] >= rok_zpet], seznam, stav, SITE / "kontrakty.xlsx",
-          f"posledních 12 měsíců (od {rok_zpet})")
+          f"posledních 12 měsíců (od {rok_zpet})", zpravy)
     archiv_slozka = DATA / "excel"
     archiv_slozka.mkdir(parents=True, exist_ok=True)
     archivy = stav.setdefault("excel_archivy", {})
@@ -256,6 +331,22 @@ def sestav(cfg: dict, db: dict, cache_cen: dict, seznam: dict, stav: dict):
         "mesice": {m: len(v) for m, v in sorted(po_mesicich.items())},
         "excel_archivy": roky,
     }, kompaktni=True)
+    if zpravy is not None:
+        po_mes = defaultdict(list)
+        for z in zpravy["clanky"]:
+            po_mes[z["cas"][:7]].append({"cas": z["cas"], "t": z["tickery"], "ti": z["titulek"], "u": z["url"],
+                                         "z": z["zdroj"], "s": z["s"], "k": z["kat"], "f": z["firmy"]})
+        (SITE / "zpravy").mkdir()
+        for mesic, seznam_z in po_mes.items():
+            uloz_json(SITE / "zpravy" / f"{mesic}.json", seznam_z, kompaktni=True)
+        uloz_json(SITE / "zpravy.json", {
+            "aktualizace": iso_ted(), "stav": stav.get("zpravy", {}),
+            "mesice": {m: len(v) for m, v in sorted(po_mes.items())},
+            "upozorneni": [{k: u.get(k) for k in ("id", "typ", "ticker", "firma", "od", "do", "aktivni", "smer", "text")}
+                           | {"nazev_typu": typ_upozorneni(u["typ"])} for u in zpravy["upozorneni"]],
+            "prehled": zpravy["prehled"], "hranice": zpravy["hranice"],
+            "mesicu_kontraktu": cfg.get("zpravy_mesicu", 6),
+        }, kompaktni=True)
     uloz_json(SITE / "tickery.json", [[t["ticker"], t.get("nazev", ""), t.get("burza", "")]
                                       for t in seznam.get("seznam", [])], kompaktni=True)
     for soubor in WEB.iterdir():

@@ -37,3 +37,28 @@ sam_dny_zpet: 2
 # SEC 8-K (kontrakty oznámené samotnými firmami)
 sec_dny_zpet: 3
 sec_max_dokumentu_za_beh: 120
+
+# ---------- Zprávy o firmách (podstránka Zprávy) ----------
+# Sledují se firmy s tickerem, které mají kontrakt za posledních X měsíců.
+zpravy_zapnuto: true
+zpravy_mesicu: 6
+# Zdroje (veřejné RSS kanály). Když některý zdroj odběr zakáže (robots.txt), program ho sám přeskočí.
+zpravy_yahoo: true
+zpravy_google: true
+# Jak často kontrolovat zprávy u jedné firmy (hodiny) a kolik firem nejvýš za jeden hodinový běh
+zpravy_kazdych_hodin: 3
+zpravy_max_tickeru_za_beh: 60
+# Pauza mezi dotazy na stejný zdroj (sekundy), ať servery zbytečně nezatěžujeme
+zpravy_pauza_s: 1.5
+# Jak dlouho držet jednotlivé zprávy (dny). Denní souhrny sentimentu pro trendy se drží trvale.
+zpravy_uchovavat_dni: 180
+# Kolik dní zpráv dát do Excelu (list Zprávy)
+zpravy_excel_dni: 90
+# Upozornění: vlna = aspoň X negativních (pozitivních) zpráv za 7 dní
+zpravy_vlna_min: 3
+# Upozornění: změna průměrného sentimentu 7 dní proti předchozím 30 dnům
+zpravy_posun_min: 0.3
+# Upozornění: nárůst zájmu médií = X násobek obvyklého týdenního počtu zpráv
+zpravy_zajem_nasobek: 3
+# Upozornění: významný kontrakt = výše kontraktu je aspoň X % tržní kapitalizace firmy
+zpravy_vyznamny_kontrakt_pct: 2

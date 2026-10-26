@@ -1,4 +1,4 @@
-# Každou hodinu: stáhne nové kontrakty, aktualizuje ceny akcií a zveřejní web + Excel.
+# Každou hodinu: stáhne nové kontrakty, aktualizuje ceny akcií, zprávy o firmách a zveřejní web + Excel.
 # Běží výhradně na serverech GitHubu. S tvým počítačem nemá žádné spojení.
 #
 # Data se ukládají trvale do větve "data" v tomto repozitáři. Každý běh je načte,
@@ -28,10 +28,10 @@ jobs:
       url: ${{ steps.nasazeni.outputs.page_url }}
     steps:
       - name: Stáhnout program
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Připravit Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -42,7 +42,7 @@ jobs:
       - name: Načíst uložená data (větev data)
         run: python -m src.vetev nacti
 
-      - name: Stáhnout kontrakty a ceny, sestavit výstup
+      - name: Stáhnout kontrakty, ceny a zprávy, sestavit výstup
         run: python -m src.main kontrakty
         env:
           # API klíč pro SAM.gov z GitHub Secrets (v logu se nikdy nezobrazí). Bez něj se SAM.gov přeskočí.
@@ -54,13 +54,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Nastavit GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Nahrát web
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
       - name: Zveřejnit web
         id: nasazeni
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

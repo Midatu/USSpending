@@ -118,6 +118,37 @@ a.tk:hover { text-decoration: underline; }
 .pozn { color: var(--muted); font-size: 12.5px; max-width: 900px; }
 .pozn p { margin: 4px 0; }
 a { color: var(--accent); }
+/* ---------- Zprávy ---------- */
+.tabs button { position: relative; }
+.bublina { position: absolute; top: -7px; right: -7px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: #d93025; color: #fff; font: 700 11px/18px var(--f-body); text-align: center; box-shadow: 0 0 0 2px var(--bg); }
+h2.nadpis { font: 700 17px/1.3 var(--f-display); font-stretch: 85%; margin: 4px 0 8px; letter-spacing: 0.01em; }
+h2.nadpis small { font: 400 12.5px var(--f-body); color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+.upoz-mrizka { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+.upoz { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 12px; cursor: pointer; text-align: left; font: inherit; color: inherit; width: 100%; }
+.upoz:hover { border-color: var(--accent); }
+.upoz.neg { border-left-color: var(--down); }
+.upoz.pos { border-left-color: var(--up); }
+.upoz.konec { opacity: 0.6; }
+.upoz .hl { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+.upoz .hl b { font: 600 12px var(--f-body); text-transform: uppercase; letter-spacing: 0.05em; }
+.upoz.neg .hl b { color: var(--down); } .upoz.pos .hl b { color: var(--up); } .upoz.info .hl b { color: var(--accent); }
+.upoz .fi { margin: 3px 0 2px; font-weight: 600; }
+.upoz .fi .tk { margin-right: 6px; }
+.upoz p { margin: 0; font-size: 13px; }
+.tag.nove { background: #d93025; color: #fff; }
+.pill { display: inline-block; min-width: 46px; text-align: center; font: 500 12px var(--f-mono); padding: 1px 6px; border-radius: 10px; background: var(--accent-soft); color: var(--muted); white-space: nowrap; }
+.pill.pos { background: var(--tag-new); color: var(--up); }
+.pill.neg { background: color-mix(in srgb, var(--down) 14%, transparent); color: var(--down); }
+.trend-svg { display: block; }
+#pohled-z table tr.klik { cursor: pointer; }
+.zprava a.ti { color: var(--fg); text-decoration: none; font-weight: 500; }
+.zprava a.ti:hover { color: var(--accent); text-decoration: underline; }
+.zprava small { display: block; color: var(--muted); font-size: 11.5px; }
+.filtr-aktivni { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; background: var(--accent-soft); color: var(--accent); border-radius: 6px; padding: 5px 8px; }
+.filtr-aktivni button { border: 0; background: none; color: inherit; cursor: pointer; font: 700 14px var(--f-body); padding: 0 2px; }
+.blok { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.blok > * { min-width: 0; }
+@media (max-width: 600px) { .upoz-mrizka { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 </head>
@@ -133,6 +164,7 @@ a { color: var(--accent); }
   <div class="lista">
     <div class="tabs" role="tablist">
       <button role="tab" id="tab-k" aria-selected="true">Kontrakty</button>
+      <button role="tab" id="tab-z" aria-selected="false">Zprávy<span class="bublina" id="bublina" hidden></span></button>
       <button role="tab" id="tab-t" aria-selected="false">Tickery</button>
     </div>
     <a class="btn" href="kontrakty.xlsx">Stáhnout Excel (12 měsíců)</a>
@@ -162,6 +194,50 @@ a { color: var(--accent); }
       <div class="prazdne" id="prazdne" hidden>Žádný kontrakt neodpovídá filtrům.</div>
     </div>
     <p class="pozn" id="pocet"></p>
+  </section>
+
+  <section id="pohled-z" hidden>
+    <div class="blok">
+      <p class="sub" id="z-info"></p>
+      <div>
+        <h2 class="nadpis">Upozornění <small>klikni na upozornění pro zobrazení zpráv o firmě</small></h2>
+        <div class="upoz-mrizka" id="z-upoz"></div>
+      </div>
+      <div>
+        <h2 class="nadpis">Sentiment podle firem <small>sentiment -1 až +1, průměr ze zpráv; klikni na řádek pro zprávy o firmě</small></h2>
+        <div class="tabulka">
+          <table style="min-width:720px">
+            <thead><tr><th>Ticker</th><th>Společnost</th><th class="num">Zprávy 7 dní</th><th class="num">Sentiment 7 dní</th>
+            <th class="num">Předchozích 30 dní</th><th>Vývoj</th><th>Posledních 30 dní (denní sentiment)</th></tr></thead>
+            <tbody id="z-firmy"></tbody>
+          </table>
+        </div>
+        <p class="pozn" id="z-bez"></p>
+      </div>
+      <div>
+        <h2 class="nadpis">Zprávy</h2>
+        <div class="lista" style="margin-bottom:12px">
+          <select id="z-obdobi" aria-label="Období"><option value="7">7 dní</option><option value="30" selected>30 dní</option><option value="90">90 dní</option><option value="0">Vše uložené</option></select>
+          <input type="search" id="z-hledat" placeholder="Hledat ticker, firmu nebo text titulku">
+          <select id="z-sent" aria-label="Sentiment"><option value="">Jakýkoli sentiment</option><option value="neg">Negativní</option><option value="pos">Pozitivní</option><option value="neu">Neutrální</option></select>
+          <select id="z-kat" aria-label="Kategorie"><option value="">Všechny kategorie</option></select>
+        </div>
+        <div class="tabulka">
+          <table style="min-width:640px">
+            <thead><tr><th>Datum</th><th>Ticker</th><th>Zpráva (titulek a odkaz na článek)</th><th class="num">Sentiment</th></tr></thead>
+            <tbody id="z-radky"></tbody>
+          </table>
+          <div class="prazdne" id="z-prazdne" hidden>Žádná zpráva neodpovídá filtrům.</div>
+        </div>
+        <p class="pozn" id="z-pocet"></p>
+      </div>
+      <div class="pozn">
+        <p><b>Co sledujeme:</b> zprávy o firmách s tickerem, které mají v seznamu kontrakt za posledních několik měsíců. Zdroje jsou veřejné RSS kanály Yahoo Finance (podle tickeru) a Google News (podle názvu firmy). Ukládáme jen zprávy, které firmu zmiňují přímo v titulku.</p>
+        <p><b>Autorská práva:</b> zobrazujeme jen titulek, název vydavatele a odkaz na původní článek. Texty článků ani jejich úryvky neukládáme ani nezveřejňujeme, celý článek si přečteš u vydavatele.</p>
+        <p><b>Sentiment</b> je automatický odhad nálady zprávy od -1 (velmi negativní) do +1 (velmi pozitivní), vyhodnocený slovníkovou metodou z titulku a krátkého popisku. Od +0,25 je zpráva pozitivní, od -0,25 negativní. Je to orientační ukazatel, ne investiční doporučení; jednotlivé zprávy může vyhodnotit chybně (např. ironii nebo složité souvislosti), smysl má hlavně trend z více zpráv.</p>
+        <p><b>Upozornění:</b> vlna negativních / pozitivních zpráv (aspoň 3 za 7 dní a převažují), zhoršení nebo zlepšení sentimentu (průměr za 7 dní se liší od předchozích 30 dní aspoň o 0,3), nárůst zájmu médií (aspoň 5 zpráv za týden a trojnásobek obvyklého počtu) a významný kontrakt (výše kontraktu za posledních 14 dní je aspoň 2 % tržní kapitalizace firmy). Červené číslo u záložky ukazuje nová upozornění od tvé poslední návštěvy této stránky.</p>
+      </div>
+    </div>
   </section>
 
   <section id="pohled-t" hidden>
@@ -366,7 +442,7 @@ a { color: var(--accent); }
   function hlavicka() {
     $("aktualizace").textContent = `Poslední kontrola: ${cas(meta.posledni_beh)} · minimální výše ${castka(meta.min_castka)} $ · tickery aktualizovány ${cas(meta.tickery_aktualizace)}`;
     const z = meta.zdroje || {};
-    $("zdroje").innerHTML = ["DoD", "SAM.gov", "USAspending", "SEC 8-K", "Ceny akcií"].map((n) => {
+    $("zdroje").innerHTML = ["DoD", "SAM.gov", "USAspending", "SEC 8-K", "Ceny akcií", "Zprávy"].map((n) => {
       const s = z[n];
       const cls = !s || s.ok == null ? "none" : s.ok ? "" : "err";
       const txt = !s ? "zatím neběželo" : s.ok == null ? (n === "DoD" ? "čeká na archiv" : "neaktivní") : s.ok ? "OK" : "chyba";
@@ -384,11 +460,138 @@ a { color: var(--accent); }
     $("pocet-t").textContent = `Zobrazeno ${Math.min(r.length, 300)} z ${kc.format(r.length)} (celkem ${kc.format(tickery.length)} tickerů).`;
   }
 
+  // ---------- Zprávy ----------
+  const PRECTENE = "zpravy-prectene-upozorneni";
+  let zp = null, zMesice = new Map(), zPrecteneNaZacatku = new Set(), zFiltrTicker = "";
+  const cteni = () => { try { return new Set(JSON.parse(localStorage.getItem(PRECTENE) || "[]")); } catch (e) { return new Set(); } };
+  const zapis = (ids) => { try { localStorage.setItem(PRECTENE, JSON.stringify([...ids])); } catch (e) { /* prohlížeč úložiště nepovoluje */ } };
+  const sTxt = (v) => v == null ? "-" : (v > 0 ? "+" : "") + kc2.format(v);
+  const sCls = (v) => v == null ? "" : v >= (zp?.hranice?.[1] ?? 0.25) ? "pos" : v <= (zp?.hranice?.[0] ?? -0.25) ? "neg" : "";
+  const aktivni = () => (zp?.upozorneni || []).filter((u) => u.aktivni);
+
+  function bublina() {
+    const prectene = cteni();
+    const n = aktivni().filter((u) => !prectene.has(u.id)).length;
+    $("bublina").hidden = n === 0;
+    $("bublina").textContent = n > 9 ? "9+" : String(n);
+    $("tab-z").setAttribute("aria-label", n ? `Zprávy, ${n} nových upozornění` : "Zprávy");
+  }
+
+  function oznacPrectene() {
+    zPrecteneNaZacatku = cteni();
+    const ids = new Set(aktivni().map((u) => u.id));  // drží jen existující upozornění, seznam neroste
+    zapis(ids);
+    bublina();
+  }
+
+  function trendSvg(trend) {
+    const w = 150, h = 26, sir = w / 30;
+    const sloupce = (trend || []).map((v, i) => {
+      if (!v) return `<rect x="${(i * sir + 1.5).toFixed(1)}" y="${h / 2 - 0.5}" width="${(sir - 2).toFixed(1)}" height="1" fill="var(--line)"/>`;
+      const [n, s] = v, vyska = Math.max(2, Math.abs(s) * (h / 2 - 1));
+      const barva = s >= 0.25 ? "var(--up)" : s <= -0.25 ? "var(--down)" : "var(--muted)";
+      const y = s >= 0 ? h / 2 - vyska : h / 2;
+      return `<rect x="${(i * sir + 1).toFixed(1)}" y="${y.toFixed(1)}" width="${(sir - 2).toFixed(1)}" height="${vyska.toFixed(1)}" fill="${barva}" opacity="${Math.min(1, 0.45 + n * 0.15).toFixed(2)}"><title>${n} zpráv, sentiment ${sTxt(s)}</title></rect>`;
+    }).join("");
+    return `<svg class="trend-svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Denní sentiment za 30 dní"><line x1="0" x2="${w}" y1="${h / 2}" y2="${h / 2}" stroke="var(--line)"/>${sloupce}</svg>`;
+  }
+
+  function vykresliUpozorneni() {
+    const vse = zp.upozorneni || [];
+    const dnes = new Date(); dnes.setDate(dnes.getDate() - 14);
+    const ukaz = vse.filter((u) => u.aktivni || u.do >= iso(dnes));
+    $("z-upoz").innerHTML = ukaz.length ? ukaz.map((u) => `
+      <button class="upoz ${u.smer}${u.aktivni ? "" : " konec"}" data-t="${esc(u.ticker)}">
+        <div class="hl"><b>${esc(u.nazev_typu)}</b><span>${u.aktivni ? "od " + datum(u.od) : "skončilo " + datum(u.do)}</span>${u.aktivni && !zPrecteneNaZacatku.has(u.id) ? `<span class="tag nove">nové</span>` : ""}</div>
+        <div class="fi"><span class="tk">${esc(u.ticker)}</span>${esc(u.firma)}</div>
+        <p>${esc(u.text)}</p>
+      </button>`).join("") : `<p class="pozn" style="margin:0">Žádná aktivní upozornění. Systém hlídá vlny negativních a pozitivních zpráv, změny sentimentu, nárůst zájmu médií a velké kontrakty vzhledem k velikosti firmy.</p>`;
+  }
+
+  function vykresliFirmy() {
+    const sZpravami = (zp.prehled || []).filter((f) => f.n7 + f.n30 > 0);
+    const bez = (zp.prehled || []).length - sZpravami.length;
+    $("z-bez").textContent = bez ? `Dalších ${kc.format(bez)} sledovaných firem nemá za posledních 37 dní žádnou zprávu: ` +
+      zp.prehled.filter((f) => f.n7 + f.n30 === 0).map((f) => f.t).join(", ") + "." : "";
+    $("z-firmy").innerHTML = sZpravami.map((f) => {
+      const zmena = f.s7 != null && f.s30 != null ? f.s7 - f.s30 : null;
+      const sipka = zmena == null ? "" : zmena >= 0.15 ? `<span class="up" title="Sentiment se zlepšuje">▲ ${sTxt(zmena)}</span>` : zmena <= -0.15 ? `<span class="down" title="Sentiment se zhoršuje">▼ ${sTxt(zmena)}</span>` : `<span style="color:var(--muted)" title="Beze změny">● stabilní</span>`;
+      return `<tr class="klik" data-t="${esc(f.t)}">
+        <td class="tk"><a class="tk" href="${yahoo(f.t)}" target="_blank" rel="noopener" title="Otevřít na Yahoo Finance">${esc(f.t)}</a></td>
+        <td><span class="trunc t1" style="max-width:240px">${esc(f.nazev)}</span></td>
+        <td class="num">${f.n7}${f.neg7 || f.pos7 ? `<small class="pod"><span class="up">${f.pos7}+</span> / <span class="down">${f.neg7}-</span></small>` : ""}</td>
+        <td class="num"><span class="pill ${sCls(f.s7)}">${sTxt(f.s7)}</span></td>
+        <td class="num"><span class="pill ${sCls(f.s30)}">${sTxt(f.s30)}</span><small class="pod">${f.n30} zpráv</small></td>
+        <td style="font-size:12px;white-space:nowrap">${sipka}</td>
+        <td>${trendSvg(f.trend)}</td></tr>`;
+    }).join("") || `<tr><td colspan="7" class="prazdne">Zatím žádné zprávy o sledovaných firmách.</td></tr>`;
+  }
+
+  async function nactiZpravy() {
+    const dni = +$("z-obdobi").value;
+    const od = dni ? (() => { const d = new Date(); d.setDate(d.getDate() - dni); return iso(d); })() : "";
+    const potreba = Object.keys(zp.mesice || {}).filter((m) => !od || m >= od.slice(0, 7)).filter((m) => !zMesice.has(m));
+    if (potreba.length) {
+      $("z-pocet").textContent = "Načítám zprávy...";
+      await Promise.all(potreba.map((m) => fetch(`zpravy/${m}.json`, { cache: "no-store" }).then((r) => r.json())
+        .then((rows) => zMesice.set(m, rows)).catch(() => zMesice.set(m, []))));
+      const kat = new Set([...zMesice.values()].flat().map((z) => z.k));
+      const vybrana = $("z-kat").value;
+      $("z-kat").innerHTML = `<option value="">Všechny kategorie</option>` + [...kat].sort((a, b) => a.localeCompare(b, "cs")).map((k) => `<option${k === vybrana ? " selected" : ""}>${esc(k)}</option>`).join("");
+    }
+    vykresliZpravy(od);
+  }
+
+  function vykresliZpravy(od) {
+    if (od === undefined) { const dni = +$("z-obdobi").value; const d = new Date(); d.setDate(d.getDate() - dni); od = dni ? iso(d) : ""; }
+    const q = $("z-hledat").value.trim().toLowerCase(), sent = $("z-sent").value, kat = $("z-kat").value;
+    const [lo, hi] = zp.hranice || [-0.25, 0.25];
+    const r = [...zMesice.values()].flat().filter((z) => {
+      if (od && z.cas.slice(0, 10) < od) return false;
+      if (zFiltrTicker && !z.t.includes(zFiltrTicker)) return false;
+      if (sent === "pos" && z.s < hi) return false;
+      if (sent === "neg" && z.s > lo) return false;
+      if (sent === "neu" && (z.s >= hi || z.s <= lo)) return false;
+      if (kat && z.k !== kat) return false;
+      return !q || [z.ti, z.f, z.t.join(" "), z.z].join(" ").toLowerCase().includes(q);
+    }).sort((a, b) => b.cas.localeCompare(a.cas));
+    $("z-radky").innerHTML = r.slice(0, 500).map((z) => `<tr>
+      <td class="num vl" title="${esc(cas(z.cas))}">${datumKr(z.cas)}</td>
+      <td class="tk">${z.t.map((t) => `<a class="tk" href="${yahoo(t)}" target="_blank" rel="noopener">${esc(t)}</a>`).join("<br>")}</td>
+      <td class="zprava"><a class="ti" href="${esc(z.u)}" target="_blank" rel="noopener nofollow">${esc(z.ti)}</a><small>${esc(z.z)} · ${esc(z.k)}</small></td>
+      <td class="num"><span class="pill ${sCls(z.s)}">${sTxt(z.s)}</span></td></tr>`).join("");
+    $("z-prazdne").hidden = r.length > 0;
+    $("z-pocet").innerHTML = (zFiltrTicker ? `<span class="filtr-aktivni">Jen ${esc(zFiltrTicker)} <button type="button" id="z-zrus" aria-label="Zrušit filtr firmy">×</button></span> ` : "") +
+      (r.length > 500 ? `Zobrazeno prvních 500 z ${kc.format(r.length)} zpráv.` : `Zobrazeno ${kc.format(r.length)} zpráv.`);
+    const zrus = $("z-zrus"); if (zrus) zrus.addEventListener("click", () => { zFiltrTicker = ""; vykresliZpravy(); });
+  }
+
+  function filtrujFirmu(t) {
+    zFiltrTicker = t;
+    vykresliZpravy();
+    $("z-radky").closest("div").previousElementSibling.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function otevriZpravy() {
+    if (!zp) { $("z-info").textContent = "Načítám zprávy..."; return; }
+    oznacPrectene();
+    const st = zp.stav || {};
+    $("z-info").textContent = `Sledováno ${kc.format(zp.prehled.length)} firem s kontraktem za posledních ${zp.mesicu_kontraktu} měsíců · poslední sběr zpráv ${cas(st.cas)}`;
+    vykresliUpozorneni();
+    vykresliFirmy();
+    nactiZpravy();
+  }
+
+  $("z-upoz").addEventListener("click", (e) => { const b = e.target.closest(".upoz"); if (b) filtrujFirmu(b.dataset.t); });
+  $("z-firmy").addEventListener("click", (e) => { if (e.target.closest("a")) return; const tr = e.target.closest("tr[data-t]"); if (tr) filtrujFirmu(tr.dataset.t); });
+  $("z-obdobi").addEventListener("change", nactiZpravy);
+  ["z-hledat", "z-sent", "z-kat"].forEach((id) => $(id).addEventListener("input", () => vykresliZpravy()));
+  fetch("zpravy.json", { cache: "no-store" }).then((r) => r.json()).then((j) => { zp = j; bublina(); if (!$("pohled-z").hidden) otevriZpravy(); })
+    .catch(() => { $("z-info").textContent = "Zprávy se zatím nepodařilo načíst. Možná ještě neproběhl první sběr zpráv."; });
+
   function prepni(t) {
-    $("tab-k").setAttribute("aria-selected", t === "k");
-    $("tab-t").setAttribute("aria-selected", t === "t");
-    $("pohled-k").hidden = t !== "k";
-    $("pohled-t").hidden = t !== "t";
+    ["k", "z", "t"].forEach((x) => { $("tab-" + x).setAttribute("aria-selected", t === x); $("pohled-" + x).hidden = t !== x; });
+    if (t === "z") otevriZpravy();
     if (t === "t" && !tickery.length) {
       fetch("tickery.json", { cache: "no-store" }).then((r) => r.json()).then((j) => { tickery = j; vykresliT(); })
         .catch(() => { $("pocet-t").textContent = "Seznam tickerů se nepodařilo načíst."; });
@@ -400,10 +603,15 @@ a { color: var(--accent); }
   $("hledat-t").addEventListener("input", vykresliT);
   $("tab-k").addEventListener("click", () => prepni("k"));
   $("tab-t").addEventListener("click", () => prepni("t"));
+  $("tab-z").addEventListener("click", () => prepni("z"));
   document.querySelectorAll("th[data-s]").forEach((th) => th.addEventListener("click", () => {
     razeni = { k: th.dataset.s, smer: razeni.k === th.dataset.s ? -razeni.smer : (th.dataset.s === "datum" || th.dataset.s === "castka" || th.dataset.s === "zmena_pct" ? -1 : 1) };
     vykresli();
   }));
+
+  if (location.hash === "#zpravy") prepni("z");
+  else if (location.hash === "#tickery") prepni("t");
+  ["k", "z", "t"].forEach((x) => $("tab-" + x).addEventListener("click", () => history.replaceState(null, "", x === "k" ? location.pathname : x === "z" ? "#zpravy" : "#tickery")));
 
   fetch("meta.json", { cache: "no-store" }).then((r) => r.json()).then((j) => {
     meta = j; hlavicka(); return nactiObdobi();

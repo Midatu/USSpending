@@ -1,0 +1,6 @@
+# Ruční nastavení, podle jakých názvů se hledají zprávy o firmě (jen když automatika hledá špatně).
+# ticker;názvy oddělené svislítkem |  (velikost písmen nehraje roli)
+# Zpráva se uloží jen tehdy, když titulek obsahuje některý z názvů (nebo ticker). Řádky začínající # se ignorují.
+ticker;nazvy
+J;Jacobs Solutions|Jacobs Engineering
+SAIC;SAIC|Science Applications

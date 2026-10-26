@@ -12,7 +12,7 @@ import sys
 import traceback
 from collections import defaultdict
 
-from . import ceny, tickery, vystup, zdroj_dod, zdroj_sam, zdroj_sec8k, zdroj_usaspending
+from . import ceny, tickery, vystup, zdroj_dod, zdroj_sam, zdroj_sec8k, zdroj_usaspending, zpravy
 from .common import DATA, Neaktivni, castka_zaznamu, iso_ted, log, nacti_config, nacti_json, uloz_json
 from .parovani import Parovac
 
@@ -212,6 +212,39 @@ def beh_kontrakty():
         traceback.print_exc()
         stav["zdroje"]["Ceny akcií"] = {"ok": False, "chyba": str(e)[:300], "cas_chyby": ted}
 
+    # zprávy o firmách (samostatná část: když selže, kontrakty se uloží normálně)
+    if cfg.get("zpravy_zapnuto", True):
+        try:
+            vysledek = zpravy.beh(cfg, db, seznam, stav)
+            kanaly = vysledek["kanaly"]
+            popis = []
+            for nazev, k in kanaly.items():
+                if k.get("ok") is None:
+                    popis.append(f"{nazev}: {k.get('info', 'neaktivní')}")
+                elif k.get("ok"):
+                    txt = f"{nazev}: OK, zkontrolováno {k['zkontrolovano']} firem, {k['nove']} nových zpráv"
+                    if k.get("chyby"):
+                        txt += f", {k['chyby']} chyb ({k.get('posledni_chyba', '')})"
+                    popis.append(txt)
+                else:
+                    popis.append(f"{nazev}: CHYBA {k.get('chyba', '')}")
+            popis.append(f"Uloženo {vysledek['clanku']} zpráv o {vysledek['firem']} firmách, "
+                         f"aktivních upozornění: {vysledek['upozorneni']}")
+            zapnute = [k for k in kanaly.values() if k.get("ok") is not None]
+            if zapnute and all(k.get("ok") is False for k in zapnute):
+                stav["zdroje"]["Zprávy"] = {"ok": False, "chyba": " · ".join(popis)[:600], "cas_chyby": ted}
+            elif not zapnute:
+                stav["zdroje"]["Zprávy"] = {"ok": None, "info": " · ".join(popis), "cas": ted}
+            else:
+                stav["zdroje"]["Zprávy"] = {"ok": True, "cas": ted, "info": " · ".join(popis)[:600]}
+            stav["zpravy"] = {"cas": ted, "kanaly": kanaly, "firem": vysledek["firem"]}
+        except Exception as e:  # noqa: BLE001
+            traceback.print_exc()
+            stav["zdroje"]["Zprávy"] = dict(stav["zdroje"].get("Zprávy", {}), ok=False, chyba=str(e)[:300],
+                                            cas_chyby=ted)
+    else:
+        stav["zdroje"]["Zprávy"] = {"ok": None, "info": "vypnuto v config.yaml", "cas": ted}
+
     # pojistka: bez zapnutého pročišťování nesmí záznamů ubýt
     if uchovavat == 0 and len(db) < pocet_pred:
         raise SystemExit(f"Počet záznamů klesl z {pocet_pred} na {len(db)}, data neukládám.")
@@ -221,13 +254,24 @@ def beh_kontrakty():
     uloz_kontrakty(db)
     uloz_json(SOUBOR_CENY, cache_cen, kompaktni=True)
     uloz_json(SOUBOR_DETAILY, detaily, kompaktni=True)
-    vystup.sestav(cfg, db, cache_cen, seznam, stav)
+    vystup.sestav(cfg, db, cache_cen, seznam, stav, _zpravy_pro_vystup(cfg, db, seznam))
     uloz_json(SOUBOR_STAV, stav)  # až po výstupu: obsahuje i datum obnovy ročních archivů Excelu
+
+
+def _zpravy_pro_vystup(cfg: dict, db: dict, seznam: dict):
+    if not cfg.get("zpravy_zapnuto", True):
+        return None
+    try:
+        return zpravy.nacti_pro_vystup(cfg, db, seznam)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Zprávy pro výstup nejde načíst: %s", e)
+        return None
 
 
 def beh_vystup():
     stav = nacti_json(SOUBOR_STAV, {})
-    vystup.sestav(nacti_config(), nacti_kontrakty(), nacti_json(SOUBOR_CENY, {}), tickery.nacti(), stav)
+    cfg, db, seznam = nacti_config(), nacti_kontrakty(), tickery.nacti()
+    vystup.sestav(cfg, db, nacti_json(SOUBOR_CENY, {}), seznam, stav, _zpravy_pro_vystup(cfg, db, seznam))
     uloz_json(SOUBOR_STAV, stav)
 
 
