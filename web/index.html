@@ -369,7 +369,7 @@ a { color: var(--accent); }
     $("zdroje").innerHTML = ["DoD", "SAM.gov", "USAspending", "SEC 8-K", "Ceny akcií"].map((n) => {
       const s = z[n];
       const cls = !s || s.ok == null ? "none" : s.ok ? "" : "err";
-      const txt = !s ? "zatím neběželo" : s.ok == null ? "neaktivní" : s.ok ? "OK" : "chyba";
+      const txt = !s ? "zatím neběželo" : s.ok == null ? (n === "DoD" ? "čeká na archiv" : "neaktivní") : s.ok ? "OK" : "chyba";
       const tip = s ? ` title="${esc(s.ok === false ? s.chyba : s.info || ("Poslední úspěch: " + cas(s.cas)))}"` : "";
       return `<span class="chip ${cls}"${tip}><i></i>${n}: ${txt}</span>`;
     }).join("");

@@ -9,7 +9,7 @@ import re
 from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
-from .common import http_session, log, norm_mod, norm_piid
+from .common import Neaktivni, http_session, log, norm_mod, norm_piid
 
 RSS_URLS = [
     "https://www.war.gov/DesktopModules/ArticleCS/RSS.ashx?ContentType=400&Site=945&max={max}",
@@ -198,50 +198,104 @@ HLAVICKY_PROHLIZECE = {
 }
 
 
-def _varianty_url(url: str, d: dt.date | None) -> list[str]:
-    """Původní adresa, stejná stránka na defense.gov a zrcadlo GlobalSecurity.org (když war.gov blokuje servery GitHubu)."""
-    varianty = [url]
-    if "war.gov" in url:
-        varianty.append(url.replace("www.war.gov", "www.defense.gov"))
-    m = re.search(r"/Article/(\d+)", url)
-    if m and d:
-        varianty.append(f"https://www.globalsecurity.org/military/library/news/{d.year}/{d.month:02d}/dod-contracts_{m.group(1)}.htm")
-    return varianty
+ARCHIV_DOSTUPNOST = "https://archive.org/wayback/available"
+ARCHIV_ULOZIT = "https://web.archive.org/save/"
+ARCHIV_ZADOST_KAZDYCH_H = 6  # o archivaci jednoho oznámení žádáme nejvýš jednou za 6 hodin
+
+
+def _z_archivu(s, url: str):
+    """Vrátí (html, cas_snimku) z Wayback Machine (archive.org), nebo (None, None), když kopie ještě není."""
+    r = s.get(ARCHIV_DOSTUPNOST, params={"url": url}, timeout=40)
+    r.raise_for_status()
+    snimek = (r.json().get("archived_snapshots") or {}).get("closest") or {}
+    if not snimek.get("available") or str(snimek.get("status")) != "200":
+        return None, None
+    ts = snimek["timestamp"]
+    # "id_" vrátí původní stránku bez lišty archivu
+    r = s.get(f"https://web.archive.org/web/{ts}id_/{url}", timeout=60)
+    r.raise_for_status()
+    return r.text, ts
+
+
+def _pozadej_archivaci(url: str, zadosti: dict, ted: dt.datetime) -> bool:
+    """Požádá archive.org, aby si stránku uložil (jeho servery war.gov neblokuje). Výsledek přijde v dalším běhu."""
+    posledni = zadosti.get(url)
+    if posledni:
+        try:
+            if ted - dt.datetime.fromisoformat(posledni) < dt.timedelta(hours=ARCHIV_ZADOST_KAZDYCH_H):
+                return False
+        except ValueError:
+            pass
+    zadosti[url] = ted.isoformat(timespec="seconds")
+    try:
+        import requests
+        requests.get(ARCHIV_ULOZIT + url, timeout=30,
+                     headers={"User-Agent": "GovContractTracker (github.com/Midatu/USSpending)"})
+    except Exception as e:  # noqa: BLE001  (archivace často doběhne, i když spojení vyprší)
+        log.info("Žádost o archivaci %s: %s", url, str(e)[:100])
+    return True
 
 
 def stahni(cfg: dict, stav: dict) -> list[dict]:
-    """Stáhne nová (a nedávno upravená) oznámení. stav['dod_clanky'] = {url: iso_cas}."""
+    """Stáhne nová (a nedávno upravená) oznámení. stav['dod_clanky'] = {url: iso_cas}.
+
+    Seznam oznámení (RSS) jde stáhnout přímo z war.gov. Samotné stránky oznámení ale war.gov
+    serverům GitHubu blokuje (403), proto je při blokaci bereme z archivu archive.org.
+    """
     s = http_session()
     s.headers.update(HLAVICKY_PROHLIZECE)
+    archiv = http_session()  # archive.org bez hlaviček prohlížeče
     zpracovane = stav.setdefault("dod_clanky", {})
+    zadosti = stav.setdefault("dod_archiv_zadosti", {})
     clanky = _seznam_clanku(s, int(cfg.get("dod_pocet_oznameni", 10)))
     dnes = dt.date.today()
-    vystup, pokusy, uspechy, chyby = [], 0, 0, []
+    ted = dt.datetime.now(dt.timezone.utc)
+    vystup, pokusy, uspechy, cekajici, chyby = [], 0, 0, 0, []
+    primo_blokovano = False
     for url, d in clanky:
         cerstve = d is None or (dnes - d).days <= 2  # čerstvá oznámení kontrolujeme znovu (opravy)
         if url in zpracovane and not cerstve:
             continue
         pokusy += 1
-        for varianta in _varianty_url(url, d):
+        html, zdroj = None, ""
+        if not primo_blokovano:
             try:
-                r = s.get(varianta, timeout=40)
+                r = s.get(url, timeout=40)
                 r.raise_for_status()
-                zaznamy = rozparsuj_clanek(r.text, url, d)
-                if not zaznamy and "awarded" not in r.text:
-                    raise ValueError("stránka neobsahuje text oznámení")
-                vystup.extend(zaznamy)
-                zpracovane[url] = dnes.isoformat()
-                uspechy += 1
-                log.info("DoD %s: %d záznamů (zdroj %s)", url.rstrip("/").split("/")[-2], len(zaznamy),
-                         varianta.split("/")[2])
-                break
+                html, zdroj = r.text, "war.gov"
             except Exception as e:  # noqa: BLE001
-                chyby.append(f"{varianta.split('/')[2]}: {str(e)[:120]}")
-                log.warning("Oznámení %s selhalo: %s", varianta, e)
+                primo_blokovano = True  # v tomto běhu už war.gov znovu nezkoušíme
+                log.info("war.gov přímo nejde (%s), použiji archiv.", str(e)[:80])
+        if html is None:
+            try:
+                html, ts = _z_archivu(archiv, url)
+                zdroj = f"archive.org {ts}" if html else ""
+            except Exception as e:  # noqa: BLE001
+                chyby.append(f"archive.org: {str(e)[:120]}")
+                log.warning("Archiv pro %s selhal: %s", url, e)
+                continue
+        if html is None:
+            cekajici += 1
+            if _pozadej_archivaci(url, zadosti, ted):
+                log.info("DoD %s: v archivu zatím není, požádáno o uložení.", url)
+            continue
+        zaznamy = rozparsuj_clanek(html, url, d)
+        if not zaznamy and "awarded" not in html:
+            chyby.append(f"{zdroj}: stránka neobsahuje text oznámení")
+            continue
+        vystup.extend(zaznamy)
+        zpracovane[url] = dnes.isoformat()
+        zadosti.pop(url, None)
+        uspechy += 1
+        log.info("DoD %s: %d záznamů (zdroj %s)", url.rstrip("/").split("/")[-2], len(zaznamy), zdroj)
     if pokusy and not uspechy:
+        if cekajici and not chyby:
+            raise Neaktivni(f"Čeká se na kopii {cekajici} oznámení v archivu (war.gov blokuje GitHub).", cekani=True)
         raise RuntimeError(f"Žádné z {pokusy} oznámení se nepodařilo stáhnout. " + " | ".join(chyby[:3]))
     # udržuj stav malý
     if len(zpracovane) > 200:
         for k in sorted(zpracovane, key=zpracovane.get)[:-200]:
             zpracovane.pop(k)
+    for k in [k for k in zadosti if k not in dict(clanky)]:
+        zadosti.pop(k)
     return vystup

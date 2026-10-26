@@ -6,7 +6,7 @@ Program každou hodinu hledá nově udělené vládní kontrakty USA (a navýše
 
 | Úloha | Jak často | Zdroj |
 |---|---|---|
-| Oznámení kontraktů ministerstva obrany (Department of War) | každou hodinu | war.gov (dříve defense.gov), kontrakty nad 7,5 mil. $, zveřejněno týž den. Pozor: web teď servery GitHubu blokuje, viz níže |
+| Oznámení kontraktů ministerstva obrany (Department of War) | každou hodinu | war.gov (dříve defense.gov), kontrakty nad 7,5 mil. $; texty oznámení přes archiv archive.org, viz níže |
 | Oznámení o udělení zakázek všech federálních úřadů | každé 3 hodiny | SAM.gov API (potřebuje bezplatný klíč, viz krok 6) |
 | Kontrakty všech federálních úřadů | každou hodinu | USAspending.gov API (DoD zde se zpožděním cca 90 dní) |
 | Kontrakty oznámené samotnými firmami | každou hodinu | SEC EDGAR, hlášení 8-K (ticker je jistý, částka vyčtená z textu) |
@@ -112,7 +112,7 @@ Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projev
 ## Co je dobré vědět
 
 - **Zpoždění USAspending:** civilní úřady se objevují v řádu dnů, kontrakty ministerstva obrany cca 90 dní po udělení. Proto kombinujeme se zdrojem DoD, který je okamžitý.
-- **Oznámení DoD:** war.gov i defense.gov momentálně odmítají servery GitHubu (chyba 403), takže štítek DoD na webu hlásí chybu. Kontrakty ministerstva obrany mezitím přicházejí přes SAM.gov a USAspending. Oznámení obsahují jen kontrakty nad 7,5 mil. $. U kontraktů pro více firem najednou (sdílený strop) je uvedena celková částka stropu, ne částka pro jednu firmu (je to vyznačeno v poznámce).
+- **Oznámení DoD:** seznam oznámení (RSS) se stahuje přímo z war.gov, ale samotné stránky oznámení war.gov serverům GitHubu blokuje (chyba 403). Program je proto bere z veřejného archivu archive.org (Wayback Machine): když kopie ještě neexistuje, požádá archiv o uložení a stáhne ji při některém z dalších běhů. Oznámení se tak objeví se zpožděním zhruba několika hodin až jednoho dne (pořád mnohem dřív než v USAspending). Dokud se čeká na archiv, štítek DoD je šedý („čeká na archiv“, po najetí myší uvidíš podrobnosti), ne červená chyba. Oznámení obsahují jen kontrakty nad 7,5 mil. $. U kontraktů pro více firem najednou (sdílený strop) je uvedena celková částka stropu, ne částka pro jednu firmu (je to vyznačeno v poznámce).
 - **Hlášení 8-K** píšou firmy volnou formou (tisková zpráva). Program vybere větu, která zmiňuje vládní úřad, kontrakt a částku. Občas tak zachytí i něco jiného (např. souhrn za čtvrtletí), proto má typ „Hlášení 8-K“ vlastní filtr a odkaz na původní dokument.
 - **Ceny akcií** pochází z Yahoo Finance přes neoficiální rozhraní. Občas může být dočasně nedostupné; program pak ponechá poslední známé hodnoty. Ceny jsou v měně dané burzy (u Londýna v pencích).
 - **Plánovač GitHubu** může hodinový běh o několik minut zpozdit, při velkém vytížení i víc.
