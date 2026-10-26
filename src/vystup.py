@@ -259,7 +259,8 @@ def priprav_zpravy(zd: dict) -> dict:
     from .zpravy import NEGATIVNI, POZITIVNI, okno
     firmy = zd["firmy"]
     nazev = {t: _hezky(f.nazev, nazev=True) for t, f in firmy.items()}
-    clanky = sorted(zd["clanky"].values(), key=lambda z: z["cas"], reverse=True)
+    # záznamy bez titulku (jen pro statistiku) se nezobrazují, sentiment a trendy je ale zahrnují
+    clanky = sorted((z for z in zd["clanky"].values() if z.get("titulek")), key=lambda z: z["cas"], reverse=True)
     for z in clanky:
         z["firmy"] = ", ".join(nazev.get(t, t) for t in z["tickery"])
     dnes = dt.date.today()

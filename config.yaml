@@ -42,14 +42,22 @@ sec_max_dokumentu_za_beh: 120
 # Sledují se firmy s tickerem, které mají kontrakt za posledních X měsíců.
 zpravy_zapnuto: true
 zpravy_mesicu: 6
-# Zdroje (veřejné RSS kanály). Když některý zdroj odběr zakáže (robots.txt), program ho sám přeskočí.
-zpravy_yahoo: true
-zpravy_google: true
+# Zdroje:
+#  GDELT = otevřená databáze světových zpráv (bez klíče), hledá podle názvu firmy
+#  Finnhub = zprávy podle tickeru, potřebuje klíč FINNHUB_API_KEY v GitHub Secrets
+zpravy_gdelt: true
+zpravy_finnhub: true
+# Titulky a odkazy z Finnhub zveřejnit na webu a ve veřejné větvi data? Zapni (true) jen tehdy,
+# když podmínky Finnhub zveřejňování dovolují. Při false se zprávy z Finnhub jen započítají do sentimentu a trendů.
+zpravy_finnhub_verejne: false
 # Jak často kontrolovat zprávy u jedné firmy (hodiny) a kolik firem nejvýš za jeden hodinový běh
 zpravy_kazdych_hodin: 3
-zpravy_max_tickeru_za_beh: 60
-# Pauza mezi dotazy na stejný zdroj (sekundy), ať servery zbytečně nezatěžujeme
-zpravy_pauza_s: 1.5
+zpravy_max_tickeru_za_beh: 40
+# Pauza mezi dotazy (sekundy). GDELT žádá nejvýš jeden dotaz za 5 sekund.
+zpravy_gdelt_pauza_s: 6
+zpravy_finnhub_pauza_s: 1.2
+# Kolik zpráv s titulkem uložit u jedné firmy za den (ostatní se jen započítají do statistiky)
+zpravy_max_titulku_na_firmu_den: 15
 # Jak dlouho držet jednotlivé zprávy (dny). Denní souhrny sentimentu pro trendy se drží trvale.
 zpravy_uchovavat_dni: 180
 # Kolik dní zpráv dát do Excelu (list Zprávy)

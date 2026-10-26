@@ -13,7 +13,7 @@ Program každou hodinu hledá nově udělené vládní kontrakty USA (a navýše
 | Doplnění mateřské společnosti a popisu | každou hodinu | USAspending.gov API |
 | Ceny akcií (aktuální cena, cena při udělení, graf) | každou hodinu | Yahoo Finance (zpoždění cca 15 min) |
 | Seznam burzovně obchodovaných firem (directory) | denně | SEC EDGAR + ruční seznam zahraničních kotací |
-| Zprávy o firmách s kontraktem za posledních 6 měsíců, sentiment a upozornění na trendy | každou hodinu (každá firma zhruba každé 3 hodiny) | RSS Yahoo Finance (podle tickeru) a Google News (podle názvu firmy) |
+| Zprávy o firmách s kontraktem za posledních 6 měsíců, sentiment a upozornění na trendy | každou hodinu (každá firma zhruba každé 3 hodiny) | GDELT (podle názvu firmy, bez klíče) a Finnhub (podle tickeru, bezplatný klíč) |
 
 Kontrakt, který se nejdřív objeví v oznámení DoD nebo na SAM.gov, se později automaticky doplní o údaje z USAspending (spárování podle čísla kontraktu a čísla modifikace). Pokud firma kontrakt sama ohlásí v 8-K a uvede v něm číslo kontraktu, připojí se odkaz na hlášení k existujícímu řádku. Jinak se hlášení zobrazí jako samostatný řádek typu „Hlášení 8-K“. Ve sloupci **Zdroje** vidíš, odkud záznam pochází.
 
@@ -105,7 +105,7 @@ Platnost klíče SAM.gov je omezená (obvykle 90 dní). Když vyprší, uvidíš
 | Minimální částka, jak daleko do historie, jak dlouho držet záznamy, jak často se ptát SAM.gov | `config.yaml` |
 | Ruční přiřazení firmy k tickeru (dceřiné firmy, opravy chybné shody, označení soukromé firmy) | `aliasy.csv` |
 | Další zahraniční burzy a firmy do directory | `zahranicni_tickery.csv` |
-| Zprávy: zapnutí/vypnutí zdrojů, jak často a kolik firem kontrolovat, hranice pro upozornění | `config.yaml` (část „Zprávy o firmách“) |
+| Zprávy: zapnutí/vypnutí zdrojů, zveřejňování titulků z Finnhub, jak často a kolik firem kontrolovat, hranice pro upozornění | `config.yaml` (část „Zprávy o firmách“) |
 | Podle jakých názvů hledat zprávy o konkrétní firmě (když automatika hledá špatně) | `zpravy_nazvy.csv` |
 
 Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projeví při dalším hodinovém běhu, a to i zpětně u již nalezených kontraktů.
@@ -125,13 +125,16 @@ Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projev
 ## Zprávy (podstránka mezi Kontrakty a Tickery)
 
 - **Které firmy:** všechny s tickerem, které mají v seznamu kontrakt za posledních 6 měsíců (`zpravy_mesicu`).
-- **Zdroje:** veřejné RSS kanály Yahoo Finance (podle tickeru) a Google News (podle názvu firmy). Uloží se jen zprávy, které firmu zmiňují přímo v titulku, aby databáze neobsahovala souhrny trhu a články o jiných firmách.
-- **Autorská práva a pravidla zdrojů:** ukládá a zveřejňuje se jen titulek, název vydavatele, datum, odkaz na původní článek a naše vlastní vyhodnocení (sentiment, kategorie). Texty článků ani úryvky z nich se neukládají. Krátký popisek z RSS se použije jen v paměti pro výpočet sentimentu. Program před dotazy kontroluje soubor robots.txt (pokud by zdroj automatický odběr zakázal, sám ho přeskočí a v hlavičce webu ukáže důvod), mezi dotazy dělá pauzy a představuje se vlastním jménem s odkazem na tento repozitář.
+- **Zdroje:** [GDELT](https://www.gdeltproject.org/) (otevřená databáze světových zpráv, hledá podle názvu firmy, bez klíče; podmínky dovolují jakékoli použití s uvedením zdroje a odkazem, které jsou na webu) a [Finnhub](https://finnhub.io/) (zprávy podle tickeru, jen severoamerické firmy, potřebuje bezplatný klíč uložený v GitHub Secrets jako `FINNHUB_API_KEY`, postup je stejný jako u `SAM_API_KEY`). Uloží se jen zprávy, které firmu zmiňují přímo v titulku.
+- **Proč ne Yahoo Finance a Google News:** oba v souboru robots.txt automatický odběr zakazují, proto je program nepoužívá.
+- **Finnhub a zveřejňování:** dokud v `config.yaml` není `zpravy_finnhub_verejne: true`, titulky a odkazy z Finnhub se nikam neukládají ani nezveřejňují, zprávy se jen započítají do sentimentu a trendů. Zapni to jen tehdy, pokud podmínky Finnhub zveřejňování dovolují.
+- **Autorská práva a pravidla zdrojů:** ukládá a zveřejňuje se jen titulek, název vydavatele, datum, odkaz na původní článek a naše vlastní vyhodnocení (sentiment, kategorie). Texty článků ani úryvky z nich se neukládají. Krátký popisek z Finnhub se použije jen v paměti pro výpočet sentimentu. U GDELT program před dotazy kontroluje robots.txt a dodržuje pauzu 6 sekund mezi dotazy. Klíč Finnhub se posílá v hlavičce dotazu, takže se nikdy neobjeví v logu ani v datech.
+- **Velmi sledované firmy:** u jedné firmy se za den uloží nejvýš 15 zpráv s titulkem (`zpravy_max_titulku_na_firmu_den`), další se jen započítají do statistiky. Databáze tak zůstane malá i u firem, o kterých se píše stovky článků denně.
 - **Shrnutí:** jako jednověté anglické shrnutí slouží titulek zprávy (napsal ho vydavatel přesně k tomu účelu). Vlastní delší shrnutí by vyžadovalo stahovat celé články nebo placený jazykový model, obojímu se záměrně vyhýbáme.
 - **Sentiment** (-1 až +1) počítá slovníková metoda VADER (licence MIT, běží zdarma přímo na GitHubu) doplněná o vlastní finanční slovník. Vojenské výrazy („missile“, „destroyer“, „war“...) jsou u zbrojních firem popis produktu, proto se nepočítají jako negativní. Názvy firem se před hodnocením odstraní (např. „Northern Trust“ nesmí působit pozitivně). Je to orientační ukazatel, smysl má hlavně trend z více zpráv.
 - **Data:** jednotlivé zprávy se drží 180 dní (`zpravy_uchovavat_dni`), denní souhrny za firmu (počet zpráv, průměrný sentiment) trvale, mají jen pár bajtů na den. Ve větvi **data** je najdeš ve složce `zpravy/`.
 - **Upozornění:** vlna negativních / pozitivních zpráv, zhoršení nebo zlepšení sentimentu proti předchozím 30 dnům, nárůst zájmu médií a významný kontrakt (aspoň 2 % tržní kapitalizace firmy, jen akcie v USD; kontrakty se sdíleným stropem se nepočítají). Hranice nastavíš v `config.yaml`. Počet nových upozornění ukazuje červená bublinka u záložky Zprávy; po otevření záložky zmizí. Co je „přečtené“, si pamatuje tvůj prohlížeč (na jiném zařízení se bublinka ukáže znovu).
-- **Na začátku:** první den se pro každou firmu načte z Google News měsíc zpětně, aby bylo s čím porovnávat. Upozornění na nárůst zájmu médií se zapne až po 10 dnech sledování firmy.
+- **Na začátku:** první den se pro každou firmu načte měsíc zpětně, aby bylo s čím porovnávat. Upozornění na nárůst zájmu médií se zapne až po 10 dnech sledování firmy.
 - Když automatika hledá zprávy podle špatného názvu (např. zachytí jinou firmu se stejným slovem v názvu), oprav to v `zpravy_nazvy.csv`.
 
 ## Struktura projektu

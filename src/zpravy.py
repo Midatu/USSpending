@@ -1,19 +1,23 @@
 """Zprávy o firmách s tickerem z listu Kontrakty: sběr, sentiment, denní souhrny a upozornění.
 
-Zdroje (oba jsou veřejné RSS kanály, které jejich provozovatelé nabízejí ke strojovému odběru):
-  - Yahoo Finance RSS podle tickeru
-  - Google News RSS, vyhledávání podle názvu firmy
+Zdroje (oba jsou rozhraní určená pro programy, žádné stahování webových stránek):
+  - GDELT DOC 2.0 API (https://www.gdeltproject.org): otevřená databáze světových zpráv, podle podmínek
+    použitelná bez omezení s uvedením zdroje a odkazem (na webu je uvedeno), hledá se podle názvu firmy
+  - Finnhub company-news API (https://finnhub.io): zprávy podle tickeru, bezplatný osobní klíč
+    v GitHub Secrets (FINNHUB_API_KEY). Klíč se posílá v hlavičce, nikdy v adrese, takže se nedostane do logu.
+    Dokud v config.yaml není zpravy_finnhub_verejne: true, titulky a odkazy z Finnhub se nezveřejňují
+    (ani ve veřejné větvi data); zprávy se jen započítají do sentimentu a trendů.
 
 Autorská práva a slušné chování:
   - ukládá a zveřejňuje se jen titulek, odkaz na původní článek, název vydavatele, datum
     a naše vlastní vyhodnocení (sentiment, kategorie); texty článků ani úryvky z nich se neukládají,
-  - krátký popisek z RSS se použije jen v paměti pro výpočet sentimentu a hned se zahodí,
-  - před dotazy se kontroluje robots.txt (když server odběr zakáže, zdroj se přeskočí),
-  - mezi dotazy je pauza a každý ticker se kontroluje nejvýš jednou za několik hodin,
+  - krátký popisek (Finnhub) se použije jen v paměti pro výpočet sentimentu a hned se zahodí,
+  - u GDELT se před dotazy kontroluje robots.txt a dodržuje se pauza mezi dotazy, kterou GDELT žádá,
   - program se identifikuje vlastním jménem a odkazem na repozitář (žádné maskování).
 
 Data ve větvi "data":
-  zpravy/clanky/RRRR-MM.json  jednotlivé zprávy (drží se zpravy_uchovavat_dni, výchozí 180 dní)
+  zpravy/clanky/RRRR-MM.json  jednotlivé zprávy (drží se zpravy_uchovavat_dni, výchozí 180 dní);
+                              záznamy jen pro statistiku (bez titulku) se drží 40 dní
   zpravy/denni.json           denní souhrn za ticker [počet, součet sentimentu, negativní, pozitivní]
                               (pár bajtů na den, drží se trvale, z něj se počítají trendy)
   zpravy/upozorneni.json      upozornění na trendy (aktivní i nedávno skončená)
@@ -22,14 +26,11 @@ Data ve větvi "data":
 """
 import datetime as dt
 import hashlib
-import html
 import os
 import re
 import time
-import xml.etree.ElementTree as ET
 from collections import defaultdict
-from email.utils import parsedate_to_datetime
-from urllib.parse import quote, urlparse
+from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 from .ceny import mena
@@ -42,8 +43,9 @@ SOUBOR_UPOZ = SLOZKA / "upozorneni.json"
 SOUBOR_KONTROLA = SLOZKA / "kontrola.json"
 SOUBOR_KAP = SLOZKA / "kapitalizace.json"
 
-YAHOO_URL = "https://feeds.finance.yahoo.com/rss/2.0/headline?s={t}&region=US&lang=en-US"
-GOOGLE_URL = "https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
+GDELT_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
+FINNHUB_URL = "https://finnhub.io/api/v1/company-news"
+STATISTIKA_DNI = 40  # jak dlouho se drží záznamy jen pro statistiku a za kolik dní se přepočítávají souhrny
 
 POZITIVNI, NEGATIVNI = 0.25, -0.25  # hranice sentimentu (-1 až +1) pro pozitivní / negativní zprávu
 
@@ -201,23 +203,21 @@ class Firma:
             return True
         return bool(self.ticker_vzor and self.ticker_vzor.search(titulek))
 
-    def dotaz_google(self, dni: int) -> str:
-        casti = [f'"{k}"' for k in sorted(self.klice, key=len)[:3]]
-        if (self.ticker_vzor and "." not in self.ticker and len(self.ticker) >= 3
-                and self.ticker.lower() not in self.klice):
-            casti.append(self.ticker)
-        return f"({' OR '.join(casti)}) when:{dni}d"
+    def dotaz_gdelt(self) -> str:
+        klice = sorted(self.klice, key=len)[:3]
+        casti = " OR ".join(f'"{k}"' if " " in k or not k.isalnum() else k for k in klice)
+        return (f"({casti})" if len(klice) > 1 else casti) + " sourcelang:english"
 
 
-# ---------- stahování RSS ----------
+# ---------- stahování ----------
 
 class Stahovac:
-    def __init__(self, pauza: float):
+    def __init__(self, pauza: float, robots: bool = True):
         repo = os.environ.get("GITHUB_REPOSITORY", "")
         odkaz = f"; +https://github.com/{repo}" if repo else ""
         self.s = http_session(user_agent=f"Mozilla/5.0 (compatible; GovContractTracker/1.0{odkaz})")
-        self.s.headers["Accept"] = "application/rss+xml, application/xml;q=0.9, */*;q=0.5"
-        self.pauza = pauza
+        self.s.headers["Accept"] = "application/json"
+        self.pauza, self.robots = pauza, robots
         self.roboti: dict[str, RobotFileParser | None] = {}
         self.posledni = 0.0
 
@@ -247,39 +247,27 @@ class Stahovac:
                 rp = None
             self.roboti[host] = rp
         rp = self.roboti[host]
-        return bool(rp and rp.can_fetch("GovContractTracker", url))
+        if rp is None:
+            raise PermissionError(f"robots.txt serveru {p.netloc} nejde načíst, dotaz se z opatrnosti neprovedl.")
+        if not rp.can_fetch("GovContractTracker", url):
+            raise PermissionError(f"Server {p.netloc} automatický odběr zakazuje (robots.txt).")
+        return True
 
-    def rss(self, url: str) -> list[dict]:
-        if not self.povoleno(url):
-            raise PermissionError(f"Server {urlparse(url).netloc} odběr nepovoluje (robots.txt) nebo je nedostupný.")
+    def json(self, url: str, params: dict, hlavicky: dict | None = None):
+        if self.robots:
+            self.povoleno(url)
         self._cekej()
-        r = self.s.get(url, timeout=30)
+        r = self.s.get(url, params=params, headers=hlavicky or {}, timeout=40)
+        if r.status_code in (401, 403):
+            raise PermissionError(f"{urlparse(url).netloc} odmítl přístup (chyba {r.status_code}), zkontroluj klíč.")
+        if r.status_code == 429:
+            raise RuntimeError("překročen limit dotazů (429), zkusí se při dalším běhu")
         r.raise_for_status()
-        koren = ET.fromstring(r.content)
-        polozky = []
-        for it in koren.iter("item"):
-            def text(tag):
-                el = it.find(tag)
-                return (el.text or "").strip() if el is not None else ""
-            zdroj_el = it.find("source")
-            polozky.append({
-                "titulek": html.unescape(text("title")),
-                "url": text("link"),
-                "popis": re.sub(r"<[^>]+>", " ", html.unescape(text("description"))),
-                "datum": text("pubDate"),
-                "vydavatel": (zdroj_el.text or "").strip() if zdroj_el is not None else "",
-            })
-        return polozky
-
-
-def _cas(datum: str) -> str | None:
-    try:
-        d = parsedate_to_datetime(datum)
-        if d.tzinfo is None:
-            d = d.replace(tzinfo=dt.timezone.utc)
-        return d.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    except Exception:  # noqa: BLE001
-        return None
+        try:
+            return r.json()
+        except ValueError:
+            # GDELT vrací při chybném dotazu nebo příliš častých dotazech prostý text
+            raise RuntimeError(r.text.strip()[:160] or "neplatná odpověď") from None
 
 
 def _id(titulek: str) -> str:
@@ -287,19 +275,28 @@ def _id(titulek: str) -> str:
     return hashlib.sha1(norm.encode()).hexdigest()[:14]
 
 
-VYDAVATELE = {"finance.yahoo.com": "Yahoo Finance", "www.reuters.com": "Reuters", "www.bloomberg.com": "Bloomberg",
-              "www.fool.com": "Motley Fool", "seekingalpha.com": "Seeking Alpha", "www.zacks.com": "Zacks",
-              "www.marketwatch.com": "MarketWatch", "www.cnbc.com": "CNBC", "www.investors.com": "Investor's Business Daily",
-              "www.prnewswire.com": "PR Newswire", "www.businesswire.com": "Business Wire",
-              "www.globenewswire.com": "GlobeNewswire", "www.benzinga.com": "Benzinga", "www.barrons.com": "Barron's",
-              "www.wsj.com": "WSJ", "www.defensenews.com": "Defense News", "breakingdefense.com": "Breaking Defense"}
+def _gdelt_polozky(j) -> list[dict]:
+    vystup = []
+    for a in (j or {}).get("articles", []) or []:
+        try:
+            cas = dt.datetime.strptime(a["seendate"], "%Y%m%dT%H%M%SZ").strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (KeyError, ValueError):
+            continue
+        vystup.append({"titulek": a.get("title") or "", "url": a.get("url") or "", "popis": "", "cas": cas,
+                       "vydavatel": (a.get("domain") or "").removeprefix("www.")})
+    return vystup
 
 
-def _vydavatel(polozka: dict, kanal: str) -> str:
-    if polozka.get("vydavatel"):
-        return polozka["vydavatel"]
-    host = urlparse(polozka["url"]).netloc.lower()
-    return VYDAVATELE.get(host, host.removeprefix("www.") or kanal)
+def _finnhub_polozky(j) -> list[dict]:
+    vystup = []
+    for a in j if isinstance(j, list) else []:
+        try:
+            cas = dt.datetime.fromtimestamp(int(a["datetime"]), dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (KeyError, ValueError, TypeError):
+            continue
+        vystup.append({"titulek": a.get("headline") or "", "url": a.get("url") or "", "popis": a.get("summary") or "",
+                       "cas": cas, "vydavatel": a.get("source") or ""})
+    return vystup
 
 
 # ---------- ukládání ----------
@@ -372,12 +369,9 @@ def sledovane_firmy(cfg: dict, db: dict, seznam: dict) -> dict[str, Firma]:
 # ---------- hlavní běh: sběr zpráv ----------
 
 def _pridej(clanky: dict, polozka: dict, kanal: str, firmy: dict[str, Firma], dotazovana: Firma,
-            nejstarsi: str) -> bool:
-    titulek = polozka["titulek"]
-    if kanal == "Google News" and polozka.get("vydavatel"):
-        titulek = re.sub(rf"\s+-\s+{re.escape(polozka['vydavatel'])}\s*$", "", titulek)
-    titulek = re.sub(r"\s+", " ", titulek).strip()
-    cas = _cas(polozka["datum"])
+            nejstarsi: str, verejne: bool, limit_den: int, pocty_den: dict) -> bool:
+    titulek = re.sub(r"\s+", " ", polozka["titulek"]).strip()
+    cas = polozka["cas"]
     if not titulek or not cas or cas < nejstarsi or not polozka["url"].startswith("http"):
         return False
     tickery = [t for t, f in firmy.items() if f.v_titulku(titulek)]
@@ -391,16 +385,26 @@ def _pridej(clanky: dict, polozka: dict, kanal: str, firmy: dict[str, Firma], do
         z["tickery"] = sorted(set(z["tickery"]) | set(tickery))
         if kanal not in z["kanaly"]:
             z["kanaly"].append(kanal)
-        if "news.google.com" in z["url"] and "news.google.com" not in polozka["url"]:
-            z["url"] = polozka["url"]  # přímý odkaz má přednost před přesměrováním přes Google
+        if verejne and not z.get("titulek") and not z.get("plno"):
+            # stejnou zprávu teď máme ze zdroje, který smíme zveřejnit
+            z.update(titulek=titulek[:300], url=polozka["url"], zdroj=(polozka["vydavatel"] or kanal)[:60])
         return False
-    # sentiment z titulku a krátkého popisku z RSS; popisek se neukládá
+    # sentiment z titulku a krátkého popisku; popisek se neukládá
     nazvy = [f.nazev for f in firmy.values() if f.ticker in tickery] + \
             [k for f in firmy.values() if f.ticker in tickery for k in f.klice]
     s = sentiment(f"{titulek}. {polozka['popis'][:400]}", nazvy)
-    clanky[klic] = {"cas": cas, "tickery": sorted(tickery), "titulek": titulek[:300], "url": polozka["url"],
-                    "zdroj": _vydavatel(polozka, kanal)[:60], "kanaly": [kanal], "s": s,
-                    "kat": kategorie(titulek)}
+    zaznam = {"cas": cas, "tickery": sorted(tickery), "kanaly": [kanal], "s": s, "kat": kategorie(titulek)}
+    # u velmi sledovaných firem (stovky zpráv denně) se titulky drží jen u prvních X zpráv za den,
+    # ostatní se jen započítají do statistiky; databáze tak zůstane malá
+    den_klice = [(t, cas[:10]) for t in tickery]
+    plno = all(pocty_den.get(k, 0) >= limit_den for k in den_klice)
+    if verejne and not plno:
+        zaznam.update(titulek=titulek[:300], url=polozka["url"], zdroj=(polozka["vydavatel"] or kanal)[:60])
+        for k in den_klice:
+            pocty_den[k] = pocty_den.get(k, 0) + 1
+    elif plno:
+        zaznam["plno"] = True
+    clanky[klic] = zaznam
     return True
 
 
@@ -408,59 +412,81 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
     """Projde zdroje pro firmy, které jsou na řadě. Vrací statistiku pro hlavičku webu."""
     ted = dt.datetime.now(dt.timezone.utc)
     interval = dt.timedelta(hours=float(cfg.get("zpravy_kazdych_hodin", 3)))
-    max_za_beh = int(cfg.get("zpravy_max_tickeru_za_beh", 60))
-    nejstarsi = (ted - dt.timedelta(days=40)).strftime("%Y-%m-%dT%H:%M:%SZ")
-    stahovac = Stahovac(float(cfg.get("zpravy_pauza_s", 1.5)))
-    kanaly = {"Yahoo Finance": cfg.get("zpravy_yahoo", True), "Google News": cfg.get("zpravy_google", True)}
+    max_za_beh = int(cfg.get("zpravy_max_tickeru_za_beh", 40))
+    limit_den = int(cfg.get("zpravy_max_titulku_na_firmu_den", 15))
+    nejstarsi = (ted - dt.timedelta(days=STATISTIKA_DNI - 3)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    pocty_den = defaultdict(int)
+    for z in clanky.values():
+        if z.get("titulek"):
+            for t in z["tickery"]:
+                pocty_den[(t, z["cas"][:10])] += 1
+    klic_fh = os.environ.get("FINNHUB_API_KEY", "").strip()
+    kanaly = {
+        "GDELT": {"zapnuto": cfg.get("zpravy_gdelt", True), "zk": "gd", "verejne": True,
+                  "stahovac": Stahovac(float(cfg.get("zpravy_gdelt_pauza_s", 6)), robots=True)},
+        "Finnhub": {"zapnuto": cfg.get("zpravy_finnhub", True), "zk": "fh",
+                    "verejne": bool(cfg.get("zpravy_finnhub_verejne", False)),
+                    # Finnhub je placené/klíčované API s vlastními podmínkami, robots.txt se týká jen webu
+                    "stahovac": Stahovac(float(cfg.get("zpravy_finnhub_pauza_s", 1.2)), robots=False)},
+    }
     stat = {}
-    for kanal, zapnuto in kanaly.items():
-        if not zapnuto:
+    for kanal, k in kanaly.items():
+        if not k["zapnuto"]:
             stat[kanal] = {"ok": None, "info": "vypnuto v config.yaml"}
             continue
-        zk = "y" if kanal == "Yahoo Finance" else "g"
-        def posledni(t):
+        if kanal == "Finnhub" and not klic_fh:
+            stat[kanal] = {"ok": None, "info": "chybí klíč FINNHUB_API_KEY v GitHub Secrets"}
+            continue
+        zk = k["zk"]
+
+        def posledni(t, zk=zk):
             return kontrola.get(t, {}).get(zk, "")
         na_rade = [t for t in firmy
                    if not posledni(t) or dt.datetime.fromisoformat(posledni(t).replace("Z", "+00:00")) <= ted - interval]
+        if kanal == "Finnhub":
+            na_rade = [t for t in na_rade if "." not in t]  # bezplatný tarif: jen severoamerické firmy
         na_rade.sort(key=posledni)  # nejdéle nekontrolované první
         nove = chyby = hotovo = 0
         posledni_chyba = ""
+        zakazano = False
         for t in na_rade[:max_za_beh]:
             f = firmy[t]
-            if zk == "y":
-                url = YAHOO_URL.format(t=quote(t))
-            else:
-                if not f.jadro:
-                    continue
-                dni = 7 if posledni(t) else 30  # nový ticker: měsíc zpět, aby bylo s čím porovnávat
-                url = GOOGLE_URL.format(q=quote(f.dotaz_google(dni)))
+            prvne = not posledni(t)
             try:
-                polozky = stahovac.rss(url)
+                if kanal == "GDELT":
+                    if not f.klice:
+                        continue
+                    params = {"query": f.dotaz_gdelt(), "mode": "artlist", "format": "json", "sort": "datedesc",
+                              "maxrecords": 250 if prvne else 100, "timespan": "30d" if prvne else "3d"}
+                    polozky = _gdelt_polozky(k["stahovac"].json(GDELT_URL, params))
+                else:
+                    od = (ted - dt.timedelta(days=30 if prvne else 3)).strftime("%Y-%m-%d")
+                    params = {"symbol": t, "from": od, "to": ted.strftime("%Y-%m-%d")}
+                    polozky = _finnhub_polozky(k["stahovac"].json(FINNHUB_URL, params, {"X-Finnhub-Token": klic_fh}))
             except PermissionError as e:
-                posledni_chyba = str(e)
-                chyby = -1
+                posledni_chyba, zakazano = str(e), True
                 break
             except Exception as e:  # noqa: BLE001
                 chyby += 1
-                posledni_chyba = f"{t}: {str(e)[:160]}"
-                log.warning("%s %s: %s", kanal, t, e)
+                # adresa dotazu se do hlášení nedává (u Finnhub je klíč stejně jen v hlavičce)
+                posledni_chyba = f"{t}: {str(e).split(' for url:')[0][:160]}"
+                log.warning("%s %s: %s", kanal, t, posledni_chyba)
                 if chyby >= 5 and hotovo == 0:
                     break  # zdroj zřejmě nefunguje, nemá smysl zkoušet další tickery
                 continue
-            nove += sum(_pridej(clanky, p, kanal, firmy, f, nejstarsi) for p in polozky)
+            nove += sum(_pridej(clanky, p, kanal, firmy, f, nejstarsi, k["verejne"], limit_den, pocty_den)
+                        for p in polozky)
             kontrola.setdefault(t, {})[zk] = iso_ted()
             kontrola[t].setdefault("od", iso_ted())
             hotovo += 1
-        if chyby == -1:
-            stat[kanal] = {"ok": False, "chyba": posledni_chyba}
-        elif hotovo == 0 and chyby:
+        if zakazano or (hotovo == 0 and chyby):
             stat[kanal] = {"ok": False, "chyba": posledni_chyba}
         else:
             stat[kanal] = {"ok": True, "zkontrolovano": hotovo, "nove": nove, "chyby": chyby,
                            "ceka": max(len(na_rade) - max_za_beh, 0)}
             if chyby:
                 stat[kanal]["posledni_chyba"] = posledni_chyba
-        log.info("Zprávy %s: zkontrolováno %d tickerů, %d nových zpráv, %d chyb", kanal, hotovo, nove, max(chyby, 0))
+        log.info("Zprávy %s: zkontrolováno %d tickerů, %d nových zpráv, %d chyb", kanal, hotovo, nove, chyby)
     return stat
 
 
@@ -634,10 +660,13 @@ def beh(cfg: dict, db: dict, seznam: dict, stav: dict) -> dict:
 
     stat = stahni(cfg, firmy, clanky, kontrola)
 
-    uchovavat = int(cfg.get("zpravy_uchovavat_dni", 180))
-    hranice = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=uchovavat)).strftime("%Y-%m-%d")
-    clanky = {k: z for k, z in clanky.items() if z["cas"][:10] >= hranice}
-    prepocti_denni(clanky, denni, hranice)
+    dnes = dt.datetime.now(dt.timezone.utc).date()
+    hranice = (dnes - dt.timedelta(days=int(cfg.get("zpravy_uchovavat_dni", 180)))).isoformat()
+    hranice_stat = (dnes - dt.timedelta(days=STATISTIKA_DNI)).isoformat()
+    # souhrny za posledních 40 dní se přepočítají ze záznamů; starší dny jsou už uzavřené
+    prepocti_denni(clanky, denni, hranice_stat)
+    clanky = {k: z for k, z in clanky.items()
+              if z["cas"][:10] >= (hranice if z.get("titulek") else hranice_stat)}
 
     cerstve = {z["ticker"] for z in db.values()
                if z.get("ticker") in firmy and z["datum"] >= (dt.date.today() - dt.timedelta(days=14)).isoformat()}

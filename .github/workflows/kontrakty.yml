@@ -47,6 +47,8 @@ jobs:
         env:
           # API klíč pro SAM.gov z GitHub Secrets (v logu se nikdy nezobrazí). Bez něj se SAM.gov přeskočí.
           SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+          # API klíč pro Finnhub (zprávy o firmách). Bez něj se Finnhub přeskočí.
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
 
       - name: Uložit data (větev data)
         run: python -m src.vetev uloz data
