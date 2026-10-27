@@ -33,8 +33,12 @@ from collections import defaultdict
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
 from .ceny import mena
-from .common import DATA, ROOT, castka_zaznamu, http_session, iso_ted, log, nacti_json, uloz_json
+from .common import DATA, ROOT, castka_zaznamu, iso_ted, log, nacti_json, uloz_json
 
 SLOZKA = DATA / "zpravy"
 SLOZKA_CLANKY = SLOZKA / "clanky"
@@ -45,6 +49,7 @@ SOUBOR_KAP = SLOZKA / "kapitalizace.json"
 
 GDELT_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 FINNHUB_URL = "https://finnhub.io/api/v1/company-news"
+VERZE_DAT = 2  # zvýšení smaže uložené zprávy a stáhne je znovu (např. po zpřísnění filtrů)
 STATISTIKA_DNI = 40  # jak dlouho se drží záznamy jen pro statistiku a za kolik dní se přepočítávají souhrny
 
 POZITIVNI, NEGATIVNI = 0.25, -0.25  # hranice sentimentu (-1 až +1) pro pozitivní / negativní zprávu
@@ -126,6 +131,45 @@ KATEGORIE = [
 ]
 
 
+# Automaticky generované zprávy bez informační hodnoty (ty by jinak zkreslovaly sentiment i počty):
+#  - hlášení o nákupu/prodeji akcií fondy ("XY LLC Buys 1,087 Shares of ...", "... Stock Acquired by ...")
+#  - srovnávací šablony ("A versus B Head to Head Contrast")
+#  - spotřebitelské slevy a akce ("Save $220 on ... at Verizon")
+SUM = re.compile("|".join([
+    r"\b(shares|stake|position|holdings|stock)\b[^|]*\b(bought|sold|acquired|purchased|trimmed|lowered|raised|boosted|"
+    r"increased|decreased|reduced|cut|added|grown|lifted|sold off)\b by\b",
+    r"\b(buys|sells|acquires|purchases|trims|boosts|lowers|raises|increases|decreases|reduces|cuts|adds|lifts|grows|"
+    r"takes|makes|initiates|establishes|invests)\b[^|]{0,40}\b(shares|stake|position|holdings|investment)\b[^|]{0,25}\b(of|in)\b",
+    r"\bnew \$?[\d.,]+ ?(k|m|million|billion)? ?(investment|position|stake) in\b",
+    r"\bhas \$?[\d.,]+ ?(k|m|million|billion)? ?(stock )?(holdings|position|stake|investment) in\b",
+    r"\b13f\b", r"head to head", r"\b(contrasting|comparing)\b.*\b(and|&)\b", r"\bcritical (comparison|survey|review)\b",
+    r"\bfinancial comparison\b", r"side.by.side comparison",
+    r"\bsave (a huge |big |up to |over )?\$", r"\$[\d,.]+ off\b", r"\d+% off\b", r"black friday|cyber monday|prime day",
+    r"\bcoupon|\bpromo code|\bat best buy\b|\bdeal of the day\b",
+]), re.I)
+# výjimka: prodeje a nákupy akcií vedením firmy ("CEO Sells 1,100 Shares of Company Stock") jsou užitečná informace
+INSIDER = re.compile(r"\b(ceo|cfo|coo|cto|director|insider|chairman|president|evp|svp|officer|executive)\b", re.I)
+
+
+def je_sum(titulek: str) -> bool:
+    return bool(SUM.search(titulek)) and not INSIDER.search(titulek)
+
+
+def cisty_titulek(t: str) -> str:
+    """GDELT vrací titulky s mezerami kolem interpunkce ("AT & T Drops 4 %, Verizon ( NYSE : VZ )")."""
+    t = re.sub(r"\s+", " ", t or "").strip()
+    t = re.sub(r"\(\s+", "(", t)
+    t = re.sub(r"\s+([,.:;?!%)])", r"\1", t)
+    for _ in range(2):  # 1 . 6 . 1 -> 1.6.1
+        t = re.sub(r"(\d)\. (\d)", r"\1.\2", t)
+    t = re.sub(r"(\d), (\d{3})\b", r"\1,\2", t)
+    t = re.sub(r"\$ (\d)", r"$\1", t)
+    t = re.sub(r"\b([A-Z]{1,3}) & ([A-Z]{1,3})\b", r"\1&\2", t)  # AT & T -> AT&T
+    t = re.sub(r"\b(\w{1,3}) - (\w)", r"\1-\2", t)                # T - Mobile, TP - Link, 16 - Pin
+    t = re.sub(r"(\w) - ([a-z0-9])", r"\1-\2", t)                 # third - quarter -> third-quarter
+    return t
+
+
 def kategorie(titulek: str) -> str:
     t = titulek.lower()
     for nazev, vzor in KATEGORIE:
@@ -169,8 +213,13 @@ def jadro_nazvu(nazev: str) -> str:
 
 class Firma:
     def __init__(self, ticker: str, nazev: str, dalsi: list[str], prvni_slova: dict | None = None,
-                 rucne: list[str] | None = None):
+                 rucne: list[str] | None = None, vyloucit: list[str] | None = None):
         self.ticker = ticker
+        # slova, při jejichž výskytu v titulku zpráva o této firmě není (např. RTX: nvidia, geforce)
+        self.vyloucit = [w.strip().lower() for w in (vyloucit or []) if w.strip()]
+        # hvězdička na konci = začátek slova ("rtx 5*" vyloučí "RTX 5090")
+        casti = [re.escape(w[:-1]) if w.endswith("*") else re.escape(w) + r"(?![a-z0-9])" for w in self.vyloucit]
+        self.vyloucit_vzor = re.compile(r"(?<![a-z0-9])(" + "|".join(casti) + ")") if casti else None
         self.nazev = nazev
         self.jadro = jadro_nazvu(nazev)
         if rucne:  # ruční nastavení v zpravy_nazvy.csv má přednost před automatikou
@@ -194,11 +243,16 @@ class Firma:
         zaklad = ticker.split(".")[0].split("-")[0]
         self.ticker_vzor = None
         if len(zaklad) >= 2 and zaklad not in TICKER_SLOVA:
-            self.ticker_vzor = re.compile(rf"(?<![A-Za-z0-9$]){re.escape(zaklad)}(?![A-Za-z0-9])|\${re.escape(zaklad)}\b")
+            # ticker se v titulku počítá jen v jednoznačném tvaru: "$LMT", "(NYSE: LMT)", "(LMT)", "LMT stock"
+            z = re.escape(zaklad)
+            self.ticker_vzor = re.compile(rf"\${z}\b|\b(NYSE|NASDAQ|Nasdaq|NYSEAMERICAN|AMEX|OTC)\s*:\s*{z}\b|"
+                                          rf"\({z}\)|\b{z}\s+(stock|shares)\b")
         self.vzory = [re.compile(rf"(?<![a-z0-9]){re.escape(k)}(?![a-z0-9])") for k in sorted(self.klice, key=len, reverse=True)]
 
     def v_titulku(self, titulek: str) -> bool:
         t = titulek.lower().replace("’", "'")
+        if self.vyloucit_vzor and self.vyloucit_vzor.search(t):
+            return False
         if any(v.search(t) for v in self.vzory):
             return True
         return bool(self.ticker_vzor and self.ticker_vzor.search(titulek))
@@ -206,7 +260,8 @@ class Firma:
     def dotaz_gdelt(self) -> str:
         klice = sorted(self.klice, key=len)[:3]
         casti = " OR ".join(f'"{k}"' if " " in k or not k.isalnum() else k for k in klice)
-        return (f"({casti})" if len(klice) > 1 else casti) + " sourcelang:english"
+        minus = "".join(f" -{w}" for w in [w for w in self.vyloucit if w.isalnum()][:6])
+        return (f"({casti})" if len(klice) > 1 else casti) + minus + " sourcelang:english"
 
 
 # ---------- stahování ----------
@@ -215,7 +270,11 @@ class Stahovac:
     def __init__(self, pauza: float, robots: bool = True):
         repo = os.environ.get("GITHUB_REPOSITORY", "")
         odkaz = f"; +https://github.com/{repo}" if repo else ""
-        self.s = http_session(user_agent=f"Mozilla/5.0 (compatible; GovContractTracker/1.0{odkaz})")
+        self.s = requests.Session()
+        self.s.mount("https://", HTTPAdapter(max_retries=Retry(total=1, backoff_factor=3, status_forcelist=(500, 502, 503, 504),
+                                                                 allowed_methods=frozenset(["GET"]))))
+        self.s.headers.update({"User-Agent": f"Mozilla/5.0 (compatible; GovContractTracker/1.0{odkaz})",
+                               "Accept-Language": "en-US,en;q=0.9"})
         self.s.headers["Accept"] = "application/json"
         self.pauza, self.robots = pauza, robots
         self.roboti: dict[str, RobotFileParser | None] = {}
@@ -257,7 +316,7 @@ class Stahovac:
         if self.robots:
             self.povoleno(url)
         self._cekej()
-        r = self.s.get(url, params=params, headers=hlavicky or {}, timeout=40)
+        r = self.s.get(url, params=params, headers=hlavicky or {}, timeout=30)
         if r.status_code in (401, 403):
             raise PermissionError(f"{urlparse(url).netloc} odmítl přístup (chyba {r.status_code}), zkontroluj klíč.")
         if r.status_code == 429:
@@ -323,8 +382,8 @@ def uloz_clanky(db: dict):
 
 # ---------- sledované firmy ----------
 
-def nacti_rucni_nazvy() -> dict[str, list[str]]:
-    """zpravy_nazvy.csv: ticker;názvy oddělené svislítkem (ruční oprava, podle čeho hledat zprávy)."""
+def nacti_rucni_nazvy() -> dict[str, tuple[list[str], list[str]]]:
+    """zpravy_nazvy.csv: ticker;názvy;vyloučit (názvy a vylučovací slova oddělená svislítkem)."""
     vystup = {}
     try:
         with open(ROOT / "zpravy_nazvy.csv", encoding="utf-8") as f:
@@ -332,9 +391,10 @@ def nacti_rucni_nazvy() -> dict[str, list[str]]:
                 radek = radek.strip()
                 if not radek or radek.startswith("#") or radek.lower().startswith("ticker;"):
                     continue
-                t, _, nazvy = radek.partition(";")
-                if t.strip() and nazvy.strip():
-                    vystup[t.strip().upper()] = [n for n in nazvy.split("|") if n.strip()]
+                t, nazvy, vyloucit = (radek.split(";") + ["", ""])[:3]
+                if t.strip():
+                    vystup[t.strip().upper()] = ([n for n in nazvy.split("|") if n.strip()],
+                                                 [n for n in vyloucit.split("|") if n.strip()])
     except FileNotFoundError:
         pass
     return vystup
@@ -362,7 +422,7 @@ def sledovane_firmy(cfg: dict, db: dict, seznam: dict) -> dict[str, Firma]:
         nazev = nazvy_sec.get(t) or sorted(nazvy, key=len)[0]
         # u kontraktu bývá název dceřiné firmy, mateřská firma (z SEC) je ale hlavní klíč
         firmy[t] = Firma(t, nazev, [n for n in nazvy if jadro_nazvu(n).split()[:1] == jadro_nazvu(nazev).split()[:1]],
-                         pocty, rucne.get(t))
+                         pocty, *rucne.get(t, (None, None)))
     return firmy
 
 
@@ -370,9 +430,9 @@ def sledovane_firmy(cfg: dict, db: dict, seznam: dict) -> dict[str, Firma]:
 
 def _pridej(clanky: dict, polozka: dict, kanal: str, firmy: dict[str, Firma], dotazovana: Firma,
             nejstarsi: str, verejne: bool, limit_den: int, pocty_den: dict) -> bool:
-    titulek = re.sub(r"\s+", " ", polozka["titulek"]).strip()
+    titulek = cisty_titulek(polozka["titulek"])
     cas = polozka["cas"]
-    if not titulek or not cas or cas < nejstarsi or not polozka["url"].startswith("http"):
+    if not titulek or not cas or cas < nejstarsi or not polozka["url"].startswith("http") or je_sum(titulek):
         return False
     tickery = [t for t, f in firmy.items() if f.v_titulku(titulek)]
     if dotazovana.ticker not in tickery and not dotazovana.v_titulku(titulek):
@@ -471,7 +531,7 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
                 # adresa dotazu se do hlášení nedává (u Finnhub je klíč stejně jen v hlavičce)
                 posledni_chyba = f"{t}: {str(e).split(' for url:')[0][:160]}"
                 log.warning("%s %s: %s", kanal, t, posledni_chyba)
-                if chyby >= 5 and hotovo == 0:
+                if (chyby >= 5 and hotovo == 0) or chyby >= 8:
                     break  # zdroj zřejmě nefunguje, nemá smysl zkoušet další tickery
                 continue
             nove += sum(_pridej(clanky, p, kanal, firmy, f, nejstarsi, k["verejne"], limit_den, pocty_den)
@@ -593,12 +653,21 @@ def vyhodnot_upozorneni(cfg: dict, firmy: dict[str, Firma], denni: dict, kontrol
         sledovano_od = kontrola.get(t, {}).get("od", "")[:10]
         historie = bool(sledovano_od) and sledovano_od <= d(10)
         hodnoty = {"n7": n7, "s7": s7, "neg7": neg7, "pos7": pos7, "n30": n30, "s30": s30}
-        if neg7 >= vlna_min and neg7 >= 2 * pos7 and (s7 or 0) <= -0.15:
+        # Vlny se posuzují proti běžnému stavu dané firmy: titulky zpráv bývají v průměru mírně pozitivní,
+        # takže samotná převaha pozitivních zpráv nic neznamená. Upozornění vzniká, jen když je podíl
+        # negativních (pozitivních) zpráv výrazně vyšší než v předchozích 30 dnech.
+        podil7_neg, podil7_pos = (neg7 / n7, pos7 / n7) if n7 else (0, 0)
+        podil30_neg, podil30_pos = (neg30 / n30, pos30 / n30) if n30 else (0, 0)
+        ma_zaklad = n30 >= 5
+        if (neg7 >= vlna_min and neg7 >= pos7 and (s7 or 0) <= -0.05
+                and podil7_neg >= max(0.3, 1.5 * podil30_neg if ma_zaklad else 0)):
             aktualni[("negativni_vlna", t)] = ("neg", f"{_zprav(neg7, 'negativní')} za 7 dní (z {n7}), průměrný "
-                                               f"sentiment {_s(s7)}.", hodnoty)
-        elif pos7 >= vlna_min and pos7 >= 2 * neg7 and (s7 or 0) >= 0.2:
+                                               f"sentiment {_s(s7)}" + (f", obvykle {_s(s30)}." if ma_zaklad else "."),
+                                               hodnoty)
+        elif (ma_zaklad and pos7 >= vlna_min and podil7_pos >= max(0.5, 1.5 * podil30_pos)
+              and s7 is not None and s30 is not None and s7 - s30 >= 0.15):
             aktualni[("pozitivni_vlna", t)] = ("pos", f"{_zprav(pos7, 'pozitivní')} za 7 dní (z {n7}), průměrný "
-                                               f"sentiment {_s(s7)}.", hodnoty)
+                                               f"sentiment {_s(s7)}, obvykle {_s(s30)}.", hodnoty)
         if n7 >= 3 and n30 >= 3 and s7 is not None and s30 is not None and abs(s7 - s30) >= posun_min:
             smer = "neg" if s7 < s30 else "pos"
             if ("negativni_vlna" if smer == "neg" else "pozitivni_vlna", t) not in aktualni:
@@ -650,6 +719,14 @@ def vyhodnot_upozorneni(cfg: dict, firmy: dict[str, Firma], denni: dict, kontrol
 
 def beh(cfg: dict, db: dict, seznam: dict, stav: dict) -> dict:
     """Volá se z hodinového běhu. Výjimky zachytí volající, kontrakty se tím neohrozí."""
+    if stav.get("zpravy_verze") != VERZE_DAT:
+        # data uložená starší verzí (bez filtrů šumu) se smažou a stáhnou znovu (30 dní zpětně)
+        for soubor in (SOUBOR_DENNI, SOUBOR_KONTROLA, SOUBOR_UPOZ):
+            soubor.unlink(missing_ok=True)
+        for soubor in SLOZKA_CLANKY.glob("*.json") if SLOZKA_CLANKY.exists() else []:
+            soubor.unlink()
+        stav["zpravy_verze"] = VERZE_DAT
+        log.info("Zprávy: data starší verze smazána, stahuji znovu")
     clanky = nacti_clanky()
     denni = nacti_json(SOUBOR_DENNI, {})
     kontrola = nacti_json(SOUBOR_KONTROLA, {})

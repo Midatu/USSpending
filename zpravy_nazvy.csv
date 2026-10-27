@@ -1,6 +1,14 @@
-# Ruční nastavení, podle jakých názvů se hledají zprávy o firmě (jen když automatika hledá špatně).
-# ticker;názvy oddělené svislítkem |  (velikost písmen nehraje roli)
-# Zpráva se uloží jen tehdy, když titulek obsahuje některý z názvů (nebo ticker). Řádky začínající # se ignorují.
-ticker;nazvy
-J;Jacobs Solutions|Jacobs Engineering
-SAIC;SAIC|Science Applications
+# Ruční nastavení hledání zpráv o firmě (jen když automatika hledá špatně).
+# ticker;názvy;vyloučit
+#   názvy   = podle čeho firmu hledat a poznat v titulku, oddělené svislítkem |  (velikost písmen nehraje roli)
+#   vyloučit = slova, při jejichž výskytu v titulku zpráva o této firmě NENÍ (nepovinné)
+# Zpráva se uloží jen tehdy, když titulek obsahuje některý z názvů (nebo ticker ve tvaru $RTX, NYSE: RTX, (RTX)).
+# Řádky začínající # se ignorují.
+ticker;nazvy;vyloucit
+J;Jacobs Solutions|Jacobs Engineering;
+SAIC;SAIC|Science Applications;
+# RTX se plete s grafickými kartami Nvidia RTX
+RTX;RTX|Raytheon|Collins Aerospace|Pratt & Whitney;nvidia|geforce|gpu|gpus|laptop|laptops|graphics|gaming|spark|amd|pc|dlss|vbios|rtx 2*|rtx 3*|rtx 4*|rtx 5*|rtx 6*|rtx pro|rtx on
+# zkratky, které se v titulcích běžně používají jako název firmy
+UPS;UPS|United Parcel Service;
+HII;HII|Huntington Ingalls;
