@@ -266,6 +266,10 @@ class Firma:
 
 # ---------- stahování ----------
 
+class LimitDotazu(Exception):
+    """Zdroj vrátil 429 (příliš mnoho dotazů)."""
+
+
 class Stahovac:
     def __init__(self, pauza: float, robots: bool = True):
         repo = os.environ.get("GITHUB_REPOSITORY", "")
@@ -320,11 +324,13 @@ class Stahovac:
         if r.status_code in (401, 403):
             raise PermissionError(f"{urlparse(url).netloc} odmítl přístup (chyba {r.status_code}), zkontroluj klíč.")
         if r.status_code == 429:
-            raise RuntimeError("překročen limit dotazů (429), zkusí se při dalším běhu")
+            raise LimitDotazu("zdroj je přetížený nebo jsme překročili limit dotazů (429)")
         r.raise_for_status()
         try:
             return r.json()
         except ValueError:
+            if "limit requests" in r.text.lower() or "too many" in r.text.lower():
+                raise LimitDotazu("zdroj žádá zpomalit dotazy") from None
             # GDELT vrací při chybném dotazu nebo příliš častých dotazech prostý text
             raise RuntimeError(r.text.strip()[:160] or "neplatná odpověď") from None
 
@@ -526,6 +532,12 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
             except PermissionError as e:
                 posledni_chyba, zakazano = str(e), True
                 break
+            except LimitDotazu as e:
+                # zdroj žádá zpomalit: tento běh už se nedotazujeme, zbylé firmy přijdou na řadu příště
+                chyby += 1
+                posledni_chyba = f"{e} (zkontrolováno {hotovo} firem, ostatní příště)"
+                log.info("%s: %s", kanal, posledni_chyba)
+                break
             except Exception as e:  # noqa: BLE001
                 chyby += 1
                 # adresa dotazu se do hlášení nedává (u Finnhub je klíč stejně jen v hlavičce)
@@ -539,8 +551,11 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
             kontrola.setdefault(t, {})[zk] = iso_ted()
             kontrola[t].setdefault("od", iso_ted())
             hotovo += 1
-        if zakazano or (hotovo == 0 and chyby):
+        if zakazano or (hotovo == 0 and chyby and "429" not in posledni_chyba and "zpomalit" not in posledni_chyba):
             stat[kanal] = {"ok": False, "chyba": posledni_chyba}
+        elif hotovo == 0 and chyby:
+            stat[kanal] = {"ok": True, "zkontrolovano": 0, "nove": 0, "chyby": chyby, "posledni_chyba": posledni_chyba,
+                           "ceka": len(na_rade)}
         else:
             stat[kanal] = {"ok": True, "zkontrolovano": hotovo, "nove": nove, "chyby": chyby,
                            "ceka": max(len(na_rade) - max_za_beh, 0)}
