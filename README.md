@@ -13,7 +13,7 @@ Program každou hodinu hledá nově udělené vládní kontrakty USA (a navýše
 | Doplnění mateřské společnosti a popisu | každou hodinu | USAspending.gov API |
 | Ceny akcií (aktuální cena, cena při udělení, graf) | každou hodinu | Yahoo Finance (zpoždění cca 15 min) |
 | Seznam burzovně obchodovaných firem (directory) | denně | SEC EDGAR + ruční seznam zahraničních kotací |
-| Zprávy o firmách s kontraktem za posledních 6 měsíců, sentiment a upozornění na trendy | každou hodinu (každá firma zhruba každé 3 hodiny) | GDELT (podle názvu firmy, bez klíče) a Finnhub (podle tickeru, bezplatný klíč) |
+| Zprávy o firmách s kontraktem za posledních 6 měsíců, sentiment a upozornění na trendy | každou hodinu (každá firma zhruba každé 3 hodiny) | GDELT (podle názvu firmy, bez klíče) |
 
 Kontrakt, který se nejdřív objeví v oznámení DoD nebo na SAM.gov, se později automaticky doplní o údaje z USAspending (spárování podle čísla kontraktu a čísla modifikace). Pokud firma kontrakt sama ohlásí v 8-K a uvede v něm číslo kontraktu, připojí se odkaz na hlášení k existujícímu řádku. Jinak se hlášení zobrazí jako samostatný řádek typu „Hlášení 8-K“. Ve sloupci **Zdroje** vidíš, odkud záznam pochází.
 
@@ -105,7 +105,7 @@ Platnost klíče SAM.gov je omezená (obvykle 90 dní). Když vyprší, uvidíš
 | Minimální částka, jak daleko do historie, jak dlouho držet záznamy, jak často se ptát SAM.gov | `config.yaml` |
 | Ruční přiřazení firmy k tickeru (dceřiné firmy, opravy chybné shody, označení soukromé firmy) | `aliasy.csv` |
 | Další zahraniční burzy a firmy do directory | `zahranicni_tickery.csv` |
-| Zprávy: zapnutí/vypnutí zdrojů, zveřejňování titulků z Finnhub, jak často a kolik firem kontrolovat, hranice pro upozornění | `config.yaml` (část „Zprávy o firmách“) |
+| Zprávy: zapnutí/vypnutí zdrojů, jak často a kolik firem kontrolovat, hranice pro upozornění | `config.yaml` (část „Zprávy o firmách“) |
 | Podle jakých názvů hledat zprávy o konkrétní firmě (když automatika hledá špatně) | `zpravy_nazvy.csv` |
 
 Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projeví při dalším hodinovém běhu, a to i zpětně u již nalezených kontraktů.
@@ -125,10 +125,10 @@ Soubory upravíš přímo na GitHubu (tužka > Commit changes). Změna se projev
 ## Zprávy (podstránka mezi Kontrakty a Tickery)
 
 - **Které firmy:** všechny s tickerem, které mají v seznamu kontrakt za posledních 6 měsíců (`zpravy_mesicu`).
-- **Zdroje:** [GDELT](https://www.gdeltproject.org/) (otevřená databáze světových zpráv, hledá podle názvu firmy, bez klíče; podmínky dovolují jakékoli použití s uvedením zdroje a odkazem, které jsou na webu) a [Finnhub](https://finnhub.io/) (zprávy podle tickeru, jen severoamerické firmy, potřebuje bezplatný klíč uložený v GitHub Secrets jako `FINNHUB_API_KEY`, postup je stejný jako u `SAM_API_KEY`). Uloží se jen zprávy, které firmu zmiňují přímo v titulku.
-- **Proč ne Yahoo Finance a Google News:** oba v souboru robots.txt automatický odběr zakazují, proto je program nepoužívá.
-- **Finnhub a zveřejňování:** dokud v `config.yaml` není `zpravy_finnhub_verejne: true`, titulky a odkazy z Finnhub se nikam neukládají ani nezveřejňují, zprávy se jen započítají do sentimentu a trendů. Zapni to jen tehdy, pokud podmínky Finnhub zveřejňování dovolují.
-- **Autorská práva a pravidla zdrojů:** ukládá a zveřejňuje se jen titulek, název vydavatele, datum, odkaz na původní článek a naše vlastní vyhodnocení (sentiment, kategorie). Texty článků ani úryvky z nich se neukládají. Krátký popisek z Finnhub se použije jen v paměti pro výpočet sentimentu. U GDELT program před dotazy kontroluje robots.txt a dodržuje pauzu 6 sekund mezi dotazy. Klíč Finnhub se posílá v hlavičce dotazu, takže se nikdy neobjeví v logu ani v datech.
+- **Zdroj:** [GDELT](https://www.gdeltproject.org/) (otevřená databáze světových zpráv, hledá podle názvu firmy, bez klíče; podmínky dovolují jakékoli použití s uvedením zdroje a odkazem, které jsou na webu). Uloží se jen zprávy, které firmu zmiňují přímo v titulku. GDELT občas požádá o zpomalení dotazů; program pak přestane a zbylé firmy zkontroluje při dalším běhu, zprávy se tak doplňují průběžně.
+- **Proč ne Yahoo Finance a Google News:** oba v souboru robots.txt automatický odběr zakazují.
+- **Proč ne Finnhub:** podmínky Finnhub zakazují sdílet data i výsledky z nich odvozené (např. sentiment) s kýmkoli bez písemného souhlasu a bezplatný tarif je jen pro osobní použití. Náš web i větev data jsou veřejné, proto je Finnhub v `config.yaml` vypnutý (`zpravy_finnhub: false`). Kód zůstává připravený: s písemným souhlasem Finnhub stačí přepnout na `true`.
+- **Autorská práva a pravidla zdrojů:** ukládá a zveřejňuje se jen titulek, název vydavatele, datum, odkaz na původní článek a naše vlastní vyhodnocení (sentiment, kategorie). Texty článků ani úryvky z nich se neukládají. Krátký popisek (pokud ho zdroj poskytuje) se použije jen v paměti pro výpočet sentimentu. U GDELT program před dotazy kontroluje robots.txt a dodržuje pauzu 6 sekund mezi dotazy.
 - **Filtr šumu:** automaticky generované zprávy bez informační hodnoty se neukládají: hlášení typu „XY LLC koupil 1 087 akcií firmy“, srovnávací šablony („A versus B Head to Head“) a spotřebitelské slevy („Save $220 at Verizon“). Prodeje a nákupy akcií vedením firmy (CEO, ředitelé) se ponechávají.
 - **Upozornění na vlny** se posuzují proti běžnému stavu dané firmy: titulky zpráv bývají v průměru mírně pozitivní, takže upozornění vznikne jen tehdy, když je podíl negativních (pozitivních) zpráv výrazně vyšší než v předchozích 30 dnech.
 - **Velmi sledované firmy:** u jedné firmy se za den uloží nejvýš 15 zpráv s titulkem (`zpravy_max_titulku_na_firmu_den`), další se jen započítají do statistiky. Databáze tak zůstane malá i u firem, o kterých se píše stovky článků denně.

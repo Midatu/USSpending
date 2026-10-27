@@ -3,10 +3,9 @@
 Zdroje (oba jsou rozhraní určená pro programy, žádné stahování webových stránek):
   - GDELT DOC 2.0 API (https://www.gdeltproject.org): otevřená databáze světových zpráv, podle podmínek
     použitelná bez omezení s uvedením zdroje a odkazem (na webu je uvedeno), hledá se podle názvu firmy
-  - Finnhub company-news API (https://finnhub.io): zprávy podle tickeru, bezplatný osobní klíč
-    v GitHub Secrets (FINNHUB_API_KEY). Klíč se posílá v hlavičce, nikdy v adrese, takže se nedostane do logu.
-    Dokud v config.yaml není zpravy_finnhub_verejne: true, titulky a odkazy z Finnhub se nezveřejňují
-    (ani ve veřejné větvi data); zprávy se jen započítají do sentimentu a trendů.
+  - Finnhub company-news API (https://finnhub.io): zprávy podle tickeru, klíč v GitHub Secrets (FINNHUB_API_KEY).
+    VÝCHOZÍ STAV: VYPNUTO. Podmínky Finnhub zakazují sdílet data i odvozené výsledky bez písemného souhlasu,
+    a web i větev data jsou veřejné. Zapnout (zpravy_finnhub: true) jen s písemným souhlasem Finnhub.
 
 Autorská práva a slušné chování:
   - ukládá a zveřejňuje se jen titulek, odkaz na původní článek, název vydavatele, datum
@@ -49,7 +48,7 @@ SOUBOR_KAP = SLOZKA / "kapitalizace.json"
 
 GDELT_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 FINNHUB_URL = "https://finnhub.io/api/v1/company-news"
-VERZE_DAT = 2  # zvýšení smaže uložené zprávy a stáhne je znovu (např. po zpřísnění filtrů)
+VERZE_DAT = 3  # zvýšení smaže uložené zprávy a stáhne je znovu (např. po zpřísnění filtrů)
 STATISTIKA_DNI = 40  # jak dlouho se drží záznamy jen pro statistiku a za kolik dní se přepočítávají souhrny
 
 POZITIVNI, NEGATIVNI = 0.25, -0.25  # hranice sentimentu (-1 až +1) pro pozitivní / negativní zprávu
@@ -490,7 +489,7 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
     kanaly = {
         "GDELT": {"zapnuto": cfg.get("zpravy_gdelt", True), "zk": "gd", "verejne": True,
                   "stahovac": Stahovac(float(cfg.get("zpravy_gdelt_pauza_s", 6)), robots=True)},
-        "Finnhub": {"zapnuto": cfg.get("zpravy_finnhub", True), "zk": "fh",
+        "Finnhub": {"zapnuto": cfg.get("zpravy_finnhub", False), "zk": "fh",
                     "verejne": bool(cfg.get("zpravy_finnhub_verejne", False)),
                     # Finnhub je placené/klíčované API s vlastními podmínkami, robots.txt se týká jen webu
                     "stahovac": Stahovac(float(cfg.get("zpravy_finnhub_pauza_s", 1.2)), robots=False)},

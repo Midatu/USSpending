@@ -46,9 +46,11 @@ zpravy_mesicu: 6
 #  GDELT = otevřená databáze světových zpráv (bez klíče), hledá podle názvu firmy
 #  Finnhub = zprávy podle tickeru, potřebuje klíč FINNHUB_API_KEY v GitHub Secrets
 zpravy_gdelt: true
-zpravy_finnhub: true
-# Titulky a odkazy z Finnhub zveřejnit na webu a ve veřejné větvi data? Zapni (true) jen tehdy,
-# když podmínky Finnhub zveřejňování dovolují. Při false se zprávy z Finnhub jen započítají do sentimentu a trendů.
+# Finnhub je VYPNUTÝ: podmínky Finnhub zakazují sdílet data i výsledky z nich odvozené (např. sentiment)
+# s kýmkoli bez písemného souhlasu Finnhub, a náš web i větev data jsou veřejné.
+# Zapnout jen s písemným souhlasem Finnhub (support@finnhub.io).
+zpravy_finnhub: false
+# Titulky a odkazy z Finnhub zveřejnit (jen s písemným souhlasem Finnhub)
 zpravy_finnhub_verejne: false
 # Jak často kontrolovat zprávy u jedné firmy (hodiny) a kolik firem nejvýš za jeden hodinový běh
 zpravy_kazdych_hodin: 3
