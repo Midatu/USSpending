@@ -55,6 +55,13 @@ zpravy_finnhub_verejne: false
 # Jak často kontrolovat zprávy u jedné firmy (hodiny) a kolik firem nejvýš za jeden hodinový běh
 zpravy_kazdych_hodin: 3
 zpravy_max_tickeru_za_beh: 40
+# GDELT: na kolik firem se ptát jedním dotazem a kolik dotazů nejvýš za běh.
+# Firmy, o kterých vyšlo za 30 dní aspoň "velka_firma" zpráv, se dotazují samostatně.
+zpravy_gdelt_firem_v_dotazu: 6
+zpravy_max_dotazu_za_beh: 20
+zpravy_gdelt_velka_firma: 40
+# Kolik dní zpět hledat u nově sledované firmy
+zpravy_prvni_dni: 14
 # Pauza mezi dotazy (sekundy). GDELT žádá nejvýš jeden dotaz za 5 sekund.
 zpravy_gdelt_pauza_s: 6
 zpravy_finnhub_pauza_s: 1.2

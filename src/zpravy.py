@@ -192,6 +192,14 @@ OBECNA = {"general", "american", "united", "international", "national", "science
 # obecná slova na konci názvu, která se v titulcích zpráv obvykle vynechávají ("Huntington Ingalls")
 KONCOVKY = {"industries", "international", "solutions", "technologies", "technology", "systems", "services",
             "enterprises", "worldwide", "global", "communications", "incorporated", "holdings", "group"}
+# názvy firem, které jsou zároveň běžná slova nebo příjmení (samotné by zachytily nesouvisející zprávy)
+BEZNA_SLOVA = {"post", "perimeter", "parsons", "target", "block", "apple", "visa", "gap", "ball", "match", "sun",
+               "oracle", "square", "state", "core", "global", "united", "general", "national", "american", "first",
+               "granite", "nova", "constellation", "summit", "pioneer", "frontier", "liberty", "eagle",
+               "atlas", "apex", "vertex", "zoom", "snap", "shell", "chevron", "progress", "insight", "science",
+               "jacobs", "marathon", "crown", "harbor", "harbour", "kraft", "mosaic", "booz", "allen", "williams",
+               "johnson", "baker", "ford", "dell", "cisco", "amazon", "meta", "alphabet", "unity", "fortive",
+               "trimble", "ciena", "textron", "boeing"} - {"boeing", "cisco", "textron", "fortive", "trimble", "ciena"}
 # tickery, které jsou zároveň běžná anglická slova nebo zkratky (v titulku by dávaly falešné shody)
 TICKER_SLOVA = {"A", "ALL", "ARE", "BIG", "CAN", "CAR", "CAT", "DE", "EAT", "FOR", "GO", "HAS", "IT", "J", "KEY",
                 "LOW", "MAN", "NOW", "ON", "ONE", "OUT", "PAY", "RUN", "SEE", "SO", "T", "TV", "TWO", "UP", "US",
@@ -225,6 +233,15 @@ class Firma:
             self.klice = {k.strip().lower() for k in rucne if len(k.strip()) >= 2}
             self.jadro = sorted(self.klice, key=len)[0] if self.klice else self.jadro
             prvni_slova = {self.jadro.split()[0]: 99} if self.jadro else {}
+        elif " " not in self.jadro and self.jadro in BEZNA_SLOVA:
+            # název firmy je běžné slovo ("Post", "Perimeter"): hledá se jen celý název ("Post Holdings")
+            n = re.sub(r"\(.*?\)|/[A-Z]{2}/?|[,.]", " ", nazev or "").lower().split()
+            while len(n) > 1 and n[-1] in {"inc", "incorporated", "llc", "ltd", "plc", "co", "the", "lp"}:
+                n.pop()
+            plny = " ".join(n)
+            self.klice = {plny} if plny != self.jadro else {self.jadro + " corp", self.jadro + " corporation"}
+            if plny.endswith(" corp"):
+                self.klice.add(plny + "oration")
         else:
             self.klice = {self.jadro} if len(self.jadro) >= 3 else set()
             for d in dalsi:
@@ -238,7 +255,8 @@ class Firma:
                 and (prvni_slova or {}).get(prvni, 1) <= 1):
             self.klice.add(prvni)
         # delší klíč, který obsahuje kratší (např. "kbr wyle" a "kbr"), je zbytečný
-        self.klice = {k for k in self.klice if not any(j != k and j in k for j in self.klice)}
+        self.klice = {k for k in self.klice
+                      if not any(j != k and re.search(rf"(?<![a-z0-9]){re.escape(j)}(?![a-z0-9])", k) for j in self.klice)}
         zaklad = ticker.split(".")[0].split("-")[0]
         self.ticker_vzor = None
         if len(zaklad) >= 2 and zaklad not in TICKER_SLOVA:
@@ -473,6 +491,45 @@ def _pridej(clanky: dict, polozka: dict, kanal: str, firmy: dict[str, Firma], do
     return True
 
 
+def davky_gdelt(cfg: dict, firmy: dict[str, Firma], na_rade: list[str], posledni, clanky: dict) -> list[list[str]]:
+    """Rozdělí firmy do dávek pro společné dotazy na GDELT ("Lockheed OR Boeing OR ..."), aby bylo dotazů
+    co nejméně. Samostatně se ptáme na firmy s vylučovacími slovy (minus by platil pro celou dávku)
+    a na firmy, o kterých se píše hodně (jinak by zaplnily limit 250 zpráv na dotaz)."""
+    velikost = max(1, int(cfg.get("zpravy_gdelt_firem_v_dotazu", 6)))
+    mez_velke = int(cfg.get("zpravy_gdelt_velka_firma", 40))  # zpráv za posledních 30 dní
+    hranice = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=30)).strftime("%Y-%m-%d")
+    pocet = defaultdict(int)
+    for z in clanky.values():
+        if z["cas"][:10] >= hranice and "GDELT" in z.get("kanaly", []):
+            for t in z["tickery"]:
+                pocet[t] += 1
+    samostatne, nove, stare = [], [], []
+    for t in na_rade:
+        f = firmy[t]
+        if not f.klice:
+            continue
+        # firmy se zvláštními znaky v názvu ("at&t") samostatně: kdyby je GDELT odmítl, nezdrží to ostatní
+        zvlastni = any(not re.fullmatch(r"[a-z0-9 ]+", k) for k in f.klice)
+        if f.vyloucit or zvlastni or pocet[t] >= mez_velke:
+            samostatne.append([t])
+        else:
+            (stare if posledni(t) else nove).append(t)
+    # nové a už sledované firmy zvlášť (jiné časové okno dotazu)
+    davky = [skupina[i:i + velikost] for skupina in (stare, nove) for i in range(0, len(skupina), velikost)]
+    # pořadí podle toho, jak dlouho která dávka čeká
+    return sorted(samostatne + davky, key=lambda d: min(posledni(t) for t in d))
+
+
+def dotaz_gdelt(firmy: dict[str, Firma], davka: list[str]) -> str:
+    if len(davka) == 1:
+        return firmy[davka[0]].dotaz_gdelt()
+    casti = []
+    for t in davka:
+        for k in sorted(firmy[t].klice, key=len)[:2]:
+            casti.append(f'"{k}"' if " " in k or not k.isalnum() else k)
+    return "(" + " OR ".join(dict.fromkeys(casti)) + ") sourcelang:english"
+
+
 def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> dict:
     """Projde zdroje pro firmy, které jsou na řadě. Vrací statistiku pro hlavičku webu."""
     ted = dt.datetime.now(dt.timezone.utc)
@@ -511,22 +568,22 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
         if kanal == "Finnhub":
             na_rade = [t for t in na_rade if "." not in t]  # bezplatný tarif: jen severoamerické firmy
         na_rade.sort(key=posledni)  # nejdéle nekontrolované první
+        dotazy = davky_gdelt(cfg, firmy, na_rade, posledni, clanky) if kanal == "GDELT" else [[t] for t in na_rade]
+        max_dotazu = int(cfg.get("zpravy_max_dotazu_za_beh", 20)) if kanal == "GDELT" else max_za_beh
         nove = chyby = hotovo = 0
         posledni_chyba = ""
         zakazano = False
-        for t in na_rade[:max_za_beh]:
-            f = firmy[t]
-            prvne = not posledni(t)
+        for davka in dotazy[:max_dotazu]:
+            prvne = not posledni(davka[0])
             try:
                 if kanal == "GDELT":
-                    if not f.klice:
-                        continue
-                    params = {"query": f.dotaz_gdelt(), "mode": "artlist", "format": "json", "sort": "datedesc",
-                              "maxrecords": 250 if prvne else 100, "timespan": "30d" if prvne else "3d"}
+                    params = {"query": dotaz_gdelt(firmy, davka), "mode": "artlist", "format": "json",
+                              "sort": "datedesc", "maxrecords": 250,
+                              "timespan": f"{int(cfg.get('zpravy_prvni_dni', 14))}d" if prvne else "3d"}
                     polozky = _gdelt_polozky(k["stahovac"].json(GDELT_URL, params))
                 else:
                     od = (ted - dt.timedelta(days=30 if prvne else 3)).strftime("%Y-%m-%d")
-                    params = {"symbol": t, "from": od, "to": ted.strftime("%Y-%m-%d")}
+                    params = {"symbol": davka[0], "from": od, "to": ted.strftime("%Y-%m-%d")}
                     polozky = _finnhub_polozky(k["stahovac"].json(FINNHUB_URL, params, {"X-Finnhub-Token": klic_fh}))
             except PermissionError as e:
                 posledni_chyba, zakazano = str(e), True
@@ -540,24 +597,31 @@ def stahni(cfg: dict, firmy: dict[str, Firma], clanky: dict, kontrola: dict) -> 
             except Exception as e:  # noqa: BLE001
                 chyby += 1
                 # adresa dotazu se do hlášení nedává (u Finnhub je klíč stejně jen v hlavičce)
-                posledni_chyba = f"{t}: {str(e).split(' for url:')[0][:160]}"
-                log.warning("%s %s: %s", kanal, t, posledni_chyba)
+                posledni_chyba = f"{', '.join(davka)}: {str(e).split(' for url:')[0][:160]}"
+                log.warning("%s %s", kanal, posledni_chyba)
                 if (chyby >= 5 and hotovo == 0) or chyby >= 8:
-                    break  # zdroj zřejmě nefunguje, nemá smysl zkoušet další tickery
+                    break  # zdroj zřejmě nefunguje, nemá smysl zkoušet dál
                 continue
-            nove += sum(_pridej(clanky, p, kanal, firmy, f, nejstarsi, k["verejne"], limit_den, pocty_den)
-                        for p in polozky)
-            kontrola.setdefault(t, {})[zk] = iso_ted()
-            kontrola[t].setdefault("od", iso_ted())
-            hotovo += 1
+            if kanal == "GDELT" and len(polozky) >= 250:
+                log.info("GDELT: dotaz na %s vrátil plný počet 250 zpráv (starší se nenačetly)", ", ".join(davka))
+            for p in polozky:
+                # zprávu přiřadíme firmě z dávky, kterou titulek zmiňuje (_pridej pak doplní i další firmy)
+                titulek = cisty_titulek(p["titulek"])
+                shoda = next((firmy[t] for t in davka if firmy[t].v_titulku(titulek)), None)
+                if shoda:
+                    nove += _pridej(clanky, p, kanal, firmy, shoda, nejstarsi, k["verejne"], limit_den, pocty_den)
+            for t in davka:
+                kontrola.setdefault(t, {})[zk] = iso_ted()
+                kontrola[t].setdefault("od", iso_ted())
+            hotovo += len(davka)
+        zbyva = sum(len(d) for d in dotazy) - hotovo
         if zakazano or (hotovo == 0 and chyby and "429" not in posledni_chyba and "zpomalit" not in posledni_chyba):
             stat[kanal] = {"ok": False, "chyba": posledni_chyba}
         elif hotovo == 0 and chyby:
             stat[kanal] = {"ok": True, "zkontrolovano": 0, "nove": 0, "chyby": chyby, "posledni_chyba": posledni_chyba,
-                           "ceka": len(na_rade)}
+                           "ceka": max(zbyva, 0)}
         else:
-            stat[kanal] = {"ok": True, "zkontrolovano": hotovo, "nove": nove, "chyby": chyby,
-                           "ceka": max(len(na_rade) - max_za_beh, 0)}
+            stat[kanal] = {"ok": True, "zkontrolovano": hotovo, "nove": nove, "chyby": chyby, "ceka": max(zbyva, 0)}
             if chyby:
                 stat[kanal]["posledni_chyba"] = posledni_chyba
         log.info("Zprávy %s: zkontrolováno %d tickerů, %d nových zpráv, %d chyb", kanal, hotovo, nove, chyby)
