@@ -9,12 +9,17 @@ from .common import log
 MIN_DNU_PA = 30  # roční zhodnocení počítáme jen u kontraktů starších 30 dní
 
 MENY = {
-    ".L": "GBp", ".PA": "EUR", ".DE": "EUR", ".MI": "EUR", ".AS": "EUR", ".ST": "SEK",
-    ".OL": "NOK", ".AX": "AUD", ".T": "JPY", ".KS": "KRW", ".TO": "CAD", ".TA": "ILA",
+    ".L": "GBp", ".PA": "EUR", ".DE": "EUR", ".MI": "EUR", ".AS": "EUR", ".BR": "EUR", ".MC": "EUR",
+    ".HE": "EUR", ".ST": "SEK", ".OL": "NOK", ".CO": "DKK", ".SW": "CHF", ".AX": "AUD", ".T": "JPY",
+    ".KS": "KRW", ".TO": "CAD", ".TA": "ILA",
 }
+# výjimky: akcie kótované v jiné měně, než je na dané burze obvyklé
+MENY_VYJIMKY = {"CPG.L": "USD"}
 
 
 def mena(ticker: str) -> str:
+    if ticker in MENY_VYJIMKY:
+        return MENY_VYJIMKY[ticker]
     for suf, m in MENY.items():
         if ticker.endswith(suf):
             return m

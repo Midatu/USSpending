@@ -197,3 +197,89 @@ World Fuel Services;WKC;
 World Kinect;WKC;
 Coca-Cola Bottling;;nezávislé stáčírny, ne The Coca-Cola Company
 Tidewater Development;;
+
+# --- Evropské a další zahraniční mateřské firmy (doplněno 27. 10. 2026, tickery ověřeny na Yahoo Finance) ---
+SES Government Solutions;SESG.PA;SES S.A., Paříž
+SES Space & Defense;SESG.PA;
+Intelsat;SESG.PA;převzato SES (červenec 2025)
+Eutelsat;ETL.PA;
+OneWeb;ETL.PA;součást Eutelsat
+Siemens;SIE.DE;
+Altair Engineering;SIE.DE;převzato Siemensem (2025)
+Siemens Healthineers;SHL.DE;
+Siemens Medical Solutions;SHL.DE;
+Petnet Solutions;SHL.DE;dceřiná firma Siemens Healthineers
+Varian Medical;SHL.DE;dceřiná firma Siemens Healthineers
+Atos;ATO.PA;
+Schneider Electric;SU.PA;
+ABB;ABBN.SW;
+Veolia;VIE.PA;
+Sodexo;SW.PA;
+Compass Group;CPG.L;
+Eurest;CPG.L;součást Compass Group
+ISS Facility Services;ISS.CO;
+Securitas;SECU-B.ST;
+Bureau Veritas;BVI.PA;
+SGS North America;SGSN.SW;
+WSP USA;WSP.TO;WSP Global, Toronto
+Turner Construction;HOT.DE;součást Hochtief (většinový vlastník ACS)
+Skanska;SKA-B.ST;
+Balfour Beatty;BBY.L;
+Fugro;FUR.AS;
+Maersk;MAERSK-B.CO;
+DHL;DHL.DE;
+Schenker;DSV.CO;převzato DSV (2025)
+Kuehne;KNIN.SW;
+Roche;RO.SW;
+Genentech;RO.SW;dceřiná firma Roche
+Sandoz;SDZ.SW;
+Bayer;BAYN.DE;
+Fresenius Kabi;FRE.DE;
+Fresenius Medical Care;FMS;
+Novo Nordisk;NVO;
+Sanofi;SNY;
+GlaxoSmithKline;GSK;
+AstraZeneca;AZN;
+Novartis;NVS;
+Philips;PHG;
+Nokia;NOK;
+Ericsson;ERIC;
+Shell Oil;SHEL;
+Shell Trading;SHEL;
+Shell USA;SHEL;
+BP Products;BP;
+BP America;BP;
+TotalEnergies;TTE;
+Equinor;EQNR;
+Glencore;GLEN.L;
+MTU Aero Engines;MTX.DE;
+Renk;R3NK.DE;
+GKN Aerospace;MRO.L;součást Melrose Industries
+Senior Aerospace;SNR.L;
+Senior Operations;SNR.L;
+Avon Protection;AVON.L;
+Avon Technologies;AVON.L;
+Indra;IDR.MC;
+Theon;THEON.AS;
+Leonardo;LDO.MI;
+AgustaWestland;LDO.MI;
+Rohde & Schwarz;;soukromá
+Martin-Baker;;soukromá
+Lupp Facility;;soukromá
+Applus;;soukromá od 2024
+Vitol;;soukromá, Vitol Group
+Trafigura;;soukromá
+KNDS;;soukromá
+Nammo;;soukromá
+Diehl;;soukromá
+Patria;;soukromá
+MBDA;;soukromá
+# --- Ostatní listované firmy, které unikaly ---
+HII;HII;
+CGI Federal;GIB;CGI Inc. (Kanada)
+Magellan Health;CNC;dceřiná firma Centene
+Constellation NewEnergy;CEG;
+Post Consumer Brands;POST;
+VWR;AVTR;dceřiná firma Avantor
+AvKARE;AMRX;většinový vlastník Amneal
+NTT Data;9432.T;NTT, Inc.

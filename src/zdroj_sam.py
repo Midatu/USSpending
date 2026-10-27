@@ -75,7 +75,7 @@ def stahni(cfg: dict, stav: dict) -> list[dict]:
             "mod": f"?{(award.get('date') or '')[:10]}" if je_mod else "0",
             "typ": "Navýšení" if je_mod else "Nový",
             "datum": (award.get("date") or o.get("postedDate") or "")[:10],
-            "spolecnost": (awardee.get("name") or "").strip(),
+            "spolecnost": re.sub(r"^\s*UPDATE:\s*", "", awardee.get("name") or "", flags=re.I).strip(),
             "castka_sam": castka,
             "popis_sam": (o.get("title") or "").strip(),
             "agentura": _agentura(o.get("fullParentPathName")),

@@ -45,7 +45,7 @@ def _slovo(w: str, prvni: bool, nazev: bool) -> str:
 
 def _hezky(text: str, nazev: bool = False) -> str:
     """Text psaný celý VELKÝMI písmeny převede na čitelnou podobu (zkratky ponechá velké)."""
-    text = (text or "").strip()
+    text = re.sub(r"^\s*UPDATE:\s*", "", text or "", flags=re.I).strip()  # prefix z oprav na SAM.gov
     if not text or not text.isupper():
         return text
     slova = text.split()

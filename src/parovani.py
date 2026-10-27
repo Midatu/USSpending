@@ -21,7 +21,7 @@ BURZA_PRIORITA = {"NYSE": 0, "Nasdaq": 0, "CBOE": 1, "OTC": 3, "": 4}
 
 
 def norm(nazev: str) -> str:
-    s = (nazev or "").upper().replace("&", " AND ")
+    s = re.sub(r"^\s*UPDATE:\s*", "", (nazev or "").upper()).replace("&", " AND ")
     s = re.split(r"\b(?:D/?B/?A|DOING BUSINESS AS)\b", s)[0]
     s = re.sub(r"[^A-Z0-9 ]", " ", s)
     slova = s.split()
