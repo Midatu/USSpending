@@ -1,0 +1,42 @@
+{
+ "36C10B26C0047|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 4388054.84,
+  "datum": "2026-05-14",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/fb76f8f29c03428da7e34a7970cff9b3/view",
+  "piid": "36C10B26C0047",
+  "popis_sam": "DA01--New: Polypharmacy Solution Integration (VA-26-00054686)",
+  "prvni_zaznam": "2026-10-27T13:03:15Z",
+  "shoda": "",
+  "spolecnost": "ODDCORE JV, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "80MSFC26P0004|P00004": {
+  "agentura": "National Aeronautics and Space Administration",
+  "alt_nazvy": [],
+  "award_gid": "CONT_AWD_80MSFC26P0004_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 3902572.0,
+  "datum": "2026-05-29",
+  "materska": "UNITED LAUNCH ALLIANCE, L.L.C",
+  "mod": "P00004",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26P0004_8000_-NONE-_-NONE-",
+  "piid": "80MSFC26P0004",
+  "popis_award": "60-DAY STUDY VC5 FOR SLS",
+  "popis_usa": "ULS INITIAL ENGINEERING AND PROGRAM SUPPORT 60-DAY STUDY FOR VULCAN CENTAUR V ADAPTATION FOR SPACE LAUNCH SYSTEM ARTEMIS IV AND V.",
+  "prvni_zaznam": "2026-10-25T17:47:42Z",
+  "shoda": "",
+  "spolecnost": "UNITED LAUNCH SERVICES, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ }
+}

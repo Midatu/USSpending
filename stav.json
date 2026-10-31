@@ -1,0 +1,152 @@
+{
+ "dod_archiv_zadosti": {
+  "https://www.war.gov/News/Contracts/Contract/Article/4636156/contracts-for-oct-28-2026/": "2026-10-31T01:16:05+00:00",
+  "https://www.war.gov/News/Contracts/Contract/Article/4638054/contracts-for-oct-30-2026/": "2026-10-31T04:56:34+00:00"
+ },
+ "dod_clanky": {
+  "https://www.war.gov/News/Contracts/Contract/Article/4623681/contracts-for-oct-9-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4624853/contracts-for-oct-13-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4625668/contracts-for-oct-14-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4626623/contracts-for-oct-15-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4627497/contracts-for-oct-16-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4628844/contracts-for-oct-19-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4629644/contracts-for-oct-20-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4630997/contracts-for-oct-21-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4631894/contracts-for-oct-22-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4632813/contracts-for-oct-23-2026/": "2026-10-26",
+  "https://www.war.gov/News/Contracts/Contract/Article/4633995/contracts-for-oct-26-2026/": "2026-10-28",
+  "https://www.war.gov/News/Contracts/Contract/Article/4634810/contracts-for-oct-27-2026/": "2026-10-29",
+  "https://www.war.gov/News/Contracts/Contract/Article/4637206/contracts-for-oct-29-2026/": "2026-10-31"
+ },
+ "dod_posledni_chyby": [
+  "www.war.gov: 403 Client Error: Forbidden for url: https://www.war.gov/News/Contracts/Contract/Article/4624853/contracts-for-oct-13-20",
+  "www.defense.gov: 403 Client Error: Forbidden for url: https://www.defense.gov/News/Contracts/Contract/Article/4624853/contracts-for-oct-1",
+  "www.globalsecurity.org: 402 Client Error: Payment Required for url: https://www.globalsecurity.org/military/library/news/2026/10/dod-contracts_4",
+  "www.war.gov: 403 Client Error: Forbidden for url: https://www.war.gov/News/Contracts/Contract/Article/4623681/contracts-for-oct-9-202",
+  "www.defense.gov: 403 Client Error: Forbidden for url: https://www.defense.gov/News/Contracts/Contract/Article/4623681/contracts-for-oct-9",
+  "www.globalsecurity.org: 402 Client Error: Payment Required for url: https://www.globalsecurity.org/military/library/news/2026/10/dod-contracts_4"
+ ],
+ "excel_archivy": {
+  "2023": "2026-10-31",
+  "2025": "2026-10-31"
+ },
+ "pocet_zaznamu": 924,
+ "posledni_beh": "2026-10-31T04:56:34Z",
+ "sam_posledni_dotaz": "2026-10-31T02:10:52.743193+00:00",
+ "sec_dokumenty": {
+  "0000018926-26-000065:ceokatejohnsonarchangeofco.htm": "2026-10-25",
+  "0000034067-26-000052:boom-exx991_2026q3.htm": "2026-10-27",
+  "0000038725-26-000066:a10272026ex21challengepump.htm": "2026-10-28",
+  "0000074303-26-000091:exhibit991q32026earningspr.htm": "2026-10-29",
+  "0000202058-26-000084:exhibit991q3cy26earnings.htm": "2026-10-29",
+  "0000217346-26-000043:q320268-kex991.htm": "2026-10-29",
+  "0000352825-26-000053:ex-101form8xkprojectworth.htm": "2026-10-29",
+  "0000355811-26-000060:exhibit99109302026.htm": "2026-10-25",
+  "0000701347-26-000074:cpfirdeck-3q26finalx1.htm": "2026-10-28",
+  "0000820027-26-000050:q32026er.htm": "2026-10-29",
+  "0001057352-26-000078:exhibit101projectvelocit.htm": "2026-10-27",
+  "0001104659-26-118875:tm2628317d1_8k.htm": "2026-10-26",
+  "0001104659-26-118958:tm2628314d1_ex2-1.htm": "2026-10-27",
+  "0001193125-26-428897:d176225dex21.htm": "2026-10-25",
+  "0001193125-26-429435:d151271dex99.htm": "2026-10-25",
+  "0001193125-26-430532:avbc-ex99_1.htm": "2026-10-25",
+  "0001193125-26-432622:d115048dex21.htm": "2026-10-27",
+  "0001193125-26-432724:cts-ex99_2.htm": "2026-10-27",
+  "0001193125-26-434266:d180862dex103.htm": "2026-10-27",
+  "0001193125-26-434274:d178604dex102.htm": "2026-10-27",
+  "0001193125-26-434415:d143472dex21.htm": "2026-10-27",
+  "0001193125-26-434415:d143472dex991.htm": "2026-10-27",
+  "0001193125-26-435041:psn-ex99_1.htm": "2026-10-28",
+  "0001193125-26-435237:nov-ex99_1.htm": "2026-10-28",
+  "0001193125-26-437039:osk-ex99_1.htm": "2026-10-29",
+  "0001213900-26-112953:ea030976801ex99-1.htm": "2026-10-27",
+  "0001213900-26-113102:ea0309913-8k425_inflection7.htm": "2026-10-28",
+  "0001213900-26-113420:ea0310009-8k_evolution.htm": "2026-10-29",
+  "0001213900-26-113420:ea031000901ex99-1.htm": "2026-10-29",
+  "0001213900-26-113420:ea031000901ex99-2.htm": "2026-10-29",
+  "0001213900-26-114385:ea030980001ex99-1.htm": "2026-10-30",
+  "0001213900-26-114385:ea030980001ex99-2.htm": "2026-10-30",
+  "0001357615-26-000194:q326kbr-exhibit991x10022026.htm": "2026-10-29",
+  "0001357615-26-000194:trinzic-investoreducatio.htm": "2026-10-29",
+  "0001402829-26-000056:orn-ex99d1.htm": "2026-10-28",
+  "0001402829-26-000056:orn-ex99d2.htm": "2026-10-28",
+  "0001437749-26-033175:ex_1029316.htm": "2026-10-25",
+  "0001437749-26-033434:ex_1029527.htm": "2026-10-25",
+  "0001437749-26-033731:ex_1032339.htm": "2026-10-28",
+  "0001437749-26-033731:ex_1032341.htm": "2026-10-28",
+  "0001437749-26-033731:ex_1032342.htm": "2026-10-28",
+  "0001493152-26-048032:ex10-1.htm": "2026-10-25",
+  "0001493152-26-048151:ex10-1.htm": "2026-10-25",
+  "0001493152-26-048631:ex99-1.htm": "2026-10-27",
+  "0001493152-26-049110:ex99-1.htm": "2026-10-28",
+  "0001501585-26-000054:hii2026q3earningsrelease.htm": "2026-10-29",
+  "0001622194-26-000032:dea-ex99_2.htm": "2026-10-26",
+  "0001628280-26-066780:ex991q32026.htm": "2026-10-25",
+  "0001628280-26-066910:danielsneilsignedofferlett.htm": "2026-10-25",
+  "0001628280-26-067411:a202609sep308kprex991.htm": "2026-10-27",
+  "0001654954-26-009210:scwo_ex992.htm": "2026-10-29",
+  "0001828318-26-000063:envx8k-10282026ex991pr.htm": "2026-10-28",
+  "0001833756-26-000042:q32026earningspressrelease.htm": "2026-10-29",
+  "0001895262-26-000147:exhibit991-q32026pressrele.htm": "2026-10-26",
+  "0001929561-26-000046:rxo2026q3pressrelease.htm": "2026-10-29",
+  "0002089271-26-000031:exhibit991q32026earningsre.htm": "2026-10-28",
+  "0002089271-26-000031:exhibit992projectarisepres.htm": "2026-10-28"
+ },
+ "usaspending_rezim": "podle data zápisu do databáze",
+ "zdroje": {
+  "Ceny akcií": {
+   "cas": "2026-10-31T04:56:34Z",
+   "ok": true,
+   "tickeru": 75
+  },
+  "DoD": {
+   "cas": "2026-10-31T04:56:34Z",
+   "nalezeno": 12,
+   "nove": 0,
+   "ok": true
+  },
+  "SAM.gov": {
+   "cas": "2026-10-31T02:10:14Z",
+   "info": "Další dotaz za méně než 3 h (denní limit API).",
+   "nalezeno": 68,
+   "nove": 0,
+   "ok": true
+  },
+  "SEC 8-K": {
+   "cas": "2026-10-31T04:56:34Z",
+   "nalezeno": 0,
+   "nove": 0,
+   "ok": true
+  },
+  "USAspending": {
+   "cas": "2026-10-31T04:56:34Z",
+   "nalezeno": 186,
+   "nove": 0,
+   "ok": true
+  },
+  "Zprávy": {
+   "cas": "2026-10-31T04:56:34Z",
+   "info": "GDELT: OK, zkontrolováno 0 firem, 0 nových zpráv, 1 chyb (zdroj je přetížený nebo jsme překročili limit dotazů (429) (zkontrolováno 0 firem, ostatní příště)) · Finnhub: vypnuto v config.yaml · Uloženo 318 zpráv o 75 firmách, aktivních upozornění: 11",
+   "ok": true
+  }
+ },
+ "zpravy": {
+  "cas": "2026-10-31T04:56:34Z",
+  "firem": 75,
+  "kanaly": {
+   "Finnhub": {
+    "info": "vypnuto v config.yaml",
+    "ok": null
+   },
+   "GDELT": {
+    "ceka": 57,
+    "chyby": 1,
+    "nove": 0,
+    "ok": true,
+    "posledni_chyba": "zdroj je přetížený nebo jsme překročili limit dotazů (429) (zkontrolováno 0 firem, ostatní příště)",
+    "zkontrolovano": 0
+   }
+  }
+ },
+ "zpravy_verze": 3
+}
