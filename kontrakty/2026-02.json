@@ -1,0 +1,20 @@
+{
+ "W58RGZ21D0077|P00006": {
+  "agentura": "U.S. Army",
+  "burza": "NYSE",
+  "castka_dod": 499760655.0,
+  "datum": "2026-02-21",
+  "mod": "P00006",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4634810/contracts-for-oct-27-2026/",
+  "piid": "W58RGZ21D0077",
+  "popis_dod": "Apache AH-64 engineering services and technical support",
+  "prvni_zaznam": "2026-10-28T11:56:38Z",
+  "shoda": "alias",
+  "spolecnost": "The Boeing Co.",
+  "ticker": "BA",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ }
+}

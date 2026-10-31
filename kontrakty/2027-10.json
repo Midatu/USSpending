@@ -1,0 +1,38 @@
+{
+ "SPE2DV27D0004|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "NYSE",
+  "castka_sam": 485419948.22,
+  "datum": "2027-10-27",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d7995f3be5544d08b48a8da0e06720e1/view",
+  "piid": "SPE2DV27D0004",
+  "popis_sam": "MSPV GEN VI Contract SPE2DV27D0004 - South Backup",
+  "prvni_zaznam": "2026-10-27T18:58:37Z",
+  "shoda": "alias",
+  "spolecnost": "CARDINAL HEALTH 200, LLC",
+  "ticker": "CAH",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPRDL127CA007|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 1571191.44,
+  "datum": "2027-10-27",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/45d1d375196c4b20991ee9bce99664cf/view",
+  "piid": "SPRDL127CA007",
+  "popis_sam": "Cloud Pour Point",
+  "prvni_zaznam": "2026-10-27T15:58:56Z",
+  "shoda": "",
+  "spolecnost": "Precision Analyzer Company L.P.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "FA703725C0004|0": {
+  "agentura": "Dept of the Air Force",
+  "burza": "",
+  "castka_sam": 5760663.79,
+  "datum": "2025-09-11",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/e4bcf9df71374f419ee479b729ab587f/view",
+  "piid": "FA703725C0004",
+  "popis_sam": "HUMINT",
+  "prvni_zaznam": "2026-10-27T18:58:37Z",
+  "shoda": "",
+  "spolecnost": "TACTICA SOLUTIONS, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}
