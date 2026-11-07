@@ -1,0 +1,20 @@
+{
+ "1BITSW18B0008|0": {
+  "agentura": "Postal Service",
+  "burza": "NYSE",
+  "castka_sam": 25000000.0,
+  "datum": "2006-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/530fbc96837049f8b8b41d4d2fd30ddc/view",
+  "piid": "1BITSW18B0008",
+  "popis_sam": "Oracle Software, Support and Services",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "alias",
+  "spolecnost": "ORACLE AMERICA, INC.",
+  "ticker": "ORCL",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}

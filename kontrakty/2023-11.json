@@ -1,0 +1,20 @@
+{
+ "SPE2D224D0001|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 3153885.75,
+  "datum": "2023-11-09",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/ba23e292c2af4ba8a6396783501d5796/view",
+  "piid": "SPE2D224D0001",
+  "popis_sam": "Clindamycin Phosphate - Benzoyl Peroxide Gel",
+  "prvni_zaznam": "2026-10-28T19:58:41Z",
+  "shoda": "",
+  "spolecnost": "PADAGIS SOURCING SOLUTIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}

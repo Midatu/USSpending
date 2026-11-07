@@ -1,0 +1,20 @@
+{
+ "SPE2D226D0004|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 2172104.55,
+  "datum": "2025-11-18",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/40138a7682a74e33b6e2efc69cc75a89/view",
+  "piid": "SPE2D226D0004",
+  "popis_sam": "Morphine IR & ER",
+  "prvni_zaznam": "2026-10-26T16:58:49Z",
+  "shoda": "",
+  "spolecnost": "SPECGX LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}
