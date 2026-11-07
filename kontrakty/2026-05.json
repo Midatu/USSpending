@@ -1,0 +1,78 @@
+{
+ "36C10B26C0047|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 4388054.84,
+  "datum": "2026-05-14",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/fb76f8f29c03428da7e34a7970cff9b3/view",
+  "piid": "36C10B26C0047",
+  "popis_sam": "DA01--New: Polypharmacy Solution Integration (VA-26-00054686)",
+  "prvni_zaznam": "2026-10-27T13:03:15Z",
+  "shoda": "",
+  "spolecnost": "ODDCORE JV, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "80MSFC26P0004|P00004": {
+  "agentura": "National Aeronautics and Space Administration",
+  "alt_nazvy": [],
+  "award_gid": "CONT_AWD_80MSFC26P0004_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 3902572.0,
+  "datum": "2026-05-29",
+  "materska": "UNITED LAUNCH ALLIANCE, L.L.C",
+  "mod": "P00004",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80MSFC26P0004_8000_-NONE-_-NONE-",
+  "piid": "80MSFC26P0004",
+  "popis_award": "60-DAY STUDY VC5 FOR SLS",
+  "popis_usa": "ULS INITIAL ENGINEERING AND PROGRAM SUPPORT 60-DAY STUDY FOR VULCAN CENTAUR V ADAPTATION FOR SPACE LAUNCH SYSTEM ARTEMIS IV AND V.",
+  "prvni_zaznam": "2026-10-25T17:47:42Z",
+  "shoda": "",
+  "spolecnost": "UNITED LAUNCH SERVICES, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "GS01PLMA00675|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 14939649.85,
+  "datum": "2026-05-20",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c06f3c310567458f9fa6287e027e798b/view",
+  "piid": "GS01PLMA00675",
+  "popis_sam": "Award Notice - The Government is seeking 15,000 ANSI BOMA Sq Ft of office/warehouse space in Bedford, MA; Burlington, MA; Billerica, MA; Chelmsford, MA; Tewksbury, MA",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "LOOP REAL ESTATE CORP",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N6893626D5006|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "Toronto",
+  "castka_sam": 6300000.0,
+  "datum": "2026-05-18",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/3f457980b86a4969a539f5887de1d94d/view",
+  "piid": "N6893626D5006",
+  "popis_sam": "Architect-Engineer (A/E) Services For Long-Range Planning",
+  "prvni_zaznam": "2026-11-04T23:54:18Z",
+  "shoda": "alias",
+  "spolecnost": "WSP USA SOLUTIONS INC",
+  "ticker": "WSP.TO",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ }
+}

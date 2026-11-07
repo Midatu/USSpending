@@ -1,0 +1,4891 @@
+{
+ "0003|P00035": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_0003_6920_DTFAWA17D00014_6920",
+  "burza": "",
+  "castka_usa": 1750000.0,
+  "datum": "2026-11-03",
+  "materska": "NOBLIS, INC.",
+  "mod": "P00035",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_0003_6920_DTFAWA17D00014_6920",
+  "piid": "0003",
+  "popis_award": "IGF::OT::IGF EPICS LARGE CONTRACT # DTFAWA-17-D-00015 ON TASK ORDER # 0003",
+  "popis_usa": "CONTRACT WITH NOBLIS, INC. FOR PROFESSIONAL AND MANAGERIAL SERVICES AS DEFINED IN THE EPICS SCOPE OF WORK.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "NOBLIS, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "05GA0A27K0004|0": {
+  "agentura": "GAO, Except Comptroller General",
+  "award_gid": "CONT_AWD_05GA0A27K0004_0559_05GA0A22A0001_0559",
+  "burza": "",
+  "castka_usa": 1467741.73,
+  "datum": "2026-11-03",
+  "materska": "FOUR POINTS TECHNOLOGY, L.L.C.",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_05GA0A27K0004_0559_05GA0A22A0001_0559",
+  "piid": "05GA0A27K0004",
+  "popis_award": "AWS INFRASTRUCTURE USAGE OF ANALYTICS FOUNDRY UNDER BPA (05GA0A22A0001). THIS IS A FIRM-FIXED UNIT PRICE TO BE PAID MONTHLY. 1 CR = 1 CREDIT.",
+  "popis_usa": "AWS INFRASTRUCTURE USAGE OF ANALYTICS FOUNDRY UNDER BPA (05GA0A22A0001). THIS IS A FIRM-FIXED UNIT PRICE TO BE PAID MONTHLY. 1 CR = 1 CREDIT.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "FOUR POINTS TECHNOLOGY, L.L.C.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "121NTB27C0006|0": {
+  "agentura": "Agricultural Marketing Service",
+  "award_gid": "CONT_AWD_121NTB27C0006_12K2_-NONE-_-NONE-",
+  "burza": "",
+  "castka_sam": 5125303.8,
+  "castka_usa": 5125303.8,
+  "datum": "2026-11-04",
+  "materska": "CARGILL, INCORPORATED",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/b643ded22776416391c1870fe11480ab/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_121NTB27C0006_12K2_-NONE-_-NONE-",
+  "piid": "121NTB27C0006",
+  "popis_award": "COMMODITIES FOR USG FOOD DONATIONS: 2000011613/4210007684/SORGHUM BULK",
+  "popis_sam": "12-1NFG-27-B-0002 - AMS International Bulk Sorghum Solicitation",
+  "popis_usa": "COMMODITIES FOR USG FOOD DONATIONS: 2000011613/4210007684/SORGHUM BULK",
+  "prvni_zaznam": "2026-11-04T23:54:18Z",
+  "shoda": "",
+  "spolecnost": "CARGILL, INCORPORATED",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "121NTP27C0008121NTP27C0019|0": {
+  "agentura": "Agricultural Marketing Service",
+  "burza": "",
+  "castka_sam": 16431540.71,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/f26dae3d69f84fae99ff4efdb7728662/view",
+  "piid": "121NTP27C0008121NTP27C0019",
+  "popis_sam": "Yellow Split Peas, Vegetable Oil, Super Cereal Plus, Soft White Wheat and Hard Red Winter Wheat for use in International Food Assistance Programs",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "UNITED OIL PACKERS INCORPORATED",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "123J1427F0013|0": {
+  "agentura": "Agricultural Marketing Service",
+  "award_gid": "CONT_AWD_123J1427F0013_12K2_123J1426D0039_12K2",
+  "burza": "",
+  "castka_usa": 6772349.37,
+  "datum": "2026-11-04",
+  "materska": "EAST BAKING COMPANY, INC.",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_123J1427F0013_12K2_123J1426D0039_12K2",
+  "piid": "123J1427F0013",
+  "popis_award": "COMMODITIES FOR USG FOOD DONATIONS: 2000011583/4400002604/4100035140/CEREAL WT BRAN FLKS 1344 PKG - 14/20 OZ,CEREAL WT SHREDDED 2016 PKG-12/16.4OZ,CEREAL CORN FLKS 1248 PKG-12/18 OZ,CEREAL OAT CIRCLES 1248 PKG-12/14 OZ",
+  "popis_usa": "COMMODITIES FOR USG FOOD DONATIONS: 2000011583/4400002604/4100035140/CEREAL WT BRAN FLKS 1344 PKG - 14/20 OZ,CEREAL WT SHREDDED 2016 PKG-12/16.4OZ,CEREAL CORN FLKS 1248 PKG-12/18 OZ,CEREAL OAT CIRCLES 1248 PKG-12/14 OZ",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "EAST BAKING COMPANY, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "124PSA27C0005|0": {
+  "agentura": "Office of the Chief Financial Officer",
+  "award_gid": "CONT_AWD_124PSA27C0005_1205_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1965040.0,
+  "datum": "2026-11-04",
+  "materska": "POSTIVE FEED LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_124PSA27C0005_1205_-NONE-_-NONE-",
+  "piid": "124PSA27C0005",
+  "popis_award": "CATTLE FEVER TICK ERADICATION PROGRAM IS REQUESTING A NEW CONTRACT FOR IVERMECTIN-TREATED MOLASSES TUBS. CFTEP WILL REQUIRE A MINIMUM OF 10 TRUCKLOADS UP TO A MAXIMUM OF 35 TRUCKLOADS IVERMECTIN-TREATED MOLASSES TUBS.",
+  "popis_usa": "CATTLE FEVER TICK ERADICATION PROGRAM IS REQUESTING A NEW CONTRACT FOR IVERMECTIN-TREATED MOLASSES TUBS. CFTEP WILL REQUIRE A MINIMUM OF 10 TRUCKLOADS UP TO A MAXIMUM OF 35 TRUCKLOADS IVERMECTIN-TREATED MOLASSES TUBS.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "POSTIVE FEED LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "124PSA27P0007|0": {
+  "agentura": "Office of the Chief Financial Officer",
+  "award_gid": "CONT_AWD_124PSA27P0007_1205_-NONE-_-NONE-",
+  "burza": "",
+  "castka_sam": 3295000.0,
+  "castka_usa": 3295000.0,
+  "datum": "2026-11-03",
+  "materska": "GENTRY CONTROLS & CONSULTING LLC",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/ca63d14ddc0a41908aad16e0fa965fcc/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_124PSA27P0007_1205_-NONE-_-NONE-",
+  "piid": "124PSA27P0007",
+  "popis_award": "MICRO GIN UPGRADE",
+  "popis_sam": "Micro Gin Motor Control Center Upgrade",
+  "popis_usa": "MICRO GIN UPGRADE",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "GENTRY CONTROLS & CONSULTING LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "1333BJ26F00280007|P27001": {
+  "agentura": "U.S. Patent and Trademark Office",
+  "award_gid": "CONT_AWD_1333BJ26F00280007_1344_1333BJ21D00280004_1344",
+  "burza": "Nasdaq",
+  "castka_usa": 7814558.4,
+  "datum": "2026-11-04",
+  "materska": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+  "mod": "P27001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_1333BJ26F00280007_1344_1333BJ21D00280004_1344",
+  "piid": "1333BJ26F00280007",
+  "popis_award": "INFORMATION TECHNOLOGY DEVELOPMENTAL SECURITY OPERATIONS SUPPORT SERVICES",
+  "popis_usa": "INFORMATION TECHNOLOGY DEVELOPMENTAL SECURITY OPERATIONS SUPPORT SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+  "ticker": "SAIC",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "140A1627F0130|0": {
+  "agentura": "Bureau of Indian Affairs and Bureau of Indian Education",
+  "award_gid": "CONT_AWD_140A1627F0130_1450_140A1624D0041_1450",
+  "burza": "",
+  "castka_usa": 2170866.13,
+  "datum": "2026-11-03",
+  "materska": "CYBERSTAR LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_140A1627F0130_1450_140A1624D0041_1450",
+  "piid": "140A1627F0130",
+  "popis_award": "IT BUSINESS SUPPORT SERVICES FOR OIT TASK ORDER ITSS IDIQ",
+  "popis_usa": "IT BUSINESS SUPPORT SERVICES FOR OIT TASK ORDER ITSS IDIQ",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CYBERSTAR LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "140D0427F1240|0": {
+  "agentura": "Departmental Offices",
+  "award_gid": "CONT_AWD_140D0427F1240_1406_47QTCA19D00AX_4732",
+  "burza": "",
+  "castka_usa": 2000000.0,
+  "datum": "2026-11-04",
+  "materska": "CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_140D0427F1240_1406_47QTCA19D00AX_4732",
+  "piid": "140D0427F1240",
+  "popis_award": "ON BEHALF OF THE UNITED STATES - SPACE FORCE SPACE (S4S) THE DEPARTMENT OF THE INTERIOR SEEKS TO AWARD A 12-MONTH TASK ORDER FOR ADVISORY ASSISTANCE SERVICES IN SUPPORT OF S4S MISSION RELATED FUNCTIONS IN FROM, AND TO SPACE IN SUPPORT OF THE JOINT AN",
+  "popis_usa": "ON BEHALF OF THE UNITED STATES - SPACE FORCE SPACE (S4S) THE DEPARTMENT OF THE INTERIOR SEEKS TO AWARD A 12-MONTH TASK ORDER FOR ADVISORY ASSISTANCE SERVICES IN SUPPORT OF S4S MISSION RELATED FUNCTIONS IN FROM, AND TO SPACE IN SUPPORT OF THE JOINT AN",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CREDENCE MANAGEMENT SOLUTIONS LIMITED LIABILITY COMPANY",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "140D0427F1245|0": {
+  "agentura": "Departmental Offices",
+  "award_gid": "CONT_AWD_140D0427F1245_1406_47QTCA21D000X_4732",
+  "burza": "",
+  "castka_usa": 1637139.86,
+  "datum": "2026-11-04",
+  "materska": "LIGHTFEATHER IO LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_140D0427F1245_1406_47QTCA21D000X_4732",
+  "piid": "140D0427F1245",
+  "popis_award": "IT PROFESSIONAL SUPPORT SERVICES FOR HRD",
+  "popis_usa": "IT PROFESSIONAL SUPPORT SERVICES FOR HRD",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "LIGHTFEATHER IO LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "140GG027D0002|0": {
+  "agentura": "Departmental Offices",
+  "burza": "",
+  "castka_sam": 2000000.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/4e6b30a9cf354b31b1e3e0f0adef3870/view",
+  "piid": "140GG027D0002",
+  "popis_sam": "Y--EO 14398 - This requirement is for support services for the Earthquake Science Center- 5-YEAR IDIQ SEISMIC STATION CONSTRUCUCTION",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "SOUTHERN CALIFORNIA ADVANCED BUILDERS, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "140RR027C0002|0": {
+  "agentura": "Bureau of Reclamation",
+  "burza": "",
+  "castka_sam": 2079904.91,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/b0b122d159c74130a983bc4e07243037/view",
+  "piid": "140RR027C0002",
+  "popis_sam": "S--BASE YEAR JANITORIAL SERVICES",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "The Centers for Habilitation/TCH",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "15B61526F00000087|P00001": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "award_gid": "CONT_AWD_15B61526F00000087_1540_15BFA022D00000022_1540",
+  "burza": "",
+  "castka_usa": 1153185.2,
+  "datum": "2026-11-04",
+  "materska": "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15B61526F00000087_1540_15BFA022D00000022_1540",
+  "piid": "15B61526F00000087",
+  "popis_award": "OUTSIDE MEDICAL SERVICES FOR FCC TUCSON FOR FY27, OCTOBER  EO 14398",
+  "popis_usa": "OUTSIDE MEDICAL SERVICES FOR FCC TUCSON FOR FY27, OCTOBER",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15B61527F00000005|0": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "award_gid": "CONT_AWD_15B61527F00000005_1540_15BFA022D00000022_1540",
+  "burza": "",
+  "castka_usa": 1133439.71,
+  "datum": "2026-11-04",
+  "materska": "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15B61527F00000005_1540_15BFA022D00000022_1540",
+  "piid": "15B61527F00000005",
+  "popis_award": "OUTSIDE MEDICAL SERVICES FOR FCC TUCSON FOR FY27, DECEMBER",
+  "popis_usa": "OUTSIDE MEDICAL SERVICES FOR FCC TUCSON FOR FY27, DECEMBER",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "J ALLEN AND ASSOCIATES OF TEXAS, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15BBNF27C30200002|0": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "burza": "",
+  "castka_sam": 5423973.56,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/568a67f9982047958aae2cb5169d3ff2/view",
+  "piid": "15BBNF27C30200002",
+  "popis_sam": "Emergency Replace Chillers Low and Medium at FCC Coleman",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "",
+  "spolecnost": "SOUTH ALABAMA CONTRACTING LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "15BBNF27D40000001|0": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "burza": "",
+  "castka_sam": 7500000.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/8aea89ea2c6f46c7b1ad181972a888a9/view",
+  "piid": "15BBNF27D40000001",
+  "popis_sam": "Architect-Engineering Supplemental Services Federal Bureau of Prisons - Noth Central Regional Office",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "DLR GROUP INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "15BBNF27D40000002|0": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "burza": "",
+  "castka_sam": 7500000.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d5fa0a97c76b457fbdd9e4be0c98b732/view",
+  "piid": "15BBNF27D40000002",
+  "popis_sam": "Architect-Engineering Supplemental Services Federal Bureau of Prisons - Noth Central Regional Office",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "GEORGE BUTLER ASSOCIATES INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "15BFA025C00000057|P00004": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "award_gid": "CONT_AWD_15BFA025C00000057_1540_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 2035820.0,
+  "datum": "2026-11-03",
+  "materska": "AOD & RBT JV",
+  "mod": "P00004",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15BFA025C00000057_1540_-NONE-_-NONE-",
+  "piid": "15BFA025C00000057",
+  "popis_award": "THE SELECTED CONTRACTOR SHALL PROVIDE ALL MATERIALS, LABOR, AND EQUIPMENT TO COMPLETE THE PROJECT REPLACE SPC & FCI ROOFS AT THE FEDERAL CORRECTIONAL INSTITUTION LOCATED IN MARION, IL IN ACCORDANCE WITH THE ATTACHED SPECIFICATION AND DRAWINGS",
+  "popis_usa": "EXERCISE OPTION ONE FOR REPLACE SPC & FCI ROOFS PROJECT IN MARION, IL EO 14398",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "AOD & RBT JV",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15BRRC27D00000014|0": {
+  "agentura": "Federal Prison System / Bureau of Prisons",
+  "burza": "NYSE",
+  "castka_sam": 136656943.2,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/cfd3f25331f6464c9b51876d9eb79de6/view",
+  "piid": "15BRRC27D00000014",
+  "popis_sam": "Residential Reentry Center (RRC) Services and Home Confinement Services Located Within San Diego County, California",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "přesná",
+  "spolecnost": "CoreCivic, Inc.",
+  "ticker": "CXW",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "15JC1V27F00000019|0": {
+  "agentura": "Offices, Boards and Divisions",
+  "award_gid": "CONT_AWD_15JC1V27F00000019_1501_NNG15SC70B_8000",
+  "burza": "",
+  "castka_usa": 1100517.6,
+  "datum": "2026-11-04",
+  "materska": "DH TECHNOLOGIES, INC.",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15JC1V27F00000019_1501_NNG15SC70B_8000",
+  "piid": "15JC1V27F00000019",
+  "popis_award": "(100) NETWORK SWITCHES FOR CIVIL DIVISION",
+  "popis_usa": "(100) NETWORK SWITCHES FOR CIVIL DIVISION",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "DH TECHNOLOGIES, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15JPSS24F00000836|P00005": {
+  "agentura": "Offices, Boards and Divisions",
+  "award_gid": "CONT_AWD_15JPSS24F00000836_1501_NNG15SD27B_8000",
+  "burza": "",
+  "castka_usa": 1237321.94,
+  "datum": "2026-11-04",
+  "materska": "V3GATE, LLC",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15JPSS24F00000836_1501_NNG15SD27B_8000",
+  "piid": "15JPSS24F00000836",
+  "popis_award": "CIV VMWARE SUBSCRIPTION RENEWAL",
+  "popis_usa": "CIV VMWARE SUBSCRIPTION RENEWAL",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "V3GATE, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15JPSS25F00000926|P00007": {
+  "agentura": "Offices, Boards and Divisions",
+  "award_gid": "CONT_AWD_15JPSS25F00000926_1501_GS35F017CA_4732",
+  "burza": "",
+  "castka_usa": 1821621.18,
+  "datum": "2026-11-04",
+  "materska": "YUDRIO INC",
+  "mod": "P00007",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15JPSS25F00000926_1501_GS35F017CA_4732",
+  "piid": "15JPSS25F00000926",
+  "popis_award": "CIVCORE CONFIGURATION SERVICES",
+  "popis_usa": "CIVCORE CONFIGURATION SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "YUDRIO INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "15JPSS26F00001681|P00001": {
+  "agentura": "Offices, Boards and Divisions",
+  "award_gid": "CONT_AWD_15JPSS26F00001681_1501_15JPSS20D00000453_1501",
+  "burza": "NYSE",
+  "castka_usa": 13734904.15,
+  "datum": "2026-11-03",
+  "materska": "THE TIMKEN COMPANY",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_15JPSS26F00001681_1501_15JPSS20D00000453_1501",
+  "piid": "15JPSS26F00001681",
+  "popis_award": "GSS DCN16 MAIL AND WAREHOUSE MGMT - GEN SUPPORT SERVICES - OP6",
+  "popis_usa": "GSS DCN16 MAIL AND WAREHOUSE MGMT - GEN SUPPORT SERVICES - OP6",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "přesná",
+  "spolecnost": "CGI FEDERAL INC.",
+  "ticker": "TKR",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "1605JW22C0008|P00061": {
+  "agentura": "Office of the Assistant Secretary for Administration and Management",
+  "award_gid": "CONT_AWD_1605JW22C0008_1605_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1360218.9,
+  "datum": "2026-11-03",
+  "materska": "FOXMAR, INC",
+  "mod": "P00061",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_1605JW22C0008_1605_-NONE-_-NONE-",
+  "piid": "1605JW22C0008",
+  "popis_award": "EXCELSIOR SPRINGS JOB CORPS CENTER WITH OA/CTS",
+  "popis_usa": "EXCELSIOR SPRINGS JOB CORPS CENTER WITH OA/CTS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "EDUCATION & TRAINING RESOURCES LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "19AQMM24F0983|P00082": {
+  "agentura": "Department of State",
+  "award_gid": "CONT_AWD_19AQMM24F0983_1900_SAQMMA16D0136_1900",
+  "burza": "NYSE",
+  "castka_usa": 3481796.16,
+  "datum": "2026-11-03",
+  "materska": "AAR GOVERNMENT SERVICES INC.",
+  "mod": "P00082",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_19AQMM24F0983_1900_SAQMMA16D0136_1900",
+  "piid": "19AQMM24F0983",
+  "popis_award": "WORLDWIDE AVIATION SUPPORT SERVICES OY6",
+  "popis_usa": "WORLDWIDE AVIATION SUPPORT SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "AAR GOVERNMENT SERVICES, INC.",
+  "ticker": "AIR",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "19AQMM27C0035|0": {
+  "agentura": "State, Department Of",
+  "burza": "",
+  "castka_sam": 11109116.05,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c245947a91484febb01da7e859d4253e/view",
+  "piid": "19AQMM27C0035",
+  "popis_sam": "Solicitation - U.S. Mission Accra, Ghana",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "INTER-CON SECURITY SYSTEMS, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "19BR2527F0020|0": {
+  "agentura": "Department of State",
+  "award_gid": "CONT_AWD_19BR2527F0020_1900_19BR2524D0005_1900",
+  "burza": "",
+  "castka_usa": 1666707.88,
+  "datum": "2026-11-03",
+  "materska": "BRADESCO SAUDE S/A",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_19BR2527F0020_1900_19BR2524D0005_1900",
+  "piid": "19BR2527F0020",
+  "popis_award": "BSB|HR| PAYROLL-HEALTH/DENTAL IDIQ - NOV-DEC/2026",
+  "popis_usa": "BSB|HR| PAYROLL-HEALTH/DENTAL IDIQ - NOV-DEC/2026",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "BRADESCO SAUDE S/A",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F51636|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F51636_2044_2031JG20D00010_2044",
+  "burza": "",
+  "castka_usa": 5186876.44,
+  "datum": "2026-11-03",
+  "materska": "STONEX FINANCIAL LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F51636_2044_2031JG20D00010_2044",
+  "piid": "2031JG27F51636",
+  "popis_award": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "popis_usa": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STONEX FINANCIAL LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F51637|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F51637_2044_2031JG20D00010_2044",
+  "burza": "",
+  "castka_usa": 5187997.99,
+  "datum": "2026-11-04",
+  "materska": "STONEX FINANCIAL LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F51637_2044_2031JG20D00010_2044",
+  "piid": "2031JG27F51637",
+  "popis_award": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "popis_usa": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STONEX FINANCIAL LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F51638|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F51638_2044_2031JG20D00010_2044",
+  "burza": "",
+  "castka_usa": 5044212.48,
+  "datum": "2026-11-03",
+  "materska": "STONEX FINANCIAL LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F51638_2044_2031JG20D00010_2044",
+  "piid": "2031JG27F51638",
+  "popis_award": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "popis_usa": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STONEX FINANCIAL LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F51639|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F51639_2044_2031JG20D00010_2044",
+  "burza": "",
+  "castka_usa": 3363892.07,
+  "datum": "2026-11-04",
+  "materska": "STONEX FINANCIAL LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F51639_2044_2031JG20D00010_2044",
+  "piid": "2031JG27F51639",
+  "popis_award": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "popis_usa": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STONEX FINANCIAL LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F51640|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F51640_2044_2031JG20D00010_2044",
+  "burza": "",
+  "castka_usa": 5057834.93,
+  "datum": "2026-11-04",
+  "materska": "STONEX FINANCIAL LTD",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F51640_2044_2031JG20D00010_2044",
+  "piid": "2031JG27F51640",
+  "popis_award": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "popis_usa": "RAW GOLD BULLION MINT MAC GOLD BULLION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STONEX FINANCIAL LTD",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F70149|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F70149_2044_2031JG23D00001_2044",
+  "burza": "",
+  "castka_usa": 18139690.8,
+  "datum": "2026-11-01",
+  "materska": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F70149_2044_2031JG23D00001_2044",
+  "piid": "2031JG27F70149",
+  "popis_award": "BASE METAL STRIP AND FREIGHT MINT MAC BASE METAL STRIP",
+  "popis_usa": "BASE METAL STRIP AND FREIGHT MINT MAC BASE METAL STRIP",
+  "prvni_zaznam": "2026-11-04T15:04:30Z",
+  "shoda": "",
+  "spolecnost": "WIELAND ROLLED PRODUCTS NORTH AMERICA, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2031JG27F71131|0": {
+  "agentura": "United States Mint",
+  "award_gid": "CONT_AWD_2031JG27F71131_2044_2031JG23D00002_2044",
+  "burza": "",
+  "castka_usa": 13518915.51,
+  "datum": "2026-11-02",
+  "materska": "POONGSAN CORPORATION",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2031JG27F71131_2044_2031JG23D00002_2044",
+  "piid": "2031JG27F71131",
+  "popis_award": "BASE METAL COIL AND FREIGHT MINT MAC BASE METAL STRIP",
+  "popis_usa": "BASE METAL COIL AND FREIGHT MINT MAC BASE METAL STRIP",
+  "prvni_zaznam": "2026-11-04T15:04:30Z",
+  "shoda": "",
+  "spolecnost": "PMX INDUSTRIES, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2032H521F00136|P00077": {
+  "agentura": "Internal Revenue Service",
+  "award_gid": "CONT_AWD_2032H521F00136_2050_GS23F0230P_4730",
+  "burza": "",
+  "castka_usa": 1158947.12,
+  "datum": "2026-11-04",
+  "materska": "THE CBE GROUP, INC.",
+  "mod": "P00077",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00136_2050_GS23F0230P_4730",
+  "piid": "2032H521F00136",
+  "popis_award": "THE PURPOSE OF THIS EFFORT IS TO ENLIST THE SERVICES OF PRIVATE COLLECTION AGENCIES (PCAS OR CONTRACTORS) TO COLLECT CERTAIN OUTSTANDING INACTIVE IRS TAX RECEIVABLES AS DESCRIBED IN THIS PERFORMANCE WORK STATEMENT AND THE POLICY.",
+  "popis_usa": "PRIVATE DEBT COLLECTION SERVICES, MODIFICATION TO INCREASE FUNDING",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "THE CBE GROUP, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "2032H521F00137|P00076": {
+  "agentura": "Internal Revenue Service",
+  "award_gid": "CONT_AWD_2032H521F00137_2050_GS23F0009U_4730",
+  "burza": "",
+  "castka_usa": 1133754.79,
+  "datum": "2026-11-04",
+  "materska": "COAST PROFESSIONAL, INC.",
+  "mod": "P00076",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_2032H521F00137_2050_GS23F0009U_4730",
+  "piid": "2032H521F00137",
+  "popis_award": "DEBT COLLECTION SERVICES",
+  "popis_usa": "PRIVATE DEBT COLLECTION SERVICES, MODIFICATION TO INCREASE FUNDING",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "COAST PROFESSIONAL, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "28321327C00060001|0": {
+  "agentura": "Social Security Administration",
+  "award_gid": "CONT_AWD_28321327C00060001_2800_-NONE-_-NONE-",
+  "burza": "NYSE",
+  "castka_sam": 74834449.7,
+  "castka_usa": 10487624.52,
+  "datum": "2026-11-02",
+  "materska": "ACCENTURE PLC",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/0068b46523d5435bacdade4f3fc0a945/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_28321327C00060001_2800_-NONE-_-NONE-",
+  "piid": "28321327C00060001",
+  "popis_award": "SERVICES TO MANAGE THE TICKET TO WORK PROGRAM (TICKET PROGRAM MANAGER CONTRACT) INCLUDING RECRUITING AND MONITORING EMPLOYMENT NETWORKS (ENS), FACILITATION OF BENEFICIARY ACCESS TO ENS, MANAGING A CONTACT CENTER AND PROGRAM WEBSITE, AND EN PAYMENT AD",
+  "popis_sam": "Recompete of the Ticket Program Manager (TPM) cont",
+  "popis_usa": "SERVICES TO MANAGE THE TICKET TO WORK PROGRAM (TICKET PROGRAM MANAGER CONTRACT) INCLUDING RECRUITING AND MONITORING EMPLOYMENT NETWORKS (ENS), FACILITATION OF BENEFICIARY ACCESS TO ENS, MANAGING A CONTACT CENTER AND PROGRAM WEBSITE, AND EN PAYMENT AD",
+  "prvni_zaznam": "2026-11-02T20:56:24Z",
+  "shoda": "alias",
+  "spolecnost": "ACCENTURE FEDERAL SERVICES LLC",
+  "ticker": "ACN",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "33301127FFT0008|0": {
+  "agentura": "National Gallery of Art",
+  "award_gid": "CONT_AWD_33301127FFT0008_3355_33301125DFI0004_3355",
+  "burza": "",
+  "castka_usa": 2270117.0,
+  "datum": "2026-11-03",
+  "materska": "WHITING-TURNER CONTRACTING COMPANY, THE",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_33301127FFT0008_3355_33301125DFI0004_3355",
+  "piid": "33301127FFT0008",
+  "popis_award": "NATIONAL GALLERY OF ART IDIQ, MATOC TO FOR EMERGENCY CHILLED WATER ACCESS ECWA",
+  "popis_usa": "NATIONAL GALLERY OF ART IDIQ, MATOC TO FOR EMERGENCY CHILLED WATER ACCESS ECWA",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "WHITING-TURNER CONTRACTING COMPANY, THE",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10A20F0309|P00115": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732",
+  "burza": "NYSE",
+  "castka_usa": 61357795.0,
+  "datum": "2026-11-03",
+  "materska": "AT&T INC",
+  "mod": "P00115",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10A20F0309_3600_GS00Q17NSD3000_4732",
+  "piid": "36C10A20F0309",
+  "popis_award": "ENTERPRISE DATA NETWORK SERVICES CARRIER B",
+  "popis_usa": "EO 14398   ENTERPRISE DATA NETWORK SERVICES CARRIER B",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "AT&T ENTERPRISES, LLC",
+  "ticker": "T",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10A25F0009|P00009": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10A25F0009_3600_GS00Q17NSD3007_4732",
+  "burza": "",
+  "castka_usa": 2150858.0,
+  "datum": "2026-11-03",
+  "materska": "MANHATTAN TELECOMMUNICATIONS CORPORATION LLC",
+  "mod": "P00009",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10A25F0009_3600_GS00Q17NSD3007_4732",
+  "piid": "36C10A25F0009",
+  "popis_award": "VA ENTERPRISE INFRASTRUCTURE SOLUTIONS PLAIN OLD TELEPHONE SERVICE (POTS) REPLACEMENT SERVICES",
+  "popis_usa": "EO 14398 VA ENTERPRISE INFRASTRUCTURE SOLUTIONS PLAIN OLD TELEPHONE SERVICE (POTS) REPLACEMENT SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MANHATTAN TELECOMMUNICATIONS CORPORATION LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10B25F0307|P00003": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10B25F0307_3600_NNG15SD26B_8000",
+  "burza": "",
+  "castka_usa": 1444286.33,
+  "datum": "2026-11-03",
+  "materska": "THUNDERCAT TECHNOLOGY  LLC",
+  "mod": "P00003",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10B25F0307_3600_NNG15SD26B_8000",
+  "piid": "36C10B25F0307",
+  "popis_award": "SITEIMPROVE SOFTWARE AS A SERVICE",
+  "popis_usa": "SITEIMPROVE SOFTWARE AS A SERVICE OPTION YEAR 1 EXERCISE",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "THUNDERCAT TECHNOLOGY, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10X27D0006|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 5457451.8,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/206024accf494b57bf1d4da88721f4c1/view",
+  "piid": "36C10X27D0006",
+  "popis_sam": "6515--NX EQ Physiologic Motility Analyzers (EndoFLIP)",
+  "prvni_zaznam": "2026-11-04T23:54:18Z",
+  "shoda": "",
+  "spolecnost": "VETERANS HEALTHCARE SUPPLY SOLUTIONS, INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C10X27N0006|P00001": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10X27N0006_3600_36C10X22D0006_3600",
+  "burza": "NYSE",
+  "castka_usa": 83406416.48,
+  "datum": "2026-11-03",
+  "materska": "UNITEDHEALTH GROUP INCORPORATED",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0006_3600_36C10X22D0006_3600",
+  "piid": "36C10X27N0006",
+  "popis_award": "TASK ORDER SUBJECT TO THE AVAILABILITY OF FY27 FUNDS.",
+  "popis_usa": "ADD FUNDS TO TASK ORDER THAT WAS SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "OPTUMSERVE HEALTH SERVICES, INC.",
+  "ticker": "UNH",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10X27N0007|P00001": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10X27N0007_3600_36C10X22D0007_3600",
+  "burza": "NYSE",
+  "castka_usa": 158762599.55,
+  "datum": "2026-11-03",
+  "materska": "LEIDOS HOLDINGS, INC.",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0007_3600_36C10X22D0007_3600",
+  "piid": "36C10X27N0007",
+  "popis_award": "TASK ORDER SUBJECT TO THE AVAILABILITY OF FY27 FUNDS.",
+  "popis_usa": "ADD FUNDS TO TASK ORDER THAT WAS SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "QTC MEDICAL SERVICES INC",
+  "ticker": "LDOS",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10X27N0008|P00001": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10X27N0008_3600_36C10X22D0008_3600",
+  "burza": "",
+  "castka_usa": 70243668.35,
+  "datum": "2026-11-03",
+  "materska": "VETERANS EVALUATION SERVICES, INC",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0008_3600_36C10X22D0008_3600",
+  "piid": "36C10X27N0008",
+  "popis_award": "TASK ORDER SUBJECT TO THE AVAILABILITY OF FY27 FUNDING.",
+  "popis_usa": "ADD FUNDS TO TASK ORDER THAT WAS SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "VETERANS EVALUATION SERVICES, INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10X27N0009|P00001": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10X27N0009_3600_36C10X22D0009_3600",
+  "burza": "NYSE",
+  "castka_usa": 87556157.11,
+  "datum": "2026-11-03",
+  "materska": "LEIDOS HOLDINGS, INC.",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0009_3600_36C10X22D0009_3600",
+  "piid": "36C10X27N0009",
+  "popis_award": "TASK ORDER SUBJECT TO THE AVAILABILITY OF FY27 FUNDING",
+  "popis_usa": "ADD FUNDS TO TASK ORDER THAT WAS SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "QTC MEDICAL SERVICES INC",
+  "ticker": "LDOS",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C10X27N0010|P00001": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C10X27N0010_3600_36C10X22D0010_3600",
+  "burza": "",
+  "castka_usa": 40439603.57,
+  "datum": "2026-11-03",
+  "materska": "VETERANS EVALUATION SERVICES, INC",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C10X27N0010_3600_36C10X22D0010_3600",
+  "piid": "36C10X27N0010",
+  "popis_award": "TASK ORDER SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "popis_usa": "ADD FUNDS TO TASK ORDER THAT WAS SUBJECT TO THE AVAILABILITY OF FY27 FUNDS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "VETERANS EVALUATION SERVICES, INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C24127P0002|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1900000.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/abe265d597004caeb1468832fffaeb86/view",
+  "piid": "36C24127P0002",
+  "popis_sam": "S208--Landscaping and Snow Removal Services",
+  "prvni_zaznam": "2026-11-07T02:12:14Z",
+  "shoda": "",
+  "spolecnost": "TSR SOLUTIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C24127P0070|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1353693.6,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/3ed55798587848e3a99f3ca569efa652/view",
+  "piid": "36C24127P0070",
+  "popis_sam": "W065--Karl Storz Brand Name or Equal Equipment Lease",
+  "prvni_zaznam": "2026-11-04T01:22:11Z",
+  "shoda": "",
+  "spolecnost": "L1 ENTERPRISES INCORPORATED",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C24427C0008|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C24427C0008_3600_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1594967.0,
+  "datum": "2026-11-03",
+  "materska": "HOME MAINTENANCE GROUP LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C24427C0008_3600_-NONE-_-NONE-",
+  "piid": "36C24427C0008",
+  "popis_award": "REPLACE HVAC BUILDING 12 AND 15",
+  "popis_usa": "REPLACE HVAC BUILDING 12 AND 15",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "HOME MAINTENANCE GROUP LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C24427N0075|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C24427N0075_3600_36C24425D0102_3600",
+  "burza": "",
+  "castka_usa": 8158193.0,
+  "datum": "2026-11-04",
+  "materska": "SERVIAM CONSTRUCTION LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C24427N0075_3600_36C24425D0102_3600",
+  "piid": "36C24427N0075",
+  "popis_award": "EO 14398",
+  "popis_usa": "EO 14398",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SERVIAM CONSTRUCTION LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C24627N0083|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C24627N0083_3600_36C24625D0012_3600",
+  "burza": "",
+  "castka_usa": 4223551.75,
+  "datum": "2026-11-03",
+  "materska": "MEDEX MEDICAL TRANSPORT SERVICE INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C24627N0083_3600_36C24625D0012_3600",
+  "piid": "36C24627N0083",
+  "popis_award": "ALS/BLS AMBULANCE SERVICE FOR SALISBURY VA HEALTH CARE SYSTEM.  MODIFICATION TO EXERCISE OPTION YEAR ONE.",
+  "popis_usa": "ALS/BLS AMBULANCE SERVICE FOR SALISBURY VA HEALTH CARE SYSTEM.  MODIFICATION TO EXERCISE OPTION YEAR ONE.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MEDEX MEDICAL TRANSPORT SERVICE INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C24726N0204|P00002": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C24726N0204_3600_36F79722D0194_3600",
+  "burza": "",
+  "castka_usa": 1658737.6,
+  "datum": "2026-11-03",
+  "materska": "SOLVET SERVICES, LLC",
+  "mod": "P00002",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C24726N0204_3600_36F79722D0194_3600",
+  "piid": "36C24726N0204",
+  "popis_award": "RADIOLOGY TECHNICIANS",
+  "popis_usa": "RADIOLOGY TECHNICIANS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SOLVET SERVICES, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C24727D0013|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 4151875.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/12edb465b7344b3192c7271fdcbf6226/view",
+  "piid": "36C24727D0013",
+  "popis_sam": "G004--Trans Housing CAVA  11/27/2026 - 11/26/2031",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "SELIKOFF CENTER, INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C24827D0013|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "Frankfurt (Xetra)",
+  "castka_sam": 1441012.5,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/2c3db744f2bf4da2bdda3f7cc48b10df/view",
+  "piid": "36C24827D0013",
+  "popis_sam": "6505--FY27 F18 Florebetapir",
+  "prvni_zaznam": "2026-11-06T19:08:24Z",
+  "shoda": "alias",
+  "spolecnost": "PETNET SOLUTIONS, INC.",
+  "ticker": "SHL.DE",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C25527N0064|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C25527N0064_3600_36C25526D0007_3600",
+  "burza": "",
+  "castka_usa": 1357548.15,
+  "datum": "2026-11-04",
+  "materska": "ROSE VILLA INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C25527N0064_3600_36C25526D0007_3600",
+  "piid": "36C25527N0064",
+  "popis_award": "EXERCISE OY 1 HCHV SERVICES",
+  "popis_usa": "EXERCISE OY 1 HCHV SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ROSE VILLA INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C25627C0005|0": {
+  "agentura": "Department of Veterans Affairs",
+  "alt_nazvy": [
+   "JETT'S SPECIALTY CONTRACTING, LLC"
+  ],
+  "award_gid": "CONT_AWD_36C25627C0005_3600_-NONE-_-NONE-",
+  "burza": "",
+  "castka_sam": 10195530.0,
+  "castka_usa": 10195530.0,
+  "datum": "2026-11-04",
+  "materska": "JETT'S SPECIALTY CONTRACTING, LLC",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/0700ac3d93324848b732b8d79dc6e718/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C25627C0005_3600_-NONE-_-NONE-",
+  "piid": "36C25627C0005",
+  "popis_award": "564-26-103 (DB)- CONDENSATE AND STEAM LINES",
+  "popis_sam": "Y1DZ| 564-26-103 |REPLACE CAMPUS STEAM AND CONDENSATE LINES | DESIGN-BUILD | FAYETTEVILLE, AR | AWARD NOTICE",
+  "popis_usa": "564-26-103 (DB)- CONDENSATE AND STEAM LINES",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "Jetts' Specialty Contracting LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "36C25627N0155|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C25627N0155_3600_36C25625D0009_3600",
+  "burza": "",
+  "castka_usa": 5161240.8,
+  "datum": "2026-11-04",
+  "materska": "PRIMARY CARE SOLUTIONS INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C25627N0155_3600_36C25625D0009_3600",
+  "piid": "36C25627N0155",
+  "popis_award": "MERIDIAN COMMUNITY BASED OUTPATIENT CLINIC, MS TASK ORDER FUNDING",
+  "popis_usa": "MERIDIAN COMMUNITY BASED OUTPATIENT CLINIC, MS TASK ORDER FUNDING",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "PRIMARY CARE SOLUTIONS INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C25726C0045|P00002": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C25726C0045_3600_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1550167.2,
+  "datum": "2026-11-03",
+  "materska": "FG MANAGEMENT GROUP LLC",
+  "mod": "P00002",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C25726C0045_3600_-NONE-_-NONE-",
+  "piid": "36C25726C0045",
+  "popis_award": "MEDICAL COURIER SERVICES",
+  "popis_usa": "EO 14398 - MEDICAL COURIER SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "FG MANAGEMENT GROUP LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C25727P0012|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1028227.68,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/e54620138f4041648034899c60c1f0fb/view",
+  "piid": "36C25727P0012",
+  "popis_sam": "Non-Critical Reusable Medical Equipment (NCRME) Cleaning Services",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "FORDHALL TECHNOLOGY SOLUTIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C25727P0035|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1589287.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/19e57787073647408e8979556a81301d/view",
+  "piid": "36C25727P0035",
+  "popis_sam": "J045--Install Chill Water System Filtration & Steam Condensate  Polisher",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "FLOWSENSE, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36C26327N0215|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C26327N0215_3600_36C26324D0009_3600",
+  "burza": "",
+  "castka_usa": 2885556.0,
+  "datum": "2026-11-03",
+  "materska": "VALOR HEALTHCARE INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C26327N0215_3600_36C26324D0009_3600",
+  "piid": "36C26327N0215",
+  "popis_award": "WILLISTON AND DICKINSON CBOC YEAR 3 FUNDING TO (01 FEB 27 - 31 JAN 28)",
+  "popis_usa": "WILLISTON AND DICKINSON CBOC YEAR 3 FUNDING TO (01 FEB 27 - 31 JAN 28)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "VALOR HEALTHCARE INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C77627N0003|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C77627N0003_3600_36C77625D0008_3600",
+  "burza": "",
+  "castka_usa": 2053647.22,
+  "datum": "2026-11-03",
+  "materska": "AESUS DESIGN GROUP LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C77627N0003_3600_36C77625D0008_3600",
+  "piid": "36C77627N0003",
+  "popis_award": "NATIONAL AE IDIQ MATOC",
+  "popis_usa": "NATIONAL AE IDIQ MATOC",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "AESUS DESIGN GROUP LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C77627N0004|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C77627N0004_3600_36C77625D0025_3600",
+  "burza": "",
+  "castka_usa": 1771081.0,
+  "datum": "2026-11-03",
+  "materska": "SPUR DESIGN, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C77627N0004_3600_36C77625D0025_3600",
+  "piid": "36C77627N0004",
+  "popis_award": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "popis_usa": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SPUR DESIGN, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C77627N0005|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C77627N0005_3600_36C77625D0008_3600",
+  "burza": "",
+  "castka_usa": 2297214.42,
+  "datum": "2026-11-03",
+  "materska": "AESUS DESIGN GROUP LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C77627N0005_3600_36C77625D0008_3600",
+  "piid": "36C77627N0005",
+  "popis_award": "NATIONAL AE IDIQ MATOC",
+  "popis_usa": "NATIONAL AE IDIQ MATOC",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "AESUS DESIGN GROUP LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C77627N0006|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C77627N0006_3600_36C77625D0025_3600",
+  "burza": "",
+  "castka_usa": 1962238.0,
+  "datum": "2026-11-03",
+  "materska": "SPUR DESIGN, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C77627N0006_3600_36C77625D0025_3600",
+  "piid": "36C77627N0006",
+  "popis_award": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "popis_usa": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SPUR DESIGN, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C77627N0044|0": {
+  "agentura": "Department of Veterans Affairs",
+  "award_gid": "CONT_AWD_36C77627N0044_3600_36C77625D0013_3600",
+  "burza": "",
+  "castka_usa": 5899459.0,
+  "datum": "2026-11-03",
+  "materska": "CHIMBORAZO JV",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_36C77627N0044_3600_36C77625D0013_3600",
+  "piid": "36C77627N0044",
+  "popis_award": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "popis_usa": "NATIONAL A-E IDIQ MATOC \"EO 14398\"",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CHIMBORAZO JV",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "36C79127D0002|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 162000000.0,
+  "datum": "2026-11-20",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/e6843e35934e47ee8c3219253fdacbec/view",
+  "piid": "36C79127D0002",
+  "popis_sam": "Cochlear Americas Auditory Implants Award Notice and J&A",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "COCHLEAR AMERICAS CORPORATION",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36F79727D0010|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 10992136.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/486a9e31a1754f1eaf891945fee3d911/view",
+  "piid": "36F79727D0010",
+  "popis_sam": "6550--Alba Bioscience Inc. (PENDING PROPOSAL)",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "ALBA BIOSCIENCE, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "36H79719D001636C26327F0008|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1168765.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/ec3de47e6851426db199f5cf30e6ceea/view",
+  "piid": "36H79719D001636C26327F0008",
+  "popis_sam": "J065--Riverain ClearRead Software in support of the VISN 23 VA  Healthcare System",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "RIVERAIN TECHNOLOGIES, INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "47PD5527F0019|0": {
+  "agentura": "Public Buildings Service",
+  "award_gid": "CONT_AWD_47PD5527F0019_4740_47PH0825D0037_4740",
+  "burza": "",
+  "castka_usa": 1855372.68,
+  "datum": "2026-11-03",
+  "materska": "WRIGHT BROS LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47PD5527F0019_4740_47PH0825D0037_4740",
+  "piid": "47PD5527F0019",
+  "popis_award": "THE PROJECT RENOVATES THE EXISTING PISTOL RANGE FACILITY, BUILDING D, AND CONVERTS IT TO OFFICE AND STORAGE SPACE FOR THE BORDER PATROL IN MARFA, TX",
+  "popis_usa": "THE PROJECT RENOVATES THE EXISTING PISTOL RANGE FACILITY, BUILDING D, AND CONVERTS IT TO OFFICE AND STORAGE SPACE FOR THE BORDER PATROL IN MARFA, TX",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "WRIGHT BROS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47PG5226F0003|PO0002": {
+  "agentura": "Public Buildings Service",
+  "award_gid": "CONT_AWD_47PG5226F0003_4740_47PG5226A0002_4740",
+  "burza": "",
+  "castka_usa": 1579606.09,
+  "datum": "2026-11-04",
+  "materska": "PUNDIR GROUP, INC",
+  "mod": "PO0002",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47PG5226F0003_4740_47PG5226A0002_4740",
+  "piid": "47PG5226F0003",
+  "popis_award": "CALL ORDER FOR OMVTE AT THE RONALD REAGAN FEDERAL BUILDING & US COURTHOUSE LOCATED IN SANTA ANA, CA",
+  "popis_usa": "EXERCISE OPTION YEAR 1 - OMVTE AT THE RONALD REAGAN FEDERAL BUILDING & US COURTHOUSE IN SANTA ANA, CA",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "PUNDIR GROUP, INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47PJ5327F0006|0": {
+  "agentura": "Public Buildings Service",
+  "award_gid": "CONT_AWD_47PJ5327F0006_4740_47PD0322A0002_4740",
+  "burza": "",
+  "castka_usa": 1289005.55,
+  "datum": "2026-11-04",
+  "materska": "LB & B ASSOCIATES INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47PJ5327F0006_4740_47PD0322A0002_4740",
+  "piid": "47PJ5327F0006",
+  "popis_award": "EMERGENCY NTP WNRC GENERATOR MONTHLY RENTAL IN SUITLAND, MD",
+  "popis_usa": "EMERGENCY NTP WNRC GENERATOR MONTHLY RENTAL IN SUITLAND, MD",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "LB & B ASSOCIATES INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QACA25F0353|P00005": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QACA25F0353_4732_GS35F309AA_4732",
+  "burza": "",
+  "castka_usa": 13315612.0,
+  "datum": "2026-11-03",
+  "materska": "MINBURN TECHNOLOGY GROUP, LLC",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QACA25F0353_4732_GS35F309AA_4732",
+  "piid": "47QACA25F0353",
+  "popis_award": "MS AZURE BRAND NAME OR EQUAL HOSTING SUPPORT & ANCILLARY SVCS - PER EO 14240 THIS PROCUREMENT HAS BEEN ADMINISTRATIVELY TRANSFERRED TO GSA.THE NEW PIID FOR THIS PROCUREMENT REPRESENTS AN ADMINISTRATIVE CONTINUANCE OF THE ORIGINAL AWARD 73351024F0025",
+  "popis_usa": "MICROSOFT AZURE BRAND NAME OR EQUAL  HOSTING SUPPORT AND ANCILLARY SERVICES - OPTION YR 3",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MINBURN TECHNOLOGY GROUP, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA21F0004|P00053": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA21F0004_4732_47QTCH18D0033_4732",
+  "burza": "",
+  "castka_usa": 1123124.79,
+  "datum": "2026-11-03",
+  "materska": "ITILITY, L.L.C",
+  "mod": "P00053",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA21F0004_4732_47QTCH18D0033_4732",
+  "piid": "47QFCA21F0004",
+  "popis_award": "THE PURPOSE OF THIS IS TO AWARD THE TASK ORDER TO ITILITY, LLC.",
+  "popis_usa": "USMEPCOM INFORMATION TECHNOLOGY ENTERPRISE SOLUTION MITES",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "ITILITY, L.L.C",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA22F0026|P00055": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA22F0026_4732_47QTCK18D0060_4732",
+  "burza": "",
+  "castka_usa": 18782270.0,
+  "datum": "2026-11-02",
+  "materska": "GOVCIO, LLC",
+  "mod": "P00055",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA22F0026_4732_47QTCK18D0060_4732",
+  "piid": "47QFCA22F0026",
+  "popis_award": "ENTERPRISE SUPPORT SERVICES AND ENDPOINT TECHNOLOGY (ESSET) TASK ORDER (47QFCA22F0026) AWARD FROM TASK ORDER REQUEST (47QFCA21F0072) IN SUPPORT OF THE US EPA.",
+  "popis_usa": "MODIFICATION TO INCREMENTALLY FUND THE TASK ORDER.",
+  "prvni_zaznam": "2026-11-04T15:04:30Z",
+  "shoda": "",
+  "spolecnost": "SALIENT CRGT, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA23F0003|P00008": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA23F0003_4732_47QFCA23D0001_4732",
+  "burza": "",
+  "castka_usa": 1227497.86,
+  "datum": "2026-11-04",
+  "materska": "ANSOL INC.",
+  "mod": "P00008",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0003_4732_47QFCA23D0001_4732",
+  "piid": "47QFCA23F0003",
+  "popis_award": "PWA SBIR PHASE III TO1 ORIGINAL AWARD. THIS SBIR PHASE III TO1 WORK IS A FOLLOW ON OF THE SBIR PHASE I (SBIR TOPIC AF192-00, CONTRACT NUMBER # FA8649-19-P-A180).",
+  "popis_usa": "PROGRESSIVE WEB APPLICATION SMALL BUSINESS INNOVATION RESEARCH PHASE III TASK ORDER 01 EXERCISE OPTION PERIOD.",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "ANSOL INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA23F0046|P00059": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA23F0046_4732_GS00Q14OADU140_4732",
+  "burza": "NYSE",
+  "castka_usa": 1486408.0,
+  "datum": "2026-11-04",
+  "materska": "AMENTUM HOLDINGS INC.",
+  "mod": "P00059",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA23F0046_4732_GS00Q14OADU140_4732",
+  "piid": "47QFCA23F0046",
+  "popis_award": "INDOPACIFIC COMMAND TECHNOLOGY EXPERIMENTATION ANALYSIS AND MANAGEMENT SERVICES (ITEAMS) BASE AWARD.",
+  "popis_usa": "TO PROVIDE USINDOPACOM AND ITS MISSION PARTNERS WITH PROFESSIONAL SERVICES TO ADOPT AND DEVELOP INNOVATIVE TECHNOLOGY, PROCEDURAL SOLUTIONS, AND CAPABILITIES TO ADDRESS WARFIGHTER MISSION NEEDS ACROSS THE USINDOPACOM ENTERPRISE.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "AMENTUM SERVICES, INC.",
+  "ticker": "AMTM",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA25F0009|P00034": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732",
+  "burza": "Nasdaq",
+  "castka_usa": 5239973.0,
+  "datum": "2026-11-03",
+  "materska": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+  "mod": "P00034",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0009_4732_47QFCA22D0337_4732",
+  "piid": "47QFCA25F0009",
+  "popis_award": "SYSTEM SOFTWARE LIFECYCLE ENGINEERING SSLE",
+  "popis_usa": "SYSTEM SOFTWARE LIFECYCLE ENGINEERING SSLE. THE PURPOSE OF THIS MODIFICATION IS TO PROVIDE INCREMENTAL FUNDING AND ADMINISTRATIVE UPDATES FOR THE REQUIREMENT.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "SCIENCE APPLICATIONS INTERNATIONAL CORPORATION",
+  "ticker": "SAIC",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA25F0010|P00029": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA25F0010_4732_GS00Q14OADU113_4732",
+  "burza": "",
+  "castka_usa": 2842098.0,
+  "datum": "2026-11-03",
+  "materska": "DELOITTE LLP",
+  "mod": "P00029",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA25F0010_4732_GS00Q14OADU113_4732",
+  "piid": "47QFCA25F0010",
+  "popis_award": "THE PURPOSE OF THIS AWARD IS TO PROVIDE ENTERPRISE-WIDE PROFESSIONAL SERVICES TO SUPPORT UNITED STATES INDO-PACIFIC COMMAND.",
+  "popis_usa": "ALPHA: TO PROVIDE USINDOPACOM AND ITS MISSION PARTNERS WITH A FULL RANGE OF PROFESSIONAL SERVICES (PLANNING, TRAINING, ENGAGEMENT, STRATEGIC ANALYSIS, BUSINESS MANAGEMENT, LOGISTICS, AND COMMUNICATION SERVICES).",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "DELOITTE CONSULTING LLP",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFCA26F0004|P00005": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFCA26F0004_4732_47QTCK18D0036_4732",
+  "burza": "NYSE",
+  "castka_usa": 5000000.0,
+  "datum": "2026-11-04",
+  "materska": "ACCENTURE PLC",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFCA26F0004_4732_47QTCK18D0036_4732",
+  "piid": "47QFCA26F0004",
+  "popis_award": "CYBER AUTOMATION SYSTEMS TECHNOLOGY AND LIFECYCLE ENTERPRISE NETWORK (CASTLE-NET) SERVICES TASK ORDER AWARD.",
+  "popis_usa": "CHANGE OF CO, ADDING FUNDS AND OTHER ADMIN ACTIONS FOR CYBER AUTOMATION SYSTEMS TECHNOLOGY AND LIFECYCLE ENTERPRISE NETWORK CASTLENET SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "ACCENTURE FEDERAL SERVICES LLC",
+  "ticker": "ACN",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFMA21F0029|P00057": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFMA21F0029_4732_GS00Q14OADS114_4732",
+  "burza": "",
+  "castka_usa": 7111074.09,
+  "datum": "2026-11-04",
+  "materska": "MANTA GROUP LLC",
+  "mod": "P00057",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFMA21F0029_4732_GS00Q14OADS114_4732",
+  "piid": "47QFMA21F0029",
+  "popis_award": "PM MC GLOBAL FIELDING SERVICES",
+  "popis_usa": "PM MC GLOBAL FIELDING SERVICES. MODIFICATION 57 EXERCISES OPTION YEAR 4, CREATES TDL 13 AND 14, REALIGNS CEILING AND APPLIES INCREMENTAL FUNDING IN THE AMOUNT OF $7,111,074.09.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MANTA GROUP LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFMA24F0023|P00043": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFMA24F0023_4732_GS00Q14OADS610_4732",
+  "burza": "",
+  "castka_usa": 1362530.42,
+  "datum": "2026-11-03",
+  "materska": "MODERN TECHNOLOGY SOLUTIONS, INC.",
+  "mod": "P00043",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFMA24F0023_4732_GS00Q14OADS610_4732",
+  "piid": "47QFMA24F0023",
+  "popis_award": "DIGITAL BLOODHOUND",
+  "popis_usa": "DIGITAL BLOODHOUND  MOD 043 ADDS INCREMENTAL FUNDING",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MODERN TECHNOLOGY SOLUTIONS, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFMA26F0001|P00008": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFMA26F0001_4732_GS00F008DA_4732",
+  "burza": "NYSE",
+  "castka_usa": 8518655.12,
+  "datum": "2026-11-03",
+  "materska": "BOOZ ALLEN HAMILTON HOLDING CORPORATION",
+  "mod": "P00008",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFMA26F0001_4732_GS00F008DA_4732",
+  "piid": "47QFMA26F0001",
+  "popis_award": "PM CAS PROFESSIONAL ENGINEERING SERVICES PES. TASK ORDER AWARD. OBLIGATE INCREMENTAL FUNDS.",
+  "popis_usa": "PM CAS PROFESSIONAL ENGINEERING SERVICES PES. EXERCISE OY1 13 NOV 26 - 12 NOV 27 AND OBLIGATED FUNDS.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "BOOZ ALLEN HAMILTON INC",
+  "ticker": "BAH",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFNA25F0001|P00020": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFNA25F0001_4732_47QTCA19D00EW_4732",
+  "burza": "",
+  "castka_usa": 1920893.72,
+  "datum": "2026-11-04",
+  "materska": "WINGBRACE LLC",
+  "mod": "P00020",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFNA25F0001_4732_47QTCA19D00EW_4732",
+  "piid": "47QFNA25F0001",
+  "popis_award": "DECISION INTELLIGENCE FOR NC3 ENTERPRISE DINE",
+  "popis_usa": "DECISION INTELLIGENCE FOR NC3 ENTERPRISE DINE",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "WINGBRACE LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFNA27F0001|0": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFNA27F0001_4732_47QTCA20D00D9_4732",
+  "burza": "",
+  "castka_usa": 6996610.0,
+  "datum": "2026-11-03",
+  "materska": "INTEGRATED DATA SERVICES, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFNA27F0001_4732_47QTCA20D00D9_4732",
+  "piid": "47QFNA27F0001",
+  "popis_award": "ASA ALT HQ  CCAR SOFTWARE AND SUPPORT SERVICES",
+  "popis_usa": "ASA ALT HQ  CCAR SOFTWARE AND SUPPORT SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "INTEGRATED DATA SERVICES, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QFPA21F0022|P00049": {
+  "agentura": "Federal Acquisition Service",
+  "award_gid": "CONT_AWD_47QFPA21F0022_4732_GS00Q14OADS609_4732",
+  "burza": "",
+  "castka_usa": 1079419.89,
+  "datum": "2026-11-04",
+  "materska": "AXIENT LLC",
+  "mod": "P00049",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_47QFPA21F0022_4732_GS00Q14OADS609_4732",
+  "piid": "47QFPA21F0022",
+  "popis_award": "SMC PORTFOLIO ARCHITECT",
+  "popis_usa": "SSC PORTFOLIO ARCHITECT ZA - MOD P00049 - DECREASE CEILING AND INCREMENTALLY FUND.",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "AXIENT LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "47QRAA27D0016|0": {
+  "agentura": "Federal Acquisition Service",
+  "burza": "",
+  "castka_sam": 27000000.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/02d6c383c44643689279c3fcb82642f7/view",
+  "piid": "47QRAA27D0016",
+  "popis_sam": "Multiple Award Schedule",
+  "prvni_zaznam": "2026-11-02T13:26:30Z",
+  "shoda": "",
+  "spolecnost": "THE BREAD AND BUTTER BRAND CONSULTING LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "47QRAA27D001B|0": {
+  "agentura": "Federal Acquisition Service",
+  "burza": "",
+  "castka_sam": 116600000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/bee70e957ee6468ea318c58b74f0fc88/view",
+  "piid": "47QRAA27D001B",
+  "popis_sam": "Multiple Award Schedule",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "VECTOR RESOURCE INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "47QSMS27D005R|0": {
+  "agentura": "Federal Acquisition Service",
+  "burza": "",
+  "castka_sam": 1000000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/cf4b393ce4c649bd894e318a684b024c/view",
+  "piid": "47QSMS27D005R",
+  "popis_sam": "Multiple Award Schedule",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "INCREDIBLE SUPPLY LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "47QTCA27D001C|0": {
+  "agentura": "Federal Acquisition Service",
+  "burza": "",
+  "castka_sam": 1000000.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/28b3bdb53fde4024a47d10f4021e4245/view",
+  "piid": "47QTCA27D001C",
+  "popis_sam": "Multiple Award Schedule",
+  "prvni_zaznam": "2026-11-03T01:21:28Z",
+  "shoda": "",
+  "spolecnost": "Metric Elire LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "47QTCA27D001D|0": {
+  "agentura": "Federal Acquisition Service",
+  "burza": "",
+  "castka_sam": 2000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c76b7510458046fda02f59cf27b4b460/view",
+  "piid": "47QTCA27D001D",
+  "popis_sam": "Multiple Award Schedule",
+  "prvni_zaznam": "2026-11-03T13:21:19Z",
+  "shoda": "",
+  "spolecnost": "RX3 COMMUNICATIONS INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "68HERW27F0021|0": {
+  "agentura": "Environmental Protection Agency",
+  "award_gid": "CONT_AWD_68HERW27F0021_6800_68HERC23D0011_6800",
+  "burza": "",
+  "castka_usa": 1150000.0,
+  "datum": "2026-11-04",
+  "materska": "THE CADMUS GROUP LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_68HERW27F0021_6800_68HERC23D0011_6800",
+  "piid": "68HERW27F0021",
+  "popis_award": "R425 - TECHNICAL SUPPORT FOR THE IMPLEMENTATION OF THE NATIONAL PRIMARY DRINKING WATER REGULATIONS",
+  "popis_usa": "R425 - TECHNICAL SUPPORT FOR THE IMPLEMENTATION OF THE NATIONAL PRIMARY DRINKING WATER REGULATIONS",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "THE CADMUS GROUP LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "69056727D000001|0": {
+  "agentura": "Federal Highway Administration",
+  "burza": "",
+  "castka_sam": 60000000.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/f4c343b330014eb1b0c11c2d457bf0c6/view",
+  "piid": "69056727D000001",
+  "popis_sam": "WFL AE Design IDIQ",
+  "prvni_zaznam": "2026-11-03T20:59:46Z",
+  "shoda": "",
+  "spolecnost": "DAVID EVANS AND ASSOCIATES, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "692M1526F00050|P00007": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_692M1526F00050_6920_692M1526D00001_6920",
+  "burza": "",
+  "castka_usa": 1535300.0,
+  "datum": "2026-11-03",
+  "materska": "QUECON, INC.",
+  "mod": "P00007",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_692M1526F00050_6920_692M1526D00001_6920",
+  "piid": "692M1526F00050",
+  "popis_award": "SYSTEMS ENGINEERING SUPPORT SERVICES INITIAL AWARD",
+  "popis_usa": "SYSTEMS ENGINEERING SUPPORT SERVICES INCREMENTAL FUNDING FOR SPECIFIC PROJECTS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "QUECON, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "692M1527D00002|0": {
+  "agentura": "Federal Aviation Administration",
+  "burza": "",
+  "castka_sam": 488190340.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/1e503e0fd15e459bb26979eb591e15d7/view",
+  "piid": "692M1527D00002",
+  "popis_sam": "Accelerated Transformation of Legacy Applications and Systems (ATLAS) Challenge Based Acquisition (ChBA)",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "DELOITTE CONSULTING LLP",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "693KA726F00016|P00005": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_693KA726F00016_6920_693KA718D00001_6920",
+  "burza": "NYSE",
+  "castka_usa": 3000000.0,
+  "datum": "2026-11-03",
+  "materska": "GENERAL DYNAMICS CORP",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_693KA726F00016_6920_693KA718D00001_6920",
+  "piid": "693KA726F00016",
+  "popis_award": "THE PURPOSE OF THIS TASK ORDER IS TO EXERCISE AND AWARD OPTIONAL CPFF CLIN 2.9. FOR TFMS SECOND LEVEL ENGINEERING (SLE) OF THE TFM2 CONTRACT 693KA7-18-D-00001.",
+  "popis_usa": "THE PURPOSE OF THIS TASK ORDER IS TO PROVIDE $3,000,000.00 IN INCREMENTAL FUNDING, INCREASE THE TOTAL ESTIMATED POTENTIAL VALUE (TEPV) BY $32,000.00 AND UPDATE THE DEFINITIZATION SCHEDULE TO CLIN 2.9. FOR TFMS SECOND LEVEL ENGINEERING (SLE) OF THE TF",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+  "ticker": "GD",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "693KA826F00317|P00001": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_693KA826F00317_6920_693KA826D00017_6920",
+  "burza": "",
+  "castka_usa": 4016147.58,
+  "datum": "2026-11-03",
+  "materska": "VISION QUEST SOLUTIONS INC",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_693KA826F00317_6920_693KA826D00017_6920",
+  "piid": "693KA826F00317",
+  "popis_award": "ARMED GUARD BASIC SERVICES WITHIN THE CENTRAL SERVICE AREA",
+  "popis_usa": "THE PURPOSE OF THIS MODIFICATION P00001 IS: -ADD $4,016,147.58 IN ADDITIONAL INCREMENTAL FUNDING TO THE TASK ORDER ALL OTHER TERMS OR CONDITIONS REMAIN THE SAME. THE OVERALL TASK ORDER FUNDED AMOUNT INCREASES BY $4,016,147.58 FROM $2,250,000.00 TO",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "VISION QUEST SOLUTIONS INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "693KA922F00134|P00079": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_693KA922F00134_6920_DTFAWA10A00086_6920",
+  "burza": "",
+  "castka_usa": 1174387.51,
+  "datum": "2026-11-04",
+  "materska": "CSSI INC",
+  "mod": "P00079",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_693KA922F00134_6920_DTFAWA10A00086_6920",
+  "piid": "693KA922F00134",
+  "popis_award": "EFAST PA 22-004-CS SAFETY SERVICES SUPPORT (S3)",
+  "popis_usa": "P00079",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "CSSI, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70B01C25F00001151|P00003": {
+  "agentura": "U.S. Customs and Border Protection",
+  "award_gid": "CONT_AWD_70B01C25F00001151_7014_70B01C23D00000009_7014",
+  "burza": "",
+  "castka_usa": 21628000.0,
+  "datum": "2026-11-04",
+  "materska": "BCCG A JOINT VENTURE",
+  "mod": "P00003",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70B01C25F00001151_7014_70B01C23D00000009_7014",
+  "piid": "70B01C25F00001151",
+  "popis_award": "CONSTRUCT BORDER BARRIER",
+  "popis_usa": "ADDED CONSTRUCTION WORK",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "BCCG A JOINT VENTURE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70B01C26F00000140|P00003": {
+  "agentura": "U.S. Customs and Border Protection",
+  "award_gid": "CONT_AWD_70B01C26F00000140_7014_70B01C26D00000013_7014",
+  "burza": "",
+  "castka_usa": 1173802.0,
+  "datum": "2026-11-04",
+  "materska": "SPENCER CONSTRUCTION LLC",
+  "mod": "P00003",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70B01C26F00000140_7014_70B01C26D00000013_7014",
+  "piid": "70B01C26F00000140",
+  "popis_award": "BORDER WALL CONSTRUCTION - WATERBORNE, DEL RIO SECTOR TEXAS (DRT-4)",
+  "popis_usa": "DRT-4 WATERBORNE - IBL MODIFICATION",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "SPENCER CONSTRUCTION LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70B03C26F00000942|P00001": {
+  "agentura": "U.S. Customs and Border Protection",
+  "award_gid": "CONT_AWD_70B03C26F00000942_7014_GS07F072GA_4732",
+  "burza": "",
+  "castka_usa": 3456201.81,
+  "datum": "2026-11-03",
+  "materska": "ISS ACTION INC",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70B03C26F00000942_7014_GS07F072GA_4732",
+  "piid": "70B03C26F00000942",
+  "popis_award": "GROUND TRANSPORTATION AND FACILITY GUARD SERVICES.",
+  "popis_usa": "ADD INCREMENTAL FUNDING TO TASK ORDER.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ISS ACTION INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70CMSD23FR0000080|P00013": {
+  "agentura": "U.S. Immigration and Customs Enforcement",
+  "award_gid": "CONT_AWD_70CMSD23FR0000080_7012_47QRAA22D008D_4732",
+  "burza": "",
+  "castka_usa": 8000000.0,
+  "datum": "2026-11-02",
+  "materska": "GEM TECHNOLOGY INTERNATIONAL, CORP",
+  "mod": "P00013",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70CMSD23FR0000080_7012_47QRAA22D008D_4732",
+  "piid": "70CMSD23FR0000080",
+  "popis_award": "PROGRAM AND ADMINISTRATIVE SUPPORT SERVICES",
+  "popis_usa": "THIS REQUIREMENT DELIVERS PROGRAM AND ADMINISTRATIVE SUPPORT SERVICES TO THE OFFICE OF PROFESSIONAL RESPONSIBILITY AT IMMIGRATION AND CUSTOMS ENFORCEMENT. THIS MODIFICATION ADDS SURGE SUPPORT.",
+  "prvni_zaznam": "2026-11-05T01:24:41Z",
+  "shoda": "",
+  "spolecnost": "GEM TECHNOLOGY INTERNATIONAL, CORP",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70CMSD26FR0000001|P00002": {
+  "agentura": "U.S. Immigration and Customs Enforcement",
+  "award_gid": "CONT_AWD_70CMSD26FR0000001_7012_70CTD022D00000014_7012",
+  "burza": "",
+  "castka_usa": 6626736.28,
+  "datum": "2026-11-04",
+  "materska": "STELLA JV, LLC",
+  "mod": "P00002",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70CMSD26FR0000001_7012_70CTD022D00000014_7012",
+  "piid": "70CMSD26FR0000001",
+  "popis_award": "THE PURPOSE OF THIS TASK ORDER IS TO PROCURE A PERSONNEL SECURITY ADJUDICATOR SUPPORT PLATFORM, WHICH WILL ASSIST US IMMIGRATION AND CUSTOMS ENFORCEMENT'S OFFICE OF PROFESSIONAL RESPONSIBILITY WITH PERSONNEL SECURITY ADJUDICATION PROCESSES.",
+  "popis_usa": "THE PURPOSE OF THIS TASK ORDER IS TO PROCURE A PERSONNEL SECURITY ADJUDICATOR SUPPORT PLATFORM, WHICH WILL ASSIST US IMMIGRATION AND CUSTOMS ENFORCEMENT'S OFFICE OF PROFESSIONAL RESPONSIBILITY WITH PERSONNEL SECURITY ADJUDICATION PROCESSES. THIS",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "STELLA JV, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70FA3126F00000031|P00002": {
+  "agentura": "Federal Emergency Management Agency",
+  "award_gid": "CONT_AWD_70FA3126F00000031_7022_GS02F142BA_4732",
+  "burza": "",
+  "castka_usa": 3844250.61,
+  "datum": "2026-11-03",
+  "materska": "ESI ACQUISITION INC",
+  "mod": "P00002",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70FA3126F00000031_7022_GS02F142BA_4732",
+  "piid": "70FA3126F00000031",
+  "popis_award": "TO PURCHASE CRISIS MANAGEMENT SYSTEM SOFTWARE AS A SERVICE",
+  "popis_usa": "TO EXERCISE THE OPTION YEAR ONE.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ESI ACQUISITION INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70FBTX26F00000003|P00004": {
+  "agentura": "Federal Emergency Management Agency",
+  "award_gid": "CONT_AWD_70FBTX26F00000003_7022_70FBTX21A00000001_7022",
+  "burza": "NYSE",
+  "castka_usa": 7726320.0,
+  "datum": "2026-11-03",
+  "materska": "GENERAL DYNAMICS CORP",
+  "mod": "P00004",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70FBTX26F00000003_7022_70FBTX21A00000001_7022",
+  "piid": "70FBTX26F00000003",
+  "popis_award": "LABOR HOUR CALL ORDER 20 AGAINST OUTSOURCED CONTACT CENTER.",
+  "popis_usa": "OUTSOURCES CONTACT CENTER CONTRACT TO EXERCISE OPTION 3",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+  "ticker": "GD",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70RDA126FR0000001|P00013": {
+  "agentura": "Office of Procurement Operations",
+  "award_gid": "CONT_AWD_70RDA126FR0000001_7001_47QTCK18D0003_4732",
+  "burza": "NYSE",
+  "castka_usa": 6229678.41,
+  "datum": "2026-11-04",
+  "materska": "GENERAL DYNAMICS CORP",
+  "mod": "P00013",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70RDA126FR0000001_7001_47QTCK18D0003_4732",
+  "piid": "70RDA126FR0000001",
+  "popis_award": "OBIM MISSION SYSTEMS LIFECYCLE SUPPORT (MSLS)",
+  "popis_usa": "EXERCISE AND FUND OPTION PERIOD 3 (70RDA126FR0000001) OBIM  MISSION SYSTEMS LIFECYCLE SUPPORT (MSLS)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+  "ticker": "GD",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70RDA224C00000002|P00009": {
+  "agentura": "Office of Procurement Operations",
+  "award_gid": "CONT_AWD_70RDA224C00000002_7001_-NONE-_-NONE-",
+  "burza": "NYSE",
+  "castka_usa": 1177320.9,
+  "datum": "2026-11-04",
+  "materska": "AT&T TECHNICAL SERVICES COMPANY, INC",
+  "mod": "P00009",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70RDA224C00000002_7001_-NONE-_-NONE-",
+  "piid": "70RDA224C00000002",
+  "popis_award": "O&M SUPPORT SERVICES ON ECC SYSTEM",
+  "popis_usa": "MODIFICATION P00009 EXTENSION OF PERIOD OF PERFORMANCE - FAR 52.217-8 OPTION TO EXTEND SERVICES.",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "alias",
+  "spolecnost": "AT&T TECHNICAL SERVICES COMPANY, INC",
+  "ticker": "T",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70RFPW27FRWA00001|0": {
+  "agentura": "Office of Procurement Operations",
+  "award_gid": "CONT_AWD_70RFPW27FRWA00001_7001_70RFP225DEC000006_7001",
+  "burza": "",
+  "castka_usa": 3044153.49,
+  "datum": "2026-11-03",
+  "materska": "GXC LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70RFPW27FRWA00001_7001_70RFP225DEC000006_7001",
+  "piid": "70RFPW27FRWA00001",
+  "popis_award": "PROTECTIVE SECURITY OFFICER SERVICES THROUGHOUT WESTERN WASHINGTON STATE",
+  "popis_usa": "PROTECTIVE SECURITY OFFICER SERVICES THROUGHOUT WESTERN WASHINGTON STATE",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "GXC INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70SBUR25F00000052|P00005": {
+  "agentura": "U.S. Citizenship and Immigration Services",
+  "award_gid": "CONT_AWD_70SBUR25F00000052_7003_75N98118D00064_7529",
+  "burza": "",
+  "castka_usa": 1401547.14,
+  "datum": "2026-11-04",
+  "materska": "ARCH SYSTEMS LLC",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70SBUR25F00000052_7003_75N98118D00064_7529",
+  "piid": "70SBUR25F00000052",
+  "popis_award": "BUSINESS ARCHITECTURE DEVELOPMENT AND STRATEGIC SPECIFICATION DESIGN (BADSSD) - FACILITATE THE CREATION, DOCUMENTATION, AND PROMOTION OF AN EFFICIENT, OPERATIONALLY VIABLE, AND CONSISTENT ENTERPRISE ARCHITECTURE WITHIN USCIS. EXEMPTION 4(A) INFRASTRU",
+  "popis_usa": "BUSINESS ARCHITECTURE DEVELOPMENT AND STRATEGIC SPECIFICATION DESIGN. THIS MODIFICATION EXERCISES OPTION PERIOD 2, UPDATES THE GOVERNMENT POINTS OF CONTRACT FOR THE ORDER, AND INCORPORATES POSITION DESCRIPTIONS (PDS) INTO THE ORDER.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ARCH SYSTEMS LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70T02022C7500N003|P00006": {
+  "agentura": "Transportation Security Administration",
+  "award_gid": "CONT_AWD_70T02022C7500N003_7013_-NONE-_-NONE-",
+  "burza": "NYSE",
+  "castka_usa": 2500000.0,
+  "datum": "2026-11-03",
+  "materska": "FAIR ISAAC CORPORATION",
+  "mod": "P00006",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70T02022C7500N003_7013_-NONE-_-NONE-",
+  "piid": "70T02022C7500N003",
+  "popis_award": "THE PURPOSE OF THIS CONTRACT IS TO PROVIDE BLADEWORKS SOFTWARE LICENSE MAINTENACE AND SUPPORT WITH A 12-MONTH BASE PERIOD AND FOUR 12-MONTH OPTION PERIODS..",
+  "popis_usa": "THE PURPOSE OF THIS MODIFICATION IS TO EXERCISE OPTION YEAR 4 CLIN 0005, UPDATE COR, AND INCORPORATE NEW INVOICING REQUIREMENT.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "přesná",
+  "spolecnost": "INFOGLIDE SOFTWARE CORP",
+  "ticker": "FICO",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70T04022F7672N004|P00021": {
+  "agentura": "Transportation Security Administration",
+  "award_gid": "CONT_AWD_70T04022F7672N004_7013_70T04021G7672N001_7013",
+  "burza": "",
+  "castka_usa": 1843000.0,
+  "datum": "2026-11-03",
+  "materska": "ALTARIS, LLC",
+  "mod": "P00021",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70T04022F7672N004_7013_70T04021G7672N001_7013",
+  "piid": "70T04022F7672N004",
+  "popis_award": "THE PURPOSE OF THIS PROCUREMENT IS TO PROCURE AND DEPLOY FULL-SIZED COMPUTED TOMOGRAPHY (CT) SYSTEMS AND ALL ASSOCIATED ANCILLARY EQUIPMENT.",
+  "popis_usa": "THE PURPOSE OF THIS MODIFICATION IS TO EXERCISE OPTIONAL WARRANTY/MAINTENANCE AND LOGISTICS SUPPORT FOR 52 COMPUTED TOMOGRAPHY SYSTEMS.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ANALOGIC CORP",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "70Z03827DL0000001|0": {
+  "agentura": "Us Coast Guard",
+  "burza": "Paris",
+  "castka_sam": 61262679.26,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c0148d6d39184854845a2538c91b751e/view",
+  "piid": "70Z03827DL0000001",
+  "popis_sam": "HC-144 Aircraft Component Repairs and Overhauls",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "alias",
+  "spolecnost": "AIRBUS DS MILITARY AIRCRAFT, INC.",
+  "ticker": "AIR.PA",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "70ZU0127CPBPL0002|0": {
+  "agentura": "U.S. Coast Guard",
+  "award_gid": "CONT_AWD_70ZU0127CPBPL0002_7008_-NONE-_-NONE-",
+  "burza": "",
+  "castka_sam": 3657158.9,
+  "castka_usa": 3657158.9,
+  "datum": "2026-11-03",
+  "materska": "PACIFIC SHIPYARDS INTERNATIONAL, LLC",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/01c8c98067ee43f79f6b8f112d5f9204/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70ZU0127CPBPL0002_7008_-NONE-_-NONE-",
+  "piid": "70ZU0127CPBPL0002",
+  "popis_award": "USCGC OLIVER BERRY DD FY27",
+  "popis_sam": "DRYDOCK: USCGC OLIVER BERRY DD FY27",
+  "popis_usa": "USCGC OLIVER BERRY DD FY27",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "",
+  "spolecnost": "Pacific Shipyards International, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "70ZU0127CPBPL0007|0": {
+  "agentura": "Us Coast Guard",
+  "burza": "",
+  "castka_sam": 1062112.98,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/10bddb4df87746338632e8531d8dce4c/view",
+  "piid": "70ZU0127CPBPL0007",
+  "popis_sam": "USCGC COHO DRYDOCK REPAIRS",
+  "prvni_zaznam": "2026-11-06T16:00:29Z",
+  "shoda": "",
+  "spolecnost": "THOMA-SEA MARINE CONSTRUCTORS, L.L.C.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "70ZU0227DLREP0002|0": {
+  "agentura": "Us Coast Guard",
+  "burza": "",
+  "castka_sam": 1698656.8,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/867686d383bb49ffa3766f62ecd61bc6/view",
+  "piid": "70ZU0227DLREP0002",
+  "popis_sam": "USCGC CALHOUN DS FQ2 FY27",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "GI Industrial-Marine",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "70ZU0227DLREP0003|0": {
+  "agentura": "Us Coast Guard",
+  "burza": "",
+  "castka_sam": 1789769.35,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/7357203ba017417b9dd654bc8aa9fcbf/view",
+  "piid": "70ZU0227DLREP0003",
+  "popis_sam": "USCGC BERTHOLF FQ2 FY27 Dockside Repair Services",
+  "prvni_zaznam": "2026-11-06T16:00:29Z",
+  "shoda": "",
+  "spolecnost": "GI Industrial Marine, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "70ZU0227FLREP0003|0": {
+  "agentura": "U.S. Coast Guard",
+  "award_gid": "CONT_AWD_70ZU0227FLREP0003_7008_70ZU0227DLREP0002_7008",
+  "burza": "",
+  "castka_usa": 1474656.8,
+  "datum": "2026-11-03",
+  "materska": "G I INDUSTRIAL-MARINE, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_70ZU0227FLREP0003_7008_70ZU0227DLREP0002_7008",
+  "piid": "70ZU0227FLREP0003",
+  "popis_award": "TASK ORDER- DOCKSIDE REPAIRS TO THE USCGC CALHOUN (DEFINITE ITEMS)",
+  "popis_usa": "TASK ORDER- DOCKSIDE REPAIRS TO THE USCGC CALHOUN (DEFINITE ITEMS)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "G I INDUSTRIAL-MARINE, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "72012123F00002|P00014": {
+  "agentura": "Department of State",
+  "award_gid": "CONT_AWD_72012123F00002_7200_7200AA21D00011_7200",
+  "burza": "",
+  "castka_usa": 9441020.33,
+  "datum": "2026-11-04",
+  "materska": "GREEN POWERED TECHNOLOGY LLC",
+  "mod": "P00014",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_72012123F00002_7200_7200AA21D00011_7200",
+  "piid": "72012123F00002",
+  "popis_award": "UKRAINE RECONSTRUCTION SUPPORT (URS) PROGRAM",
+  "popis_usa": "MODIFICATION TO ADMINISTRATIVELY MOVE FUNDING FROM USAID TO STATE SYSTEMS FOR CONTINUED SUPPORT OF SERVICING AND MANAGEMENT OF USAID AWARD (19AQMM27F0006)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "GREEN POWERED TECHNOLOGY LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "75A50226F62003|P00003": {
+  "agentura": "Office of Assistant Secretary for Preparedness and Response",
+  "award_gid": "CONT_AWD_75A50226F62003_7505_75A50223D00005_7505",
+  "burza": "",
+  "castka_usa": 1293000.0,
+  "datum": "2026-11-04",
+  "materska": "FORTS LOGISTICS, LLC",
+  "mod": "P00003",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_75A50226F62003_7505_75A50223D00005_7505",
+  "piid": "75A50226F62003",
+  "popis_award": "FORTS SUPPORT FOR LAIKIPIA, KENYA, EBOLA MISSION",
+  "popis_usa": "P00003 IS TO FORMALIZE THE AUTHORIZATION TO PROCEED (ATP) SUSTAINMENT AND MAINTENANCE SUPPORT, FROM OCTOBER 5, 2026, THROUGH FEBRUARY 7, 2027.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "FORTS LOGISTICS, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "75D30122C12935|P00022": {
+  "agentura": "Centers for Disease Control and Prevention",
+  "award_gid": "CONT_AWD_75D30122C12935_7523_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 6272967.24,
+  "datum": "2026-11-03",
+  "materska": "MANAGED CARE ADVISORS, INC.",
+  "mod": "P00022",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_75D30122C12935_7523_-NONE-_-NONE-",
+  "piid": "75D30122C12935",
+  "popis_award": "WTCHP NATIONWIDE PROVIDER NETWORK",
+  "popis_usa": "FUNDING AN AUTHORIZED CLAIM FOR CLIN 4010",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MANAGED CARE ADVISORS, INC.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "75FCMC25FJ022|P00018": {
+  "agentura": "Centers for Medicare and Medicaid Services",
+  "award_gid": "CONT_AWD_75FCMC25FJ022_7530_47QTCK18D0003_4732",
+  "burza": "NYSE",
+  "castka_usa": 14277678.0,
+  "datum": "2026-11-04",
+  "materska": "GENERAL DYNAMICS CORP",
+  "mod": "P00018",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_75FCMC25FJ022_7530_47QTCK18D0003_4732",
+  "piid": "75FCMC25FJ022",
+  "popis_award": "THE CLOUD PRODUCTS AND TOOLS (CPT) CONTRACT IS USED TO PROVIDE CLOUD-BASED INFRASTRUCTURE FROM COMMERCIAL CLOUD SERVICE PROVIDERS (CSP) SUCH AS MICROSOFT AZURE GOVERNMENT (MAG) AND AMAZON WEB SERVICES (AWS), AS WELL AS SOFTWARE, HARDWARE, TOOLS, PROF",
+  "popis_usa": "HYBRID CLOUD PRODUCTS & TOOLS (HCPT) PROVIDES THE CLOUD-BASED INFRASTRUCTURE FROM COMMERCIAL CLOUD SERVICE PROVIDERS (CSP) , AS WELL AS SOFTWARE, HARDWARE, TOOLS, PROFESSIONAL SERVICES ASSOCIATED.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "GENERAL DYNAMICS INFORMATION TECHNOLOGY, INC.",
+  "ticker": "GD",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "75H70127C00001|0": {
+  "agentura": "Indian Health Service",
+  "award_gid": "CONT_AWD_75H70127C00001_7527_-NONE-_-NONE-",
+  "burza": "",
+  "castka_sam": 5691000.0,
+  "castka_usa": 5691000.0,
+  "datum": "2026-11-04",
+  "materska": "SOUTHWESTERN DAKOTAH INC",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d1c360dc57c0453c940fa8813beb80b8/view",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_75H70127C00001_7527_-NONE-_-NONE-",
+  "piid": "75H70127C00001",
+  "popis_award": "GALLUP INDIAN MEDICAL CENTER (GIMC) FIRE ALARM UPGRADE  PROJECT NO. NA19GA009H8",
+  "popis_sam": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction  (Gallup, NM)",
+  "popis_usa": "GALLUP INDIAN MEDICAL CENTER (GIMC) FIRE ALARM UPGRADE  PROJECT NO. NA19GA009H8",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "SOUTHWESTERN DAKOTAH INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "USAspending"
+  ]
+ },
+ "75Q80125C00002|P00005": {
+  "agentura": "Office of the Assistant Secretary for Financial Resources",
+  "award_gid": "CONT_AWD_75Q80125C00002_7528_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 12468574.15,
+  "datum": "2026-11-04",
+  "materska": "RESEARCH TRIANGLE INSTITUTE",
+  "mod": "P00005",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_75Q80125C00002_7528_-NONE-_-NONE-",
+  "piid": "75Q80125C00002",
+  "popis_award": "MEDICAL EXPENDITURE PANEL SURVEY (MEPS) - MEDICAL PROVIDER COMPONENT (MPC)",
+  "popis_usa": "MEDICAL EXPENDITURE PANEL SURVEY (MEPS) - MEDICAL PROVIDER COMPONENT (MPC)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "RESEARCH TRIANGLE INSTITUTE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80AFRC27F0001|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80AFRC27F0001_8000_80AFRC27D0002_8000",
+  "burza": "NYSE",
+  "castka_usa": 5356166.0,
+  "datum": "2026-11-04",
+  "materska": "LOCKHEED MARTIN CORP",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80AFRC27F0001_8000_80AFRC27D0002_8000",
+  "piid": "80AFRC27F0001",
+  "popis_award": "TASK ORDER 1 - LABOR",
+  "popis_usa": "TASK ORDER 1 - LABOR",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "LOCKHEED MARTIN CORPORATION",
+  "ticker": "LMT",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80ARC024CA007|P00025": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80ARC024CA007_8000_-NONE-_-NONE-",
+  "burza": "NYSE",
+  "castka_usa": 1684469.0,
+  "datum": "2026-11-03",
+  "materska": "NORTHROP GRUMMAN CORPORATION",
+  "mod": "P00025",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80ARC024CA007_8000_-NONE-_-NONE-",
+  "piid": "80ARC024CA007",
+  "popis_award": "HELIOSWARM PROGRAM SUPPORT",
+  "popis_usa": "HELIOSWARM PROGRAM SUPPORT",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "NORTHROP GRUMMAN SYSTEMS CORPORATION",
+  "ticker": "NOC",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80ARC027C0002|P00001": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80ARC027C0002_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 7443737.0,
+  "datum": "2026-11-03",
+  "materska": "SOUTHWEST RESEARCH INSTITUTE",
+  "mod": "P00001",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80ARC027C0002_8000_-NONE-_-NONE-",
+  "piid": "80ARC027C0002",
+  "popis_award": "HELIOSWARM MISSION PHASE SUPPORT",
+  "popis_usa": "HELIOSWARM MISSION PHASE SUPPORT",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SOUTHWEST RESEARCH INSTITUTE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80GSFC24CA041|P00026": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80GSFC24CA041_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1300000.0,
+  "datum": "2026-11-04",
+  "materska": "SOUTHWEST RESEARCH INSTITUTE",
+  "mod": "P00026",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80GSFC24CA041_8000_-NONE-_-NONE-",
+  "piid": "80GSFC24CA041",
+  "popis_award": "JOINT EUV CORONAL DIAGNOSTIC INVESTIGATION (JEDI) EFFORT. PHASE A WORK INCLUDES INSTRUMENT REQUIREMENTS DEFINITION, INSTRUMENT MANAGEMENT, SYSTEM ENGINEERING, INSTRUMENT SAFETY & MISSION ASSURANCE, AND SYSTEM INTEGRATION PLANNING.",
+  "popis_usa": "JOINT EUV CORONAL DIAGNOSTIC INVESTIGATION, OR JEDI, WILL CAPTURE IMAGES OF THE SUN IN EXTREME ULTRAVIOLET LIGHT, A TYPE OF LIGHT INVISIBLE TO OUR EYES BUT REVEALS MANY OF THE UNDERLYING MECHANISMS OF THE SUN'S ACTIVITY.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SOUTHWEST RESEARCH INSTITUTE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80JSC027C0001|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80JSC027C0001_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 2550000.0,
+  "datum": "2026-11-03",
+  "materska": "DOXA SPACE LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80JSC027C0001_8000_-NONE-_-NONE-",
+  "piid": "80JSC027C0001",
+  "popis_award": "\"DOXA SPACE PHASE II BRAIN ORGANOIDS\"",
+  "popis_usa": "\"DOXA SPACE PHASE II BRAIN ORGANOIDS\"",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "DOXA SPACE LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80JSC027F7004|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80JSC027F7004_8000_80JSC020D0010_8000",
+  "burza": "",
+  "castka_usa": 25380000.0,
+  "datum": "2026-11-02",
+  "materska": "BLUE ORIGIN, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80JSC027F7004_8000_80JSC020D0010_8000",
+  "piid": "80JSC027F7004",
+  "popis_award": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS) CONTRACT TASK ORDER CX-2C",
+  "popis_usa": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS) CONTRACT TASK ORDER CX-2C",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "BLUE ORIGIN, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80KSC025F0005|P00012": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80KSC025F0005_8000_47PA0425D0019_4740",
+  "burza": "",
+  "castka_usa": 1726486.6,
+  "datum": "2026-11-04",
+  "materska": "FLORIDA POWER & LIGHT COMPANY",
+  "mod": "P00012",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80KSC025F0005_8000_47PA0425D0019_4740",
+  "piid": "80KSC025F0005",
+  "popis_award": "KSC ELECTRIC UTILITY SERVICE",
+  "popis_usa": "KSC ELECTRIC UTILITY SERVICE",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "FLORIDA POWER & LIGHT COMPANY",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NM0018C0002|P00065": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NM0018C0002_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 4000000.0,
+  "datum": "2026-11-03",
+  "materska": "COMMONWEALTH SCIENTIFIC AND INDUSTRIAL RESEARCH ORGANISATION",
+  "mod": "P00065",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NM0018C0002_8000_-NONE-_-NONE-",
+  "piid": "80NM0018C0002",
+  "popis_award": "DSN OPERATION AND MAINTENANCE CDSCC",
+  "popis_usa": "OPERATIONS AND MAITENANCE OF THE CANBERRA DEEP SPACE COMMUNICATION COMPLEX",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "COMMONWEALTH SCIENTIFIC AND INDUSTRIAL RESEARCH ORGANISATION",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NM0020F0009|P00013": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NM0020F0009_8000_80NM0018D0004_8000",
+  "burza": "",
+  "castka_usa": 2000000.0,
+  "datum": "2026-11-03",
+  "materska": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+  "mod": "P00013",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NM0020F0009_8000_80NM0018D0004_8000",
+  "piid": "80NM0020F0009",
+  "popis_award": "MAXIMIZING SCIENCE EXPLORATION OF SIMULATED COSMOLOGY SURVEY DATA",
+  "popis_usa": "MAXIMIZING SCIENCE EXPLORATION OF SIMULATED COSMOLOGY SURVEY DATA (70-711320)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NM0020F0074|P00040": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NM0020F0074_8000_80NM0018D0004_8000",
+  "burza": "",
+  "castka_usa": 3000000.0,
+  "datum": "2026-11-03",
+  "materska": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+  "mod": "P00040",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NM0020F0074_8000_80NM0018D0004_8000",
+  "piid": "80NM0020F0074",
+  "popis_award": "EXOPLANET EXPLORATION (EXEP) PROGRAM OFFICE (73-108020)",
+  "popis_usa": "EXOPLANET EXPLORATION (EXEP) PROGRAM OFFICE (73-108020)",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CALIFORNIA INSTITUTE OF TECHNOLOGY",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NSSC27C0020|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NSSC27C0020_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1227200.0,
+  "datum": "2026-11-04",
+  "materska": "EMODE, INC.",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NSSC27C0020_8000_-NONE-_-NONE-",
+  "piid": "80NSSC27C0020",
+  "popis_award": "SBIR PHASE II - QUANTUM WAVEGUIDE INFRARED PHOTODETECTOR FOR HETERODYNE SPECTROSCOPY",
+  "popis_usa": "SBIR PHASE II - QUANTUM WAVEGUIDE INFRARED PHOTODETECTOR FOR HETERODYNE SPECTROSCOPY",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "EMODE, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NSSC27C0048|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NSSC27C0048_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1274842.0,
+  "datum": "2026-11-04",
+  "materska": "MATERIALS DATA MANAGEMENT INC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NSSC27C0048_8000_-NONE-_-NONE-",
+  "piid": "80NSSC27C0048",
+  "popis_award": "SBIR PHASE II 80NSSC27C0048 - DIGITAL TWIN AND THREAD ECOSYSTEM FOR AUTOMATED ICME AND MODELING WORKFLOW OPTIMIZATION",
+  "popis_usa": "SBIR PHASE II 80NSSC27C0048 - DIGITAL TWIN AND THREAD ECOSYSTEM FOR AUTOMATED ICME AND MODELING WORKFLOW OPTIMIZATION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "MATERIALS DATA MANAGEMENT INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "80NSSC27C0050|0": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_80NSSC27C0050_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1275000.0,
+  "datum": "2026-11-03",
+  "materska": "EXCITING TECHNOLOGY LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_80NSSC27C0050_8000_-NONE-_-NONE-",
+  "piid": "80NSSC27C0050",
+  "popis_award": "SBIR PHASE II - 80NSSC27C0050 SCALABLE METASURFACE ARRAY TELESCOPE, SMART",
+  "popis_usa": "SBIR PHASE II - 80NSSC27C0050 SCALABLE METASURFACE ARRAY TELESCOPE, SMART",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "EXCITING TECHNOLOGY LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "88310322F00184|P00040": {
+  "agentura": "National Archives and Records Administration",
+  "award_gid": "CONT_AWD_88310322F00184_8800_GS07F0622N_4730",
+  "burza": "",
+  "castka_usa": 2077264.87,
+  "datum": "2026-11-04",
+  "materska": "AMERICAN SECURITY PROGRAMS INC",
+  "mod": "P00040",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_88310322F00184_8800_GS07F0622N_4730",
+  "piid": "88310322F00184",
+  "popis_award": "AI AND AII SECURITY GUARD SERVICES",
+  "popis_usa": "THE PURPOSE OF THIS BILATERAL MODIFICATION FOR SECURITY GUARD SERVICES AT ARCHIVES I AND ARCHIVES II IS TO FUND OPTION YEAR IV BY 2 MONTHS AND DEOBLLIGATE FY 2026 EXCESS FUNDS.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "AMERICAN SECURITY PROGRAMS INC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "89233124CNA000329|P00021": {
+  "agentura": "Department of Energy",
+  "award_gid": "CONT_AWD_89233124CNA000329_8900_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1324070.0,
+  "datum": "2026-11-03",
+  "materska": "NANA REGIONAL CORPORATION INC.",
+  "mod": "P00021",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_89233124CNA000329_8900_-NONE-_-NONE-",
+  "piid": "89233124CNA000329",
+  "popis_award": "PERSONNEL SECURITY & FACILITY CLEARANCES SUPPORT SERVICES FOR DOE/NATIONAL NUCLEAR SECURITY ADMINISTRATION, OFFICE OF PERSONNEL & FACILITY CLEARANCES AND CLASSIFICATION (OPFCC - NA-74), JOHN A. GORDON ALBUQUERQUE COMPLEX.",
+  "popis_usa": "PERSONNEL SECURITY & FACILITY CLEARANCES SUPPORT SERVICES FOR DOE/NATIONAL NUCLEAR SECURITY ADMINISTRATION, OFFICE OF PERSONNEL & FACILITY CLEARANCES AND CLASSIFICATION (OPFCC - NA-74), JOHN A. GORDON ALBUQUERQUE COMPLEX.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "TKC GLOBAL SOLUTIONS, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "89303026FIM000213|P00007": {
+  "agentura": "Department of Energy",
+  "award_gid": "CONT_AWD_89303026FIM000213_8900_89303025AIM000023_8900",
+  "burza": "NYSE",
+  "castka_usa": 4611252.42,
+  "datum": "2026-11-03",
+  "materska": "ACCENTURE PLC",
+  "mod": "P00007",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_89303026FIM000213_8900_89303025AIM000023_8900",
+  "piid": "89303026FIM000213",
+  "popis_award": "BLANKET PURCHASE AGREEMENT (BPA) ORDER FOR EITS OPERATIONS, SHARED SERVICES AND MODERNIZATION PROJECTS",
+  "popis_usa": "THE PURPOSE OF THIS MODIFICATION IS TO PROVIDE INCREMENTAL FUNDING IN THE AMOUNT OF $4,611,252.42.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "ACCENTURE FEDERAL SERVICES LLC",
+  "ticker": "ACN",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "89303925FEM400064|P00029": {
+  "agentura": "Department of Energy",
+  "award_gid": "CONT_AWD_89303925FEM400064_8900_89303324DEM000096_8900",
+  "burza": "",
+  "castka_usa": 17258000.0,
+  "datum": "2026-11-02",
+  "materska": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
+  "mod": "P00029",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_89303925FEM400064_8900_89303324DEM000096_8900",
+  "piid": "89303925FEM400064",
+  "popis_award": "THE AWARD CONTINUES PERFORMANCE OF INTEGRATED TANK DISPOSITION CONTRACT VIA THE IMPLEMENTATION TASK ORDER, TO-02.",
+  "popis_usa": "THIS MODIFICATION INCREMENTALLY FUNDS TASK ORDER 2 THROUGH JANUARY 8, 2027. THIS MODIFICATION INCREASES FUNDING BY $17,258,000.00 FROM $1,869,227,775.41. TO $1,886,485,775.41.",
+  "prvni_zaznam": "2026-11-04T15:04:30Z",
+  "shoda": "",
+  "spolecnost": "HANFORD TANK WASTE OPERATIONS & CLOSURE, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "89603024F0071|P00007": {
+  "agentura": "Federal Energy Regulatory Commission",
+  "award_gid": "CONT_AWD_89603024F0071_8960_47QTCB21D0189_4732",
+  "burza": "",
+  "castka_usa": 1329111.99,
+  "datum": "2026-11-03",
+  "materska": "ABACO STRATEGY, LLC",
+  "mod": "P00007",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_89603024F0071_8960_47QTCB21D0189_4732",
+  "piid": "89603024F0071",
+  "popis_award": "CPIC, BPM AND REGULATORY COMPLIANCE SUPPORT SERVICES",
+  "popis_usa": "CPIC, BPM AND REGULATORY COMPLIANCE SUPPORT SERVICES",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "ABACO STRATEGY, LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "8K000133692026000290|0": {
+  "agentura": "Department of War",
+  "burza": "NYSE",
+  "castka_8k": 301000000.0,
+  "cisla_kontraktu": [],
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_8k": "https://www.sec.gov/Archives/edgar/data/1336920/000133692026000290/ldos100226q3pressreleaseex.htm",
+  "piid": "8K000133692026000290",
+  "popis_8k": "Leidos was awarded a $301 million follow-on contract to provide 24/7/365 defensive cyber operations for the Department of War Information Network (DoDIN).",
+  "prvni_zaznam": "2026-11-03T11:07:40Z",
+  "shoda": "hlášení SEC",
+  "spolecnost": "Leidos Holdings, Inc.",
+  "ticker": "LDOS",
+  "ticker_pevny": "LDOS",
+  "typ": "Hlášení 8-K",
+  "zdroje": [
+   "SEC 8-K"
+  ]
+ },
+ "8K000136764426000116|0": {
+  "agentura": "U.S. Department",
+  "burza": "NYSE",
+  "castka_8k": 22300000.0,
+  "cisla_kontraktu": [
+   "W911SR24D0001"
+  ],
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_8k": "https://www.sec.gov/Archives/edgar/data/1367644/000136764426000116/ebs-20261104.htm",
+  "piid": "8K000136764426000116",
+  "popis_8k": "Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ Item 8.01 Other Ev...",
+  "prvni_zaznam": "2026-11-04T21:59:22Z",
+  "shoda": "hlášení SEC",
+  "spolecnost": "Emergent Biosolutions Inc.",
+  "ticker": "EBS",
+  "ticker_pevny": "EBS",
+  "typ": "Hlášení 8-K",
+  "zdroje": [
+   "SEC 8-K"
+  ]
+ },
+ "DTFA0102D03006CALL0002|P00223": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_DTFA0102D03006CALL0002_6920_DTFA0102D03006_6920",
+  "burza": "NYSE",
+  "castka_usa": 15692100.44,
+  "datum": "2026-11-02",
+  "materska": "L3HARRIS TECHNOLOGIES, INC",
+  "mod": "P00223",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_DTFA0102D03006CALL0002_6920_DTFA0102D03006_6920",
+  "piid": "DTFA0102D03006CALL0002",
+  "popis_award": "DAFIS UDO RECONSTRUCT W/O ADVANCE",
+  "popis_usa": "FTI CONTRACT NUMBER DTFA01-02-D-03006 DELIVERY ORDER 0002 FOR COST REIMBURSABLE CLINS",
+  "prvni_zaznam": "2026-11-04T15:04:30Z",
+  "shoda": "alias",
+  "spolecnost": "HARRIS CORPORATION",
+  "ticker": "LHX",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "DTFAWA10C00052|P00380": {
+  "agentura": "Federal Aviation Administration",
+  "award_gid": "CONT_AWD_DTFAWA10C00052_6920_-NONE-_-NONE-",
+  "burza": "NYSE",
+  "castka_usa": 9993157.55,
+  "datum": "2026-11-03",
+  "materska": "LEIDOS HOLDINGS, INC.",
+  "mod": "P00380",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_DTFAWA10C00052_6920_-NONE-_-NONE-",
+  "piid": "DTFAWA10C00052",
+  "popis_award": "WA-10-03770-- INCREMENTAL FUNDING -  NEXTGEN HD TRAJECTORY MGMT-ARRIVAL TACTICAL FLOW_TBFM_ PROGRAM 'NEW CONTRACT'.  TO PROVIDE PROGRAM MANAGEMENT, SYSTEMS ENGINEERING, SYSTEM DESIGN, SYSTEM TEST AND EVALUATION, TRAINING, IMPLEMENTATION, INTEGRATED LOGISTICS SUPPORT & ENGINEERING SUPPORT.  TENTATIVE CONTRACT  DTFAWA-10-C-00052.  PERIOD OF PERFORMANCE --TBD (BASE PERIOD (5 YEARS) WITH 5 OPTION YEARS A TOTAL OF 10 YEARS)  10-AJR4500-6000  TAS::69 8107::TAS",
+  "popis_usa": "FUNDING ACTION",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "alias",
+  "spolecnost": "LEIDOS INNOVATIONS GLOBAL, INC.",
+  "ticker": "LDOS",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "FA221727FB001|0": {
+  "agentura": "U.S. Air Force",
+  "burza": "NYSE",
+  "castka_dod": 80000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "FA221727FB001",
+  "popis_dod": "Strategic Mission Planning and Execution System Global Strike Product Support (SMPES GSPS)",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "Lockheed Martin Corp.",
+  "ticker": "LMT",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA236325CB002|P00009": {
+  "agentura": "U.S. Air Force",
+  "burza": "NYSE",
+  "castka_dod": 16910812.0,
+  "datum": "2026-11-03",
+  "mod": "P00009",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "FA236325CB002",
+  "popis_dod": "Japan E-767 Airborne Warning and Control System post-delivery support services",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "The Boeing Co.",
+  "ticker": "BA",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA255027C0002|0": {
+  "agentura": "Dept of the Air Force",
+  "burza": "",
+  "castka_sam": 6190450.77,
+  "datum": "2026-11-01",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/19c5d757d8d14d1d9523e69d8876935d/view",
+  "piid": "FA255027C0002",
+  "popis_sam": "Grounds Maintenance Services for Schriever Space Force Base",
+  "prvni_zaznam": "2026-11-02T20:56:24Z",
+  "shoda": "",
+  "spolecnost": "PROFESSIONAL CONTRACT SERVICES, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "FA852327FB003|0": {
+  "agentura": "U.S. Air Force",
+  "burza": "",
+  "castka_dod": 9896783.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "FA852327FB003",
+  "popis_dod": "Royal Australian Air Force (RAAF) C-130J AN/ALQ-251 radio frequency countermeasures laboratory support",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "",
+  "spolecnost": "Georgia Tech Applied Research Corp.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA862127CB001|0": {
+  "agentura": "U.S. Air Force",
+  "burza": "Nasdaq",
+  "castka_dod": 14800647.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4639373/contracts-for-nov-2-2026/",
+  "piid": "FA862127CB001",
+  "popis_dod": "Taiwan Air Force F-16 Block 20V and Block 70 Mission Training Center Program contractor logistics support (CLS)-futures",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "CAE USA Inc.",
+  "ticker": "CAE",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA869227FB002|0": {
+  "agentura": "U.S. Air Force",
+  "burza": "",
+  "castka_dod": 310498639.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4639373/contracts-for-nov-2-2026/",
+  "piid": "FA869227FB002",
+  "popis_dod": "programmed flying training, schoolhouse academics, simulator training operations, and opposition forces training, in order to execute aircrew initial qualification training, aircrew mission qualification training, aircrew transition training, aircrew conversion training, instructor upgrade traini...",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Phoenix Defense Ventures LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA877327D0001|0": {
+  "agentura": "U.S. Air Force",
+  "burza": "",
+  "castka_dod": 33842284.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "FA877327D0001",
+  "popis_dod": "operation support services",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "",
+  "spolecnost": "Computer World Services Corp.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "FA880625FB002|P00031": {
+  "agentura": "U.S. Air Force",
+  "burza": "",
+  "castka_dod": 30752715.0,
+  "datum": "2026-11-04",
+  "mod": "P00031",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "FA880625FB002",
+  "popis_dod": "addition of cloud compute resources, software licenses, platform integration, and workspace enablement supporting platform delivery",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "",
+  "spolecnost": "Systems Planning and Analysis Inc.",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "GS04PLKY02704|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 3217822.89,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d63f7ac54ce342d4b82cfaae7e79933d/view",
+  "piid": "GS04PLKY02704",
+  "popis_sam": "Government awarded lease in Fort Mitchell, KY",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "CHAMBER OFFICE PARK DEVELOPERS, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "GS05PLMN01636|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 1253025.46,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/2124a5be0a1c4e65be37be564320a008/view",
+  "piid": "GS05PLMN01636",
+  "popis_sam": "Award of lease for Office space in Anoka County, Minnesota",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "",
+  "spolecnost": "CR FOLEY, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "GS07F0168T36C24827F0010|0": {
+  "agentura": "Veterans Affairs, Department Of",
+  "burza": "",
+  "castka_sam": 1593010.2,
+  "datum": "2026-11-01",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/ab7c804203104eddbed55cb72ef2a4ec/view",
+  "piid": "GS07F0168T36C24827F0010",
+  "popis_sam": "S206--Task Order 3, Unarmed  Security Guard Service-675C70077",
+  "prvni_zaznam": "2026-11-02T20:56:24Z",
+  "shoda": "",
+  "spolecnost": "CULPEPPER & ASSOCIATES SECURITY SERVICES INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "GS07PLNM01660|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 4378204.3,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/a71039782f8844faa24986da016435a7/view",
+  "piid": "GS07PLNM01660",
+  "popis_sam": "General Services Administration-Lease, Office Space, Albuquerque, NM",
+  "prvni_zaznam": "2026-11-02T20:56:24Z",
+  "shoda": "",
+  "spolecnost": "AMERICAN CROSSING, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "LCA01802|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 1461685.68,
+  "datum": "2026-11-08",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/1f0bb29ee1a0477292f8b56395c0fb73/view",
+  "piid": "LCA01802",
+  "popis_sam": "US Government Awards Extension in San Diego, CA",
+  "prvni_zaznam": "2026-11-06T19:08:24Z",
+  "shoda": "",
+  "spolecnost": "CPI AHP CHANCELLOR PARK MOB OWNER LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "LIL00782|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 2529260.72,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d4d8fee0431e4070a191013eed753f11/view",
+  "piid": "LIL00782",
+  "popis_sam": "Lease Award for (5,100 RSF) in Alton, IL",
+  "prvni_zaznam": "2026-11-03T20:59:46Z",
+  "shoda": "",
+  "spolecnost": "CROWN AUTO PROPERTIES II, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "LLA01628|0": {
+  "agentura": "Public Buildings Service",
+  "burza": "",
+  "castka_sam": 1065330.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/b7941b2414cb4a3f9cc16733800845dc/view",
+  "piid": "LLA01628",
+  "popis_sam": "General Services Administration (GSA)     Lease: Office Space     Slidell, Louisiana",
+  "prvni_zaznam": "2026-11-03T20:59:46Z",
+  "shoda": "",
+  "spolecnost": "STATE MACHINERY & EQUIPMENT SALES INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "M6700127P0003|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "NYSE",
+  "castka_sam": 6696248.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/37537a21244d40d186ce2a95804a089a/view",
+  "piid": "M6700127P0003",
+  "popis_sam": "Enterprise Land Mobile Radio (ELMR)",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "alias",
+  "spolecnost": "L3HARRIS TECHNOLOGIES, INC.",
+  "ticker": "LHX",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0001426C2208|P00002": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 11265876.0,
+  "datum": "2026-11-05",
+  "mod": "P00002",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "N0001426C2208",
+  "popis_dod": "“Operationalizing Marine Acoustics for Strategic Awareness” effort",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "Integer Technologies",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N0001926F1095|P00001": {
+  "agentura": "U.S. Navy",
+  "burza": "NYSE",
+  "castka_dod": 119654234.0,
+  "datum": "2026-11-04",
+  "mod": "P00001",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "N0001926F1095",
+  "popis_dod": "Navy P-8A Poseidon aircraft and two for Royal Australian Air Force P-8A aircraft, incorporating Increment Three Block Two engineering change Proposal Six capabilities",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "alias",
+  "spolecnost": "The Boeing Co.",
+  "ticker": "BA",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N0002412C2115|0": {
+  "agentura": "U.S. Navy",
+  "burza": "NYSE",
+  "castka_dod": 14513267.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4639373/contracts-for-nov-2-2026/",
+  "piid": "N0002412C2115",
+  "popis_dod": "$14,513,267 undefinitized contract action under a previously awarded contract (N00024-12-C-2115) in support of the USS Idaho (SSN 799) Post Delivery Work Period",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "General Dynamics Electric Boat Corp.",
+  "ticker": "GD",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N0002427C4413|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "Sydney",
+  "castka_sam": 44868123.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/8eb02b926bd04254bdaa5c819f6bb8ab/view",
+  "piid": "N0002427C4413",
+  "popis_sam": "USS CANBERRA (LCS 30) FY27 DSRA Award Notice",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "alias",
+  "spolecnost": "AUSTAL USA, LLC",
+  "ticker": "ASB.AX",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0002427C4414|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 232543042.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/e31316df5712493e8bb6e4d0d398b61c/view",
+  "piid": "N0002427C4414",
+  "popis_sam": "USS GRIDLEY (DDG 101) FY27 Depot Modernization Period (DMP) Award Notice",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "VIGOR MARINE LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0002427C4441|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "London",
+  "castka_sam": 60385105.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/f648491be59b4b1298eafd0ce3adef80/view",
+  "piid": "N0002427C4441",
+  "popis_sam": "USS CINCINNATI (LCS 20) FY27 Docking Selected Restricted Availability (DSRA) Award Notice",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "alias",
+  "spolecnost": "BAE SYSTEMS MARITIME SOLUTIONS SAN DIEGO INC.",
+  "ticker": "BA.L",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0003027C3015|0": {
+  "agentura": "U.S. Navy",
+  "burza": "NYSE",
+  "castka_dod": 122449494.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "N0003027C3015",
+  "popis_dod": "$122,449,494 cost-plus-incentive-fee and cost-plus-fixed-fee contract (N0003027C3015) to provide Strategic Weapon System Trident Fleet Support, Trident II SSP Shipboard Integration Increment 8, Navigation Subsystem development efforts",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "alias",
+  "spolecnost": "The Lockheed Martin Corp.",
+  "ticker": "LMT",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N0010427CJA01|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 3036075.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/050c2d9135e045df8301e3aa8a116dd9/view",
+  "piid": "N0010427CJA01",
+  "popis_sam": "20--HUB AND CYLINDER AS",
+  "prvni_zaznam": "2026-11-06T16:00:29Z",
+  "shoda": "",
+  "spolecnost": "GE AVIATION SYSTEMS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0010427CJA02|?2026-11-05": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 1377051.0,
+  "datum": "2026-11-05",
+  "mod": "?2026-11-05",
+  "odkaz_sam": "https://sam.gov/opp/287792d438aa4afd9fe5cbe8a2eb967a/view",
+  "piid": "N0010427CJA02",
+  "popis_sam": "59--COM FREQ GEN ASSY, IN REPAIR/MODIFICATION OF",
+  "prvni_zaznam": "2026-11-06T16:00:29Z",
+  "shoda": "",
+  "spolecnost": "LAUREL TECHNOLOGIES PARTNERSHIP",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0018927FL007|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 2927259.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c6821602145f4e76bf6c96fcc7452b71/view",
+  "piid": "N0018927FL007",
+  "popis_sam": "FGEN Support Services",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "PREVAILANCE, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N0038327FB400|?2026-11-02": {
+  "agentura": "Dept of the Navy",
+  "burza": "NYSE",
+  "castka_sam": 1259498.0,
+  "datum": "2026-11-02",
+  "mod": "?2026-11-02",
+  "odkaz_sam": "https://sam.gov/opp/2bdb3c0da9cd449aba2941144f1418c0/view",
+  "piid": "N0038327FB400",
+  "popis_sam": "16--MULTIFUNCTIONAL FLI, IN REPAIR/MODIFICATION OF",
+  "prvni_zaznam": "2026-11-04T01:22:11Z",
+  "shoda": "alias",
+  "spolecnost": "THE BOEING COMPANY",
+  "ticker": "BA",
+  "typ": "Navýšení",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N3220527C1204|0": {
+  "agentura": "U.S. Navy",
+  "alt_nazvy": [
+   "Pacific Shipyards International, LLC"
+  ],
+  "burza": "",
+  "castka_dod": 14428074.0,
+  "castka_sam": 14948825.29,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "odkaz_sam": "https://sam.gov/opp/0c7268c3180040f68a84ecf599aa6acc/view",
+  "piid": "N3220527C1204",
+  "popis_dod": "a 75-calendar day shipyard availability for the regular overhaul and dry dock availability of Military Sealift Command’s rescue and salvage vessel USNS Grasp (T-ARS 51)",
+  "popis_sam": "USNS GRASP FY27 Regular Overhaul and Drydocking",
+  "prvni_zaznam": "2026-11-04T01:22:11Z",
+  "shoda": "",
+  "spolecnost": "Pacific Shipyards International",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "N3220527C1207|0": {
+  "agentura": "U.S. Navy",
+  "alt_nazvy": [
+   "VIGOR MARINE LLC"
+  ],
+  "burza": "",
+  "castka_dod": 18083104.0,
+  "castka_sam": 20945615.72,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/ad6ab043d88a4a6086d9870a2d03c0ee/view",
+  "piid": "N3220527C1207",
+  "popis_dod": "a 59-calendar day shipyard availability for the Mid-Term Availability of Military Sealift Command’s hospital ship USNS Mercy (T-AH 19)",
+  "popis_sam": "USNS MERCY (T-AH 19) FY27 Mid-Term Availability",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Vigor Marine",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "N3220527P5010|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 10644989.04,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/197af3c0749f4d99a4f3d57413a3d5f0/view",
+  "piid": "N3220527P5010",
+  "popis_sam": "90-Day Tanker Time Charter",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "",
+  "spolecnost": "SCHUYLER LINE NAVIGATION COMPANY LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N3220527P5011|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 2404000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/00d5f719c89b4c5f981044b8dd25ce95/view",
+  "piid": "N3220527P5011",
+  "popis_sam": "Tanker Voyage Charter",
+  "prvni_zaznam": "2026-11-05T21:02:04Z",
+  "shoda": "",
+  "spolecnost": "REEDEREI TMS",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N5523627C0001|0": {
+  "agentura": "Dept of the Navy",
+  "burza": "",
+  "castka_sam": 3404926.69,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/58fd304c458e4c4cb46ce54d5bc6c92d/view",
+  "piid": "N5523627C0001",
+  "popis_sam": "USS BOXER (LHD-4), ALCO Model 251C Long Lead Time Material (LLTM) Replacement",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "FAIRBANKS MORSE, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "N6247321D1202|0": {
+  "agentura": "U.S. Navy",
+  "burza": "London",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1202",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "Balfour Beatty Construction LLC",
+  "ticker": "BBY.L",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1203|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1203",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "B.L. Harbert International LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1204|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1204",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "Clark Construction Group – California LP",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1205|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1205",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "ECC Infrastructure LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1206|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1206",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Harper Construction Co. Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1207|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1207",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Heffler Contracting Group",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1208|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1208",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Korte Construction Co.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1209|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1209",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "M. A. Mortenson Co.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1210|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1210",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "R. A. Burch Construction Co. Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1211|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1211",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "RQ Construction LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1212|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1212",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Sundt Construction Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1213|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1213",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Walsh Federal LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1214|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1214",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Webcor Construction LP",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6247321D1215|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 99000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "N6247321D1215",
+  "popis_dod": "new construction, renovation, and repair of commercial and institutional facilities at various locations in the Naval Facilities Engineering Systems Command (NAVFAC) Southwest area of operations",
+  "poznamka": "Sdílený strop pro 14 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "The Whiting-Turner Contracting Co.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "N6945027C0004|0": {
+  "agentura": "U.S. Navy",
+  "burza": "",
+  "castka_dod": 14637787.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "N6945027C0004",
+  "popis_dod": "Atlantic Undersea Test and Evaluation Center (AUTEC) ground water storage tanks replacement",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "Numunu Martinez JV",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "NNG04EB99C|161": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_NNG04EB99C_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 1200000.0,
+  "datum": "2026-11-04",
+  "materska": "SOUTHWEST RESEARCH INSTITUTE",
+  "mod": "161",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_NNG04EB99C_8000_-NONE-_-NONE-",
+  "piid": "NNG04EB99C",
+  "popis_award": "TAS::80 0120::TAS AS THE PRINCIPAL INVESTIGATOR (PI) INSTITUTION FOR THE MAGNETOSPHERIC MULTISCALE  (MMS) INSTRUMENT SUITE SCIENCE TEAM (ISST), THE CONTRACTOR IS RESPONSIBLE FOR LEADING THE SOLVING MAGNETOSPHERIC ACCELERATION RECONNECTION AND TURBULENCE (SMART) TEAM THROUGH ALL MISSION PHASES. THE SCOPE OF WORK SHALL INCLUDE, BUT NOT BE LIMITED, TO THE FOLLOWING: - MANAGE THE SMART TEAM THROUGH PHASES B THROUGH E OF THE MMS MISSION,  - DEFINING SCIENCE GOALS AND OBJECTIVES - ASSIST THE MMS PROJECT AND HQ SCIENCE MISSION DIRECTORATE HELIOPHYSICS DIVISION IN THE PREPARATION OF LEVEL 1 REQUIREMENTS FOR THE MMS MISSION - FLOW-DOWN OF TOP-LEVEL MISSION REQUIREMENTS TO THE APPROPRIATE ELEMENTS OF THE INSTRUMENT SUITE - DESIGN, FABRICATION, INTEGRATION, CALIBRATION, TESTING AND DELIVERY OF FOUR FULLY QUALIFIED, FLIGHT INSTRUMENT SUITES TO OBSERVATORY INTEGRATION AND TEST (I&T) PLUS SPARES - DESIGN, DEVELOPMENT, INTEGRATION AND TESTING OF THE SOC - SUPPORT OBSERVATORY-LEVEL I&T ACTIVITIES - PROVIDE SUSTAINING ENGINEERING AND I&T SUPPORT OF THE INSTRUMENT SUITES AFTER DELIVERY TO NASA - RESPONSIBILITY FOR THE ON-ORBIT OPERATION, HEALTH AND SAFETY OF THE INSTRUMENT SUITES - RESPONSIBILITY FOR OPERATING AND MAINTAINING THE SOC POST-LAUNCH - ESTABLISHING AND MANAGING SUBCONTRACTS WITH INSTRUMENT SUITE TEAM MEMBERS - ESTABLISHING AND MAINTAINING THE REQUIRED INTERNATIONAL TRAFFIC IN ARMS REGULATIONS (ITAR) AND EXPORT CONTROL DOCUMENTATION NECESSARY FOR WORKING WITH ITS INTERNATIONAL TEAM MEMBERS - IMPLEMENTATION OF AN EPO PROGRAM FOR THE MMS MISSION",
+  "popis_usa": "THE MAGNETOSPHERIC MULTISCALE (MMS) MISSION",
+  "prvni_zaznam": "2026-11-07T01:17:01Z",
+  "shoda": "",
+  "spolecnost": "SOUTHWEST RESEARCH INSTITUTE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "NNM16AA08C|P00060": {
+  "agentura": "National Aeronautics and Space Administration",
+  "award_gid": "CONT_AWD_NNM16AA08C_8000_-NONE-_-NONE-",
+  "burza": "",
+  "castka_usa": 5000000.0,
+  "datum": "2026-11-04",
+  "materska": "SOUTHWEST RESEARCH INSTITUTE",
+  "mod": "P00060",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_NNM16AA08C_8000_-NONE-_-NONE-",
+  "piid": "NNM16AA08C",
+  "popis_award": "IGF::CL,CT::IGF LUCY IS A PLANNED NASA SPACE PROBE THAT WILL TOUR FIVE JUPITER TROJANS, ASTEROIDS WHICH SHARE JUPITER'S ORBIT AROUND THE SUN, ORBITING EITHER AHEAD OF OR BEHIND THE PLANET AND ONE MAIN BELT ASTEROID. ALL TARGET ENCOUNTERS WILL BE FLY-BY ENCOUNTERS.",
+  "popis_usa": "LUCY IS A PLANNED NASA SPACE PROBE THAT WILL TOUR FIVE JUPITER TROJANS, ASTEROIDS WHICH SHARE JUPITER'S ORBIT AROUND THE SUN, ORBITING EITHER AHEAD OF OR BEHIND THE PLANET AND ONE MAIN BELT ASTEROID. ALL TARGET ENCOUNTERS WILL BE FLY-BY ENCOUNTERS.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "SOUTHWEST RESEARCH INSTITUTE",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "SP700027D0002SP700027D0003SP700027D0004|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 26200000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/d0364de47a7b4344bfef3940666c7794/view",
+  "piid": "SP700027D0002SP700027D0003SP700027D0004",
+  "popis_sam": "Korea IDIQ Award Notice",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "See Description",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SP700027D0004|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_dod": 26200000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "SP700027D0004",
+  "popis_dod": "a 60-month lease of A3 Multifunctional Devices, accessories and office document devices within the Republic of Korea",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Trident E&P LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "SPE2DE25R0002|0": {
+  "agentura": "Defense Logistics Agency",
+  "alt_nazvy": [
+   "Update: Zyris Inc."
+  ],
+  "burza": "",
+  "castka_dod": 94000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "SPE2DE25R0002",
+  "popis_dod": "dental supplies for the Defense Logistics Agency Electronic Catalog, issued against solicitation SPE2DE-25-R-0002 and awarded Feb. 12, 2026",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "Update: Dental Health Products Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "SPE2DF27D0002|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 15000000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/c9e40b70bade46e08c4d78c076d70bb5/view",
+  "piid": "SPE2DF27D0002",
+  "popis_sam": "ECAT Dental Award",
+  "prvni_zaznam": "2026-11-03T20:59:46Z",
+  "shoda": "",
+  "spolecnost": "ZYRIS, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE2DF27D0005|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 94000000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/6c2b1e0ab5b342e7a04c0c1c11235419/view",
+  "piid": "SPE2DF27D0005",
+  "popis_sam": "66--Electr Cat (ECAT) II Div - FSJ",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "DENTAL HEALTH PRODUCTS INCORPORATED",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE2DH27D0005|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 15000000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/63e06a23dfe444f6a1b5b4ec445c969e/view",
+  "piid": "SPE2DH27D0005",
+  "popis_sam": "65--Hospital Supply Div - FSH",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "DOUBLEDAY ACQUISITIONS, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE4A527C0009|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "NYSE",
+  "castka_sam": 4097495.35,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/801d1696f99b4a9d9623dd8de9b77d20/view",
+  "piid": "SPE4A527C0009",
+  "popis_sam": "16--BRACKET ASSEMBLY,TA",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "alias",
+  "spolecnost": "AAR SUPPLY CHAIN, INC",
+  "ticker": "AIR",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE4A627C0016|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 1499817.44,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/55b4af4d320d49d98e65e9d42959cf7b/view",
+  "piid": "SPE4A627C0016",
+  "popis_sam": "62--PANEL,INDICATING,LI",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "POLYTRONIX, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE4A727D0042|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 2499999.99,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/db034784451e4712a40b60e124323398/view",
+  "piid": "SPE4A727D0042",
+  "popis_sam": "15--FAIRING,AIRCRAFT",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "G. S. E. DYNAMICS, INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE4A727D0061|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 3300000.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/4e60a784fa49460a906668ed529b5453/view",
+  "piid": "SPE4A727D0061",
+  "popis_sam": "15--TRACK,ESCAPE HATCH",
+  "prvni_zaznam": "2026-11-03T13:21:19Z",
+  "shoda": "",
+  "spolecnost": "D-J ENGINEERING INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE4AX27F0542|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "NYSE",
+  "castka_dod": 25406155.0,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4640667/contracts-for-nov-3-2026/",
+  "piid": "SPE4AX27F0542",
+  "popis_dod": "flow control valves",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "alias",
+  "spolecnost": "Northrop Grumman Systems Corp.",
+  "ticker": "NOC",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "SPE7L127C0017|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 1015250.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/ec97eb99498b4edbac84df09faa2afe3/view",
+  "piid": "SPE7L127C0017",
+  "popis_sam": "25--ARMOR,TRANSPARENT,V",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "HAWKINS GLASS WHOLESALERS, L.L.C",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE7LX27D5001|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 1350994.95,
+  "datum": "2026-11-03",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/291294c55e1a4b8a9b78d33af891b563/view",
+  "piid": "SPE7LX27D5001",
+  "popis_sam": "30--BELT,V",
+  "prvni_zaznam": "2026-11-03T17:11:38Z",
+  "shoda": "",
+  "spolecnost": "DIRECT LINE, INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE7M527C0001|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 2252925.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/554ca407a233488c944994816b3c7d16/view",
+  "piid": "SPE7M527C0001",
+  "popis_sam": "FILTER,RADIO FREQUE",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "PACIFIC SCIENTIFIC COMPANY",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE7MX27D0002|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_sam": 2346374.79,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/21f51b42274048ba8011bc0d10519076/view",
+  "piid": "SPE7MX27D0002",
+  "popis_sam": "ELECTRONIC MODULE S",
+  "prvni_zaznam": "2026-11-02T17:18:01Z",
+  "shoda": "",
+  "spolecnost": "MDF TECHNOLOGIES INC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "SPE8E327D0001|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_dod": 60000000.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4639373/contracts-for-nov-2-2026/",
+  "piid": "SPE8E327D0001",
+  "popis_dod": "facilities maintenance, repair and operations supplies",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "SupplyCore Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "SPE8E327D0002|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "",
+  "castka_dod": 80000000.0,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4639373/contracts-for-nov-2-2026/",
+  "piid": "SPE8E327D0002",
+  "popis_dod": "facilities maintenance, repair and operations supplies",
+  "prvni_zaznam": "2026-11-04T22:59:19Z",
+  "shoda": "",
+  "spolecnost": "SupplyCore Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "SPRPA127FDD00|0": {
+  "agentura": "Defense Logistics Agency",
+  "burza": "London",
+  "castka_sam": 3354400.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/1eda9200bbf64abfb7ba8735c52390b3/view",
+  "piid": "SPRPA127FDD00",
+  "popis_sam": "70--PROCESSOR,DISPLAY A",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "alias",
+  "spolecnost": "BAE Systems Information and Electronic Systems Integration Inc.",
+  "ticker": "BA.L",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W519TC27CA019|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 61053453.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "W519TC27CA019",
+  "popis_dod": "software sustainment, capability delivery, technical refactoring of the Virtual Contracting Enterprise business intelligence suite into a modern microservices architecture, and the deployment of a secure contracting capability",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "",
+  "spolecnost": "Avum",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W519TC27DA005|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/3e76bd52c2984e178b0f674532f2c827/view",
+  "piid": "W519TC27DA005",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "CLARK CONSTRUCTION GROUP LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA007|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "J KOKOLAKIS CONTRACTING INC"
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/701de5c70ca44aca87eede524288bb3c/view",
+  "piid": "W519TC27DA007",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "J Kokolakis Contracting Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA008|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "M. C. DEAN, INC."
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/e0d52689d78742d281416adc8114d584/view",
+  "piid": "W519TC27DA008",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "M.C. Dean Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA009|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "BURNS & MCDONNELL ENGINEERING COMPANY, INC."
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/68f7d929deac4febbbae525e24531776/view",
+  "piid": "W519TC27DA009",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Burns & McDonnell Engineering Co. Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA010|0": {
+  "agentura": "U.S. Army",
+  "burza": "NYSE",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/4b8c3465460b4983a205ff7d218f9ef7/view",
+  "piid": "W519TC27DA010",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "alias",
+  "spolecnost": "PARSONS GOVERNMENT SERVICES INC.",
+  "ticker": "PSN",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA011|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "BERING-WESTON JV, LLC"
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/a773e2cdcf714fc19f8d6fc160bf3c79/view",
+  "piid": "W519TC27DA011",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Bering-Weston JV LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA012|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "HENSEL PHELPS CONSTRUCTION CO"
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/27af66a23e684e2fa173e490412eb70e/view",
+  "piid": "W519TC27DA012",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Hensel Phelps Construction Co.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA013|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "ALBERICI CONSTRUCTORS INC"
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/b38dcca3d62f4cd29cb612f762be7eb1/view",
+  "piid": "W519TC27DA013",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Alberici Constructors Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA014|0": {
+  "agentura": "U.S. Army",
+  "burza": "London",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/ae3ec6b95b85466a9fd5e1739ffc3b04/view",
+  "piid": "W519TC27DA014",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "alias",
+  "spolecnost": "BAE SYSTEMS ORDNANCE SYSTEMS INC.",
+  "ticker": "BA.L",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA015|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/2b80fd43d503404eb734c1b982ea641c/view",
+  "piid": "W519TC27DA015",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "MSM GROUP NORTH AMERICA INC.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W519TC27DA016|0": {
+  "agentura": "U.S. Army",
+  "alt_nazvy": [
+   "Applied Research Associates, Inc."
+  ],
+  "burza": "",
+  "castka_dod": 4171491000.0,
+  "castka_sam": 4171491000.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "odkaz_sam": "https://sam.gov/opp/2aa02d79617946df827ab01b073d99ff/view",
+  "piid": "W519TC27DA016",
+  "popis_dod": "government-owned, contractor-operated Army ammunition plant design, build, and commissioning to support ongoing organic industrial base modernization, operations, and maintenance requirements",
+  "popis_sam": "Government-Owned, Contractor-Operated (GOCO) Army Ammunition Plant (AAP) Design, Build, and Commissioning Multiple Award Task Order Contract (MATOC)",
+  "poznamka": "Sdílený strop pro 11 firem (částka je celkový strop, ne částka pro jednu firmu).",
+  "prvni_zaznam": "2026-11-06T01:26:29Z",
+  "shoda": "",
+  "spolecnost": "Applied Research Associates Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov",
+   "DoD"
+  ]
+ },
+ "W56ZTN27DA001|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 1250271.21,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/e5cb8367eb444451b33dc0aa76bb33dd/view",
+  "piid": "W56ZTN27DA001",
+  "popis_sam": "HVAC - Water Treatment",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "COASTLINE LTD.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W911N227DA007|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 2000000.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/313056325cd84bf9bc5f51408dd69eb7/view",
+  "piid": "W911N227DA007",
+  "popis_sam": "Cleaning and Impregnation of CLET Heat Exchangers",
+  "prvni_zaznam": "2026-11-04T20:11:19Z",
+  "shoda": "",
+  "spolecnost": "GODFREY & WING, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W911RQ27CA004|0": {
+  "agentura": "U.S. Army",
+  "burza": "NYSE",
+  "castka_dod": 608999219.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "W911RQ27CA004",
+  "popis_dod": "supplemental workforce of at least 500 full-time equivalent personnel to sustain Department of War organic industrial base operations across key depots",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "alias",
+  "spolecnost": "Amentum Service Inc.",
+  "ticker": "AMTM",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W911RX27DA006|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 12543003.22,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/a7d2d35aa08142359e32ef06ee291eb7/view",
+  "piid": "W911RX27DA006",
+  "popis_sam": "Award Notice: III Armored Corps Agricultural Sanitation (AGSAN) Multiple Award Task Order (MATOC)",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "STELLARS PRECISIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W911W621D0001|P00016": {
+  "agentura": "U.S. Army",
+  "burza": "NYSE",
+  "castka_dod": 22036976.0,
+  "datum": "2026-11-05",
+  "mod": "P00016",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "W911W621D0001",
+  "popis_dod": "specialized engineering analysis test and technical services, UH-60 modernization, and strategic planning support",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "alias",
+  "spolecnost": "Sikorsky Aircraft Corp.",
+  "ticker": "LMT",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W911XK27CA002|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 1844525.76,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/9862e97b09aa4373a7c21cb6d99efc22/view",
+  "piid": "W911XK27CA002",
+  "popis_sam": "Pointe Mouillee Confined Disposal Facility Cells 1 and 2 Fill Management",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "WALSH SERVICE SOLUTIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W9124G27DA001|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 1242108.09,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/828c54a017e5450eaa4aa7fdc1918cc5/view",
+  "piid": "W9124G27DA001",
+  "popis_sam": "Award Notification Fort Rucker Laundry and Dry Cleaning Services",
+  "prvni_zaznam": "2026-11-04T23:54:18Z",
+  "shoda": "",
+  "spolecnost": "UNIVERSITY LAUNDRY SOLUTIONS LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W9126G24C0004|P00016": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 9470000.0,
+  "datum": "2026-11-04",
+  "mod": "P00016",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "W9126G24C0004",
+  "popis_dod": "design-build construction of a Veterans Affairs health care center. [The modification brings the total cumulative face value of the contract to $629,869,053",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "soukromá (alias)",
+  "spolecnost": "Clark Construction Group LLC",
+  "ticker": "",
+  "typ": "Navýšení",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W912CH27CA017|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 19437106.4,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/82067038ef3d468781e93f4011d03ccd/view",
+  "piid": "W912CH27CA017",
+  "popis_sam": "AWARD NOTICE: SATS BASE IN MOBILE; NSN: 4910-01-531-2053",
+  "prvni_zaznam": "2026-11-04T23:54:18Z",
+  "shoda": "",
+  "spolecnost": "WRIGHT TOOL COMPANY, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W912DQ27CA002|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 46259489.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "W912DQ27CA002",
+  "popis_dod": "environmental remedial action at the Roebling Steel Superfund Site",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "CAPE-APTIM JV1 LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W912DQ27FA010|0": {
+  "agentura": "Department of the Army",
+  "award_gid": "CONT_AWD_W912DQ27FA010_9700_W912DQ26DA003_9700",
+  "burza": "",
+  "castka_usa": 10000000.0,
+  "datum": "2026-11-04",
+  "materska": "CAPE-APTIM JV1, LLC",
+  "mod": "0",
+  "odkaz_usa": "https://www.usaspending.gov/award/CONT_AWD_W912DQ27FA010_9700_W912DQ26DA003_9700",
+  "piid": "W912DQ27FA010",
+  "popis_award": "REMEDIAL ACTION AT THE FORMER KIL-TONE COMPANY SUPERFUND SITE, OPERABLE UNIT 2 (OU2), PHASE 2, CUMBERLAND COUNTY, VINELAND, NEW JERSEY.",
+  "popis_usa": "REMEDIAL ACTION AT THE FORMER KIL-TONE COMPANY SUPERFUND SITE, OPERABLE UNIT 2 (OU2), PHASE 2, CUMBERLAND COUNTY, VINELAND, NEW JERSEY.",
+  "prvni_zaznam": "2026-11-06T07:36:29Z",
+  "shoda": "",
+  "spolecnost": "CAPE-APTIM JV1, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "USAspending"
+  ]
+ },
+ "W912HP27FA004|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 19562841.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "W912HP27FA004",
+  "popis_dod": "$19,562,841 firm-fixed-price contract to provide facility investment services at 81st Readiness Division facilities throughout Puerto Rico",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "Enviremedial Services Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W912HQ27CA008|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 2515462.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/441f057d37e44f8899c5af52d7dab5c7/view",
+  "piid": "W912HQ27CA008",
+  "popis_sam": "“The New Low-hanging Fruit - Making Chillers Cooler with Expansion Turbines”",
+  "prvni_zaznam": "2026-11-05T17:59:29Z",
+  "shoda": "",
+  "spolecnost": "HAYZEL, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W912HQ27CA013|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 1762791.0,
+  "datum": "2026-11-06",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/1a5afe6cdfd246bfbf63d80f39dcb2ba/view",
+  "piid": "W912HQ27CA013",
+  "popis_sam": "Electrochemical Depolymerization for Demilitarization of Plastic-Bonded Energetics in Water",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "Faraday Technology, Inc.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W912KC27CA002|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 6046935.25,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/f6c5abcc85e7440c8ed86c1165e66a9c/view",
+  "piid": "W912KC27CA002",
+  "popis_sam": "PAARNG Army Aircraft Maintenance",
+  "prvni_zaznam": "2026-11-04T16:21:56Z",
+  "shoda": "",
+  "spolecnost": "TYONEK AIRCRAFT OVERHAUL, LLC",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W912P825D0001|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 15419322.0,
+  "datum": "2026-11-05",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4642767/contracts-for-nov-5-2026/",
+  "piid": "W912P825D0001",
+  "popis_dod": "equipment, materials, supplies, and manpower required to perform 24/7 on-call capability to dredge in the primary dredging region and/or secondary dredging regions",
+  "prvni_zaznam": "2026-11-06T22:55:03Z",
+  "shoda": "",
+  "spolecnost": "Pine Bluff Sand and Gravel Co.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ },
+ "W912PB27DA002|0": {
+  "agentura": "Dept of the Army",
+  "burza": "",
+  "castka_sam": 2096736.46,
+  "datum": "2026-11-02",
+  "mod": "0",
+  "odkaz_sam": "https://sam.gov/opp/040ffd70669c41ae87682f950c3e1d05/view",
+  "piid": "W912PB27DA002",
+  "popis_sam": "Disposal Food Waste, Hohenfels, USAG Bavaria",
+  "prvni_zaznam": "2026-11-03T13:21:19Z",
+  "shoda": "",
+  "spolecnost": "Krätz GmbH",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "SAM.gov"
+  ]
+ },
+ "W912QR27CA001|0": {
+  "agentura": "U.S. Army",
+  "burza": "",
+  "castka_dod": 36259921.0,
+  "datum": "2026-11-04",
+  "mod": "0",
+  "odkaz_dod": "https://www.war.gov/News/Contracts/Contract/Article/4641708/contracts-for-nov-4-2026/",
+  "piid": "W912QR27CA001",
+  "popis_dod": "maintenance and repair on the General Stilwell Memorial Army Reserve Center",
+  "prvni_zaznam": "2026-11-05T22:59:08Z",
+  "shoda": "",
+  "spolecnost": "HHI Corp.",
+  "ticker": "",
+  "typ": "Nový",
+  "zdroje": [
+   "DoD"
+  ]
+ }
+}

@@ -1,0 +1,520 @@
+{
+ "kontrakt:15BRRC27D00000014|0|CXW|2026-11-05": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "CoreCivic, Inc.",
+  "hodnoty": {
+   "castka": 136656943.2,
+   "kapitalizace": 2479897660.0,
+   "n7": 0,
+   "podil": 0.0551,
+   "s7": null
+  },
+  "od": "2026-11-05",
+  "smer": "pos",
+  "text": "Kontrakt 137 mil. $ ze dne 5. 11. 2026 = 5,5 % tržní kapitalizace (2,5 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "CXW",
+  "typ": "kontrakt:15BRRC27D00000014|0",
+  "zachyceno": "2026-11-05T21:03:17Z"
+ },
+ "kontrakt:36F79727D0004|0|MDXH|2026-10-30": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "MDxHealth SA",
+  "hodnoty": {
+   "castka": 12000000.0,
+   "kapitalizace": 14980528.974,
+   "n7": 0,
+   "podil": 0.801,
+   "s7": null
+  },
+  "od": "2026-10-29",
+  "smer": "pos",
+  "text": "Kontrakt 12 mil. $ ze dne 29. 10. 2026 = 80,1 % tržní kapitalizace (15 mil. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "MDXH",
+  "typ": "kontrakt:36F79727D0004|0",
+  "zachyceno": "2026-10-30T19:04:31Z"
+ },
+ "kontrakt:47QACA27F0010|0|SKIL|2026-10-31": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Skillsoft Corp.",
+  "hodnoty": {
+   "castka": 1173150.0,
+   "kapitalizace": 30577491.84,
+   "n7": 0,
+   "podil": 0.0384,
+   "s7": null
+  },
+  "od": "2026-10-28",
+  "smer": "pos",
+  "text": "Kontrakt 1 mil. $ ze dne 28. 10. 2026 = 3,8 % tržní kapitalizace (31 mil. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "SKIL",
+  "typ": "kontrakt:47QACA27F0010|0",
+  "zachyceno": "2026-10-31T08:18:00Z"
+ },
+ "kontrakt:70CDCR27D00000002|0|GEO|2026-10-30": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "GEO GROUP INC",
+  "hodnoty": {
+   "castka": 1499517495.37,
+   "kapitalizace": 3659024435.2000003,
+   "n7": 0,
+   "podil": 0.4098,
+   "s7": null
+  },
+  "od": "2026-10-28",
+  "smer": "pos",
+  "text": "Kontrakt 1,5 mld. $ ze dne 28. 10. 2026 = 41,0 % tržní kapitalizace (3,7 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "GEO",
+  "typ": "kontrakt:70CDCR27D00000002|0",
+  "zachyceno": "2026-10-30T19:04:31Z"
+ },
+ "kontrakt:89303523FEM400032|P00129|AMTM|2026-11-01": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Amentum Holdings, Inc.",
+  "hodnoty": {
+   "castka": 113181680.81,
+   "kapitalizace": 5191796727.5,
+   "n7": 0,
+   "podil": 0.0218,
+   "s7": null
+  },
+  "od": "2026-10-30",
+  "smer": "pos",
+  "text": "Navýšení kontraktu 113 mil. $ ze dne 30. 10. 2026 = 2,2 % tržní kapitalizace (5,2 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "AMTM",
+  "typ": "kontrakt:89303523FEM400032|P00129",
+  "zachyceno": "2026-11-01T11:50:29Z"
+ },
+ "kontrakt:8K000119312526435041|0|PSN|2026-10-28": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "PARSONS CORP",
+  "hodnoty": {
+   "castka": 514000000.0,
+   "kapitalizace": 5160851378.7,
+   "n7": 0,
+   "podil": 0.0996,
+   "s7": null
+  },
+  "od": "2026-10-28",
+  "smer": "pos",
+  "text": "Kontrakt 514 mil. $ ze dne 28. 10. 2026 = 10,0 % tržní kapitalizace (5,2 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "PSN",
+  "typ": "kontrakt:8K000119312526435041|0",
+  "zachyceno": "2026-10-28T10:58:48Z"
+ },
+ "kontrakt:8K000136764426000116|0|EBS|2026-11-04": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Emergent BioSolutions Inc.",
+  "hodnoty": {
+   "castka": 22300000.0,
+   "kapitalizace": 311576002.91999996,
+   "n7": 0,
+   "podil": 0.0716,
+   "s7": null
+  },
+  "od": "2026-11-04",
+  "smer": "pos",
+  "text": "Kontrakt 22 mil. $ ze dne 4. 11. 2026 = 7,2 % tržní kapitalizace (312 mil. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "EBS",
+  "typ": "kontrakt:8K000136764426000116|0",
+  "zachyceno": "2026-11-04T22:00:50Z"
+ },
+ "kontrakt:8K000140282926000056|0|ORN|2026-10-28": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Orion Group Holdings Inc",
+  "hodnoty": {
+   "castka": 27000000000.0,
+   "kapitalizace": 293559785.0,
+   "n7": 0,
+   "podil": 91.9745,
+   "s7": null
+  },
+  "od": "2026-10-28",
+  "smer": "pos",
+  "text": "Kontrakt 27,0 mld. $ ze dne 28. 10. 2026 = 9197,4 % tržní kapitalizace (294 mil. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "ORN",
+  "typ": "kontrakt:8K000140282926000056|0",
+  "zachyceno": "2026-10-28T13:14:01Z"
+ },
+ "kontrakt:8K000149315226048631|0|NVA|2026-10-27": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Nova Minerals Corp",
+  "hodnoty": {
+   "castka": 43400000.0,
+   "kapitalizace": 164999669.76000002,
+   "n7": 0,
+   "podil": 0.263,
+   "s7": null
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Kontrakt 43 mil. $ ze dne 27. 10. 2026 = 26,3 % tržní kapitalizace (165 mil. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "NVA",
+  "typ": "kontrakt:8K000149315226048631|0",
+  "zachyceno": "2026-10-27T10:53:16Z"
+ },
+ "kontrakt:8K000150158526000054|0|HII|2026-10-29": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "HUNTINGTON INGALLS INDUSTRIES, INC.",
+  "hodnoty": {
+   "castka": 2200000000.0,
+   "kapitalizace": 11378105764.4,
+   "n7": 0,
+   "podil": 0.1934,
+   "s7": null
+  },
+  "od": "2026-10-29",
+  "smer": "pos",
+  "text": "Kontrakt 2,2 mld. $ ze dne 29. 10. 2026 = 19,3 % tržní kapitalizace (11,4 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "HII",
+  "typ": "kontrakt:8K000150158526000054|0",
+  "zachyceno": "2026-10-29T11:57:18Z"
+ },
+ "kontrakt:DEAC0908SR22470|1166|FLR|2026-10-31": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "FLUOR CORP",
+  "hodnoty": {
+   "castka": 378824045.0,
+   "kapitalizace": 6216284794.16,
+   "n7": 0,
+   "podil": 0.0609,
+   "s7": null
+  },
+  "od": "2026-10-29",
+  "smer": "pos",
+  "text": "Navýšení kontraktu 379 mil. $ ze dne 29. 10. 2026 = 6,1 % tržní kapitalizace (6,2 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "FLR",
+  "typ": "kontrakt:DEAC0908SR22470|1166",
+  "zachyceno": "2026-10-31T09:04:06Z"
+ },
+ "kontrakt:FA882320C0004|P00380|RTX|2026-10-27": {
+  "aktivni": false,
+  "aktualizace": "2026-10-27T23:44:53Z",
+  "do": "2026-10-27",
+  "firma": "RTX Corp",
+  "hodnoty": {
+   "castka": 8000000000.0,
+   "kapitalizace": 266487519419.03998,
+   "n7": 8,
+   "podil": 0.03,
+   "s7": 0.179
+  },
+  "od": "2026-10-13",
+  "smer": "pos",
+  "text": "Navýšení kontraktu 8,0 mld. $ ze dne 13. 10. 2026 = 3,0 % tržní kapitalizace (266,5 mld. $). Zprávy za 7 dní: 8, sentiment +0,18.",
+  "ticker": "RTX",
+  "typ": "kontrakt:FA882320C0004|P00380",
+  "zachyceno": "2026-10-27T08:21:00Z"
+ },
+ "kontrakt:SPE2DV26R0001|0|CAH|2026-10-28": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "CARDINAL HEALTH INC",
+  "hodnoty": {
+   "castka": 1500444621.0,
+   "kapitalizace": 62919305223.40001,
+   "n7": 0,
+   "podil": 0.0238,
+   "s7": null
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Kontrakt 1,5 mld. $ ze dne 27. 10. 2026 = 2,4 % tržní kapitalizace (62,9 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "CAH",
+  "typ": "kontrakt:SPE2DV26R0001|0",
+  "zachyceno": "2026-10-28T11:57:48Z"
+ },
+ "kontrakt:SPE2DV27D0001|0|CAH|2026-10-27": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "CARDINAL HEALTH INC",
+  "hodnoty": {
+   "castka": 8840378196.35,
+   "kapitalizace": 62919305223.40001,
+   "n7": 0,
+   "podil": 0.1405,
+   "s7": null
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Kontrakt 8,8 mld. $ ze dne 27. 10. 2026 = 14,1 % tržní kapitalizace (62,9 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "CAH",
+  "typ": "kontrakt:SPE2DV27D0001|0",
+  "zachyceno": "2026-10-27T18:59:16Z"
+ },
+ "kontrakt:SPE2DV27D0003|0|MCK|2026-10-27": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "MCKESSON CORP",
+  "hodnoty": {
+   "castka": 4368779533.94,
+   "kapitalizace": 122481047437.76,
+   "n7": 0,
+   "podil": 0.0357,
+   "s7": null
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Kontrakt 4,4 mld. $ ze dne 27. 10. 2026 = 3,6 % tržní kapitalizace (122,5 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "MCK",
+  "typ": "kontrakt:SPE2DV27D0003|0",
+  "zachyceno": "2026-10-27T18:59:16Z"
+ },
+ "kontrakt:SPE2DV27D0005|0|CAH|2026-10-27": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "CARDINAL HEALTH INC",
+  "hodnoty": {
+   "castka": 6573132797.66,
+   "kapitalizace": 62919305223.40001,
+   "n7": 0,
+   "podil": 0.1045,
+   "s7": null
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Kontrakt 6,6 mld. $ ze dne 27. 10. 2026 = 10,4 % tržní kapitalizace (62,9 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "CAH",
+  "typ": "kontrakt:SPE2DV27D0005|0",
+  "zachyceno": "2026-10-27T18:59:16Z"
+ },
+ "kontrakt:W519TC27DA010|0|PSN|2026-11-06": {
+  "aktivni": false,
+  "aktualizace": "2026-11-06T21:56:05Z",
+  "do": "2026-11-06",
+  "firma": "PARSONS CORP",
+  "hodnoty": {
+   "castka": 4171491000.0,
+   "kapitalizace": 5312827370.22,
+   "n7": 0,
+   "podil": 0.7852,
+   "s7": null
+  },
+  "od": "2026-11-05",
+  "smer": "pos",
+  "text": "Kontrakt 4,2 mld. $ ze dne 5. 11. 2026 = 78,5 % tržní kapitalizace (5,3 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "PSN",
+  "typ": "kontrakt:W519TC27DA010|0",
+  "zachyceno": "2026-11-06T01:27:09Z"
+ },
+ "kontrakt:W519TC27DA019|0|PEGA|2026-10-30": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "PEGASYSTEMS INC",
+  "hodnoty": {
+   "castka": 419008836.0,
+   "kapitalizace": 5302698858.0,
+   "n7": 0,
+   "podil": 0.079,
+   "s7": null
+  },
+  "od": "2026-10-29",
+  "smer": "pos",
+  "text": "Kontrakt 419 mil. $ ze dne 29. 10. 2026 = 7,9 % tržní kapitalizace (5,3 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "PEGA",
+  "typ": "kontrakt:W519TC27DA019|0",
+  "zachyceno": "2026-10-30T01:18:40Z"
+ },
+ "kontrakt:W911RQ27CA004|0|AMTM|2026-11-06": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "Amentum Holdings, Inc.",
+  "hodnoty": {
+   "castka": 608999219.0,
+   "kapitalizace": 5191796727.5,
+   "n7": 0,
+   "podil": 0.1173,
+   "s7": null
+  },
+  "od": "2026-11-05",
+  "smer": "pos",
+  "text": "Kontrakt 609 mil. $ ze dne 5. 11. 2026 = 11,7 % tržní kapitalizace (5,2 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "AMTM",
+  "typ": "kontrakt:W911RQ27CA004|0",
+  "zachyceno": "2026-11-06T22:57:59Z"
+ },
+ "kontrakt:W9123827DA009|0|TTEK|2026-11-06": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "TETRA TECH INC",
+  "hodnoty": {
+   "castka": 238000000.0,
+   "kapitalizace": 10316030004.119999,
+   "n7": 0,
+   "podil": 0.0231,
+   "s7": null
+  },
+  "od": "2026-10-30",
+  "smer": "pos",
+  "text": "Kontrakt 238 mil. $ ze dne 30. 10. 2026 = 2,3 % tržní kapitalizace (10,3 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "TTEK",
+  "typ": "kontrakt:W9123827DA009|0",
+  "zachyceno": "2026-11-06T01:27:09Z"
+ },
+ "kontrakt:W91RUS21C0001P00080|0|VVX|2026-11-06": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "V2X, Inc.",
+  "hodnoty": {
+   "castka": 211091828.0,
+   "kapitalizace": 2387114478.72,
+   "n7": 0,
+   "podil": 0.0884,
+   "s7": null
+  },
+  "od": "2026-10-30",
+  "smer": "pos",
+  "text": "Kontrakt 211 mil. $ ze dne 30. 10. 2026 = 8,8 % tržní kapitalizace (2,4 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "VVX",
+  "typ": "kontrakt:W91RUS21C0001P00080|0",
+  "zachyceno": "2026-11-06T16:02:21Z"
+ },
+ "kontrakt:W91RUS21C0001|P00080|VVX|2026-10-31": {
+  "aktivni": true,
+  "aktualizace": "2026-11-07T10:56:18Z",
+  "do": "2026-11-07",
+  "firma": "V2X, Inc.",
+  "hodnoty": {
+   "castka": 104641327.0,
+   "kapitalizace": 2387114478.72,
+   "n7": 0,
+   "podil": 0.0438,
+   "s7": null
+  },
+  "od": "2026-10-30",
+  "smer": "pos",
+  "text": "Navýšení kontraktu 105 mil. $ ze dne 30. 10. 2026 = 4,4 % tržní kapitalizace (2,4 mld. $). Za 7 dní zatím bez zpráv.",
+  "ticker": "VVX",
+  "typ": "kontrakt:W91RUS21C0001|P00080",
+  "zachyceno": "2026-10-31T22:50:17Z"
+ },
+ "negativni_vlna|ANT|2026-11-01": {
+  "aktivni": false,
+  "aktualizace": "2026-11-02T05:17:09Z",
+  "do": "2026-11-02",
+  "firma": "Anthropic, PBC",
+  "hodnoty": {
+   "n30": 17,
+   "n7": 4,
+   "neg7": 4,
+   "pos7": 0,
+   "s30": 0.045,
+   "s7": -0.571
+  },
+  "od": "2026-11-01",
+  "smer": "neg",
+  "text": "4 negativní zprávy za 7 dní (z 4), průměrný sentiment -0,57, obvykle +0,04.",
+  "ticker": "ANT",
+  "typ": "negativni_vlna",
+  "zachyceno": "2026-11-01T11:50:29Z"
+ },
+ "negativni_vlna|T|2026-10-28": {
+  "aktivni": false,
+  "aktualizace": "2026-10-28T23:50:26Z",
+  "do": "2026-10-28",
+  "firma": "AT&T INC.",
+  "hodnoty": {
+   "n30": 5,
+   "n7": 7,
+   "neg7": 3,
+   "pos7": 2,
+   "s30": 0.301,
+   "s7": -0.121
+  },
+  "od": "2026-10-28",
+  "smer": "neg",
+  "text": "3 negativní zprávy za 7 dní (z 7), průměrný sentiment -0,12, obvykle +0,30.",
+  "ticker": "T",
+  "typ": "negativni_vlna",
+  "zachyceno": "2026-10-28T01:16:31Z"
+ },
+ "pozitivni_vlna|VZ|2026-10-29": {
+  "aktivni": false,
+  "aktualizace": "2026-10-30T23:49:27Z",
+  "do": "2026-10-30",
+  "firma": "VERIZON COMMUNICATIONS INC",
+  "hodnoty": {
+   "n30": 25,
+   "n7": 3,
+   "neg7": 0,
+   "pos7": 3,
+   "s30": -0.119,
+   "s7": 0.384
+  },
+  "od": "2026-10-29",
+  "smer": "pos",
+  "text": "3 pozitivní zprávy za 7 dní (z 3), průměrný sentiment +0,38, obvykle -0,12.",
+  "ticker": "VZ",
+  "typ": "pozitivni_vlna",
+  "zachyceno": "2026-10-29T01:15:09Z"
+ },
+ "zhorseni|T|2026-10-29": {
+  "aktivni": false,
+  "aktualizace": "2026-10-29T23:51:52Z",
+  "do": "2026-10-29",
+  "firma": "AT&T INC.",
+  "hodnoty": {
+   "n30": 8,
+   "n7": 4,
+   "neg7": 2,
+   "pos7": 1,
+   "s30": 0.205,
+   "s7": -0.245
+  },
+  "od": "2026-10-29",
+  "smer": "neg",
+  "text": "Sentiment za 7 dní -0,24 proti +0,20 v předchozích 30 dnech (4 a 8 zpráv).",
+  "ticker": "T",
+  "typ": "zhorseni",
+  "zachyceno": "2026-10-29T01:15:09Z"
+ },
+ "zlepseni|UNH|2026-10-27": {
+  "aktivni": false,
+  "aktualizace": "2026-10-27T23:44:53Z",
+  "do": "2026-10-27",
+  "firma": "UNITEDHEALTH GROUP INC",
+  "hodnoty": {
+   "n30": 5,
+   "n7": 3,
+   "neg7": 0,
+   "pos7": 2,
+   "s30": -0.004,
+   "s7": 0.411
+  },
+  "od": "2026-10-27",
+  "smer": "pos",
+  "text": "Sentiment za 7 dní +0,41 proti -0,00 v předchozích 30 dnech (3 a 5 zpráv).",
+  "ticker": "UNH",
+  "typ": "zlepseni",
+  "zachyceno": "2026-10-27T20:51:23Z"
+ }
+}
